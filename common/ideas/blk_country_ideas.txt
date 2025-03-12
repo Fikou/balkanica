@@ -1,0 +1,44 @@
+ILY_ideas = {
+	start = {
+		global_manpower_modifier = 0.1
+	 land_forcelimit_modifier = 0.1
+	}
+	bonus = {
+		legitimacy = 1
+		devotion = 1
+		republican_tradition = 0.3
+		meritocracy = 1
+		horde_unity = 1
+	}
+	trigger = {
+		tag = ILY
+	}
+	free = yes
+	
+	ILY_i1 = {
+		defensiveness = 0.15
+  hostile_attrition = 1
+	}
+	ILY_i2 = {
+		cavalry_power = 0.15
+  infantry_power = 0.15
+	}
+	ILY_i3 = {
+		global_unrest = -2
+	}
+	ILY_i4 = {
+		trade_efficiency = 0.1
+  naval_forcelimit_modifier = 0.2
+	}
+	ILY_i5 = {
+		core_creation = -0.2
+	}
+	ILY_i6 = {
+		development_cost_modifier = -0.1
+  global_institution_spread = 0.1
+	}
+	ILY_i7 = {
+		inflation_reduction = 0.1
+  global_trade_goods_size_modifier = 0.1
+	}
+}

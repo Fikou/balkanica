@@ -1,0 +1,6 @@
+government = monarchy
+add_government_reform = feudalism_reform
+technology_group = eastern
+primary_culture = dalmatian_new
+religion = catholic
+capital = 136 # Split, next to Salon, the capital of Roman Illyricum
