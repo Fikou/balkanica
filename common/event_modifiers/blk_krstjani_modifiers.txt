@@ -1,0 +1,76 @@
+blk_krstjani_conversion_mod = {
+ tolerance_heretic = -2
+ tolerance_heathen = -2
+ global_missionary_strength = 0.03
+ picture = "global_missionary_strength"
+}
+
+blk_krstjani_ideas = {
+ idea_cost = -0.1
+}
+
+blk_djed_cooldown = {
+ picture = "global_heretic_missionary_strength" # make this the clergy influence icon
+}
+
+blk_krstjani_gosti_cooldown = {
+ picture = "global_heretic_missionary_strength" # make this the burgher influence icon
+}
+
+blk_krstjani_hizas_temple = {
+ local_tax_modifier = 0.15
+ local_missionary_strength = 0.01
+ picture = "local_tax_modifier"
+}
+
+blk_krstjani_hizas_no_uni_no_temple = {
+ local_tax_modifier = 0.3
+ picture = "local_tax_modifier"
+}
+
+blk_krstjani_hizas_uni = {
+ local_tax_modifier = 0.15
+ picture = "local_tax_modifier"
+}
+
+blk_djed_morale_defense = {
+ land_morale = 0.15
+}
+
+blk_djed_morale_offense = {
+ land_morale = 0.1
+}
+
+blk_djed_devcost = {
+ development_cost = -0.05
+ build_cost = -0.1
+ stability_cost_modifier = -0.15
+ picture = "development_cost"
+}
+
+blk_djed_unrest = {
+ global_unrest = -1
+ all_estate_loyalty_equilibrium = 0.025
+ picture = "global_unrest"
+}
+
+blk_djed_legitimacy = {
+ legitimacy = 1
+ devotion = 1
+ horde_unity = 1
+ meritocracy = 1
+ republican_tradition = 0.33
+}
+
+blk_djed_colonies = {
+ global_colonial_growth = 50
+ colonist_placement_chance = 0.25
+}
+
+blk_djed_institutions = {
+ technology_cost = -0.05
+ idea_cost = -0.05
+ institution_spread_from_true_faith = 0.5
+ innovativeness_gain = 0.25
+ russian_modernization_gain_modifier = 0.25 # just for fun
+}

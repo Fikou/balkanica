@@ -1,0 +1,290 @@
+namespace = krstjani_flavor
+
+# talk to the djed
+country_event = {
+ id = krstjani_flavor.1
+ title = krstjani_flavor.1.title
+ picture = POPE_PREACHING_eventPicture # todo?
+
+ desc = krstjani_flavor.1.desc
+
+ is_triggered_only = yes
+
+ # morale boost - only if we're being attacked
+ option = {
+  name = krstjani_flavor.1.a
+  trigger = {
+   any_neighbor_country = {
+    offensive_war_with = ROOT
+   }
+  }
+  highlight = yes
+  add_country_modifier = {
+    name = "blk_djed_morale_defense"
+    duration = 1825 # 5 years
+  }
+  ai_chance = {
+   factor = 100
+  }
+ }
+ # morale boost - if we're in a crusade
+ option = {
+  name = krstjani_flavor.1.b
+  trigger = {
+   any_neighbor_country = {
+    defensive_war_with = ROOT
+    NOT = { religion = ROOT }
+   }
+  }
+  highlight = yes
+  add_country_modifier = {
+    name = "blk_djed_morale_offense"
+    duration = 1825 # 5 years
+  }
+  ai_chance = {
+   factor = 100
+  }
+ }
+ # peace - develop the country
+ option = {
+  name = krstjani_flavor.1.c
+  trigger = {
+   is_at_war = no
+  }
+  highlight = yes
+  add_country_modifier = {
+    name = "blk_djed_devcost"
+    duration = 1825 # 5 years
+  }
+  ai_chance = {
+   factor = 10
+  }
+ }
+ # reform
+ option = {
+  name = krstjani_flavor.1.d
+  trigger = {
+   is_at_war = no
+  }
+  highlight = yes
+  add_reform_progress_medium_effect = yes
+  ai_chance = {
+   factor = 10
+  }
+ }
+ # unity
+ option = {
+  name = krstjani_flavor.1.e
+  trigger = {
+   is_at_war = no
+  }
+  highlight = yes
+  add_country_modifier = {
+    name = "blk_djed_unrest"
+    duration = 3650 # 10 years
+  }
+  ai_chance = {
+   factor = 1
+   modifier = {
+    factor = 100
+    rebel_progress_at_least = { value = 80 }
+   }
+   modifier = {
+    factor = 0
+    NOT = { rebel_progress_at_least = { value = 50 } }
+   }
+  }
+ }
+ # strengthening the church
+ option = {
+  name = krstjani_flavor.1.f
+  change_estate_land_share = {
+   estate = estate_church
+   share = 5
+  }
+  add_estate_influence_modifier = {
+   estate = estate_church
+   desc = DJED_ESTATE_MODIFIER
+   influence = 5
+   duration = 3650 # 10 years
+  }
+  add_estate_loyalty_modifier = {
+   estate = estate_church
+   desc = DJED_ESTATE_MODIFIER
+   loyalty = 12.5
+   duration = 3650 # 10 years
+  }
+  ai_chance = {
+   factor = 0
+  }
+ }
+ # add legitimacy
+ option = {
+  name = krstjani_flavor.1.g
+  add_legitimacy = 10
+  add_devotion = 10
+  add_horde_unity = 10
+  add_meritocracy = 10
+  add_republican_tradition = 5
+  add_country_modifier = {
+    name = "blk_djed_legitimacy"
+    duration = 3650 # 10 years
+  }
+  ai_chance = {
+   factor = 1
+   modifier = {
+    factor = 50
+    OR = {
+     legitimacy = 50
+     devotion = 50
+     horde_unity = 50
+     meritocracy = 50
+     republican_tradition = 80
+    }
+   }
+   modifier = {
+    factor = 4
+    OR = {
+     legitimacy = 25
+     devotion = 25
+     horde_unity = 25
+     meritocracy = 25
+     republican_tradition = 50
+    }
+   }
+   modifier = {
+    factor = 0
+    OR = {
+     legitimacy = 90
+     devotion = 90
+     horde_unity = 90
+     meritocracy = 90
+     republican_tradition = 95
+    }
+   }
+  }
+ }
+ # cooperation
+ option = {
+  name = krstjani_flavor.1.h
+  trigger = {
+   OR = {
+    any_subject_country = {
+     religion = ROOT
+    }
+    any_neighbor_country = {
+     religion = ROOT
+    }
+    any_owned_province = {
+     religion = ROOT
+     local_autonomy_above_min = 10
+    }
+   }
+  }
+  highlight = yes
+  every_owned_province = {
+   limit = {
+    religion = ROOT
+    local_autonomy_above_min = 10
+   }
+   add_local_autonomy = -10
+  }
+  every_subject_country = {
+   limit = {
+    religion = ROOT
+   }
+   add_opinion = {
+    who = ROOT
+    modifier = djed_cooperation
+   }
+   add_liberty_desire = -25
+   add_trust = {
+    who = ROOT
+    value = 10
+   }
+  }
+  every_neighbor_country = {
+   limit = {
+    religion = ROOT
+    NOT = { is_rival = ROOT }
+    ROOT = { NOT = { is_rival = PREV } }
+   }
+   add_opinion = {
+    who = ROOT
+    modifier = djed_cooperation
+   }
+  }
+  ai_chance = {
+   factor = 10
+  }
+ }
+ # colonization...?
+ option = {
+  name = krstjani_flavor.1.i
+  trigger = {
+   num_of_colonists = 1
+  }
+  highlight = yes
+  add_country_modifier = {
+    name = "blk_djed_colonies"
+    duration = 3650 # 10 years
+  }
+  ai_chance = {
+   factor = 10
+  }
+ }
+ # institutions
+ option = {
+  name = krstjani_flavor.1.j
+  trigger = {
+   has_institution = printing_press
+   NOT = { has_country_modifier = blk_krstjani_ideas }
+  }
+  highlight = yes
+  add_country_modifier = {
+    name = "blk_djed_institutions"
+    duration = 1825 # 5 years
+  }
+  ai_chance = {
+   factor = 10
+  }
+ }
+}
+
+# invite ghosti
+country_event = {
+ id = krstjani_flavor.2
+ title = krstjani_flavor.2.title
+ picture = POPE_PREACHING_eventPicture # todo
+
+ desc = krstjani_flavor.2.desc
+
+ is_triggered_only = yes
+
+ option = {
+  name = krstjani_flavor.2.a
+  generate_scaled_advisor_of_type_and_cost_effect = {
+   type = theologian
+   cost_multiplier = 0.5
+  }
+  ai_chance = {
+   factor = 1
+  }
+ }
+ option = {
+  name = krstjani_flavor.2.b
+  generate_scaled_advisor_of_type_and_cost_effect = {
+   type = inquisitor
+   cost_multiplier = 0.5
+  }
+  ai_chance = {
+   factor = 1
+   modifier = {
+    factor = 0
+    all_owned_province = {
+     religion = ROOT
+    }
+   }
+  }
+ }
+}

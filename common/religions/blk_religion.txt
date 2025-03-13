@@ -8,8 +8,13 @@ christian = {
   aspects_name = ANGLICAN_ASPECTS
 
   aspects = {
-   divorce_consort_aspect
-   stability_aspect
+   blk_krstjani_heretic_refuge
+   blk_krstjani_dualism
+   blk_krstjani_conversion
+   blk_krstjani_church_tax
+   blk_krstjani_djed
+   blk_krstjani_hizas
+   blk_krstjani_gosti
   }
 
   province = {
@@ -22,12 +27,12 @@ christian = {
    tolerance_heretic = 2
    global_heretic_missionary_strength = -0.02
   }
-  
+
   country_as_secondary = {
    stability_cost_modifier = -0.1
    tolerance_heathen = 2
   }
-  
+
   heretic = { BOGOMILIST }
  }
 

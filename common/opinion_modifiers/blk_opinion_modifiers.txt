@@ -1,0 +1,4 @@
+djed_cooperation = {
+ opinion = 30
+ yearly_decay = 3
+}

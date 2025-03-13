@@ -1,53 +1,352 @@
-diplomats_of_the_reformation_aspect = {
-	sprite = "GFX_diplomats_of_the_reformation_aspect"
-	cost = 100
-	trigger = {}
-	effect = {
-		custom_tooltip = diplomats_of_the_reformation_aspect_tt
-		hidden_effect = {
-			every_known_country = {
-				limit = {
-					OR = {
-						religion = protestant
-						religion = reformed
-						religion = anglican
-						religion = hussite
-					}
-				}
-				add_opinion = {
-					who = ROOT
-					modifier = anglican_reformation_diplomacy
-				}
-				reverse_add_opinion = {
-					who = ROOT
-					modifier = anglican_reformation_diplomacy
-				}
-			}
-		}
-	}
-	ai_will_do = {
-		factor = 0
-	}
+# gain manpower for every neighboring non-krstjani province
+blk_krstjani_heretic_refuge = {
+ sprite = "GFX_diplomats_of_the_reformation_aspect"
+ cost = 150
+ trigger = {
+  any_neighbor_province = {
+    NOT = { religion = ROOT }
+  }
+ }
+ effect = {
+  custom_tooltip = blk_krstjani_heretic_refuge_tt
+  hidden_effect = {
+   every_neighbor_province = {
+     limit = {
+      NOT = { religion = ROOT }
+     }
+     # manpower gain corresponds to development
+     export_to_variable = {
+      which = var__manpower_to_gain
+      value = development
+     }
+     # note: 1 manpower = 1000 men
+     multiply_variable = {
+      which = var__manpower_to_gain
+      value = 0.03
+     }
+     # can't just do add_manpower = var__manpower_to_gain, because that would make sense
+     while = {
+      limit = {
+       check_variable = {
+        which = var__manpower_to_gain
+        value = 1
+       }
+      }
+      ROOT = { add_manpower = 1 }
+      subtract_variable = {
+       which = var__manpower_to_gain
+       value = 1
+      }
+     }
+     while = {
+      limit = {
+       check_variable = {
+        which = var__manpower_to_gain
+        value = 0.1
+       }
+      }
+      ROOT = { add_manpower = 0.1 }
+      subtract_variable = {
+       which = var__manpower_to_gain
+       value = 0.1
+      }
+     }
+   }
+  }
+ }
+ ai_will_do = {
+  factor = 1
+  modifier = {
+   factor = 5
+   is_at_war = yes
+  }
+  modifier = {
+   factor = 0.5
+   manpower = 10
+  }
+  modifier = {
+   factor = 0.2
+   manpower = 20
+  }
+  modifier = {
+   factor = 0
+   manpower = 50
+  }
+ }
 }
 
-icons_of_the_church_aspect = {
-	sprite = "GFX_icons_of_the_church_icon"
-	cost = 200
-	trigger = {}
-	effect = {
-		custom_tooltip = icons_of_the_church_aspect_tt
-		hidden_effect = {
-			add_country_modifier = {
-				name = anglican_militarized_church_aspect
-				duration = 5475
-			}
-		}
-	}
-	ai_will_do = {
-		factor = 3
-		modifier = {
-			factor = 0
-			is_at_war = no
-		}
-	}
+# tain temp idea cost reduction
+blk_krstjani_dualism = {
+ sprite = "GFX_innovativeness_aspect"
+ cost = 80
+ trigger = {
+  NOT = { has_country_modifier = blk_krstjani_ideas }
+  NOT = { has_country_modifier = blk_krstjani_conversion_mod }
+ }
+ effect = {
+  custom_tooltip = blk_krstjani_dualism_tt
+   hidden_effect = {
+    add_country_modifier = {
+     name = "blk_krstjani_ideas"
+     duration = 3650 # 10 years
+   }
+  }
+ }
+ ai_will_do = {
+  factor = 1
+  modifier = {
+   factor = 0
+   NOT = { has_any_active_incomplete_idea_group_of_category = { adm_ideas = yes } }
+   NOT = { has_any_active_incomplete_idea_group_of_category = { mil_ideas = yes } }
+   NOT = { has_any_active_incomplete_idea_group_of_category = { dip_ideas = yes } }
+  }
+ }
+}
+
+# reduce tolerance of heretics and heathens, increase heretic missionary strength
+blk_krstjani_conversion = {
+ sprite = "GFX_expel_heretics_aspect"
+ cost = 80
+ trigger = {
+  NOT = { has_country_modifier = blk_krstjani_ideas }
+  NOT = { has_country_modifier = blk_krstjani_conversion_mod }
+ }
+ effect = {
+  custom_tooltip = blk_krstjani_conversion_tt
+  hidden_effect = {
+   add_country_modifier = {
+    name = "blk_krstjani_conversion_mod"
+    duration = 3650 # 10 years
+   }
+  }
+ }
+ ai_will_do = {
+  factor = 1
+  modifier = {
+   factor = 0
+   all_owned_province = {
+    religion = ROOT
+   }
+  }
+ }
+}
+
+#gain money from non-krstjani provinces with churches
+blk_krstjani_church_tax = {
+ sprite = "GFX_icons_of_the_church_icon"
+ cost = 150
+ trigger = {
+  any_owned_province = {
+    NOT = { religion = ROOT }
+    OR = {
+      has_building = temple
+      has_building = cathedral
+      has_building = university
+    }
+  }
+ }
+ effect = {
+  custom_tooltip = blk_krstjani_church_tax_tt
+  hidden_effect = {
+   every_owned_province = {
+    limit = {
+     NOT = { religion = ROOT }
+    }
+    # 10 ducats per province with a churchq
+    set_variable = {
+     which = var__tax_to_gain
+     value = 10
+    }
+    # times 2 if it has a cathedral
+    if = {
+     limit = {
+      has_building = cathedral
+     }
+     multiply_variable = {
+      which = var__tax_to_gain
+      value = 2
+     }
+    }
+    # times 4 if it has a university (stacks with temple/cathedral)
+    if = {
+     limit = {
+      has_building = university
+     }
+     multiply_variable = {
+      which = var__tax_to_gain
+      value = 4
+     }
+    }
+    # can't just do add_treasury = var__tax_to_gain, because that would make sense
+    while = {
+     limit = {
+      check_variable = {
+       which = var__tax_to_gain
+       value = 10
+      }
+     }
+     ROOT = { add_treasury = 10 }
+     subtract_variable = {
+      which = var__tax_to_gain
+      value = 10
+     }
+    }
+   }
+  }
+ }
+ ai_will_do = {
+  factor = 5
+  modifier = {
+   factor = 0.5
+   treasury = 200
+  }
+  modifier = {
+   factor = 0.2
+   treasury = 500
+  }
+  modifier = {
+   factor = 0.1
+   treasury = 1000
+  }
+  modifier = {
+   factor = 0
+   treasury = 2000
+  }
+ }
+}
+
+# get an event, which gives you a choice of modifiers
+# future : make it so only one nation can have one of these modifiers at a time
+blk_krstjani_djed = {
+ sprite = "GFX_spread_the_book_of_common_prayer"
+ cost = 150
+ trigger = {
+  NOT = { has_country_modifier = blk_djed_cooldown }
+ }
+ effect = {
+  custom_tooltip = blk_krstjani_djed_tt
+  hidden_effect = {
+   country_event = {
+    id = krstjani_flavor.1
+   }
+   add_country_modifier = {
+    name = "blk_djed_cooldown"
+    duration = 3650 # 10 years
+   }
+   add_estate_influence_modifier = {
+    estate = estate_church
+    desc = DJED_CALLED
+    influence = 5
+    duration = 1825 # 5 years
+   }
+  }
+ }
+ ai_will_do = {
+  factor = 1
+  modifier = {
+   factor = 100
+   is_at_war = yes
+  }
+ }
+}
+
+# adds tax modifiers to all provinces
+blk_krstjani_hizas = {
+ sprite = "GFX_expel_heretics_aspect"
+ cost = 120
+ trigger = {
+  any_owned_province = {
+   religion = ROOT
+   NOT = { has_province_modifier = blk_krstjani_hizas_temple }
+   NOT = { has_province_modifier = blk_krstjani_hizas_no_uni_no_temple }
+   NOT = { has_province_modifier = blk_krstjani_hizas_uni }
+  }
+ }
+ effect = {
+  custom_tooltip = blk_krstjani_hizas_tt
+  hidden_effect = {
+   every_owned_province = {
+    limit = {
+     religion = ROOT
+     NOT = { has_province_modifier = blk_krstjani_hizas_temple }
+     NOT = { has_province_modifier = blk_krstjani_hizas_no_uni_no_temple }
+     NOT = { has_province_modifier = blk_krstjani_hizas_uni }
+    }
+    #temples / cathedrals get 20% tax, +1% missionary strength
+    if = {
+     limit = {
+      OR = {
+       has_building = temple
+       has_building = cathedral
+      }
+     }
+     add_province_modifier = {
+      name = "blk_krstjani_hizas_temple"
+      duration = 3650 # 10 years
+     }
+    }
+    #provinces without universities get a 30% tax
+    else_if = {
+     limit = {
+      NOT = { has_building = university }
+     }
+     add_province_modifier = {
+      name = "blk_krstjani_hizas_no_uni_no_temple"
+      duration = 3650 # 10 years
+     }
+    }
+    #all other provinces just get a 10% tax
+    else = {
+     add_province_modifier = {
+      name = "blk_krstjani_hizas_uni"
+      duration = 3650 # 10 years
+     }
+    }
+   }
+  }
+ }
+ ai_will_do = {
+  factor = 5
+  modifier = {
+   factor = 0.5
+   treasury = 200
+  }
+  modifier = {
+   factor = 0.2
+   treasury = 500
+  }
+  modifier = {
+   factor = 0.1
+   treasury = 1000
+  }
+  modifier = {
+   factor = 0
+   treasury = 2000
+  }
+ }
+}
+
+# trigger an event to gain a half priced unrest / missionary advisor
+# future : maybe change this to just be able to pick an advisor from a pool of advisors (basically a free rehire?)
+blk_krstjani_gosti = {
+ sprite = "GFX_diplomats_of_the_reformation_aspect"
+ cost = 80
+ trigger = {
+  NOT = { has_country_modifier = blk_krstjani_gosti_cooldown }
+ }
+ effect = {
+  custom_tooltip = blk_krstjani_gosti_tt
+  hidden_effect = {
+   country_event = {
+    id = krstjani_flavor.2
+   }
+   add_country_modifier = {
+    name = "blk_krstjani_gosti_cooldown"
+    duration = 9125 # 25 years
+   }
+  }
+ }
+ ai_will_do = {
+  factor = 0.2
+ }
 }
