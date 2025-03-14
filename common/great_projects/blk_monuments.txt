@@ -12,13 +12,23 @@ necropolis_radimlja = {
  can_upgrade_trigger = {
   religion = krstjani
  }
+	build_trigger = {
+	}
+	on_built = {
+	}
+	on_destroyed = {
+	}
+	keep_trigger = {
+	}
  tier_0 = {
   upgrade_time = { months = 0 }
   cost_to_upgrade = { factor = 0 }
+  province_modifiers = {}
  }
  tier_1 = {
   upgrade_time = { months = 60 }
   cost_to_upgrade = { factor = 100 }
+  province_modifiers = {}
   area_modifier = {
    local_tax_modifier = 0.1
   }
@@ -26,6 +36,7 @@ necropolis_radimlja = {
  tier_2 = {
   upgrade_time = { months = 90 }
   cost_to_upgrade = { factor = 250 }
+  province_modifiers = {}
   area_modifier = {
    local_tax_modifier = 0.1
   }
@@ -61,9 +72,22 @@ vranduk = {
  can_be_moved = no
  starting_tier = 1
  type = monument
+	build_trigger = {
+	}
+	on_built = {
+	}
+	on_destroyed = {
+	}
+	can_use_modifiers_trigger = {
+	}
+	can_upgrade_trigger = {
+	}
+	keep_trigger = {
+	}
  tier_0 = {
   upgrade_time = { months = 0 }
   cost_to_upgrade = { factor = 0 }
+  province_modifiers = {}
  }
  tier_1 = {
   upgrade_time = { months = 60 }
@@ -71,6 +95,7 @@ vranduk = {
   province_modifiers = {
    local_defensiveness = 0.1
   }
+  area_modifier = {}
  }
  tier_2 = {
   upgrade_time = { months = 120 }
@@ -111,11 +136,10 @@ vranduk = {
    if = {
     limit = {
      140 = {
-      NOT = {
-       has_building = fort_15th
-       has_building = fort_16th
-       has_building = fort_17th
-       has_building = fort_18th
+      NOT = { has_building = fort_15th }
+      NOT = { has_building = fort_16th }
+      NOT = { has_building = fort_17th }
+      NOT = { has_building = fort_18th }
       }
      }
     }
@@ -162,12 +186,10 @@ vranduk = {
    if = {
     limit = {
      140 = {
-      NOT = {
-       has_building = fort_15th
-       has_building = fort_16th
-       has_building = fort_17th
-       has_building = fort_18th
-      }
+      NOT = { has_building = fort_15th }
+      NOT = { has_building = fort_16th }
+      NOT = { has_building = fort_17th }
+      NOT = { has_building = fort_18th }
      }
     }
     add_building_construction = {

@@ -72,11 +72,16 @@
  krstjani_flavor.2.a:0 "Welcome a Theologian to our court."
  krstjani_flavor.2.b:0 "Welcome an Inquisitor to our court."
 
- necropolis_radimlja:0 "Stecak Radimlja Necropolis"
- necropolis_radimlja_desc:0 "An important burial site in Herzegovina dating back to the 12th-13th century. "Stecak" is not a title, rather a type of tombstone found largely in Bosnia, often inscribed with epitaphs and richly decorated. Radimlja Necropolis had upwards of a hundred of these tombstones (or "Stecci"), many of which are still standing."
+ necropolis_radimlja:0 "Stećak Radimlja Necropolis"
+ necropolis_radimlja_desc:0 "An important burial site in Herzegovina dating back to the 12th-13th century. "Stećak" is not a title, rather a type of tombstone found largely in Bosnia, often inscribed with epitaphs and richly decorated. Radimlja Necropolis had upwards of a hundred of these tombstones (or "Stećci"), many of which are still standing."
 
  vranduk:0 "Vranduk Fortress"
- vranduk_desc:0 "Built in the latter part of the 14th century by the ruler of Bosnia, Stjepan II Kotromanic. It was originally made to protect the road between the Bosnian capital of Visoki and the town of Zenica. In its later years, after conquest by the Ottoman Empire, the castle was modified with Turkish architectural elements and expanded with a mosque. It found new life as an Ottoman military base and regional administrative center, securing their pressence in Bosnia."
+ vranduk_desc:0 "Built in the latter part of the 14th century by the ruler of Bosnia, Stjepan II Kotromanić. It was originally made to protect the road between the Bosnian capital of Visoki and the town of Zenica. In its later years, after conquest by the Ottoman Empire, the castle was modified with Turkish architectural elements and expanded with a mosque. It found new life as an Ottoman military base and regional administrative center, securing their pressence in Bosnia."
+ 
+ ljubljana_castle:0 "Ljubljana Castle"
+
+ maintain_the_free_church_reform:0 "Maintain the Free Church"
+ maintain_the_free_church_reform_desc:0 "The Bosnian Church has been attacked by many foreign powers for giving refuge to other faiths. By preserving its independence, we resist their influence and keep our identity."
 
  dalmatian_new:0 "Dalmatian"
  albanian_new:0 "Albanian"
@@ -100,6 +105,9 @@
  HRZ_ESS:0 "Empire of Saint Sava"
  HRZ_ESS_ADJ:0 "Saint Savan"
  HRZ_ESS_ADJ2:0 "Saint Savan"
+ MON_D:0 "Montenegro"
+ MON_D_ADJ:0 "Montenegrin"
+ MON_D_ADJ2:0 "Montenegrin"
 
  illyrian_nation_title:0 "Claim Illyrian Legacy"
  illyrian_nation_desc:0 "The people of Illyria have been fractured for far too long, beset by foreign powers and internal strife. It is time to reclaim the legacy of Illyricum from the ashes of history and unite the Albanians and Dalmatians with the South Slavs!"
@@ -147,8 +155,8 @@
  extend_regency_allowtip:0 "The regency must be ending in less than a year."
  recently_extended_regency:0 "Recently Extended Regency"
 
- legitimist_rebels_demand:0 "Return of the Rightful Heir"
- legitimist_rebels_demand_desc:0 "The nobles demand we immediately leave as Regent and let the heir take the throne."
+ legitimist_rebels_demands:0 "Return of the Rightful Heir"
+ legitimist_rebels_demands_desc:0 "The nobles demand we immediately leave as Regent and let the heir take the throne."
  legitimist_rebels_title:0 "Legitimists"
  legitimist_rebels_name:0 "$COUNTRY$ Legitimist Rebels"
  legitimist_rebels_desc:0 "Legitimist Rebels are dissatisfied with their regent due to an extended regency. They field professional troops with a large proportion of artillery."

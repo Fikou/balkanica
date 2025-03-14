@@ -1,0 +1,26 @@
+maintain_the_free_church_reform = {
+	icon = "church"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+		religion = krstjani
+	}
+	modifiers = {
+		church_influence_modifier = 0.1
+  church_loyalty_modifier = 0.1
+		global_tax_modifier = 0.10
+		church_power_modifier = 0.1
+  tolerance_heathen = 2
+	}
+	custom_attributes = {
+		clerical_ministers_tech_buff = yes
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
