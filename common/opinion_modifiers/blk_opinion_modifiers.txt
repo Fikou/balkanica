@@ -2,3 +2,19 @@ djed_cooperation = {
  opinion = 30
  yearly_decay = 3
 }
+
+in_regency = {
+	opinion = 10
+}
+
+lost_regency = {
+ opinion = -50
+}
+
+force_extended_regency = {
+ opinion = -50
+}
+
+peace_extended_regency = {
+ opinion = 30
+}

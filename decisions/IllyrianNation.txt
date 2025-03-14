@@ -43,15 +43,53 @@ country_decisions = {
 				}
 			}
 		}
-		provinces_to_highlight = {
-			AND = {
-				OR = {
+  provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
 					province_id = 136			# Split
-					province_id = 4753			# Zadar
+     province_id = 129 # Ljubljana
+     province_id = 1826 # Senj
+     province_id = 4174 # Durazzo
+					}
+					ROOT = {
+						NOT = { owns_core_province = 136 }
+						NOT = { owns_core_province = 129 }
+						NOT = { owns_core_province = 1826 }
+						NOT = { owns_core_province = 4174 }
+					}
 				}
-				ROOT = {
-					NOT = { owns_core_province = 136 }
-					NOT = { owns_core_province = 4753 }
+				AND = {
+					OR = {
+						culture_group = south_slavic
+      culture = dalmatian
+      culture = albanian
+					}
+					continent = europe
+					OR = {
+						NOT = { is_core = root }
+						NOT = { owned_by = root }
+					}
+					ROOT = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 33
+								OR = {
+         culture_group = south_slavic
+         culture = dalmatian
+         culture = albanian
+								}
+								is_core = root
+								continent = europe
+							}
+						}
+						OR = {
+							owns_core_province = 136
+							owns_core_province = 129
+							owns_core_province = 1826
+							owns_core_province = 4174
+						}
+					}
 				}
 			}
 		}
@@ -61,6 +99,24 @@ country_decisions = {
 			is_nomad = no
 			is_at_war = no
 			owns_core_province = 136			# Split
+   owns_core_province = 129 # Ljubljana
+   owns_core_province = 1826 # Senj
+   owns_core_province = 4174 # Durazzo
+   num_of_owned_provinces_with = {
+    value = 4
+    culture = albanian
+    is_overseas = no
+   }
+   num_of_owned_provinces_with = {
+    value = 4
+    culture = dalmatian
+    is_overseas = no
+   }
+   num_of_owned_provinces_with = {
+    value = 25
+    culture_group = south_slavic
+    is_overseas = no
+   }
 		}
 		effect = {
    change_tag = ILY

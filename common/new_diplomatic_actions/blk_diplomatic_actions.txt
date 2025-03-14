@@ -1,0 +1,136 @@
+leave_regency = {
+	category = influence
+	require_acceptance = no
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = regency
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	on_accept = {
+		FROM = {
+			grant_independence = yes
+   clr_country_flag = regency_subject
+   define_ruler = {
+    regency = yes
+    force_republican_names = yes
+   }
+   add_truce_with = ROOT
+   disband_rebels = legitimist_rebels
+		}
+  ROOT = {
+   add_truce_with = FROM
+  }
+		add_prestige = -25
+	}
+	ai_will_do = {
+		always = no
+	}
+}
+
+extend_regency_action = {
+ category = influence
+	require_acceptance = no
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = regency
+		}
+	}
+ is_allowed = {
+  variable_arithmetic_trigger = {
+   custom_tooltip = extend_regency_allowtip
+   export_to_variable = {
+    variable_name = modulo_age
+    value = trigger_value:heir_age
+    who = FROM
+   }
+   export_to_variable = {
+    variable_name = real_age
+    value = trigger_value:heir_age
+    who = FROM
+   }
+   variable_arithmetic_trigger = {
+    modulo_variable = {
+     which = modulo_age
+     value = 5
+    }
+   }
+   check_variable = {
+    which = real_age
+    value = 14
+   }
+   OR = {
+    is_variable_equal = {
+     which = modulo_age
+     value = 4
+    }
+   }
+  }
+  NOT = { FROM = { has_country_modifier = recently_extended_regency } }
+ }
+ on_accept = {
+  FROM = {
+   set_country_flag = forced_regency_extension
+   extend_regency = 5
+   add_liberty_desire = 30
+   add_country_modifier = {
+    name = recently_extended_regency
+    duration = 765
+    hidden = yes
+   }
+   if = {
+    limit = {
+     tag = HAB
+     has_heir = "Ladislaus Postumus"
+     has_country_flag = hab_ladislaus_postumus_heir
+     HUN = {
+      is_subject_of = ROOT
+      is_subject_of_type = regency
+      has_heir = "Ladislaus Postumus"
+      has_country_flag = hun_ladislaus_postumus_heir
+     }
+    }
+    HUN = {
+     set_country_flag = forced_regency_extension
+     extend_regency = 5
+     add_liberty_desire = 30
+     add_country_modifier = {
+      name = recently_extended_regency
+      duration = 765
+      hidden = yes
+     }
+    }
+   }
+   else_if = {
+    limit = {
+     tag = HUN
+     has_heir = "Ladislaus Postumus"
+     has_country_flag = hun_ladislaus_postumus_heir
+     HAB = {
+      is_subject_of = ROOT
+      is_subject_of_type = regency
+      has_heir = "Ladislaus Postumus"
+      has_country_flag = hab_ladislaus_postumus_heir
+     }
+    }
+    HAB = {
+     set_country_flag = forced_regency_extension
+     extend_regency = 5
+     add_liberty_desire = 30
+     add_country_modifier = {
+      name = recently_extended_regency
+      duration = 765
+      hidden = yes
+     }
+    }
+   }
+  }
+ }
+ ai_will_do = {
+  always = no
+ }
+}

@@ -1,0 +1,85 @@
+on_dependency_gained_effect = {
+ if = {
+  limit = {
+   FROM = { is_subject_of_type = regency }
+  }
+  FROM = {
+   define_ruler = {
+    regency = yes
+    name = "Regency Subject"
+    dynasty = ROOT
+    age = 1
+    adm = 0
+    dip = 0
+    mil = 0
+    culture = new_variable:ROOT:ruler_culture
+    religion = new_variable:ROOT:ruler_religion
+   }
+   while = {
+    limit = { NOT = { adm = ROOT } }
+    change_adm = 1
+   }
+   while = {
+    limit = { NOT = { dip = ROOT } }
+    change_dip = 1
+   }
+   while = {
+    limit = { NOT = { mil = ROOT } }
+    change_mil = 1
+   }
+   set_country_flag = regency_subject
+  }
+ }
+}
+
+on_dependency_lost_effect = {
+ if = {
+  limit = {
+   FROM = { has_country_flag = regency_subject }
+  }
+  clr_country_flag = regency_subject
+  define_ruler = {
+   regency = yes
+   force_republican_names = yes
+  }
+  add_truce_with = FROM
+  FROM = {
+   add_truce_with = ROOT
+  }
+  disband_rebels = legitimist_rebels
+ }
+}
+
+on_new_monarch_effect = {
+ every_subject_country = {
+  if = {
+   limit = {
+    is_subject_of_type = regency
+   }
+   clr_country_flag = regency_subject
+   grant_independence = yes
+   define_ruler = {
+    regency = yes
+    force_republican_names = yes
+   }
+   add_truce_with = ROOT
+   ROOT = {
+    add_truce_with = PREV
+   }
+   disband_rebels = legitimist_rebels
+  }
+ }
+ if = {
+  limit = {
+   has_country_flag = regency_subject
+   is_subject_of_type = regency
+  }
+  add_truce_with = overlord
+  overlord = {
+   add_truce_with = ROOT
+  }
+  grant_independence = yes
+  clr_country_flag = regency_subject
+  disband_rebels = legitimist_rebels
+ }
+}

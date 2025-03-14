@@ -1,0 +1,32 @@
+on_extend_regency = {
+ if = {
+  limit = {
+   is_subject_of_type = regency
+  }
+  if = {
+   limit = {
+    has_country_flag = forced_regency_extension
+   }
+   overlord = {
+    country_event = {
+     id = reg.2
+    }
+    reverse_add_opinion = {
+     who = ROOT
+     modifier = force_extended_regency
+    }
+   }
+  }
+  else = {
+   overlord = {
+    country_event = {
+     id = reg.1
+    }
+    add_opinion = {
+     who = ROOT
+     modifier = peace_extended_regency
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,56 @@
+namespace = reg
+
+country_event = {
+	id = reg.1
+	title = reg.1.t
+	desc = reg.1.d
+	picture = DIPLOMACY_eventPicture
+ is_triggered_only = yes
+ option = {
+  name = reg.1.a
+  add_prestige = 10
+ }
+}
+
+country_event = {
+ id = reg.2
+ title = reg.2.t
+ desc = reg.2.d
+ picture = ANGRY_MOB_eventPicture
+ is_triggered_only = yes
+ option = {
+  name = reg.2.a
+ }
+ immediate = {
+  hidden_effect = {
+   every_subject_country = {
+    limit = { has_country_flag = forced_regency_extension }
+    capital_scope = {
+     spawn_rebels = {
+      type = legitimist_rebels
+      size = 3
+     }
+    }
+    random_owned_province = {
+     limit = {
+      is_capital = no
+     }
+     spawn_rebels = {
+      type = legitimist_rebels
+      size = 2
+     }
+    }
+    random_owned_province = {
+     limit = {
+      is_capital = no
+     }
+     spawn_rebels = {
+      type = legitimist_rebels
+      size = 2
+     }
+    }
+    clr_country_flag = forced_regency_extension
+   }
+  }
+ }
+}
