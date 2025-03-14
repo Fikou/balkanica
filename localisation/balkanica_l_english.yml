@@ -72,6 +72,12 @@
  krstjani_flavor.2.a:0 "Welcome a Theologian to our court."
  krstjani_flavor.2.b:0 "Welcome an Inquisitor to our court."
 
+ necropolis_radimlja:0 "Stecak Radimlja Necropolis"
+ necropolis_radimlja_desc:0 "An important burial site in Herzegovina dating back to the 12th-13th century. "Stecak" is not a title, rather a type of tombstone found largely in Bosnia, often inscribed with epitaphs and richly decorated. Radimlja Necropolis had upwards of a hundred of these tombstones (or "Stecci"), many of which are still standing."
+
+ vranduk:0 "Vranduk Fortress"
+ vranduk_desc:0 "Built in the latter part of the 14th century by the ruler of Bosnia, Stjepan II Kotromanic. It was originally made to protect the road between the Bosnian capital of Visoki and the town of Zenica. In its later years, after conquest by the Ottoman Empire, the castle was modified with Turkish architectural elements and expanded with a mosque. It found new life as an Ottoman military base and regional administrative center, securing their pressence in Bosnia."
+
  dalmatian_new:0 "Dalmatian"
  albanian_new:0 "Albanian"
  albanian_g:0 "Albanian"
@@ -115,7 +121,7 @@
  ILY_i6_desc:0 "The Renaissance has benefitted Dalmatia and the Italians across the Adriatic greatly, we must import its art and ideas to take advantage and spur our nation into its own age of innovation."
  ILY_i7:0 "Gold and Silver"
  ILY_i7_desc:0 "The mountainous south of our nation contains many rich deposits of minerals, we should fund more mining operations to extract great profits from them."
- 
+
  in_regency:0 "Regency"
  broke_regency:0 "Broke Regency"
  force_extended_regency:0 "Forcefully Extended Regency"

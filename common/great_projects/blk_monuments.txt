@@ -1,0 +1,181 @@
+necropolis_radimlja = {
+ start = 1831
+ date = 1200.1.1 # 1150-1250, apparently. so i picked the middle
+ time = { months = 0 }
+ build_cost = 0
+ can_be_moved = no
+ starting_tier = 1
+ type = monument
+ can_use_modifiers_trigger = {
+  religion = krstjani
+ }
+ can_upgrade_trigger = {
+  religion = krstjani
+ }
+ tier_0 = {
+  upgrade_time = { months = 0 }
+  cost_to_upgrade = { factor = 0 }
+ }
+ tier_1 = {
+  upgrade_time = { months = 60 }
+  cost_to_upgrade = { factor = 100 }
+  area_modifier = {
+   local_tax_modifier = 0.1
+  }
+ }
+ tier_2 = {
+  upgrade_time = { months = 90 }
+  cost_to_upgrade = { factor = 250 }
+  area_modifier = {
+   local_tax_modifier = 0.1
+  }
+  country_modifiers = {
+   church_power_modifier = 0.1
+  }
+  on_upgraded = {
+   add_base_tax = 1
+  }
+ }
+ tier_3 = {
+  upgrade_time = { months = 120 }
+  cost_to_upgrade = { factor = 750 }
+  province_modifiers = {}
+  area_modifier = {
+   local_tax_modifier = 0.1
+  }
+  country_modifiers = {
+   tolerance_own = 0.25
+   church_power_modifier = 0.1
+  }
+  on_upgraded = {
+   add_base_tax = 1
+  }
+ }
+}
+
+vranduk = {
+ start = 140
+ date = 1394.1.1 # "End of the 14th century". i just put it 50 yrs to 1444
+ time = { months = 0 }
+ build_cost = 0
+ can_be_moved = no
+ starting_tier = 1
+ type = monument
+ tier_0 = {
+  upgrade_time = { months = 0 }
+  cost_to_upgrade = { factor = 0 }
+ }
+ tier_1 = {
+  upgrade_time = { months = 60 }
+  cost_to_upgrade = { factor = 200 }
+  province_modifiers = {
+   local_defensiveness = 0.1
+  }
+ }
+ tier_2 = {
+  upgrade_time = { months = 120 }
+  cost_to_upgrade = { factor = 500 }
+  province_modifiers = {
+   local_defensiveness = 0.1
+  }
+  area_modifier = {
+   local_defensiveness = 0.1
+			local_autonomy = -0.025
+  }
+  # only here so we can have conditional modifiers
+  country_modifiers = {
+   rival_border_fort_maintenance = -0.1
+  }
+  # ottomans historically turned it into a mosque fortress,
+  # so i'm giving muslims a bonus to conversion to represent that
+  conditional_modifier = {
+   trigger = {
+    owner = { religion_group = muslim }
+   }
+   modifier = {
+    global_heathen_missionary_strength = 0.002
+   }
+  }
+  # otherwise we can give some generic fort related bonuses for christians camping on the ottoman doorstep
+  # (army tradition from "maintaining forts" and prestige because "big fort cool")
+  conditional_modifier = {
+   trigger = {
+    owner = { religion_group = christian }
+   }
+   modifier = {
+    army_tradition = 0.1
+    prestige = 0.1
+   }
+  }
+  on_upgraded = {
+   if = {
+    limit = {
+     140 = {
+      NOT = {
+       has_building = fort_15th
+       has_building = fort_16th
+       has_building = fort_17th
+       has_building = fort_18th
+      }
+     }
+    }
+    add_building_construction = {
+     building = fort_15th
+     speed = 0.1
+     cost = 0
+    }
+   }
+  }
+ }
+ tier_3 = {
+  upgrade_time = { months = 240 }
+  cost_to_upgrade = { factor = 1000 }
+  province_modifiers = {
+   local_defensiveness = 0.2
+  }
+  area_modifier = {
+   local_defensiveness = 0.2
+   local_defender_dice_roll_bonus = 1
+			local_autonomy = -0.05
+  }
+  country_modifiers = {
+   rival_border_fort_maintenance = -0.2
+  }
+  conditional_modifier = {
+   trigger = {
+    owner = { religion_group = muslim }
+   }
+   modifier = {
+    global_heathen_missionary_strength = 0.005
+   }
+  }
+  conditional_modifier = {
+   trigger = {
+    owner = { religion_group = christian }
+   }
+   modifier = {
+    army_tradition = 0.25
+    prestige = 0.25
+   }
+  }
+  on_upgraded = {
+   if = {
+    limit = {
+     140 = {
+      NOT = {
+       has_building = fort_15th
+       has_building = fort_16th
+       has_building = fort_17th
+       has_building = fort_18th
+      }
+     }
+    }
+    add_building_construction = {
+     building = fort_15th
+     speed = 0.1
+     cost = 0
+    }
+   }
+  }
+ }
+}
