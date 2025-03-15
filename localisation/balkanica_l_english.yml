@@ -92,7 +92,7 @@
  ALBANIA_FLAVOR_1_B_TT:0 "The §YDurres Amphitheatre§! is saved from further damage."
 
  krstjani_flavor.3.title:0 "The Krstjani Church Fades"
- krstjani_flavor.3.desc:0 "The Krstjani church of Bosnia has been in decline for some time now, and following our conquest of the region, many former followers have either adopted our ways or have converted to other Christian sects. The church is now a shadow of its former self."
+ krstjani_flavor.3.desc:0 "The Krstjani church of Bosnia has been in decline for some time now, and following our conquest of the region, many former followers have adopted new ways.\n\nMany have converted to Islam, either due to Sufi prostelytizing (including the Jesus-worshipping Hamzevis), to maintain their status and economic privileges, or for community benefits. Islam also offered an opportunity for social mobility for many Bosnians. As we expanded further into Europe, so did Muslim administrators, generals, and merchants. The new Muslim local elite - called Ayans - allowed for talented locals to work in their guilds - called Akhs - should they convert.\n\nSome have adopted Orthodox Christianty to gain protected status under the Millet system (as typically Catholics were not afforded the same rights as Orthodox Christians), while a scant few have chosen to convert to another Christian denomination to fill the vacuum following the collapse of religious authorities like the Djed.\n\nThe church is now a shadow of its former self."
  krstjani_flavor.3.a:0 "Another heresy lost to time."
 
  maintain_the_free_church_reform:0 "Maintain the Free Church"

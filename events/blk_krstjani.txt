@@ -313,11 +313,11 @@ country_event = {
   }
  }
 
- # decently long mtth, the krstjani faded over a long time
+ # decently long mtth, the krstjani faded over a long time (2 centuries)
  mean_time_to_happen = {
-  months = 1200
+  months = 2400
   modifier = {
-   factor = 0.5
+   factor = 0.75
    OR = {
     full_idea_group = religious_ideas
     full_idea_group = humanist_ideas
@@ -334,17 +334,17 @@ country_event = {
     religion = krstjani
    }
    random_list = {
-    40 = {
+    60 = {
      change_religion = ROOT
      modifier = {
-      factor = 2
+      factor = 2.67
       full_idea_group = religious_ideas
      }
     }
     20 = {
      change_religion = catholic
      modifier = {
-      factor = 2
+      factor = 1.5
       full_idea_group = humanist_ideas
      }
      modifier = {
@@ -359,7 +359,7 @@ country_event = {
     20 = {
      change_religion = orthodox
      modifier = {
-      factor = 2
+      factor = 1.5
       full_idea_group = humanist_ideas
      }
      modifier = {
@@ -374,7 +374,7 @@ country_event = {
     10 = {
      change_religion = protestant
      modifier = {
-      factor = 2
+      factor = 1.5
       full_idea_group = humanist_ideas
      }
      modifier = {
@@ -385,7 +385,7 @@ country_event = {
     10 = {
      change_religion = reformed
      modifier = {
-      factor = 2
+      factor = 1.5
       full_idea_group = humanist_ideas
      }
      modifier = {
