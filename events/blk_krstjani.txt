@@ -288,3 +288,116 @@ country_event = {
   }
  }
 }
+
+# bosnian church dies out after being conquered
+country_event = {
+ id = krstjani_flavor.3
+ title = krstjani_flavor.3.title
+ picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+
+ desc = krstjani_flavor.3.desc
+
+ # triggered on krstjani provinces owned by muslims
+ # (because muslims will give them dhimmi status, and they will never convert)
+ # (christians will just straight up convert them though, so they don't need this)
+ # if all krstjani nations are extinct
+ trigger = {
+  religion_group = muslim
+  any_owned_province = {
+   religion = krstjani
+  }
+  NOT = {
+   any_country = {
+    religion = krstjani
+   }
+  }
+ }
+
+ # decently long mtth, the krstjani faded over a long time
+ mean_time_to_happen = {
+  months = 1200
+  modifier = {
+   factor = 0.5
+   OR = {
+    full_idea_group = religious_ideas
+    full_idea_group = humanist_ideas
+   }
+  }
+ }
+
+ # the odds a given religion is picked to convert is based on idea groups taken and nearby provinces
+ # with some rare chances of being protestant or reformed if those are active (they likely are)
+ option = {
+  name = krstjani_flavor.3.a
+  random_owned_province = {
+   limit = {
+    religion = krstjani
+   }
+   random_list = {
+    40 = {
+     change_religion = ROOT
+     modifier = {
+      factor = 2
+      full_idea_group = religious_ideas
+     }
+    }
+    20 = {
+     change_religion = catholic
+     modifier = {
+      factor = 2
+      full_idea_group = humanist_ideas
+     }
+     modifier = {
+      factor = 0.5
+      NOT = {
+       any_neighbor_province = {
+        religion = catholic
+       }
+      }
+     }
+    }
+    20 = {
+     change_religion = orthodox
+     modifier = {
+      factor = 2
+      full_idea_group = humanist_ideas
+     }
+     modifier = {
+      factor = 0.5
+      NOT = {
+       any_neighbor_province = {
+        religion = orthodox
+       }
+      }
+     }
+    }
+    10 = {
+     change_religion = protestant
+     modifier = {
+      factor = 2
+      full_idea_group = humanist_ideas
+     }
+     modifier = {
+      factor = 0
+      NOT = { is_religion_enabled = protestant }
+     }
+    }
+    10 = {
+     change_religion = reformed
+     modifier = {
+      factor = 2
+      full_idea_group = humanist_ideas
+     }
+     modifier = {
+      factor = 0
+      NOT = { is_religion_enabled = reformed }
+     }
+    }
+   }
+   add_province_modifier = {
+    name = religious_zeal_at_conv
+    duration = 7300
+   }
+  }
+ }
+}

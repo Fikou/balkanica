@@ -40,7 +40,7 @@
  krstjani_flavor.1.e:0 "The Djed calls for unity."
  krstjani_flavor.1.f:0 "The Djed calls for strength in the church."
  krstjani_flavor.1.g:0 "The Djed calls for strength behind our [Root.Monarch.GetTitle]."
- krstjani_flavor.1.h:0 "The Djed calls for cooperation of our subjects."
+ krstjani_flavor.1.h:0 "The Djed calls for cooperation between Krstjanis."
  krstjani_flavor.1.i:0 "The Djed calls for colonization of new lands for our faith."
  krstjani_flavor.1.j:0 "The Djed calls for enlightenment and education."
 
@@ -90,6 +90,10 @@
  albania_flavor.1.a:0 "We will recover."
  albania_flavor.1.b:0 "Our infrastructural developments have mitigated the destruction!"
  ALBANIA_FLAVOR_1_B_TT:0 "The §YDurres Amphitheatre§! is saved from further damage."
+
+ krstjani_flavor.3.title:0 "The Krstjani Church Fades"
+ krstjani_flavor.3.desc:0 "The Krstjani church of Bosnia has been in decline for some time now, and following our conquest of the region, many former followers have either adopted our ways or have converted to other Christian sects. The church is now a shadow of its former self."
+ krstjani_flavor.3.a:0 "Another heresy lost to time."
 
  maintain_the_free_church_reform:0 "Maintain the Free Church"
  maintain_the_free_church_reform_desc:0 "The Bosnian Church has been attacked by many foreign powers for giving refuge to other faiths. By preserving its independence, we resist their influence and keep our identity."
