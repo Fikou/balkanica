@@ -175,7 +175,7 @@ country_event = {
     any_neighbor_country = {
      religion = ROOT
      NOT = { is_rival = ROOT }
-     ROOT = { NOT = { is_rival = PREV } }
+     NOT = { ROOT = { is_rival = PREV } }
     }
     any_owned_province = {
      religion = ROOT
@@ -209,7 +209,7 @@ country_event = {
    limit = {
     religion = ROOT
     NOT = { is_rival = ROOT }
-    ROOT = { NOT = { is_rival = PREV } }
+    NOT = { ROOT = { is_rival = PREV } }
    }
    add_opinion = {
     who = ROOT
@@ -291,7 +291,7 @@ country_event = {
  }
 }
 
-# bosnian church dies out after being conquered
+# bosnian church dies out after being conquered if sufficiently weak
 country_event = {
  id = krstjani_flavor.3
  title = krstjani_flavor.3.title
@@ -299,25 +299,19 @@ country_event = {
 
  desc = krstjani_flavor.3.desc
 
- # triggered on krstjani provinces owned by muslims
- # (because muslims will give them dhimmi status, and they will never convert)
- # (christians will just straight up convert them though, so they don't need this)
- # if all krstjani nations are extinct
+ # triggers if we have a krstjani provinces and krstjani failed to gain a foothold
  trigger = {
-  religion_group = muslim
   any_owned_province = {
    religion = krstjani
   }
   NOT = {
-   any_country = {
-    religion = krstjani
-   }
+   has_global_flag = krstjani_cemented
   }
  }
 
- # decently long mtth, the krstjani faded over a long time (2 centuries)
+ # disappeared roughly 30 years after the conquest of bosnia
  mean_time_to_happen = {
-  months = 2400
+  months = 360
   modifier = {
    factor = 0.75
    OR = {
@@ -327,8 +321,6 @@ country_event = {
   }
  }
 
- # the odds a given religion is picked to convert is based on idea groups taken and nearby provinces
- # with some rare chances of being protestant or reformed if those are active (they likely are)
  option = {
   name = krstjani_flavor.3.a
   random_owned_province = {
@@ -336,19 +328,8 @@ country_event = {
     religion = krstjani
    }
    random_list = {
-    60 = {
-     change_religion = ROOT
-     modifier = {
-      factor = 2.67
-      owner = { full_idea_group = religious_ideas }
-     }
-    }
     20 = {
      change_religion = catholic
-     modifier = {
-      factor = 1.5
-      owner = { full_idea_group = humanist_ideas }
-     }
      modifier = {
       factor = 0.5
       NOT = {
@@ -358,12 +339,8 @@ country_event = {
       }
      }
     }
-    20 = {
+    40 = {
      change_religion = orthodox
-     modifier = {
-      factor = 1.5
-      owner = { full_idea_group = humanist_ideas }
-     }
      modifier = {
       factor = 0.5
       NOT = {
@@ -376,20 +353,12 @@ country_event = {
     10 = {
      change_religion = protestant
      modifier = {
-      factor = 1.5
-      owner = { full_idea_group = humanist_ideas }
-     }
-     modifier = {
       factor = 0
       NOT = { is_religion_enabled = protestant }
      }
     }
     10 = {
      change_religion = reformed
-     modifier = {
-      factor = 1.5
-      owner = { full_idea_group = humanist_ideas }
-     }
      modifier = {
       factor = 0
       NOT = { is_religion_enabled = reformed }
@@ -398,8 +367,213 @@ country_event = {
    }
    add_province_modifier = {
     name = religious_zeal_at_conv
+    duration = 9125
+   }
+  }
+  ai_chance = {
+   factor = 1
+  }
+ }
+}
+
+
+# bosnian islamization
+country_event = {
+ id = krstjani_flavor.4
+ title = krstjani_flavor.4.title
+ picture = PRAYER_IN_MOSQUE_eventPicture
+
+ desc = krstjani_flavor.4.desc
+
+ # only triggers for muslims owning bosnia that have granted dhimmi autonomy
+ trigger = {
+  religion_group = muslim
+  any_owned_province = {
+   OR = {
+    culture = bosnian
+    culture = bosnian_new
+   }
+   religion_group = christian
+   has_province_modifier = estate_dhimmi_guaranteed_autonomy_mod
+  }
+  # this doesn't happen if the krstjani never collapsed
+  NOT = {
+   has_global_flag = krstjani_cemented
+  }
+ }
+
+ # took about 1-2 centuries to convert most of bosnia
+ mean_time_to_happen = {
+  months = 1440
+  modifier = {
+   factor = 0.75
+   OR = {
+    full_idea_group = religious_ideas
+    full_idea_group = humanist_ideas
+   }
+  }
+ }
+
+ # non-orthodox provices are prioritized for immediate conversion
+ # to represet the fact that orthodox christians were protected under the millet system
+ immediate = {
+  hidden_effect = {
+   random_list = {
+    80 = {
+     random_owned_province = {
+      limit = {
+       OR = {
+        culture = bosnian
+        culture = bosnian_new
+       }
+       NOT = { religion = orthodox }
+       has_province_modifier = estate_dhimmi_guaranteed_autonomy_mod
+      }
+      save_event_target_as = converting_bosnian_province
+     }
+     # make sure this option cant fire if we only have orthodox bosnian provinces
+     modifier = {
+      factor = 0
+      NOT = {
+       any_owned_province = {
+        OR = {
+         culture = bosnian
+         culture = bosnian_new
+        }
+        NOT = { religion = orthodox }
+        has_province_modifier = estate_dhimmi_guaranteed_autonomy_mod
+       }
+      }
+     }
+    }
+    20 = {
+     random_owned_province = {
+      limit = {
+       OR = {
+        culture = bosnian
+        culture = bosnian_new
+       }
+       religion = orthodox
+       has_province_modifier = estate_dhimmi_guaranteed_autonomy_mod
+      }
+      save_event_target_as = converting_bosnian_province
+     }
+     # make sure this option cant fire if we only have non-orthodox bosnian provinces
+     modifier = {
+      factor = 0
+      NOT = {
+       any_owned_province = {
+        OR = {
+         culture = bosnian
+         culture = bosnian_new
+        }
+        religion = orthodox
+        has_province_modifier = estate_dhimmi_guaranteed_autonomy_mod
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+
+ option = {
+  name = krstjani_flavor.4.a
+  event_target:converting_bosnian_province = {
+   change_religion = ROOT
+   add_province_modifier = {
+    name = religious_zeal_at_conv
     duration = 7300
    }
+  }
+  ai_chance = {
+   factor = 1
+  }
+ }
+}
+
+# "cementing" the krstjani faith
+country_event = {
+ id = krstjani_flavor.5
+ title = krstjani_flavor.5.title
+ desc = krstjani_flavor.5.desc
+ picture = REFORM_eventPicture
+
+ major = yes
+
+ major_trigger = {
+  OR = {
+   # random nations that might not fulfill the generic conditions
+   # but would likely be interested in this event no matter what
+   tag = BOH
+   tag = BYZ
+   tag = NAP
+   tag = PAP
+   tag = ROM
+   tag = RUS
+   tag = TUR
+   is_emperor = yes
+   # in case one triggers it while the other still exists
+   # (they will definitely fulfill the generic conditions but this is for being thorough)
+   tag = HRZ
+   tag = BOS
+   religion = krstjani
+   # generically notify anyone who is nearby
+   # or is involved in the balkans / with the krstjanis
+   is_neighbor_of = ROOT
+   capital_scope = {
+    region = balkan_region
+    region = carpathia_region
+    area = austria_proper_area
+    area = carinthia_area
+    area = inner_austria_area
+    area = venetia_area
+   }
+   any_owned_province = {
+    OR = {
+     region = balkan_region
+     religion = krstjani
+    }
+   }
+  }
+ }
+
+ trigger = {
+  religion = krstjani
+  development_in_provinces = {
+   value = 80
+   religion = krstjani
+  }
+ }
+
+ mean_time_to_happen = {
+  months = 240
+  modifier = {
+   factor = 0.5
+   development_in_provinces = {
+    value = 120
+    religion = krstjani
+   }
+  }
+ }
+
+ option = {
+  name = krstjani_flavor.5.a
+  hidden_effect = {
+   set_global_flag = krstjani_cemented
+  }
+  add_prestige_or_monarch_power = { amount = 20 }
+  every_country = {
+   limit = {
+    religion = krstjani
+   }
+   add_opinion = {
+    who = ROOT
+    modifier = krstjani_resurgence
+   }
+  }
+  ai_chance = {
+   factor = 1
   }
  }
 }

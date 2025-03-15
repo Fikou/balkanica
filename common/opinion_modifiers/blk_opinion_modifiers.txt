@@ -3,6 +3,11 @@ djed_cooperation = {
  yearly_decay = 3
 }
 
+krstjani_resurgence = {
+ opinion = 30
+ yearly_decay = 0.5
+}
+
 in_regency = {
 	opinion = 10
 }

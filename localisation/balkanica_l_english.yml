@@ -92,8 +92,17 @@
  ALBANIA_FLAVOR_1_B_TT:0 "The §YDurres Amphitheatre§! is saved from further damage."
 
  krstjani_flavor.3.title:0 "The Krstjani Church Fades"
- krstjani_flavor.3.desc:0 "The Krstjani church of Bosnia has been in decline for some time now, and following our conquest of the region, many former followers have adopted new ways.\n\nMany have converted to Islam, either due to Sufi prostelytizing (including the Jesus-worshipping Hamzevis), to maintain their status and economic privileges, or for community benefits. Islam also offered an opportunity for social mobility for many Bosnians. As we expanded further into Europe, so did Muslim administrators, generals, and merchants. The new Muslim local elite - called Ayans - allowed for talented locals to work in their guilds - called Akhs - should they convert.\n\nSome have adopted Orthodox Christianty to gain protected status under the Millet system (as typically Catholics were not afforded the same rights as Orthodox Christians), while a scant few have chosen to convert to another Christian denomination to fill the vacuum following the collapse of religious authorities like the Djed.\n\nThe church is now a shadow of its former self."
+ krstjani_flavor.3.desc:0 "The Krstjani church of Bosnia has been in decline for some time now, and following our conquest of the region, many former followers have adopted new ways.\n\nA majority of Bosnians have adopted Orthodox Christianty to gain protected status under the Millet system (as typically Catholics were not afforded the same rights as Orthodox Christians), though a scant few have chosen to convert to other Christian sects to fill the vacuum following the collapse of religious authorities like the Djed.\n\nThe church is now a shadow of its former self."
  krstjani_flavor.3.a:0 "Another heresy lost to time."
+
+ krstjani_flavor.4.title:0 "Islamization of Bosnia"
+ krstjani_flavor.4.desc:0 "In Bosnia, it has been centuries since our conquest and the collapse of the Krstjani church. Since then, many have adopted Islam, either due to Sufi prostelytizing (including the Jesus-worshipping Hamzevis), to maintain their status and economic privileges (such as silver export rights, which many relied on), or for community benefits.\n\nIslam also offered an opportunity for social mobility for many Bosnians. As we expanded further into Europe, so did Muslim administrators, generals, and merchants. The new Muslim local elite - called Ayans - allowed for talented locals to work in their guilds - called Akhs - should they convert."
+ krstjani_flavor.4.a:0 "Welcome to the faith."
+
+ krstjani_flavor.5.title:0 "The Krstjani Church Resurgent"
+ krstjani_flavor.5.desc:0 "Against all odds, the Krstjani church has survived the centuries of hardship and cemented itself as a religious authority in Bosnia. The Djed and his council of Strojnici are stronger than ever, and the faith sees continual influxes of new followers from Orthodoxy and Catholicism."
+ krstjani_flavor.5.a:0 "The faith endures!"
+ krstjani_resurgence:0 "Resurgent Krstjani Power"
 
  maintain_the_free_church_reform:0 "Maintain the Free Church"
  maintain_the_free_church_reform_desc:0 "The Bosnian Church has been attacked by many foreign powers for giving refuge to other faiths. By preserving its independence, we resist their influence and keep our identity."
