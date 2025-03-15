@@ -1,6 +1,6 @@
 ﻿l_english:
  krstjani:0 "Krstjani"
- krstjani_religion_desc:0 "The autonomous Bosnian Church arose due to geographic isolation and limited Catholic influence in the region after the Great Schism. It's headed by a bishop called a djed (grandfather) and a council of twelve, with liturgies being in the Slavonic language. It's seen as heretical by many, and accused of ties to dualist sects."
+ krstjani_religion_desc:0 "The autonomous Bosnian Church arose due to geographic isolation and limited Catholic influence in the region after the Great Schism. It's headed by a bishop called a Djed (grandfather) and a council of twelve called the Strojnici, with liturgies being in the Slavonic language. It's seen as heretical by many, and accused of ties to dualist sects."
  krstjani_rebels_demand:0 "Convert $COUNTRYNAME$"
  krstjani_rebels_demand_desc:0 "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
  krstjani_rebels_title:0 "Religious"

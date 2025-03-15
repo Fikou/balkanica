@@ -12,14 +12,8 @@ necropolis_radimlja = {
  can_upgrade_trigger = {
   religion = krstjani
  }
- build_trigger = {
- }
- on_built = {
- }
- on_destroyed = {
- }
- keep_trigger = {
- }
+ build_trigger = {}
+ keep_trigger = {}
  tier_0 = {
   upgrade_time = { months = 0 }
   cost_to_upgrade = { factor = 0 }
@@ -209,6 +203,10 @@ ljubljana_castle = {
  can_be_moved = no
  starting_tier = 1
  type = monument
+ keep_trigger = {}
+ build_trigger = {}
+ can_upgrade_trigger = {}
+ can_use_modifiers_trigger = {}
  tier_0 = {
   upgrade_time = { months = 0 }
   cost_to_upgrade = { factor = 0 }
@@ -221,6 +219,7 @@ ljubljana_castle = {
    local_defensiveness = 0.1
    local_tax_modifier = 0.1
   }
+  area_modifier = {}
  }
  tier_2 = {
   upgrade_time = { months = 120 }
@@ -305,6 +304,8 @@ durres_amphitheatre = {
  can_be_moved = no
  starting_tier = 0 # it's very old, and by the time it was pretty damaged
  type = monument
+ keep_trigger = {}
+ build_trigger = {}
  can_use_modifiers_trigger = {
   custom_trigger_tooltip = {
    tooltip = DURRES_AMPHITHEATRE_TOOLTIP
@@ -330,10 +331,12 @@ durres_amphitheatre = {
  tier_0 = {
   upgrade_time = { months = 0 }
   cost_to_upgrade = { factor = 0 }
+  province_modifiers = {}
  }
  tier_1 = {
   upgrade_time = { months = 60 }
   cost_to_upgrade = { factor = 250 }
+  province_modifiers = {}
   country_modifiers = {
    prestige_from_land = 0.2
    army_tradition_from_battle = 0.1
@@ -349,6 +352,8 @@ durres_amphitheatre = {
  tier_2 = {
   upgrade_time = { months = 120 }
   cost_to_upgrade = { factor = 750 }
+  province_modifiers = {}
+  area_modifier = {}
   country_modifiers = {
    prestige_from_land = 0.5
    army_tradition_from_battle = 0.25
@@ -367,6 +372,8 @@ durres_amphitheatre = {
  tier_3 = {
   upgrade_time = { months = 240 }
   cost_to_upgrade = { factor = 1250 }
+  province_modifiers = {}
+  area_modifier = {}
   country_modifiers = {
    prestige_from_land = 1
    army_tradition_from_battle = 0.5

@@ -1,0 +1,12 @@
+sound = {
+	name = start_convert_krstjani
+	file = "start_conversion_christian_orthodox.wav"
+}
+sound = {
+	name = defender_of_the_krstjani_faith
+	file = "claim_defender_faith_orthodox.wav"
+}
+sound = {
+ name = religion_krstjani
+	file = "tab_religion_christian.wav"
+}

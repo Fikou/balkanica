@@ -1,6 +1,6 @@
 # gain manpower for every neighboring non-krstjani province
 blk_krstjani_heretic_refuge = {
- sprite = "GFX_diplomats_of_the_reformation_aspect"
+ sprite = "GFX_blk_diplomats_of_the_reformation_aspect"
  cost = 150
  trigger = {
   any_neighbor_province = {
@@ -77,7 +77,7 @@ blk_krstjani_heretic_refuge = {
 
 # tain temp idea cost reduction
 blk_krstjani_dualism = {
- sprite = "GFX_innovativeness_aspect"
+ sprite = "GFX_blk_innovativeness_aspect"
  cost = 80
  trigger = {
   NOT = { has_country_modifier = blk_krstjani_ideas }
@@ -105,7 +105,7 @@ blk_krstjani_dualism = {
 
 # reduce tolerance of heretics and heathens, increase heretic missionary strength
 blk_krstjani_conversion = {
- sprite = "GFX_expel_heretics_aspect"
+ sprite = "GFX_blk_expel_heretics_aspect"
  cost = 80
  trigger = {
   NOT = { has_country_modifier = blk_krstjani_ideas }
@@ -133,7 +133,7 @@ blk_krstjani_conversion = {
 
 #gain money from non-krstjani provinces with churches
 blk_krstjani_church_tax = {
- sprite = "GFX_icons_of_the_church_icon"
+ sprite = "GFX_blk_icons_of_the_church_icon"
  cost = 150
  trigger = {
   any_owned_province = {
@@ -151,8 +151,13 @@ blk_krstjani_church_tax = {
    every_owned_province = {
     limit = {
      NOT = { religion = ROOT }
+     OR = {
+      has_building = temple
+      has_building = cathedral
+      has_building = university
+     }
     }
-    # 10 ducats per province with a churchq
+    # 20 ducats per province with a churchq
     set_variable = {
      which = var__tax_to_gain
      value = 10
@@ -182,13 +187,13 @@ blk_krstjani_church_tax = {
      limit = {
       check_variable = {
        which = var__tax_to_gain
-       value = 10
+       value = 20
       }
      }
-     ROOT = { add_treasury = 10 }
+     ROOT = { add_treasury = 20 }
      subtract_variable = {
       which = var__tax_to_gain
-      value = 10
+      value = 20
      }
     }
    }
@@ -218,7 +223,7 @@ blk_krstjani_church_tax = {
 # get an event, which gives you a choice of modifiers
 # future : make it so only one nation can have one of these modifiers at a time
 blk_krstjani_djed = {
- sprite = "GFX_spread_the_book_of_common_prayer"
+ sprite = "GFX_blk_spread_the_book_of_common_prayer"
  cost = 150
  trigger = {
   NOT = { has_country_modifier = blk_djed_cooldown }
@@ -252,7 +257,7 @@ blk_krstjani_djed = {
 
 # adds tax modifiers to all provinces
 blk_krstjani_hizas = {
- sprite = "GFX_expel_heretics_aspect"
+ sprite = "GFX_blk_expel_heretics_aspect"
  cost = 120
  trigger = {
   any_owned_province = {
@@ -329,7 +334,7 @@ blk_krstjani_hizas = {
 # trigger an event to gain a half priced unrest / missionary advisor
 # future : maybe change this to just be able to pick an advisor from a pool of advisors (basically a free rehire?)
 blk_krstjani_gosti = {
- sprite = "GFX_diplomats_of_the_reformation_aspect"
+ sprite = "GFX_blk_diplomats_of_the_reformation_aspect"
  cost = 80
  trigger = {
   NOT = { has_country_modifier = blk_krstjani_gosti_cooldown }

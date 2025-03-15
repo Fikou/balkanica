@@ -24,9 +24,11 @@ country_event = {
   months = 2400
   modifier = {
    factor = 0.5
-   has_great_project = {
-    type = durres_amphitheatre
-    tier = 2
+   4174 = {
+     has_great_project = {
+     type = durres_amphitheatre
+     tier = 2
+    }
    }
   }
  }

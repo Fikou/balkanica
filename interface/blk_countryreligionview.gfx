@@ -1,0 +1,31 @@
+# These icons error out the wazzoo if I don't make custom ones that are lazyloaded, I dunno why
+spriteTypes = {
+  spriteType = {
+  name = "GFX_blk_innovativeness_aspect"
+  texturefile = "gfx/interface/church_aspects_anglicanism/innovativeness_aspect_icon.dds"
+  legacy_lazy_load = no
+ }
+
+ spriteType = {
+  name = "GFX_blk_expel_heretics_aspect"
+  texturefile = "gfx/interface/church_aspects_anglicanism/expel_heretics_aspect_icon.dds"
+  legacy_lazy_load = no
+ }
+
+ spriteType = {
+  name = "GFX_blk_diplomats_of_the_reformation_aspect"
+  texturefile = "gfx/interface/church_aspects_anglicanism/diplomats_of_the_reformation_aspect_icon.dds"
+  legacy_lazy_load = no
+ }
+
+ spriteType = {
+  name = "GFX_blk_icons_of_the_church_icon"
+  texturefile = "gfx/interface/church_aspects_anglicanism/icons_of_the_church_icon.dds"
+  legacy_lazy_load = no
+ }
+ spriteType = {
+  name = "GFX_blk_spread_the_book_of_common_prayer"
+  texturefile = "gfx/interface/church_aspects_anglicanism/spread_the_book_of_common_prayer_icon.dds"
+  legacy_lazy_load = no
+ }
+}
