@@ -77,8 +77,19 @@
 
  vranduk:0 "Vranduk Fortress"
  vranduk_desc:0 "Built in the latter part of the 14th century by the ruler of Bosnia, Stjepan II Kotromanic. It was originally made to protect the road between the Bosnian capital of Visoki and the town of Zenica. In its later years, after conquest by the Ottoman Empire, the castle was modified with Turkish architectural elements and expanded with a mosque. It found new life as an Ottoman military base and regional administrative center, securing their pressence in Bosnia."
- 
+
  ljubljana_castle:0 "Ljubljana Castle"
+ ljubljana_castle_desc:0 "A medieval fortress located on Castle Hill in the center of Ljubljana. While the site has been used for fortifications for thousands of years - dating back to the Romans - The modern castle was built in the early 11th century, then later rebuilt in the 12th century and overhauled in the 15th century. The structure served as the seat of the Duke of Carniolia and later as a bulkwark against Ottoman incursions into central Europe."
+
+ durres_amphitheatre:0 "Durres Amphitheatre"
+ durres_amphitheatre_desc:0 "An ancient Roman amphitheatre that dates back to the 2nd century AD - The Durres Amphitheatre is one of the largest in the Balkans, being able to fit upwards of 20,000 spectators. Unfortuantely, multiple earthquakes have caused repeated damage to the structure, though it has periodically been repaired and populated with new buildings over the centuries."
+ DURRES_AMPHITHEATRE_TOOLTIP:0 "One of the following must be true:\n    Province Owner is §YAlbanian§!\n    Province Owner is §YGreek§!\n    Province Owner is §YRoman§!"
+
+ albania_flavor.1.title:0 "Great Durres Earthquake of [GetYear]"
+ albania_flavor.1.desc:0 "A powerful earthquake has struck our coastline, causing significant damage to the city of Durres and its surroundings. Worst of all, the Durres Amphitheatre has been heavily damaged once again, now marking the third time in its history that a major earthquake has devastated the structure. This has set back our efforts to restore the amphitheatre."
+ albania_flavor.1.a:0 "We will recover."
+ albania_flavor.1.b:0 "Our infrastructural developments have mitigated the destruction!"
+ ALBANIA_FLAVOR_1_B_TT:0 "The §YDurres Amphitheatre§! is saved from further damage."
 
  maintain_the_free_church_reform:0 "Maintain the Free Church"
  maintain_the_free_church_reform_desc:0 "The Bosnian Church has been attacked by many foreign powers for giving refuge to other faiths. By preserving its independence, we resist their influence and keep our identity."

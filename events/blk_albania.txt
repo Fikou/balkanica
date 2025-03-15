@@ -1,0 +1,76 @@
+namespace = albania_flavor
+
+country_event = {
+ id = albania_flavor.1
+ title = albania_flavor.1.title
+ picture = REVOLUTION_eventPicture
+
+ desc = albania_flavor.1.desc
+
+ major = yes
+	fire_only_once = yes
+
+ trigger = {
+  is_year = 1500
+  4174 = {
+   has_great_project = {
+    type = durres_amphitheatre
+    tier = 1
+   }
+  }
+ }
+
+ mean_time_to_happen = {
+  months = 2400
+  modifier = {
+   factor = 0.5
+   has_great_project = {
+    type = durres_amphitheatre
+    tier = 2
+   }
+  }
+ }
+
+ option = {
+  name = albania_flavor.1.a
+  trigger = {
+   NOT = { full_idea_group = infrastructure_ideas }
+  }
+  4174 = {
+   add_province_modifier = {
+    name = "earthquake"
+    duration = 3650
+   }
+   add_great_project_tier = {
+    type = durres_amphitheatre
+    tier = -1
+   }
+   add_base_manpower = -2
+   add_base_tax = -1
+   add_devastation = 80
+  }
+  if = {
+   limit = {
+    is_emperor_of_china = yes
+   }
+   add_mandate = -10
+   add_stability = -1
+  }
+ }
+
+ option = {
+  name = albania_flavor.1.b
+  trigger = {
+   full_idea_group = infrastructure_ideas
+  }
+  highlight = yes
+  4174 = {
+   add_province_modifier = {
+    name = "earthquake"
+    duration = 3650
+   }
+   add_devastation = 50
+  }
+  custom_tooltip = ALBANIA_FLAVOR_1_B_TT
+ }
+}

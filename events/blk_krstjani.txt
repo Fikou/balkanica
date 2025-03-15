@@ -255,7 +255,7 @@ country_event = {
 country_event = {
  id = krstjani_flavor.2
  title = krstjani_flavor.2.title
- picture = POPE_PREACHING_eventPicture # todo
+ picture = BAD_POPE_eventPicture
 
  desc = krstjani_flavor.2.desc
 
