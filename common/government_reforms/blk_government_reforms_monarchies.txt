@@ -1,295 +1,400 @@
 league_of_lezhe_reform = {
-	icon = "giga_chad"
-	allow_normal_conversion = yes
-	potential = {
+ icon = "giga_chad"
+ allow_normal_conversion = yes
+ potential = {
   OR = {
-		 primary_culture = albanian
+   primary_culture = albanian
    primary_culture = albanian_new
   }
-	}
-	nation_designer_trigger = {
+ }
+ nation_designer_trigger = {
   OR = {
-		 primary_culture = albanian
+   primary_culture = albanian
    primary_culture = albanian_new
   }
-	}
-	valid_for_nation_designer = yes
-	nation_designer_cost = 30
-	modifiers = {
-		morale_damage = 0.1
-		hostile_attrition = 1
-		defensiveness = 0.25
-	}
-	custom_attributes = {
-		winning_battles_increases_legitimacy = yes
-	}
-	ai = {
-		factor = 1
-	}
+ }
+ valid_for_nation_designer = yes
+ nation_designer_cost = 30
+ modifiers = {
+  morale_damage = 0.1
+  hostile_attrition = 1
+  defensiveness = 0.25
+ }
+ custom_attributes = {
+  winning_battles_increases_legitimacy = yes
+ }
+ ai = {
+  factor = 1
+ }
 }
 
 mughal_government = {
-	icon = "peacock_throne"
-	allow_normal_conversion = yes
-	potential = {
-		OR = {
-			has_dlc = "Dharma"
-			has_dlc = "King of Kings"
-			has_dlc = "Winds of Change"
-		}
-		AND = {
-			tag = MUG
-			NOT = { map_setup = map_setup_random }
-		}
-	}
-	lock_level_when_selected = yes
-	legacy_equivalent = feudal_monarchy
+ icon = "peacock_throne"
+ allow_normal_conversion = yes
+ potential = {
+  OR = {
+   has_dlc = "Dharma"
+   has_dlc = "King of Kings"
+   has_dlc = "Winds of Change"
+  }
+  AND = {
+   tag = MUG
+   NOT = { map_setup = map_setup_random }
+  }
+ }
+ lock_level_when_selected = yes
+ legacy_equivalent = feudal_monarchy
 
-	modifiers = {
-		tolerance_own = 1
-		governing_capacity = 150
-	}
+ modifiers = {
+  tolerance_own = 1
+  governing_capacity = 150
+ }
 
-	assimilation_cultures = {
-		altaic = {
-			artillery_cost = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		baltic = {
-			naval_forcelimit_modifier = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		british = {
-			ship_durability = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		burman = {
-			free_leader_pool = 1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		byzantine = {
-			legitimacy = 0.25
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		carpathian = {
-			mercenary_cost = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		caucasian = {
-			mercenary_discipline = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		gaelic = {
-			shock_damage = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		central_indic = {
-			land_attrition = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		east_asian = {
-			state_maintenance_modifier = -0.2
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		kongo_group = {
-			heir_chance = 0.5
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		cushitic = {
-			missionaries = 1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		dravidian = {
-			global_trade_goods_size_modifier = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		african = {
-			global_tax_income = 10
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		east_slavic = {
-			land_forcelimit_modifier = 0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		eastern_aryan = {
-			production_efficiency = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		evenks = {
-			cavalry_flanking = 0.2
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		french = {
-			diplomats = 1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		germanic = {
-			global_institution_spread = 0.15
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		great_lakes_group = {
-			loot_amount = 0.5
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		hindusthani = {
-			core_creation = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		iberian = {
-			global_colonial_growth = 10
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		iranian = {
-			advisor_cost = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		japanese_g = {
-			land_morale = 0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		kamchatkan_g = {
-			hostile_attrition = 1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		korean_g = {
-			idea_cost = -0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		latin = {
-			embracement_cost = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		lost_cultures_group = {
-			discipline = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		turko_semitic = {
-			cavalry_power = 0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		maghrebi = {
-			privateer_efficiency = 0.25
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		malay = {
-			merchants = 1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		mande = {
-			tolerance_heretic = 1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		pacific = {
-			global_sailors_modifier = 0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		sahelian = {
-			movement_speed = 0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		scandinavian = {
-			mil_advisor_cost = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		southeastasian_group = {
-			development_cost = -0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		south_slavic = {
-			warscore_cost_vs_other_religion = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		southern_african = {
-			inflation_reduction = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		sudanese = {
-			caravan_power = 0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		tartar = {
-			cavalry_cost = -0.15
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		thai_group = {
-			build_cost = -0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		tibetan_group = {
-			prestige_per_development_from_conversion = 0.5
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		finno_ugric = {
-			prestige_decay = -0.01
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		west_african = {
-			global_autonomy = -0.01
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		west_slavic = {
-			leader_land_fire = 1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		western_aryan = {
-			trade_efficiency = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		slavic = {
-			province_warscore_cost = -0.15
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		albanian_g = {
-			manpower_recovery_speed = 0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-	}
+ assimilation_cultures = {
+  altaic = {
+   artillery_cost = -0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  baltic = {
+   naval_forcelimit_modifier = 0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  british = {
+   ship_durability = 0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  burman = {
+   free_leader_pool = 1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  byzantine = {
+   legitimacy = 0.25
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  carpathian = {
+   mercenary_cost = -0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  caucasian = {
+   mercenary_discipline = 0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  gaelic = {
+   shock_damage = 0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  central_indic = {
+   land_attrition = -0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  east_asian = {
+   state_maintenance_modifier = -0.2
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  kongo_group = {
+   heir_chance = 0.5
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  cushitic = {
+   missionaries = 1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  dravidian = {
+   global_trade_goods_size_modifier = 0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  african = {
+   global_tax_income = 10
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  east_slavic = {
+   land_forcelimit_modifier = 0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  eastern_aryan = {
+   production_efficiency = 0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  evenks = {
+   cavalry_flanking = 0.2
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  french = {
+   diplomats = 1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  germanic = {
+   global_institution_spread = 0.15
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  great_lakes_group = {
+   loot_amount = 0.5
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  hindusthani = {
+   core_creation = -0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  iberian = {
+   global_colonial_growth = 10
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  iranian = {
+   advisor_cost = -0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  japanese_g = {
+   land_morale = 0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  kamchatkan_g = {
+   hostile_attrition = 1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  korean_g = {
+   idea_cost = -0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  latin = {
+   embracement_cost = -0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  lost_cultures_group = {
+   discipline = 0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  turko_semitic = {
+   cavalry_power = 0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  maghrebi = {
+   privateer_efficiency = 0.25
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  malay = {
+   merchants = 1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  mande = {
+   tolerance_heretic = 1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  pacific = {
+   global_sailors_modifier = 0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  sahelian = {
+   movement_speed = 0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  scandinavian = {
+   mil_advisor_cost = -0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  southeastasian_group = {
+   development_cost = -0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  south_slavic = {
+   warscore_cost_vs_other_religion = -0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  southern_african = {
+   inflation_reduction = 0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  sudanese = {
+   caravan_power = 0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  tartar = {
+   cavalry_cost = -0.15
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  thai_group = {
+   build_cost = -0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  tibetan_group = {
+   prestige_per_development_from_conversion = 0.5
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  finno_ugric = {
+   prestige_decay = -0.01
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  west_african = {
+   global_autonomy = -0.01
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  west_slavic = {
+   leader_land_fire = 1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  western_aryan = {
+   trade_efficiency = 0.05
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  slavic = {
+   province_warscore_cost = -0.15
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+  albanian_g = {
+   manpower_recovery_speed = 0.1
+   effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+   removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+  }
+ }
+}
+
+bosnian_elective_kingdom_reform = {
+ icon = "elective_monarchy"
+ allow_normal_conversion = yes
+ potential = {
+  OR = {
+   primary_culture = bosnian
+   primary_culture = bosnian_new
+  }
+ }
+ nation_designer_trigger = {
+  OR = {
+   primary_culture = bosnian
+   primary_culture = bosnian_new
+  }
+ }
+ valid_for_nation_designer = yes
+ nation_designer_cost = 10
+ modifiers = {
+  development_cost_in_primary_culture = -0.1
+  nobles_privilege_slots = 1
+  nobles_influence_modifier = 0.1
+  global_autonomy = 0.01
+ }
+ conditional = {
+  allow = { has_dlc = "Domination" }
+  custom_attributes = {
+   has_ruler_election = yes
+  }
+ }
+ conditional = {
+  allow = {
+   OR = {
+    has_dlc = "Domination"
+    has_dlc = "Common Sense"
+   }
+  }
+  has_parliament = yes
+ }
+ ai = {
+  factor = 1
+ }
+}
+
+croatian_sabor_reform = {
+ icon = "parliament_hall"
+ allow_normal_conversion = no
+ potential = {
+  OR = { 
+   has_reform = croatian_sabor_reform
+   mission_completed = cro_reign_in_slavonia
+   culture = croatian
+   culture = croatian_new
+  }
+ }
+ trigger = {
+  OR = { 
+   has_reform = croatian_sabor_reform
+   mission_completed = cro_reign_in_slavonia
+  }
+ }
+ modifiers = {
+  all_estate_influence_modifier = 0.1
+  all_estate_loyalty_equilibrium = 0.1
+  legitimacy = 1
+  global_unrest = -1
+ }
+ conditional = {
+  allow = {
+   OR = {
+    has_dlc = "Domination"
+    has_dlc = "Common Sense"
+   }
+  }
+  has_parliament = yes
+ }
+}
+
+cilli_principality_reform = {
+ icon = "free_city"
+ allow_normal_conversion = no
+ potential = {
+  OR = { 
+   has_reform = cilli_principality_reform
+   mission_completed = cli_reform_the_principality
+   culture = slovene
+   culture = slovene_new
+  }
+ }
+ trigger = {
+  OR = { 
+   has_reform = cilli_principality_reform
+   mission_completed = cli_reform_the_principality
+  }
+ }
+ modifiers = {
+  diplomatic_reputation = 2
+  improve_relation_modifier = 0.15
+  spy_offence = 0.2
+ }
+ custom_attributes = {
+  buffed_strong_duchies = yes
+  can_request_regency = yes
+ }
 }

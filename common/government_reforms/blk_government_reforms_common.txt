@@ -57,7 +57,7 @@ maintain_the_free_church_reform = {
 	modifiers = {
 		church_influence_modifier = 0.1
   church_loyalty_modifier = 0.1
-		global_tax_modifier = 0.10
+		global_tax_modifier = 0.1
 		church_power_modifier = 0.1
   tolerance_heathen = 2
 	}

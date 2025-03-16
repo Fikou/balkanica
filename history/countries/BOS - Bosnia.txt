@@ -1,10 +1,11 @@
 government = monarchy
-add_government_reform = feudalism_reform
+add_government_reform = bosnian_elective_kingdom_reform
 primary_culture = bosnian
 add_accepted_culture = croatian
 religion = krstjani
 technology_group = eastern
 capital = 3002	# Sarajevo
+historical_rival = HUN
 
 1389.1.1 = {
 	government_rank = 1

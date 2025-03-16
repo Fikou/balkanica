@@ -3177,6 +3177,55 @@ serbian_feudal_monarchy = {
 	}
 }
 
+zetan_monarchy = {
+	rank = {
+		1 = PRINCIPALITY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = GOSPODAR
+		2 = KRALJ
+		3 = CAR
+	}
+
+	ruler_female = {
+		1 = GOSPODA
+		2 = KRALJICA
+		3 = CARICA
+	}
+
+	consort_male = {
+		1 = GOSPODAR
+		2 = KRALJ
+		3 = CAR
+	}
+
+	consort_female = {
+		1 = GOSPODA
+		2 = KRALJICA
+		3 = CARICA
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	trigger = {
+		government = monarchy
+		tag = MON
+	}
+}
+
 serbian_monarchy = {
 	rank = {
 		1 = PRINCEDOM
