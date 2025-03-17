@@ -132,6 +132,10 @@ monarchy = {
     bosnian_elective_kingdom_reform
     croatian_sabor_reform
     cilli_principality_reform
+    herzegovina_reform
+    duchy_of_saint_sava_reform
+    kingdom_of_saint_sava_reform
+    empire_of_saint_sava_reform
 			}
 		}
 		hereditary_vs_nobility = {
@@ -542,6 +546,7 @@ monarchy = {
 		lottery_reform
 		dutch_republic
 		force_reelection_reform
+  force_reelection_reform_r
 	}
 
 	#States General works with few others
@@ -716,11 +721,11 @@ republic = {
 		frequent_elections_vs_consolidation_of_power = {
 			reforms = {
     frequent_elections_reform_r
-    force_reelection_reform_r
 				frequent_elections_reform
 				consolidation_of_power_reform
 				consolidate_power_in_doge_reform
 				consolidate_power_in_cities_reform
+    force_reelection_reform_r
 				force_reelection_reform
 				devotee_to_the_people_reform
 				permanent_marathas_council_reform
@@ -1031,6 +1036,7 @@ republic = {
 	exclusive_reforms = { 
 		dutch_republic
 		force_reelection_reform
+  force_reelection_reform_r
 	}
 }
 
@@ -1078,6 +1084,9 @@ theocracy = {
 				egyptian_government_reform
 				blood_theocracy_reform
 				turkoman_ottoman_institutions
+    duchy_of_saint_sava_reform
+    kingdom_of_saint_sava_reform
+    empire_of_saint_sava_reform
 			}
 		}
 		internal_vs_external_mission = {

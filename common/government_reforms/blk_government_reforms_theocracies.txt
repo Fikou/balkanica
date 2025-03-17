@@ -6,7 +6,7 @@ hereditary_theocracy_reform = {
  potential = {
   NOT = { has_reform = papacy_reform }
   OR = { 
-   is_or_was_tag = { tag = MON }
+   tag = MON
    has_reform = hereditary_theocracy_reform
    have_had_reform = hereditary_theocracy_reform
   }
@@ -22,15 +22,21 @@ hereditary_theocracy_reform = {
   monarch_lifespan = 0.2
  }
  effect = {
-  if = {
-   limit = { heir_has_ruler_dynasty = no }
-   remove_heir = { allow_new_heir = no }
+  hidden_effect = {
+   if = {
+    limit = { heir_has_ruler_dynasty = no }
+    remove_heir = { allow_new_heir = no }
+    define_heir = {
+     dynasty = ROOT
+     age = 15
+    }
+   }
   }
  }
  custom_attributes = {
   random_kinsman_becomes_heir = yes
  }
  ai = {
-  factor = 5
+  factor = 100
  }
 }

@@ -42,7 +42,6 @@ head_of_the_reformed_church_reform = {
 	}
 }
 
-
 maintain_the_free_church_reform = {
 	icon = "church"
 	allow_normal_conversion = yes
@@ -68,4 +67,187 @@ maintain_the_free_church_reform = {
 	ai = {
 		factor = 1
 	}
+}
+
+duchy_of_saint_sava_reform = {
+ icon = "divine_guidance_reform"
+ allow_normal_conversion = no
+ lock_level_when_selected = yes
+ potential = {
+  tag = HRZ
+  NOT = { total_development = 300 }
+ }
+ trigger = {
+  OR = {
+   has_reform = duchy_of_saint_sava_reform
+   mission_completed = hrz_abc
+  }
+  OR = {
+   religion = krstjani
+   religion = orthodox
+  }
+ }
+ fixed_rank = 1
+ maintain_dynasty = yes
+ conditional = {
+  allow = { has_dlc = "Cradle of Civilization" }
+  government_abilities = {
+   feudal_theocracy_mechanic
+  }
+ }
+ modifiers = {
+  tolerance_own = 1
+  legitimacy = 0.5
+  devotion = 0.5
+  relation_with_same_religion = 10
+  relation_with_heretics = 10
+ }
+ custom_attributes = {
+  locked_government_type = yes
+  enables_divine_idea_group = yes
+  enables_aristocratic_idea_group = no
+ }
+ effect = {
+  hidden_effect = {
+   override_country_name = HRZ
+  }
+ }
+ removed_effect = {
+  hidden_effect = {
+   restore_country_name = yes
+  }
+  if = {
+   limit = {
+    tag = HRZ
+    total_development = 300
+    OR = {
+     religion = krstjani
+     religion = orthodox
+    }
+   }
+   add_government_reform = kingdom_of_saint_sava_reform
+  }
+ }
+}
+
+kingdom_of_saint_sava_reform = {
+ icon = "divine_guidance_reform"
+ allow_normal_conversion = no
+ lock_level_when_selected = yes
+ potential = {
+  tag = HRZ
+  OR = {
+   total_development = 300
+   has_reform = kingdom_of_saint_sava_reform
+  }
+  NOT = { total_development = 1000 }
+ }
+ trigger = {
+  OR = {
+   has_reform = kingdom_of_saint_sava_reform
+   mission_completed = hrz_abc
+  }
+  OR = {
+   religion = krstjani
+   religion = orthodox
+  }
+ }
+ fixed_rank = 2
+ maintain_dynasty = yes
+ conditional = {
+  allow = { has_dlc = "Cradle of Civilization" }
+  government_abilities = {
+   feudal_theocracy_mechanic
+  }
+ }
+ modifiers = {
+  tolerance_own = 2
+  legitimacy = 1
+  devotion = 1
+  relation_with_same_religion = 15
+  relation_with_heretics = 15
+ }
+ custom_attributes = {
+  locked_government_type = yes
+  enables_divine_idea_group = yes
+  enables_aristocratic_idea_group = no
+  upgrade_feudal_theocracy = yes
+ }
+ effect = {
+  hidden_effect = {
+   override_country_name = HRZ_KSS
+  }
+ }
+ removed_effect = {
+  hidden_effect = {
+   restore_country_name = yes
+  }
+  if = {
+   limit = {
+    tag = HRZ
+    total_development = 1000
+    OR = {
+     religion = krstjani
+     religion = orthodox
+    }
+   }
+   add_government_reform = empire_of_saint_sava_reform
+  }
+ }
+}
+
+empire_of_saint_sava_reform = {
+ icon = "divine_guidance_reform"
+ allow_normal_conversion = no
+ lock_level_when_selected = yes
+ potential = {
+  tag = HRZ
+  OR = {
+   total_development = 1000
+   has_reform = empire_of_saint_sava_reform
+  }
+ }
+ trigger = {
+  OR = {
+   has_reform = empire_of_saint_sava_reform
+   mission_completed = hrz_abc
+  }
+  OR = {
+   religion = krstjani
+   religion = orthodox
+  }
+ }
+ modifiers = {
+  tolerance_own = 3
+  legitimacy = 1.5
+  devotion = 1.5
+  global_missionary_strength = 0.2
+  missionaries = 1
+  relation_with_same_religion = 20
+  relation_with_heretics = 20
+ }
+ fixed_rank = 3
+ maintain_dynasty = yes
+ conditional = {
+  allow = { has_dlc = "Cradle of Civilization" }
+  government_abilities = {
+   feudal_theocracy_mechanic
+  }
+ }
+ custom_attributes = {
+  locked_government_type = yes
+  enables_divine_idea_group = yes
+  enables_aristocratic_idea_group = no
+  upgrade_feudal_theocracy = yes
+ }
+ effect = {
+  hidden_effect = {
+   override_country_name = HRZ_ESS
+  }
+ }
+ removed_effect = {
+  hidden_effect = {
+   restore_country_name = yes
+  }
+ }
 }

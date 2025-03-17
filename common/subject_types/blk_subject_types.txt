@@ -1,19 +1,19 @@
 regency = {
  copy_from = personal_union
  sprite = GFX_icon_regency
-	diplomacy_overlord_sprite = GFX_icon_diplomacy_lead_regency
-	diplomacy_subject_sprite = GFX_icon_diplomacy_am_regency
+ diplomacy_overlord_sprite = GFX_icon_diplomacy_lead_regency
+ diplomacy_subject_sprite = GFX_icon_diplomacy_am_regency
  has_overlords_ruler = no
  can_union_break = no
  can_be_integrated = no
  embargo_rivals = no
  placate_rulers = yes
  restoration_cb = null
-	uses_military_focus = no
-	counts_for_borders = no
-	can_transfer_in_peace = no
-	can_send_missionary_to_subject = no
-	does_overlord_size_count_for_warscore_cost = no
+ uses_military_focus = no
+ counts_for_borders = no
+ can_transfer_in_peace = no
+ can_send_missionary_to_subject = no
+ does_overlord_size_count_for_warscore_cost = no
  enforce_religion = no
  can_have_great_projects_moved_by_overlord = no
  seize_court_resources = yes
@@ -21,17 +21,21 @@ regency = {
  relative_power_class = 0
  base_liberty_desire = 25
  liberty_desire_negative_prestige = 0.5
-	modifier_overlord = {
-		modifier = union_subject
-	}
-	overlord_opinion_modifier = in_regency
-	subject_opinion_modifier = in_regency
-	can_rival = {
-		independent_nations = yes
-		other_overlord = all
-	}
-	can_marry = {
-		independent_nations = yes
-		other_overlord = all
-	}
+ modifier_overlord = {
+  modifier = union_subject
+ }
+ overlord_opinion_modifier = in_regency
+ subject_opinion_modifier = in_regency
+ can_rival = {
+  independent_nations = yes
+  other_overlord = all
+ }
+ can_marry = {
+  independent_nations = yes
+  other_overlord = all
+ }
+ can_ally = {
+  independent_nations = yes
+  other_overlord = all
+ }
 }

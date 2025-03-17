@@ -312,7 +312,7 @@ bosnian_elective_kingdom_reform = {
  valid_for_nation_designer = yes
  nation_designer_cost = 10
  modifiers = {
-  development_cost_in_primary_culture = -0.1
+  development_cost_in_primary_culture = -0.15
   nobles_privilege_slots = 1
   nobles_influence_modifier = 0.1
   global_autonomy = 0.01
@@ -339,7 +339,7 @@ bosnian_elective_kingdom_reform = {
 
 croatian_sabor_reform = {
  icon = "parliament_hall"
- allow_normal_conversion = no
+ allow_normal_conversion = yes
  potential = {
   OR = { 
    has_reform = croatian_sabor_reform
@@ -373,7 +373,7 @@ croatian_sabor_reform = {
 
 cilli_principality_reform = {
  icon = "free_city"
- allow_normal_conversion = no
+ allow_normal_conversion = yes
  potential = {
   OR = { 
    has_reform = cilli_principality_reform
@@ -396,5 +396,64 @@ cilli_principality_reform = {
  custom_attributes = {
   buffed_strong_duchies = yes
   can_request_regency = yes
+ }
+}
+
+herzegovina_reform = {
+ icon = "millet_courts"
+ allow_normal_conversion = no
+ lock_level_when_selected = yes
+ potential = {
+  OR = {
+   tag = HRZ
+   has_reform = herzegovina_reform
+   mission_completed = hrz_abc
+  }
+ }
+ trigger = {
+  OR = {
+   has_reform = herzegovina_reform
+   mission_completed = hrz_abc
+  }
+  religion = krstjani
+ }
+ maintain_dynasty = yes
+ modifiers = {
+  church_loyalty_modifier = -0.05
+  relation_with_heathens = 15
+  tolerance_heretic = 1
+  tolerance_of_heretics_capacity = 1
+  tolerance_heathen = 1
+  tolerance_of_heathens_capacity = 1
+ }
+ custom_attributes = {
+  locked_government_type = yes
+ }
+ conditional = {
+  allow = {
+   has_dlc = "Winds of Change"
+  }
+  custom_attributes = {
+   can_royal_marry_heathens = yes
+  }
+ }
+ conditional = {
+  allow = { 
+   OR = {
+    has_dlc = "Domination"
+    has_dlc = "Cradle of Civilization"
+   }
+  }
+  has_pashas = yes
+ }
+ effect = {
+  hidden_effect = {
+   override_country_name = HRZ_TUR
+  }
+ }
+ removed_effect = {
+  hidden_effect = {
+   restore_country_name = yes
+  }
  }
 }
