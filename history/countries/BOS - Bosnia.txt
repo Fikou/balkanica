@@ -5,6 +5,8 @@ add_accepted_culture = croatian
 religion = krstjani
 technology_group = eastern
 capital = 3002	# Sarajevo
+historical_rival = HUN
+historical_rival = SER
 
 1389.1.1 = {
 	government_rank = 1
@@ -14,7 +16,7 @@ capital = 3002	# Sarajevo
 	monarch = {
 		name = "Stjepan Ostoja"
 		dynasty = "Kotromanic"
-		# no birth date information	
+		# no birth date information
 		adm = 3
 		dip = 1
 		mil = 2

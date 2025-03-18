@@ -185,3 +185,5 @@
  legitimist_rebels_name:0 "$COUNTRY$ Legitimist Rebels"
  legitimist_rebels_desc:0 "Legitimist Rebels are dissatisfied with their regent due to an extended regency. They field professional troops with a large proportion of artillery."
  legitimist_rebels_army:0 "Legitimist Army"
+
+ 100_improved_relation_trigger_tt:0 "Has opinion modifier §YImproved Relations§! of at least §Y100§!"

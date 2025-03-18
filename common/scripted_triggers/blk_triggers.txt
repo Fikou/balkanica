@@ -1,0 +1,154 @@
+has_100_opinion_improved_relation = {
+	custom_trigger_tooltip = {
+		tooltip = 100_improved_relation_trigger_tt
+		has_opinion_modifier = {
+			who = $target$
+			modifier = improved_relation
+			value = 100
+		}
+	}
+}
+
+ # maybe add a tooltip to this later?
+bos_has_country_support_trigger = {
+ $tag$ = { has_country_flag = blk_$faction$_support }
+}
+
+bos_civil_war_check_opposing_support_trigger = {
+ custom_trigger_tooltip = {
+  tooltip = bos_other_faction_got_support_trigger_tt
+  OR = {
+   AND = {
+    tag = BOS
+    bos_has_country_support_trigger = { tag = BOS faction = $faction$ }
+   }
+   AND = {
+    tag = HRZ
+    bos_has_country_support_trigger = { tag = HRZ faction = $faction$ }
+   }
+  }
+ }
+}
+
+bos_civil_war_resolved_through_violence_trigger = {
+ custom_trigger_tooltip = {
+  tooltip = bos_other_faction_dead_tt
+  if = {
+   limit = { tag = BOS }
+   OR = {
+    HRZ = { exists = no }
+    HRZ = { is_subject_of = BOS }
+   }
+  }
+  if = {
+   limit = { tag = HRZ }
+   OR = {
+    BOS = { exists = no }
+    BOS = { is_subject_of = HRZ }
+   }
+  }
+ }
+}
+
+bos_civil_war_resolved_through_marriage_trigger = {
+ custom_trigger_tooltip = {
+  tooltip = bos_civil_war_resolved_through_marriage_tt
+  AND = {
+   HRZ = { marriage_with = BOS }
+   ai = no # if you RM the AI it will just click the button first
+  }
+ }
+}
+
+bos_civil_war_resolved_diplomatically_trigger = {
+ custom_trigger_tooltip = {
+  tooltip = bos_civil_war_resolved_diplomatically_tt
+  OR = {
+   AND = {
+    tag = BOS
+    BOS = { ai = yes }
+    HRZ = { ai = yes }
+    is_year = 1454
+   }
+   calc_true_if = {
+    amount = 3
+    bos_has_country_support_trigger = { faction = HUN }
+    bos_has_country_support_trigger = { faction = HAB }
+    bos_has_country_support_trigger = { faction = ARA }
+    bos_has_country_support_trigger = { faction = SER }
+   }
+  }
+ }
+}
+
+bos_civil_war_resolved_trigger = {
+ custom_trigger_tooltip = {
+  tooltip = bos_civil_war_resolved_tt
+   OR = {
+    bos_civil_war_resolved_through_violence_trigger = yes
+    bos_civil_war_resolved_through_marriage_trigger = yes
+    bos_civil_war_resolved_diplomatically_trigger = yes
+  }
+ }
+}
+
+bos_can_diplo_vassal_rag_trigger = {
+ AND = {
+  hidden_trigger = {
+   RAG = { exists = yes }
+   RAG = { ai = yes }
+  }
+  RAG = { alliance_with = ROOT }
+  RAG = {
+   has_opinion = {
+    who = ROOT
+    value = 150
+   }
+  }
+  RAG = {
+   trust = {
+    who = ROOT
+    value = 75
+   }
+  }
+ }
+}
+
+tur_owns_any_balkan_provices = {
+ TUR = {
+  OR = {
+   exists = no
+   NOT = {
+    any_owned_province = {
+     region = balkan_region
+    }
+   }
+  }
+ }
+}
+
+bos_hating_on_hun = {
+ OR = {
+  is_rival = HUN
+  HUN = {
+   OR = {
+    is_rival = ROOT
+    has_opinion_modifier = {
+     who = ROOT
+     modifier = insulted
+    }
+    has_opinion_modifier = {
+     who = ROOT
+     modifier = scornfully_insulted
+    }
+   }
+  }
+ }
+}
+
+bos_trying_to_amend_hun = {
+ OR = {
+  alliance_with = HUN
+  HUN = { is_subject_of = ROOT }
+ }
+}

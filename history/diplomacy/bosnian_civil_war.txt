@@ -1,0 +1,14 @@
+# Represents Alfonso V's support of Herzegovina in the Bosnian Civil War
+guarantee = {
+	first = ARA
+	second = HRZ
+	start_date = 1444.1.1
+	end_date = 1446.1.1
+}
+# Represents the Hunyadi's support of Bosnia in the Bosnian Civil War
+guarantee = {
+	first = HUN
+	second = BOS
+	start_date = 1444.1.1
+	end_date = 1446.1.1
+}

@@ -1,0 +1,14 @@
+name = "Bosnian Civil War"
+war_goal = {
+	type = superiority_crusade
+	casus_belli = cb_claim_throne
+}
+# The war started in 1443 but I want the truce to last until 1448
+1443.1.1 = {
+	add_attacker = HRZ
+	add_defender = BOS
+}
+1443.10.11 = {
+ rem_attacker = HRZ
+ rem_defender = BOS
+}

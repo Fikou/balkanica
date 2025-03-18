@@ -1,0 +1,139 @@
+bos_civil_war_provice_mod = {
+ min_local_autonomy = 20
+ local_unrest = 1
+ picture = "min_local_autonomy"
+}
+
+bos_recently_setup_silver_mining = {
+ trade_goods_size_modifier = -0.75
+ picture = "trade_goods_size_opposite"
+}
+bos_temp_silver_mining = {
+ trade_goods_size_modifier = -0.85
+ picture = "trade_goods_size_opposite"
+}
+
+bos_srebrenica_devd = {
+ local_gold_depletion_chance_modifier = -0.5
+}
+
+bos_fleet_built = {
+ naval_maintenance_modifier = -0.1
+ naval_morale = 0.1
+ picture = "naval_morale"
+}
+
+bos_italian_land_reclaimed = {
+ local_culture_conversion_time = -0.5
+ local_culture_conversion_cost = -0.5
+}
+
+bos_usora_fort_temp_modifier = {
+ local_great_project_upgrade_cost = -0.33
+ local_defensiveness = 0.15
+ picture = "local_defensiveness"
+}
+
+bos_misc_fort_temp_modifier = {
+ local_defensiveness = 0.15
+ picture = "local_defensiveness"
+}
+
+bos_homeland_protected_temp_modifier = {
+ local_defensiveness = 0.1
+ local_development_cost = -0.1
+ picture = "local_development_cost"
+}
+
+bos_offensive_ottoman_invasion_buff = {
+ land_morale = 0.1
+ discipline = 0.1
+ recover_army_morale_speed = 0.2
+ land_maintenance_modifier = -0.2
+ global_regiment_recruit_speed = -0.2
+ global_attacker_dice_roll_bonus = 1
+ picture = "global_attacker_dice_roll_bonus"
+}
+
+bos_defensive_ottoman_invasion_buff = {
+ land_morale = 0.2
+ defensiveness = 0.25
+ discipline = 0.05
+ recover_army_morale_speed = 0.2
+ land_maintenance_modifier = -0.2
+ global_regiment_recruit_speed = -0.2
+ global_defender_dice_roll_bonus = 1
+ picture = "global_defender_dice_roll_bonus"
+}
+
+bos_secured_future = {
+ # tall bosnia time
+ development_cost_modifier = -0.05
+ # people want to fight
+ land_morale = 0.1
+ manpower_in_culture_group_provinces = 0.1
+ manpower_in_own_culture_provinces = 0.2
+ # gov strengthened
+ prestige = 0.5
+	legitimacy = 0.5
+ devotion = 0.5
+ horde_unity = 0.5
+ republican_tradition = 0.25
+}
+
+bos_krstjani_empire = {
+ religion = yes
+ # gov strengthened
+ prestige = 0.5
+	legitimacy = 0.5
+ devotion = 0.5
+ horde_unity = 0.5
+ republican_tradition = 0.25
+ # religion bonuses
+	global_missionary_strength = 0.03
+	tolerance_of_heretics_capacity = 1
+ tolerance_own = 1
+ church_power_modifier = 0.5
+ # clergy bonuses
+ church_loyalty_modifier = 0.15
+ manpower_in_true_faith_provinces = 0.2
+}
+
+bos_catholic_empire = {
+ religion = yes
+ # gov strengthened
+ prestige = 0.5
+ legitimacy = 0.5
+ devotion = 0.5
+ horde_unity = 0.5
+ republican_tradition = 0.25
+ # religion bonuses
+ global_missionary_strength = 0.03
+ papal_influence = 0.25
+ papal_influence_from_cardinals = 0.25
+ prestige_per_development_from_conversion = 0.25
+}
+
+bos_krstjani_tolerance = {
+ tolerance_of_heretics_capacity = 1
+ relation_with_heretics = 20
+ manpower_in_true_faith_provinces = 0.1
+ religion = yes
+}
+
+bos_tax_meta = {
+ global_tax_modifier = 0.33
+ religion = yes
+}
+
+bos_integrated_djed = {
+ tolerance_heretic = 1
+ global_heretic_missionary_strength = -0.01
+ religion = yes
+}
+
+bos_exiled_djed = {
+ tolerance_heretic = -1
+ global_heretic_missionary_strength = 0.01
+ religion = yes
+}

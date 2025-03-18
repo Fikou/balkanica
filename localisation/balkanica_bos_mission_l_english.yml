@@ -1,0 +1,202 @@
+﻿l_english:
+ bos_approach_hungary_title:0 "Approach Hungary"
+ bos_approach_hungary_desc:0 "While we have been at odds with Hungary in the past, we are in need of support. The regent of Hungary, John Hunyadi, is a powerful and infulential force in the Balkans, and their recognition of our claim to the throne would be invaluable."
+
+ bos_develop_capital_title:0 "Expand [Root.Capital.GetCapitalName]"
+ bos_develop_capital_desc:0 ""
+
+ bos_dev_gold_title:0 "Develop Srebcenica"
+ bos_dev_gold_desc:0 ""
+
+ bos_buildup_forts_title:0 "Fortify the Homeland"
+ bos_buildup_forts_desc:0 ""
+
+ bos_serbia_time_title:0 "Conquer Serbian Silver"
+ bos_serbia_time_desc:0 "We have long quarrelled with the despot of Serbia. Decades ago we took large swathes of their territory, using their silver and gold mines to develop our fledging nation. Now our [Root.Monarch.GetTitle] desires the riches of their mines once again to fund our nation's continued growth."
+
+ bos_approach_austria_title:0 "Approach Austria"
+ bos_approach_austria_desc:0 "Austria is a powerful nation, seeking to expand its influence in the Balkans. They may be willing to support our claim to the throne."
+
+ bos_reconquer_dalmatia_title:0 "Reclaim our Coast"
+ bos_reconquer_dalmatia_desc:0 "Decades ago, we were profiting off the Adriatic coast line. But now, we are locked away high in the mountains, limited in trade to the perfidious Italiance who occupy our once beautiful cost line. It is time to act, to regain our Dalmatian holdings."
+
+ bos_develop_ports_title:0 "Develop the Coast"
+ bos_develop_ports_desc:0 "With our coast reclaimed, we must now develop it if we want to broaden our trade network. While Dubrovnik is an undeniably critical link in our economy, we can't rely on it alone. We must develop all of our Adriatic harbors, and found a new port in the north - Zadar is a prime candidate."
+
+ bos_bos_fleet_title:0 "A Bosnian Fleet"
+ bos_bos_fleet_desc:0 "With our coast reclaimed and our ports modernized, we must now raise a mighty fleet to protect our trade and nation. The Italians and their greed are not to be trusted, and the Ottomans remain a constant threat. We must be prepared."
+
+ bos_kill_venice_title:0 "Stop Italian Exploitation"
+ bos_kill_venice_desc:0 "Italians have long sought to exploit the Balkans, and we have been their victims. We must act to stop their exploitation, once and for all."
+
+ bos_civil_war_title:0 "Civil War!"
+ bos_civil_war_desc:0 "Bosnia in in civil war! Stjepan Kosaca, Lord of Hum, has raised an army against Stjepan Tomas Kotromanic, Kralj of Bosnia."
+
+ bos_find_other_ally_title:0 "Find Other Allies"
+ bos_find_other_ally_desc:0 "There are many powers in the Balkans, Italy, and beyond. Finding any nation willing to support our cause, no matter how big or small, would be invaluable."
+
+ bos_resolve_civil_war_title:0 "Peace in Bosnia"
+ bos_resolve_civil_war_desc:0 "Peace has been restored to Bosnia! Whether this is truly the end remains to be seen, but we should now celebrate and focus on rebuilding our nation."
+
+ bos_ragusa_title:0 "Annex Ragusa"
+ bos_ragusa_desc:0 "Our nation has had long ties to the Republic of Ragusa, through trade and history. In fact, our[Root.Monarch.GetTitle] has noble ties to the republic nominally, being named a "nobleman".\n\nHowever, it is undeniable that the port of Dubrovnik will be critical for the future of our nation. We should seek to strike a deal with their Rector - offer then something they can't refuse. And if they do refuse, we must act."
+
+ bos_hum_revolt_title:0 "Integrate Hum"
+ bos_hum_revolt_desc:0 "The civil war is still in recent memory, and the people of Hum are still sore. We must act to integrate them into our nation, and to ensure that they are loyal to the throne."
+
+ bos_croatia_title:0 "Return to Croatia"
+ bos_croatia_desc:0 "Long ago we made inroads into Croatia, taking land and power from them. Now, we must act to reclaim our lost lands, and to ensure that Croatia does not threaten us again."
+
+ bos_secure_our_future_title:0 "Secure Bosnia"
+ bos_secure_our_future_desc:0 "With the Ottoman threat diminished, our faith secure, and our lands reclaimed, Bosnia is finally secure. Bosnians can now rest easy and look to the future, for it is bright."
+
+ bos_rebuild_bosnia_title:0 "Rebuild Bosnia"
+ bos_rebuild_bosnia_desc:0 "With Bosnia rebuilt and whole again, we are ready to look outwards. Our kingdom has shrunk since its height - decade ago we lost land to Croatia, Hungary, Serbia, and the perfidious Venetians. We must strengthen our people and return these lands to our fold."
+
+ bos_turk_time_title:0 "Prepare for the Ottomans"
+ bos_turk_time_desc:0 "The Ottomans are a constant threat to every nation in the Balkans. We must prepare for their inevitable invasion, and ensure that we are ready to defend our lands."
+
+ bos_hungary_fued_title:0 "Our Hungarian Feud"
+ bos_hungary_fued_desc:0 "It is no secret that we have long been at odds with Hungary. They have long lorded over the Balkans, and we have only recently begun to challenge their power. We must act to secure our future, and to ensure that Hungary does not crush us."
+
+ bos_approach_aragon_title:0 "Approach Aragon"
+ bos_approach_aragon_desc:0 "The King of Aragon, Alfonso V, while an unlikely ally, has shown interest in the Balkans. He may be willing to support our claim to the throne."
+
+ bos_approach_serbia_title:0 "Approach Serbia"
+ bos_approach_serbia_desc:0 "While Serbia may still be sore from our previous conflicts, they are one of our neighbors and may be willing to support our claim to the throne."
+
+ bos_krstjani_question_title:0 "The Krstjani Question"
+ bos_krstjani_question_desc:0 "Bosnia has long been a land of religious diversity. The Bosnian Church, or Krstjani, has been present in our lands for centuries. However, the Catholic Church has been making inroads, and the Krstjani are now a minority in our lands. We must decide how to handle this situation."
+
+ bos_catholic_1_title:0 "Handle the Djed"
+ bos_catholic_1_desc:0 "The Djed is the head of the Bosnian Church, along side his council, the Strojnici. If we are to convert Bosnia to Catholicism, we must handle the Djed and his council."
+
+ bos_catholic_2_title:0 "Convert Bosnia"
+ bos_catholic_2_desc:0 "With the Djed handled, we can now focus on converting the people of Bosnia to Catholicism."
+
+ bos_catholic_3_title:0 "Build Temples"
+ bos_catholic_3_desc:0 "Bosnia is not home to many monastaeries or churches. Krstjani temples are simple, and few in number. To solidify Catholicism in Bosnia, we must build temples and churches across the land to foster the faith."
+
+ bos_catholic_4_title:0 "Continue the Crusades"
+ bos_catholic_4_desc:0 "Bosnia is now firmly Catholic. We must do what we can to spread the faith across the Balkans."
+
+ bos_krstjani_1_title:0 "Build New Hiže"
+ bos_krstjani_1_desc:0 "Hiže are small, local monastaries where the Krstjani gather to worship. They are simple, and few in number. To solidify the Krstjani faith in Bosnia, we must encourage the founding of new Hiže across the land."
+
+ bos_krstjani_2_title:0 "Convert Bosnia"
+ bos_krstjani_2_desc:0 "With new Hiža founded across the land, we can now focus on converting the people of Bosnia to the Krstjani faith."
+
+ bos_krstjani_3_title:0 "Cement the Faith"
+ bos_krstjani_3_desc:0 "Now that Bosnia is firmly Krstjani, we must cement it as an official branch of Christianity, earning the respect of the other Christian nations."
+
+ bos_krstjani_4_title:0 "Spread Across the Balkans"
+ bos_krstjani_4_desc:0 "Bosnia is now firmly Krstjani. To ensure the faith does not die in the face of Catholicism or Sunni Islam, we must spread the faith across the Balkans."
+
+ bos_branch_1_title:0 "Branching Mission"
+ bos_branch_1_desc:0 "This branch unlocks after resolving the Krstjani Question."
+
+ bos_branch_2_title:0 "Branching Mission"
+ bos_branch_2_desc:0 "This branch unlocks after resolving the Krstjani Question."
+
+ bos_branch_3_title:0 "Branching Mission"
+ bos_branch_3_desc:0 "This branch unlocks after resolving the Krstjani Question."
+
+ bos_branch_4_title:0 "Branching Mission"
+ bos_branch_4_desc:0 "This branch unlocks after resolving the Krstjani Question."
+
+
+ bos_civil_war_explanation_tt:0 "To resolve the civil war, you must reclaim all of Bosnia.\n\nYou can accomplish this §Ydiplomatically§! by approaching §Ythree of the four§! major powers before the opposing faction, by managing to obtain a §Yroyal marriage§! with the opposing faction, or through §Ywar§!."
+ bos_raise_army_title:0 "Raise an Army"
+ bos_raise_army_desc:0 ""
+ bos_other_faction_got_support_trigger_tt:0 "This nation has pledged support to the other faction."
+ bos_other_faction_got_support_effect_tt:0 "§RThis nation has pledged support to the opposing faction!§!"
+ bos_other_faction_we_get_support_tt:0 "§GThis power will support our claim to Bosnia.§!\nThe other faction will not be able to gain support from them."
+ bos_civil_war_ARA_support_tt:0 "§RAragon may ask for vassalage in exchange for their support. Declining may anger them!§!"
+ bos_civil_war_HUN_support_tt:0 "§RHungary will not ask for anything in exchange for their support, but the Bosnian people will not be happy.§!"
+ bos_civil_war_HAB_support_tt:0 "§RAustria may ask for claims over the Balkans in exchange for their support. Declining may anger them!§!"
+ bos_civil_war_SER_support_tt:0 "§RSerbia will ask for a lengthy truce in exchange for their support. Declining may lead to war!§!"
+ bos_other_faction_dead_tt:0 "We annexed or vassalized the other faction."
+ bos_civil_war_resolved_through_marriage_tt:0 "We obtained a §Yroyal marriage§! with the opposing faction."
+ bos_civil_war_resolved_diplomatically_tt:0 "We have support of §Ythree of the four§! major powers."
+ bos_civil_war_resolved_diplomatically:0 "The Bosnian civil war has been resolved diplomatically."
+ bos_civil_war_resolved_violently:0 "The Bosnian civil war has been resolved through war."
+ bos_hum_ragusa_revolt:0 "Hum and Ragusa Revolt"
+ bos_bypass_civil_war_mission_tt:0 "§GThe Bosnian civil war has been resolved.§! This mission can be bypassed."
+ bos_bypass_support_mission_tt:0 "§RThis nation has pledged support to the opposing faction.§! This mission can be bypassed."
+ bos_civil_war_resolved_tt:0 "The Bosnian civil war has been resolved."
+ bos_civil_war_provice_mod:0 "Aftermath of the Civil War"
+ bos_civil_war_provice_mod_desc:0 "Resolving the civil war diplomatically has left the rival faction with some local power."
+ bos_civil_war_diplomacy_warning_tt:0 "§RSolving the civil war through diplomacy will leave the rival faction with some local power.§!"
+ bos_ragusa_via_war_tt:0 "Ragusa was a supporter of Hum during our civil war. §RStjepan I Kosaca's followers may be displeased, and may use what little local power they have left to contest your conquest.§!"
+ bos_found_srebcenica_tt:0 "Expand silver mining in Srebrenica. §GThis will be permanent.§!\n"
+ bos_exploit_serbia_silver_temp_tt:0 "\nExploit the silver veins of Raksa and Kolubara. §RThis will be temporary.§!\n"
+ bos_recently_setup_silver_mining:0 "Srebcenica Silver Mining Resumed"
+ bos_temp_silver_mining:0 "Exploiting Serbian Silver"
+ bos_srebrenica_devd:0 "Srebrenica Silver Deposits"
+ bos_italian_land_reclaimed:0 "Italian Land Reclaimed"
+ bos_gain_claims_on_italians_tt:0 "§Y[Root.GetName]§! gains a claim on all provinces in the §YBalkan§! region owned by a §YLatin§! culture nation."
+ bos_fleet_built:0 "New Bosnian Fleet"
+ bos_misc_fort_temp_modifier:0 "Fortify the Homeland"
+ bos_usora_fort_temp_modifier:0 "Fortify the Homeland"
+ bos_homeland_protected_temp_modifier:0 "Protected Homeland"
+ bos_krstjani_question_has_resolved_tt:0 "Has responded to the Papal legate on the Krstjani Question."
+ bos_kristjani_cement_mission_tt:0 "Cement the Krstjani faith in Bosnia. The more Kristjani development you have, the sooner this will happen."
+ bos_prepared_for_ottoman_invasion_tt:0 "The next time we are at war with the Ottomans, we will receieve powerful bonuses for the duration of the war.\n\nIf the Ottomans have already been pushed out of the Balkans, this bonus will trigger when fighting any nation which is more powerful than us.\n"
+ bos_krstjani_empire:0 "A Krstjani Empire"
+ bos_catholic_empire:0 "A Catholic Empire"
+ bos_secured_future:0 "A Secure Bosnia"
+ bos_krstjani_tolerance:0 "Krstjani Tolerance"
+ bos_tax_meta:0 "Religious Taxation"
+ bos_integrated_djed:0 "Integrated the Djed"
+ bos_djed_exiled:0 "Exiled the Djed"
+
+ bos_missions.1.title:0 "Serbian Mines Run Dry"
+ bos_missions.1.desc:0 "The silver mines of Raksa and Kolubara have run dry. Their workers have returned to the farms and fields."
+ bos_missions.1.a:0 "A pity."
+
+ bos_missions.2.title:0 "Papal Legate Arrives"
+ bos_missions.2.desc:0 "A Papal legate has arrived in Bosnia, seeking to convert the Krstjani to Catholicism."
+ bos_missions.2.a:0 "We refuse the Pope's demands - Krstjani are our people."
+ bos_missions.2.b:0 "We acquiesce to the Pope's demands - Catholicism is the true faith."
+ bos_missions_2_krstjani_tt:0 "We stay §YKrstjani§!, unlocking a new branch of missions. This choice is permanent."
+ bos_missions_2_catholic_tt:0 "We convert to §YCatholicism§!, unlocking a new branch of missions. This choice is permanent."
+ pope_rebuffed:0 "Pope Rebuffed"
+ pope_accepted:0 "Pope Accepted"
+
+ bos_missions.3.title:0 "Cost of Hungarian Support"
+ bos_missions.3.desc:0 "Hungary has agreed to support our claim to the throne at no cost. However, the Bosnian people are not happy with this decision. Anti-Hungarian sentiment has been high in Bosnia across the decades, and this decision has only worsened it."
+ bos_missions.3.a:0 "The people will come around."
+
+ bos_missions.4.title:0 "Cost of Austrian Support"
+ bos_missions.4.desc:0 "Austria has agreed to support our claim to the throne in exchange for claims over the Balkans. We can acquiesce to their demands, or refuse and anger them, giving them just cause to invade."
+ bos_missions.4.a:0 "We accept their demands."
+ bos_missions.4.b:0 "We refuse their demands!"
+
+ bos_missions.5.title:0 "Cost of Serbian Support"
+ bos_missions.5.desc:0 "Serbia has agreed to support our claim to the throne in exchange for a lengthy truce. We can acquiesce to their demands, or refuse and risk war."
+ bos_missions.5.a:0 "We accept their demands."
+ bos_missions.5.b:0 "We refuse their demands!"
+
+ bos_missions.6.title:0 "Cost of Aragonese Support"
+ bos_missions.6.desc:0 "Aragon has agreed to support our claim to the throne in exchange for vassalage. We can acquiesce to their demands, or refuse and risk war."
+ bos_missions.6.a:0 "We accept their demands."
+ bos_missions.6.b:0 "We refuse their demands!"
+
+ bos_missions.7.title:0 "Hum and Ragusa Revolt"
+ bos_missions.7.desc:0 "Long ago we resolved our civil war without blood, granting the Lord of Hum token autonomy in trade for unifying the realm once again. However, with our recent conquest of Ragusa, the people of Hum have been up in arms. The nobles of Ragusa had supported the Lord of Hum during the civil war, and our aggressive expansion has left them angered at our betrayal of their former allies. We must act to quell this revolt before it grows out of hand."
+ bos_missions.7.a:0 "We will crush them!"
+
+ bos_missions.8.title:0 "War for the Balkans"
+ bos_missions.8.desc:0 "The time has come. Our war against the invaders has begun. We must act quickly and decisively to ensure our victory."
+ bos_missions.8.a:0 "For [Root.GetName]!"
+ bos_offensive_ottoman_invasion_buff:0 "War for the Balkans"
+ bos_defensive_ottoman_invasion_buff:0 "War for the Balkans"
+
+ bos_missions.9.title:0 "The War is Over"
+ bos_missions.9.desc:0 "The war against the invaders is over. Our men have fought bravely and return home to their families."
+ bos_missions.9.a:0 "Peace at last."
+
+ bos_missions.10.title:0 "The Question of the Djed"
+ bos_missions.10.desc:0 "Now that we have converted to Catholicism, we must handle the Djed and his council. They were the head of the Bosnian Church, and may be a threat to our new faith, if we do not handle them properly."
+ bos_missions.10.a:0 "The Djed are integrated into the Catholic Church."
+ bos_missions.10.b:0 "The Djed are exiled from Bosnia."
