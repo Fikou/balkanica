@@ -129,6 +129,13 @@ monarchy = {
 				austrian_absolute_monarchy
 				merchant_aristocracy_reform
 				gothic_monarchy_reform
+    bosnian_elective_kingdom_reform
+    croatian_sabor_reform
+    cilli_principality_reform
+    herzegovina_reform
+    duchy_of_saint_sava_reform
+    kingdom_of_saint_sava_reform
+    empire_of_saint_sava_reform
 			}
 		}
 		hereditary_vs_nobility = {
@@ -223,6 +230,7 @@ monarchy = {
 		}
 		state_and_religion = {
 			reforms = {
+    maintain_the_free_church_reform
 				papal_embassy_reform
 				lands_for_the_monasteries_reform
 				focus_of_the_patriarchy_reform
@@ -261,7 +269,6 @@ monarchy = {
 				#1.36
 				legacy_of_the_safavid_reform
 				state_madrasas_reform
-    maintain_the_free_church_reform
 			}
 		}
 		military_doctrines = {
@@ -523,6 +530,8 @@ monarchy = {
 		polish_great_sejm
 		courts_of_navarra
 		livonian_diplomatic_monarchy
+  bosnian_elective_kingdom_reform
+  croatian_sabor_reform
 	}
 	
 	# Dictatorships etc
@@ -537,6 +546,7 @@ monarchy = {
 		lottery_reform
 		dutch_republic
 		force_reelection_reform
+  force_reelection_reform_r
 	}
 
 	#States General works with few others
@@ -665,6 +675,7 @@ republic = {
 				egyptian_government_reform
 				city_alliance_reform
 				turkoman_ottoman_institutions
+    dalmatian_merchants_reform
 			}
 		}
 		republican_virtues = {
@@ -709,10 +720,12 @@ republic = {
 		}
 		frequent_elections_vs_consolidation_of_power = {
 			reforms = {
+    frequent_elections_reform_r
 				frequent_elections_reform
 				consolidation_of_power_reform
 				consolidate_power_in_doge_reform
 				consolidate_power_in_cities_reform
+    force_reelection_reform_r
 				force_reelection_reform
 				devotee_to_the_people_reform
 				permanent_marathas_council_reform
@@ -727,6 +740,7 @@ republic = {
 		}
 		republic_and_religion = {
 			reforms = {
+    maintain_the_free_church_reform
 				papal_embassy_reform
 				lands_for_the_monasteries_reform
 				focus_of_the_patriarchy_reform
@@ -767,7 +781,6 @@ republic = {
 				#1.36
 				legacy_of_the_safavid_reform
 				state_madrasas_reform
-    maintain_the_free_church_reform
 			}
 		}
 		military_doctrines = {
@@ -985,6 +998,7 @@ republic = {
 		pirate_republic_reform
 		protectorate_parliament_reform
 		prussian_republic_reform
+  dalmatian_merchants_reform
 	}
 	exclusive_reforms = {
 		lottery_reform
@@ -995,6 +1009,7 @@ republic = {
 		military_rulership_reform
 		prussian_republic_reform
 		military_dictatorship_reform
+  dalmatian_merchants_reform
 	}
 	exclusive_reforms = {
 		free_city
@@ -1021,6 +1036,7 @@ republic = {
 	exclusive_reforms = { 
 		dutch_republic
 		force_reelection_reform
+  force_reelection_reform_r
 	}
 }
 
@@ -1068,6 +1084,9 @@ theocracy = {
 				egyptian_government_reform
 				blood_theocracy_reform
 				turkoman_ottoman_institutions
+    duchy_of_saint_sava_reform
+    kingdom_of_saint_sava_reform
+    empire_of_saint_sava_reform
 			}
 		}
 		internal_vs_external_mission = {
@@ -1111,6 +1130,7 @@ theocracy = {
 		religoius_doctrine = {
 			reforms = {
 				i_am_the_church_reform
+    maintain_the_free_church_reform
 				papal_embassy_reform
 				lands_for_the_monasteries_reform
 				focus_of_the_patriarchy_reform
@@ -1141,7 +1161,6 @@ theocracy = {
 				anglican_state_church_reform
 				#1.36
 				legacy_of_the_safavid_reform
-    maintain_the_free_church_reform
 			}
 		}
 		military_doctrines = {
@@ -1292,6 +1311,7 @@ theocracy = {
 				monastic_elections_reform
 				commander_king_reform
 				admiral_king_reform
+    hereditary_theocracy_reform
 			}
 		}
 		nature_of_faith = {

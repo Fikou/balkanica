@@ -55,8 +55,8 @@
  DJED_ESTATE_MODIFIER:0 "Djed's Guidance"
  djed_cooperation:0 "Cooperation with the Djed"
 
- blk_krstjani_hizas:0 "§YEstablish Hiže§!"
- desc_blk_krstjani_hizas:0 "The hiže, or houses, are small local monasteries that serve as the center of religious life in the church. We must establish them in every province to strengthen our faith."
+ blk_krstjani_hizas:0 "§YEstablish Hižas§!"
+ desc_blk_krstjani_hizas:0 "The hižas, or houses, are small local monasteries that serve as the center of religious life in the church. We must establish them in every province to strengthen our faith."
  blk_krstjani_hizas_tt:0 "Gain a tax modifier in every owned Krstjani province. Stronger in less developed provinces."
  blk_krstjani_hizas_temple:0 "Integrated Local Hiža"
  blk_krstjani_hizas_no_uni_no_temple:0 "Strong Local Hiža"
@@ -79,11 +79,12 @@
  vranduk_desc:0 "Built in the latter part of the 14th century by the ruler of Bosnia, Stjepan II Kotromanic. It was originally made to protect the road between the Bosnian capital of Visoki and the town of Zenica. In its later years, after conquest by the Ottoman Empire, the castle was modified with Turkish architectural elements and expanded with a mosque. It found new life as an Ottoman military base and regional administrative center, securing their pressence in Bosnia."
 
  ljubljana_castle:0 "Ljubljana Castle"
- ljubljana_castle_desc:0 "A medieval fortress located on Castle Hill in the center of Ljubljana. While the site has been used for fortifications for thousands of years - dating back to the Romans - The modern castle was built in the early 11th century, then later rebuilt in the 12th century and overhauled in the 15th century. The structure served as the seat of the Duke of Carniolia and later as a bulkwark against Ottoman incursions into central Europe."
+ ljubljana_castle_desc:0 "A medieval fortress located on Castle Hill in the center of Ljubljana. While the site has been used for fortifications for thousands of years - dating back to the Romans - The modern castle was built in the early 11th century, then later rebuilt in the 12th century and overhauled in the 15th century. The structure served as the seat of the Duke of Carniolia and later as a bulwark against Ottoman incursions into central Europe."
 
  durres_amphitheatre:0 "Durres Amphitheatre"
  durres_amphitheatre_desc:0 "An ancient Roman amphitheatre that dates back to the 2nd century AD - The Durres Amphitheatre is one of the largest in the Balkans, being able to fit upwards of 20,000 spectators. Unfortuantely, multiple earthquakes have caused repeated damage to the structure, though it has periodically been repaired and populated with new buildings over the centuries."
- DURRES_AMPHITHEATRE_TOOLTIP:0 "One of the following must be true:\n    Province Owner is §YAlbanian§!\n    Province Owner is §YGreek§!\n    Province Owner is §YRoman§!"
+
+ province_is_or_accepts_krstjani_tt:0 "The Religion of §Y[Root.GetName]§! is §YKrstjani§! and is either the State or the Syncretic Religion of the owner."
 
  albania_flavor.1.title:0 "Great Durres Earthquake of [GetYear]"
  albania_flavor.1.desc:0 "A powerful earthquake has struck our coastline, causing significant damage to the city of Durres and its surroundings. Worst of all, the Durres Amphitheatre has been heavily damaged once again, now marking the third time in its history that a major earthquake has devastated the structure. This has set back our efforts to restore the amphitheatre."
@@ -104,8 +105,46 @@
  krstjani_flavor.5.a:0 "The faith endures!"
  krstjani_resurgence:0 "Resurgent Krstjani Power"
 
+ montenegro_flavor.1.title:0 "Crown or Cross?"
+ montenegro_flavor.1.desc:0 "In a vision, $MONARCH$ saw $COUNTRY$ as the last bastion of Orthodoxy, leading the faithful with divine guidance and striking down the infidels in its path. Should we embrace this destiny and elevate the power of the Metropolitanate?"
+ montenegro_flavor.1.a:0 "A bishop's life for me!"
+ montenegro_flavor.1.b:0 "A dream cannot be a basis for a state."
+
  maintain_the_free_church_reform:0 "Maintain the Free Church"
  maintain_the_free_church_reform_desc:0 "The Bosnian Church has been attacked by many foreign powers for giving refuge to other faiths. By preserving its independence, we resist their influence and keep our identity."
+ bosnian_elective_kingdom_reform:0 "Bosnian Elective Monarchy"
+ bosnian_elective_kingdom_reform_desc:0 "The rulers of Bosnia are elected during an assembly of nobility called the Stanak. These councils decide on foreign policy, cession of territory, signing treaties, and military issues, making Bosnia a quite decentralized state."
+ croatian_sabor_reform:0 "Kingdom of Croatia, Slavonia and Dalmatia"
+ croatian_sabor_reform_desc:0 "We have unified the two regional councils across Croatia, making the Sabor (parliament) able to vote to address all pressing issues of our kingdom. This gives us much better responses to outside threats to our realm."
+ cilli_principality_reform:0 "Imperial Principality of Celje"
+ cilli_principality_reform_desc:0 "Our noble house has proven itself to be some of the most capable rulers in the Empire. As such, nations are willing to accept our lead and guidance while we prepare their heirs for governance."
+ dalmatian_merchants_reform:0 "Patrician Republic"
+ dalmatian_merchants_reform_desc:0 "The realm is strictly aristocratic. All the power is in the hands of the Senate and the Major and Minor councils, composed of a few patrician families. Elections are very frequent in order to reduce possibility of corruption and accumulation of too much personal power."
+ hereditary_theocracy_reform:0 "Hereditary Theocracy"
+ hereditary_theocracy_reform_desc:0 "It's clear, only our dynasty is divinely ordained. As such we should not hold votes on who should take the place of the bishop, but leave power in the hands of our kin."
+ frequent_elections_reform_r:0 "Frequent Elections"
+ frequent_elections_reform_r_desc:0 "Long terms make rulers reckless and the very idea that someone would rule for a long time is contrary to the very idea of a republic. Let us reform our election system to ensure better accountability from our elected officials."
+ force_reelection_reform_r:0 "Formalize the Right of Re-election"
+ force_reelection_reform_r_desc:0 "Even in a glorious republic such as ours the ruler of the state is an individual, and individuals tend to exploit their power for personal gains. Let us introduce the right of the ruling class to enforce a re-election in times of doubt."
+ herzegovina_reform:0 "Herceg's Land"
+ herzegovina_reform_desc:0 "Aligning closer to the Ottomans we can see what makes their government as effective as it is. Let us borrow these improvements and create a better realm for all people."
+ duchy_of_saint_sava_reform:0 "Duchy of Saint Sava"
+ duchy_of_saint_sava_reform_desc:0 "Rooted in the legacy of Saint Sava, whose relics we hold, our duchy is a stronghold of Christianity, and we are held in a higher regard by others of Christendom."
+ kingdom_of_saint_sava_reform:0 "Kingdom of Saint Sava"
+ kingdom_of_saint_sava_reform_desc:0 "Rooted in the legacy of Saint Sava, whose relics we hold, our kingdom is a stronghold of Christianity, and we are held in a higher regard by others of Christendom."
+ empire_of_saint_sava_reform:0 "Empire of Saint Sava"
+ empire_of_saint_sava_reform_desc:0 "Rooted in the legacy of Saint Sava, whose relics we hold, our empire is a stronghold of Christianity, and we are held in a higher regard by others of Christendom."
+
+ mechanic_random_kinsman_becomes_heir_yes:0 "A §YDynasty member§! becomes heir."
+ mechanic_can_request_regency_yes:0 "Can request to be a §YRegent§! of other countries."
+
+ estate_patricians:0 "Patricians"
+ estate_vlastela:0 "Vlastela"
+
+ BOS_parliament_name:0 "Stanak"
+ RAG_parliament_name:0 "Senate"
+ DAL_parliament_name:0 "Senate"
+ ILY_parliament_name:0 "Senate"
 
  dalmatian_new:0 "Dalmatian"
  albanian_new:0 "Albanian"
@@ -113,6 +152,8 @@
 
  EMPEROR_HERCEG:0 "Supreme Herceg"
  EMPRESS_HERCEGI:0 "Supreme Hercegi"
+ GOSPODAR:0 "Gospodar"
+ GOSPODA:0 "Gospoda"
 
  ILY:0 "Illyria"
  ILY_ADJ:0 "Illyrian"
@@ -155,14 +196,18 @@
  ILY_i7_desc:0 "The mountainous south of our nation contains many rich deposits of minerals, we should fund more mining operations to extract great profits from them."
 
  in_regency:0 "Regency"
- broke_regency:0 "Broke Regency"
+ lost_regency:0 "Broke Regency"
  force_extended_regency:0 "Forcefully Extended Regency"
  peace_extended_regency:0 "Extended our Regency"
+ requested_regency:0 "Granted Regency Rights"
 
  regency_title:0 "Regency"
  regency_title_plural:0 "Regencies"
  regency_long_desc:0 "In a regency a country is temporarily ruled by another's monarch. The country must follow its regent to war and cannot make certain diplomatic actions. When the regent dies or the country gets a capable heir the union will break."
+ regency_overlord:0 "Regent"
+ regency_subject:0 "Regency Subject"
  regency_is_our:0 "$NAME|Y$ is ruled by us in a Regency."
+ regency_no_overlord_dow:0 "You can't declare war on a country you're a Regent of."
  reg.1.t:0 "Regency Extended"
  reg.1.d:0 "The nobility has spoken- our regency over [From.From.GetName] must continue. Whether out of loyalty, self-interest, or fear of instability, they have chosen to extend our rule. We shall continue to guide their realm's fate and use it to our own benefit."
  reg.1.a:0 "Great!"
@@ -178,6 +223,14 @@
  extend_regency_action_tooltip:0 "Extend the regency for §Y5§! more years, enraging the country's nobles."
  extend_regency_allowtip:0 "The regency must be ending in less than a year."
  recently_extended_regency:0 "Recently Extended Regency"
+ request_regency_action_title:0 "Request Regency"
+ request_regency_action_desc:0 "While they don't have a capable ruler, we will be the overlord of §Y[From.GetName]§! until their heir grows to §Y15§! years old, or until our ruler dies."
+ request_regency_action_tooltip:0 "Ask that §Y[From.GetName]§! hand their heir over to us, making us the country's §YRegent§!."
+ request_regency_allowtip:0 "They must have a young heir."
+ request_regency_action_dialog:0 "[This.GetName] requests custody of our heir, making them the Regent of our nation until they grow up."
+ cancel_request_regency_action_title:0 "Cancel Regency Request"
+ cancel_request_regency_action_desc:0 "We will no longer become the temporary overlord of §Y[From.GetName]§! if their ruler dies without a capable heir."
+ cancel_request_regency_action_tooltip:0 "Cancel our request to be the §YRegent§! of §Y[From.GetName]§!."
 
  legitimist_rebels_demands:0 "Return of the Rightful Heir"
  legitimist_rebels_demands_desc:0 "The nobles demand we immediately leave as Regent and let the heir take the throne."
@@ -187,3 +240,6 @@
  legitimist_rebels_army:0 "Legitimist Army"
 
  100_improved_relation_trigger_tt:0 "Has opinion modifier §YImproved Relations§! of at least §Y100§!"
+
+ adriatic_fleet_naval_doctrine:0 "Adriatic Fleet"
+ adriatic_fleet_naval_doctrine_desc:0 "To maintain any power in the Mediterranean we need to punch above our weight, constructing a greater amount of ships and packing them with more cannons and cargo."

@@ -1,0 +1,42 @@
+hereditary_theocracy_reform = {
+ icon = "patriarch"
+ allow_normal_conversion = yes
+ fixed_rank = 0
+
+ potential = {
+  NOT = { has_reform = papacy_reform }
+  OR = { 
+   tag = MON
+   has_reform = hereditary_theocracy_reform
+   have_had_reform = hereditary_theocracy_reform
+  }
+ }
+ trigger = {
+  religion = orthodox
+ }
+ modifiers = {
+  prestige = 1
+  monarch_admin_power = 1
+  monarch_diplomatic_power = 1
+  monarch_military_power = 1
+  monarch_lifespan = 0.2
+ }
+ effect = {
+  hidden_effect = {
+   if = {
+    limit = { heir_has_ruler_dynasty = no }
+    remove_heir = { allow_new_heir = no }
+    define_heir = {
+     dynasty = ROOT
+     age = 15
+    }
+   }
+  }
+ }
+ custom_attributes = {
+  random_kinsman_becomes_heir = yes
+ }
+ ai = {
+  factor = 100
+ }
+}

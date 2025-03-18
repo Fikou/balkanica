@@ -24,6 +24,10 @@ peace_extended_regency = {
  opinion = 30
 }
 
+requested_regency = {
+ opinion = 15
+}
+
 pope_rebuffed = {
  opinion = -100
  yearly_decay = 1

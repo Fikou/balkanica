@@ -1,18 +1,18 @@
 leave_regency = {
-	category = influence
-	require_acceptance = no
-	is_visible = {
-		FROM = {
-			is_subject_of = ROOT
-			is_subject_of_type = regency
-		}
-	}
-	is_allowed = {
-		always = yes
-	}
-	on_accept = {
-		FROM = {
-			grant_independence = yes
+ category = influence
+ require_acceptance = no
+ is_visible = {
+  FROM = {
+   is_subject_of = ROOT
+   is_subject_of_type = regency
+  }
+ }
+ is_allowed = {
+  always = yes
+ }
+ on_accept = {
+  FROM = {
+   grant_independence = yes
    clr_country_flag = regency_subject
    define_ruler = {
     regency = yes
@@ -20,26 +20,26 @@ leave_regency = {
    }
    add_truce_with = ROOT
    disband_rebels = legitimist_rebels
-		}
+  }
   ROOT = {
    add_truce_with = FROM
   }
-		add_prestige = -25
-	}
-	ai_will_do = {
-		always = no
-	}
+  add_prestige = -25
+ }
+ ai_will_do = {
+  always = no
+ }
 }
 
 extend_regency_action = {
  category = influence
-	require_acceptance = no
-	is_visible = {
-		FROM = {
-			is_subject_of = ROOT
-			is_subject_of_type = regency
-		}
-	}
+ require_acceptance = no
+ is_visible = {
+  FROM = {
+   is_subject_of = ROOT
+   is_subject_of_type = regency
+  }
+ }
  is_allowed = {
   variable_arithmetic_trigger = {
    custom_tooltip = extend_regency_allowtip
@@ -132,5 +132,252 @@ extend_regency_action = {
  }
  ai_will_do = {
   always = no
+ }
+}
+
+request_regency_action = {
+ category = influence
+ require_acceptance = yes
+ is_visible = {
+  FROM = {
+   NOT = { is_subject = yes }
+   has_government_attribute = heir
+  }
+  NOT = {
+   has_opinion_modifier = {
+    who = FROM
+    modifier = requested_regency
+   }
+  }
+  has_government_attribute = can_request_regency
+ }
+ is_allowed = {
+  custom_tooltip = request_regency_allowtip
+  FROM = {
+   has_heir = yes
+   NOT = { heir_age = 15 }
+  }
+ }
+ ai_acceptance = {
+  add_entry = {
+   name = BASE_REJECTION
+   limit = {
+    always = yes
+   }
+   export_to_variable = {
+    variable_name = ai_value
+    value = 1
+   }
+   
+   multiply_variable = {
+    which = ai_value
+    value = -75
+   }
+  }
+  add_entry = {
+   name = attitude_allied_DIPLO_ATTITUDE_TT
+   limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_allied } } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = 20 }
+  }
+  add_entry = {
+   name = attitude_friendly_DIPLO_ATTITUDE_TT
+   limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = 20 }
+  }
+  add_entry = {
+   name = attitude_protective_DIPLO_ATTITUDE_TT
+   limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_protective } } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = 20 }
+  }
+  add_entry = {
+   name = attitude_threatened_DIPLO_ATTITUDE_TT
+   limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = 10 }
+  }
+  add_entry = {
+   name = attitude_neutral_DIPLO_ATTITUDE_TT
+   limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = -20 }
+  }
+  add_entry = {
+   name = attitude_domineering_DIPLO_ATTITUDE_TT
+   limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_domineering } } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = -1000 }
+  }
+  add_entry = {
+   name = attitude_hostile_DIPLO_ATTITUDE_TT
+   limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = -1000 }
+  }
+  add_entry = {
+   name = attitude_outraged_DIPLO_ATTITUDE_TT
+   limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_outraged } } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = -1000 }
+  }
+  add_entry = {
+   name = attitude_rivalry_DIPLO_ATTITUDE_TT
+   limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_rivalry } } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = -1000 }
+  }
+  add_entry = {
+   name = AI_DIPLOMATIC_REPUTATION
+   export_to_variable = {
+    variable_name = ai_value
+    value = trigger_value:diplomatic_reputation
+   }
+   #1 rep = 3
+   multiply_variable = {
+    which = ai_value
+    value = 5
+   }
+  }
+  add_entry = {
+   name = DIPLO_OPPINION
+    export_to_variable = {
+    variable_name = ai_value
+    value = opinion
+    who = FROM
+    with = ROOT
+   }
+   multiply_variable = {
+    which = ai_value 
+    value = 0.25
+   }
+  }
+  add_entry = {
+   name = ANNEX_SAME_CULTURE
+   limit = { FROM = { culture_group = ROOT } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = 10 }
+  }
+  add_entry = {
+   name = ANNEX_SAME_RELIGION
+   limit = { FROM = { religion = ROOT } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = 20 }
+  }
+  add_entry = {
+   name = DIPLO_ROYAL_MARRIAGE_BETWEEN
+   limit = { FROM = { marriage_with = ROOT } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = 10 }
+  }
+  add_entry = {
+   name = MSG_FILTER_NEIGHBOURS
+   limit = { FROM = { is_neighbor_of = ROOT } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = 10 }
+  }
+  add_entry = {
+   name = DIPLO_BORDER_DISTANCE_TT
+   export_to_variable = {
+    variable_name = ai_value
+    value = border_distance
+    who = FROM
+    with = ROOT
+   }
+   #2 units = -1
+   multiply_variable = {
+    which = ai_value
+    value = -0.5
+   }
+  }
+ }
+ on_accept = {
+  if = {
+   limit = {
+    FROM = {
+     has_regency = yes
+    }
+   }
+   create_subject = {
+    subject_type = regency
+    who = FROM
+   }
+  }
+  else = {
+   add_opinion = {
+    who = FROM
+    modifier = requested_regency
+   }
+  }
+ }
+ ai_will_do = {
+  OR = {
+   ai_attitude = {
+    who = FROM
+    attitude = attitude_allied
+   }
+   ai_attitude = {
+    who = FROM
+    attitude = attitude_friendly
+   }
+   ai_attitude = {
+    who = FROM
+    attitude = attitude_protective
+   }
+   ai_attitude = {
+    who = FROM
+    attitude = attitude_domineering
+   }
+  }
+  NOT = {
+   ai_attitude = {
+    who = FROM
+    attitude = attitude_hostile
+   }
+  }
+  NOT = {
+   ai_attitude = {
+    who = FROM
+    attitude = attitude_outraged
+   }
+  }
+  OR = {
+   num_of_free_diplomatic_relations = 1
+   alliance_with = FROM
+   marriage_with = FROM
+   has_guaranteed = FROM
+  }
+ }
+}
+
+cancel_request_regency_action = {
+ category = influence
+ require_acceptance = no
+ is_visible = {
+   has_opinion_modifier = {
+    who = FROM
+    modifier = requested_regency
+   }
+  }
+ is_allowed = {
+  always = yes
+ }
+ on_accept = {
+  remove_opinion = {
+   who = FROM
+   modifier = requested_regency
+  }
+ }
+ ai_will_do = {
+  OR = {
+   NOT = { num_of_free_diplomatic_relations = 1 }
+   NOT = { alliance_with = FROM }
+   NOT = { marriage_with = FROM }
+   NOT = { has_guaranteed = FROM }
+  }
+  FROM = {
+   heir_age = 15
+  }
  }
 }

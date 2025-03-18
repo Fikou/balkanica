@@ -512,6 +512,7 @@ country_event = {
    tag = ROM
    tag = RUS
    tag = TUR
+   tag = HUN
    is_emperor = yes
    # in case one triggers it while the other still exists
    # (they will definitely fulfill the generic conditions but this is for being thorough)

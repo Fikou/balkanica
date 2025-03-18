@@ -7,10 +7,14 @@ necropolis_radimlja = {
  starting_tier = 1
  type = monument
  can_use_modifiers_trigger = {
-  religion = krstjani
+		province_is_or_accepts_religion = {
+			religion = krstjani
+		}
  }
  can_upgrade_trigger = {
-  religion = krstjani
+		province_is_or_accepts_religion = {
+			religion = krstjani
+		}
  }
  build_trigger = {}
  keep_trigger = {}
@@ -109,7 +113,9 @@ vranduk = {
   # so i'm giving muslims a bonus to conversion to represent that
   conditional_modifier = {
    trigger = {
-    owner = { religion_group = muslim }
+    province_is_or_accepts_religion_group = {
+     religion_group = muslim
+    }
    }
    modifier = {
     global_heathen_missionary_strength = 0.002
@@ -119,7 +125,9 @@ vranduk = {
   # (army tradition from "maintaining forts" and prestige because "big fort cool")
   conditional_modifier = {
    trigger = {
-    owner = { religion_group = christian }
+    province_is_or_accepts_religion_group = {
+     religion_group = christian
+    }
    }
    modifier = {
     army_tradition = 0.1
@@ -149,10 +157,10 @@ vranduk = {
   cost_to_upgrade = { factor = 1000 }
   province_modifiers = {
    local_defensiveness = 0.2
+   local_defender_dice_roll_bonus = 1
   }
   area_modifier = {
    local_defensiveness = 0.2
-   local_defender_dice_roll_bonus = 1
    local_autonomy = -0.05
   }
   country_modifiers = {
@@ -160,7 +168,9 @@ vranduk = {
   }
   conditional_modifier = {
    trigger = {
-    owner = { religion_group = muslim }
+    province_is_or_accepts_religion_group = {
+     religion_group = muslim
+    }
    }
    modifier = {
     global_heathen_missionary_strength = 0.005
@@ -168,7 +178,9 @@ vranduk = {
   }
   conditional_modifier = {
    trigger = {
-    owner = { religion_group = christian }
+    province_is_or_accepts_religion_group = {
+     religion_group = christian
+    }
    }
    modifier = {
     army_tradition = 0.25
@@ -227,14 +239,12 @@ ljubljana_castle = {
   province_modifiers = {
    local_defensiveness = 0.1
    local_tax_modifier = 0.1
+   local_defender_dice_roll_bonus = 1
   }
   area_modifier = {
-   local_defensiveness = 0.1
-   local_tax_modifier = 0.1
    local_autonomy = -0.025
   }
   country_modifiers = {
-   rival_border_fort_maintenance = -0.1
    prestige = 0.25
   }
   conditional_modifier = {
@@ -263,15 +273,12 @@ ljubljana_castle = {
   province_modifiers = {
    local_defensiveness = 0.2
    local_tax_modifier = 0.2
-  }
-  area_modifier = {
-   local_defensiveness = 0.2
-   local_tax_modifier = 0.2
-   local_autonomy = -0.05
    local_defender_dice_roll_bonus = 1
   }
+  area_modifier = {
+   local_autonomy = -0.05
+  }
   country_modifiers = {
-   rival_border_fort_maintenance = -0.2
    prestige = 0.5
   }
   conditional_modifier = {
@@ -307,26 +314,26 @@ durres_amphitheatre = {
  keep_trigger = {}
  build_trigger = {}
  can_use_modifiers_trigger = {
-  custom_trigger_tooltip = {
-   tooltip = DURRES_AMPHITHEATRE_TOOLTIP
-   OR = {
-    owner = { culture = albanian }
-    owner = { culture = albanian_new }
-    owner = { culture = greek }
-    owner = { culture = roman }
+		OR = {
+   culture = albanian
+   hidden_trigger = {
+    culture = albanian_new
    }
+   culture = greek
+   culture = roman
   }
+		province_is_or_accepts_culture = yes
  }
  can_upgrade_trigger = {
-  custom_trigger_tooltip = {
-   tooltip = DURRES_AMPHITHEATRE_TOOLTIP
-   OR = {
-    owner = { culture = albanian }
-    owner = { culture = albanian_new }
-    owner = { culture = greek }
-    owner = { culture = roman }
+		OR = {
+   culture = albanian
+   hidden_trigger = {
+    culture = albanian_new
    }
+   culture = greek
+   culture = roman
   }
+		province_is_or_accepts_culture = yes
  }
  tier_0 = {
   upgrade_time = { months = 0 }
@@ -362,7 +369,7 @@ durres_amphitheatre = {
    monthly_prussian_militarized_society_3 = 0.02
   }
   region_modifier = {
-   local_unrest = -1
+   local_unrest = -1.5
   }
   on_upgraded = {
    add_army_tradition_or_mil_power = { amount = 20 }
@@ -382,7 +389,7 @@ durres_amphitheatre = {
    monthly_prussian_militarized_society_3 = 0.05
   }
   region_modifier = {
-   local_unrest = -1
+   local_unrest = -2
   }
   on_upgraded = {
    add_army_tradition_or_mil_power = { amount = 30 }

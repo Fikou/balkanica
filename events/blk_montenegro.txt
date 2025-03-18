@@ -1,0 +1,46 @@
+namespace = montenegro_flavor
+
+country_event = {
+ id = montenegro_flavor.1
+ title = montenegro_flavor.1.title
+ desc = montenegro_flavor.1.desc
+ picture = ORTHODOX_eventPicture
+
+ fire_only_once = yes
+
+ trigger = {
+  tag = MON
+  religion = orthodox
+  owns_core_province = 138
+  NOT = { num_of_cities = 3 }
+  OR = {
+   ai = no
+   is_subject = no
+  }
+  NOT = { government = theocracy }
+ }
+
+ mean_time_to_happen = {
+  months = 6
+ }
+
+ option = {
+  name = "montenegro_flavor.1.a"
+  change_government = theocracy
+  add_government_reform = orthodox_patriarchate_reform
+  add_devotion = 50
+
+  ai_chance = {
+   factor = 50
+  }
+ }
+
+ option = {
+  name = "montenegro_flavor.1.b"
+  add_stability = 1
+
+  ai_chance = {
+   factor = 50
+  }
+ }
+}
