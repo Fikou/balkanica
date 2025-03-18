@@ -5,7 +5,7 @@
  bos_serbia_time_title:0 "Conquer Serbian Silver"
  bos_serbia_time_desc:0 "We have long quarrelled with the despot of Serbia. Decades ago we took large swathes of their territory, using their silver and gold mines to develop our fledging nation. Now our [Root.Monarch.GetTitle] desires the riches of their mines once again to fund our nation's continued growth."
 
- bos_dev_gold_title:0 "Develop Srebcenica"
+ bos_dev_gold_title:0 "Develop Srebrenica"
  bos_dev_gold_desc:0 "The silver mines of Srebcenica are a critical part of our economy. We must develop them if we are to continue to grow."
 
  bos_buildup_forts_title:0 "Fortify the Homeland"
@@ -48,7 +48,7 @@
  bos_rebuild_bosnia_desc:0 "With Bosnia rebuilt and whole again, we are ready to look outwards. Our kingdom has shrunk since its height - decade ago we lost land to Croatia, Hungary, Serbia, and the perfidious Venetians. We must strengthen our people and return these lands to our fold."
 
  bos_ragusa_title:0 "Annex Ragusa"
- bos_ragusa_desc:0 "Our nation has had long ties to the Republic of Ragusa, through trade and history. In fact, our[Root.Monarch.GetTitle] has noble ties to the republic nominally, being named a "nobleman".\n\nHowever, it is undeniable that the port of Dubrovnik will be critical for the future of our nation. We should seek to strike a deal with their Rector - offer then something they can't refuse. And if they do refuse, we must act."
+ bos_ragusa_desc:0 "Our nation has had long ties to the Republic of Ragusa, through trade and history. In fact, our [Root.Monarch.GetTitle] has noble ties to the republic nominally, being named a "nobleman".\n\nHowever, it is undeniable that the port of Dubrovnik will be critical for the future of our nation. We should seek to strike a deal with their Rector - offer then something they can't refuse. And if they do refuse, we must act."
 
  bos_hum_revolt_title:0 "Integrate Hum"
  bos_hum_revolt_desc:0 "The civil war is still in recent memory, and the people of Hum are still sore. We must act to integrate them into our nation, and to ensure that they are loyal to the throne."
@@ -84,19 +84,19 @@
  bos_catholic_2_desc:0 "With the Djed handled, we can now focus on converting the people of Bosnia to Catholicism."
 
  bos_catholic_3_title:0 "Build Temples"
- bos_catholic_3_desc:0 "Bosnia is not home to many monastaeries or churches. Krstjani temples are simple, and few in number. To solidify Catholicism in Bosnia, we must build temples and churches across the land to foster the faith."
+ bos_catholic_3_desc:0 "Bosnia is not home to many monasteries or churches. Krstjani temples are simple, and few in number. To solidify Catholicism in Bosnia, we must build temples and churches across the land to foster the faith."
 
  bos_catholic_4_title:0 "Continue the Crusades"
  bos_catholic_4_desc:0 "Bosnia is now firmly Catholic. We must do what we can to spread the faith across the Balkans."
 
  bos_krstjani_1_title:0 "Build New Hiže"
- bos_krstjani_1_desc:0 "Hiže are small, local monastaries where the Krstjani gather to worship. They are simple, and few in number. To solidify the Krstjani faith in Bosnia, we must encourage the founding of new Hiže across the land."
+ bos_krstjani_1_desc:0 "Hiže are small, local monastaries where the Krstjani gather to worship. They are simple, and few in number. To solidify the Church in Bosnia, we must encourage the founding of new Hiže across the land."
 
  bos_krstjani_2_title:0 "Convert Bosnia"
- bos_krstjani_2_desc:0 "With new Hiža founded across the land, we can now focus on converting the people of Bosnia to the Krstjani faith."
+ bos_krstjani_2_desc:0 "With new hiže founded across the land, we can now focus on cementing our Church in Bosnia."
 
  bos_krstjani_3_title:0 "Cement the Faith"
- bos_krstjani_3_desc:0 "Now that Bosnia is firmly Krstjani, we must cement it as an official branch of Christianity, earning the respect of the other Christian nations."
+ bos_krstjani_3_desc:0 "Now that Bosnians firmly follow our church, we must cement it as an official branch of Christianity, earning the respect of the other Christian nations."
 
  bos_krstjani_4_title:0 "Spread Across the Balkans"
  bos_krstjani_4_desc:0 "Bosnia is now firmly Krstjani. To ensure the faith does not die in the face of Catholicism or Sunni Islam, we must spread the faith across the Balkans."
@@ -141,9 +141,9 @@
  desc_bos_civil_war_provice_mod:0 "Resolving the civil war diplomatically has left the rival faction with some local power."
  bos_civil_war_diplomacy_warning_tt:0 "§RSolving the civil war through diplomacy will leave the rival faction with some local power.§!"
  bos_ragusa_via_war_tt:0 "§RStjepan I Kosaca's followers may be displeased, and may use what little local power they have left to contest your conquest.§!"
- bos_found_srebcenica_tt:0 "Expand silver mining in Srebrenica. §GThis will be permanent.§!\n"
+ bos_found_srebrenica_tt:0 "Expand silver mining in Srebrenica. §GThis will be permanent.§!\n"
  bos_exploit_serbia_silver_temp_tt:0 "\nExploit the silver veins of Raksa and Kolubara. §RThis will be temporary.§!\n"
- bos_recently_setup_silver_mining:0 "Srebcenica Silver Mining Resumed"
+ bos_recently_setup_silver_mining:0 "Srebrenica Silver Mining Resumed"
  desc_bos_recently_setup_silver_mining:0 "Srebcenica Silver Mining Resumed"
  bos_temp_silver_mining:0 "Exploiting Serbian Silver"
  desc_bos_temp_silver_mining:0 "Exploiting Serbian Silver"
@@ -167,8 +167,8 @@
  bos_krstjani_question_has_resolved_tt:0 "Has responded to the Papal legate on the Krstjani Question."
  bos_kristjani_cement_mission_tt:0 "Cement the §YKrstjani§! faith in Bosnia. §GThe more Kristjani development you have, the sooner this will happen.§!"
  bos_prepared_for_ottoman_invasion_tt:0 "The next time we are at war with the §YOttomans§!, we will receieve §Gpowerful bonuses§! for the duration of the war.\n\nIf the §YOttomans§! have already been pushed out of the §YBalkans§!, this bonus will trigger when fighting §Yany nation which is more powerful§! than us.\n"
- bos_krstjani_empire:0 "A Krstjani Empire"
- desc_bos_krstjani_empire:0 "A Krstjani Empire"
+ bos_krstjani_empire:0 "A Krstjan Empire"
+ desc_bos_krstjani_empire:0 "A Krstjan Empire"
  bos_catholic_empire:0 "A Catholic Empire"
  desc_bos_catholic_empire:0 "A Catholic Empire"
  bos_secured_future:0 "A Secure Bosnia"
@@ -253,8 +253,8 @@
 
  bos_missions.10.title:0 "The Question of the Djed"
  bos_missions.10.desc:0 "Now that we have converted to Catholicism, we must handle the Djed and his council. They were the head of the Bosnian Church, and may be a threat to our new faith, if we do not handle them properly."
- bos_missions.10.a:0 "The Djed are integrated into the Catholic Church."
- bos_missions.10.b:0 "The Djed are exiled from Bosnia."
+ bos_missions.10.a:0 "The Djed is integrated into the Catholic Church."
+ bos_missions.10.b:0 "The Djed is exiled from Bosnia."
 
  bos_missions.11.title:0 "End of the Bosnian Civil War"
  bos_missions.11.desc:0 "The Bosnian Civil War has ended, and we have emerged victorious. The people of Bosnia are now united under our rule."

@@ -63,7 +63,7 @@ bos_1 = {
 		}
 
 		effect = {
-			custom_tooltip = bos_found_srebcenica_tt
+			custom_tooltip = bos_found_srebrenica_tt
 			4755 = {
 				change_trade_goods = gold
 				add_province_modifier = {
