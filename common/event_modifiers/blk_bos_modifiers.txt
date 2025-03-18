@@ -17,6 +17,18 @@ bos_srebrenica_devd = {
  local_gold_depletion_chance_modifier = -0.5
 }
 
+bos_token_trade_buffs = {
+ trade_efficiency = 0.1
+ global_own_trade_power = 0.2
+}
+
+bos_pre_fleet_built = {
+ global_ship_cost = -0.2
+ global_ship_recruit_speed = -0.25
+ global_sailors_modifier = 0.25
+ sailors_recovery_speed = 1
+}
+
 bos_fleet_built = {
  naval_maintenance_modifier = -0.1
  naval_morale = 0.1
@@ -40,9 +52,9 @@ bos_misc_fort_temp_modifier = {
 }
 
 bos_homeland_protected_temp_modifier = {
- local_defensiveness = 0.1
  local_development_cost = -0.1
- picture = "local_development_cost"
+ local_prosperity_growth = 0.25
+ picture = "local_prosperity_growth"
 }
 
 bos_offensive_ottoman_invasion_buff = {
@@ -91,7 +103,6 @@ bos_krstjani_empire = {
  republican_tradition = 0.25
  # religion bonuses
 	global_missionary_strength = 0.03
-	tolerance_of_heretics_capacity = 1
  tolerance_own = 1
  church_power_modifier = 0.5
  # clergy bonuses
@@ -109,13 +120,12 @@ bos_catholic_empire = {
  republican_tradition = 0.25
  # religion bonuses
  global_missionary_strength = 0.03
- papal_influence = 0.25
- papal_influence_from_cardinals = 0.25
+ papal_influence_from_cardinals = 0.5
  prestige_per_development_from_conversion = 0.25
 }
 
 bos_krstjani_tolerance = {
- tolerance_of_heretics_capacity = 1
+ tolerance_of_heretics_capacity = 2
  relation_with_heretics = 20
  manpower_in_true_faith_provinces = 0.1
  religion = yes
@@ -127,13 +137,24 @@ bos_tax_meta = {
 }
 
 bos_integrated_djed = {
- tolerance_heretic = 1
+ tolerance_of_heretics_capacity = 2
  global_heretic_missionary_strength = -0.01
  religion = yes
 }
 
 bos_exiled_djed = {
- tolerance_heretic = -1
+ tolerance_of_heretics_capacity = -1
  global_heretic_missionary_strength = 0.01
  religion = yes
+}
+
+bos_converted = {
+ stability_cost_modifier = 0.1
+ global_unrest = 1
+ religion = yes
+}
+
+bos_lets_diplomacy = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.2
 }

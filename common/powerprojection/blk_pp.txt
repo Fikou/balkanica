@@ -1,0 +1,11 @@
+bos_fueding_with_hungary = {
+ max = 25
+ power = 10
+ yearly_decay = 0.2
+}
+
+bos_fueding_with_hungary_perm = {
+ max = 5
+ power = 5
+ decay = no
+}

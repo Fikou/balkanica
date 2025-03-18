@@ -3,253 +3,326 @@ bos_1 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = {
-		tag = BOS
-
-	}
+	potential = { tag = BOS }
 
 	bos_approach_hungary = {
 		icon = mission_diplomatic_relation
 		position = 2
-		required_missions = {
-			bos_civil_war
-		}
-		provinces_to_highlight = { }
-		trigger = {
-			OR = {
-				HUN = {
-					has_100_opinion_improved_relation = {
-						target = ROOT
-					}
-				}
-				bos_civil_war_check_opposing_support_trigger = {
-					faction = HUN
-				}
-				bos_civil_war_resolved_trigger = yes
-			}
-
-		}
-		effect = {
-   if = {
-    limit = {
-     bos_civil_war_resolved_trigger = yes
-    }
-    custom_tooltip = bos_bypass_civil_war_mission_tt
-   }
-   else_if = {
-    limit = {
-     bos_civil_war_check_opposing_support_trigger = { faction = HUN }
-    }
-    custom_tooltip = bos_bypass_support_mission_tt
-   }
-   else = {
-    bos_civil_war_gain_support_effect = {
-     faction = HUN
-    }
-   }
+		required_missions = { bos_civil_war }
+		provinces_to_highlight = {  }
+  ai_weight = {
+   factor = 1000
   }
+		trigger = { bos_civil_war_can_get_support_trigger = { faction = HUN }  }
+
+		effect = {
+			if = {
+				limit = { bos_has_country_support_trigger = { faction = HUN }  }
+				bos_civil_war_gain_support_effect = { faction = HUN }
+				if = {
+					limit = {
+						tag = HRZ
+						BOS = { exists = yes }
+					}
+					HUN = { remove_guarantee = BOS }
+				}
+			}
+			else = {
+				bos_civil_war_gain_support_effect = { faction = HUN }
+				if = {
+					limit = {
+						tag = HRZ
+						BOS = { exists = yes }
+					}
+					HUN = { remove_guarantee = BOS }
+				}
+			}
+		}
 	}
 
 	bos_serbia_time = {
 		icon = defeat_the_serbs
 		position = 5
-		required_missions = {
-			bos_rebuild_bosnia
-		}
+		required_missions = { bos_rebuild_bosnia }
 		provinces_to_highlight = {
-   OR = {
-    province_id = 138
-    province_id = 1827
-    province_id = 4755
-    province_id = 4757
-   }
-  }
+			OR = {
+				province_id = 138
+				province_id = 1827
+				province_id = 4755
+				province_id = 4757
+			}
+		}
+
 		trigger = {
-   AND = {
-    owns_core_province = 138
-    owns_core_province = 1827
-    owns_core_province = 4755
-    owns_core_province = 4757
-   }
-  }
+			AND = {
+				owns_core_province = 138
+				owns_core_province = 1827
+				owns_core_province = 4755
+				owns_core_province = 4757
+			}
+		}
+
 		effect = {
-   custom_tooltip = bos_found_srebcenica_tt
-   4755 = {
-    change_trade_goods = gold
-    add_province_modifier = {
-     name = bos_recently_setup_silver_mining
-     duration = 10950
-    }
-    if = {
-     limit = {
-      NOT = { base_production = 5 }
-     }
-    }
-    set_base_production = 4
-   }
-   custom_tooltip = bos_exploit_serbia_silver_temp_tt
-   4757 = {
-    change_trade_goods = gold
-    set_province_flag = bos_temp_exploiting_silver
-    add_province_modifier = {
-     name = bos_temp_silver_mining
-     duration = 7300
-    }
-    if = {
-     limit = {
-      NOT = { base_production = 4 }
-     }
-    }
-    set_base_production = 3
-   }
-   1827 = {
-    change_trade_goods = gold
-    set_province_flag = bos_temp_exploiting_silver
-    add_province_modifier = {
-     name = bos_temp_silver_mining
-     duration = 7300
-    }
-    if = {
-     limit = {
-      NOT = { base_production = 4 }
-     }
-    }
-    set_base_production = 3
-   }
-  }
+			custom_tooltip = bos_found_srebcenica_tt
+			4755 = {
+				change_trade_goods = gold
+				add_province_modifier = {
+					name = "bos_recently_setup_silver_mining"
+					duration = 10950
+				}
+				if = {
+					limit = { NOT = { base_production = 4 }  }
+					set_base_production = 4
+				}
+			}
+			custom_tooltip = bos_exploit_serbia_silver_temp_tt
+			4757 = {
+				change_trade_goods = gold
+				set_province_flag = bos_temp_exploiting_silver
+				add_province_modifier = {
+					name = "bos_temp_silver_mining"
+					duration = 7300
+				}
+				if = {
+					limit = { NOT = { base_production = 3 }  }
+					set_base_production = 3
+				}
+			}
+			1827 = {
+				change_trade_goods = gold
+				set_province_flag = bos_temp_exploiting_silver
+				add_province_modifier = {
+					name = "bos_temp_silver_mining"
+					duration = 7300
+				}
+				if = {
+					limit = { NOT = { base_production = 3 }  }
+					set_base_production = 3
+				}
+			}
+		}
 	}
 
 	bos_dev_gold = {
 		icon = mission_jawal_silver_mine
 		position = 6
-		required_missions = {
-			bos_serbia_time
-		}
-		provinces_to_highlight = {
-   province_id = 4755
-  }
+		required_missions = { bos_serbia_time }
+		provinces_to_highlight = { province_id = 4755 }
+
 		trigger = {
-   4755 = {
-    development = 20
-    owned_by = ROOT
-   }
-  }
+			4755 = {
+				development = 20
+				owned_by = ROOT
+			}
+		}
+
 		effect = {
-   4755 = {
-    remove_province_modifier = bos_recently_setup_silver_mining
-    add_province_modifier = {
-     name = bos_srebrenica_devd
-     duration = -1
-    }
+			4755 = {
+				remove_province_modifier = bos_recently_setup_silver_mining
+				add_province_modifier = {
+					name = "bos_srebrenica_devd"
+					duration = -1
+				}
+			}
+   add_country_modifier = {
+    name = "strong_treasury"
+    duration = 7300
    }
-  }
+		}
 	}
 
 	bos_buildup_forts = {
 		icon = fortress_of_belgrade
 		position = 7
-		required_missions = {
-			bos_dev_gold
-		}
+		required_missions = { bos_dev_gold }
 		provinces_to_highlight = {
-   OR = {
-    AND = {
-     province_id = 140
-     NOT = {
-      OR = {
-        has_building = fort_15th
-        has_building = fort_16th
-        has_building = fort_17th
-        has_building = fort_18th
-       }
-     }
-    }
-   AND = {
-    area = rascia_area
-    NOT = {
-     OR = {
-       has_building = fort_15th
-       has_building = fort_16th
-       has_building = fort_17th
-       has_building = fort_18th
-      }
-     }
-    }
-   }
-  }
+			OR = {
+				AND = {
+					province_id = 140
+					NOT = {
+						OR = {
+							has_building = fort_15th
+							has_building = fort_16th
+							has_building = fort_17th
+							has_building = fort_18th
+						}
+					}
+				}
+				AND = {
+					area = rascia_area
+					NOT = {
+						OR = {
+							has_building = fort_15th
+							has_building = fort_16th
+							has_building = fort_17th
+							has_building = fort_18th
+						}
+					}
+				}
+			}
+		}
+
 		trigger = {
-   140 = {
-     OR = {
-      has_building = fort_15th
-      has_building = fort_16th
-      has_building = fort_17th
-      has_building = fort_18th
-     }
-    }
-   any_owned_province = {
-    area = rascia_area
-    OR = {
-     has_building = fort_15th
-     has_building = fort_16th
-     has_building = fort_17th
-     has_building = fort_18th
-    }
-   }
-  }
+			140 = {
+				OR = {
+					has_building = fort_15th
+					has_building = fort_16th
+					has_building = fort_17th
+					has_building = fort_18th
+				}
+			}
+			any_owned_province = {
+				area = rascia_area
+				OR = {
+					has_building = fort_15th
+					has_building = fort_16th
+					has_building = fort_17th
+					has_building = fort_18th
+				}
+			}
+		}
+
 		effect = {
-   140 = {
-    add_province_modifier = {
-     name = bos_usora_fort_temp_modifier
-     duration = 7300
-    }
-   }
-   rascia_area = {
-    limit = {
-     OR = {
-      has_building = fort_15th
-      has_building = fort_16th
-      has_building = fort_17th
-      has_building = fort_18th
-     }
-    }
-    add_province_modifier = {
-     name = bos_misc_fort_temp_modifier
-     duration = 7300
-    }
-   }
-   every_owned_province = {
-    limit = {
-     area = bosnia_area
-     NOT = { province_id = 140 }
-    }
-    add_province_modifier = {
-     name = bos_homeland_protected_temp_modifier
-     duration = 3650
-    }
-   }
-  }
+			140 = {
+				add_province_modifier = {
+					name = "bos_usora_fort_temp_modifier"
+					duration = 7300
+				}
+			}
+			rascia_area = {
+				limit = {
+					OR = {
+						has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+				add_province_modifier = {
+					name = "bos_misc_fort_temp_modifier"
+					duration = 7300
+				}
+			}
+			bosnia_area = {
+				limit = {
+					NOT = { province_id = 140 }
+				}
+				add_province_modifier = {
+					name = "bos_homeland_protected_temp_modifier"
+					duration = 3650
+				}
+			}
+		}
 	}
 
 	bos_develop_capital = {
 		icon = develop_our_capital
 		position = 8
-		required_missions = {
-			bos_buildup_forts
+		required_missions = { bos_buildup_forts }
+		provinces_to_highlight = { is_capital_of = ROOT }
+
+		trigger = { capital_scope = { development = 24 }  }
+
+		effect = {
+			capital_scope = {
+				area = {
+					add_province_modifier = {
+						name = "growth_of_capital"
+						duration = 7300
+					}
+				}
+			}
+			country_event = { id = bos_missions.17 }
+			custom_tooltip = bos_develop_capital_event_tt
 		}
+	}
+
+	bos_finish_developments = {
+		icon = mission_expand_into_the_forest
+		position = 9
+		required_missions = { bos_develop_capital }
 		provinces_to_highlight = {
-   is_capital_of = ROOT
-  }
-		trigger = {
-   capital_scope = {
-    development = 24
+   OR = {
+    AND = {
+     owned_by = ROOT
+     ROOT = { has_estate_privilege = estate_burghers_mountain_expansion }
+     development = 20
+     OR = {
+      has_terrain = mountain
+      has_terrain = hills
+      has_terrain = highlands
+     }
+    }
+    AND = {
+     owned_by = ROOT
+     ROOT = { has_estate_privilege = estate_burghers_forest_expansion }
+     development = 20
+     has_terrain = forest
+    }
    }
   }
+
+		trigger = {
+   OR = {
+    AND = {
+     custom_trigger_tooltip = {
+      tooltip = bos_finish_developments_mountain_trigger_tt
+      has_unlocked_estate_privilege = { estate_privilege = estate_burghers_mountain_expansion }
+     }
+     calc_true_if = {
+      amount = 10
+      all_owned_province = {
+       OR = {
+        has_terrain = mountain
+        has_terrain = hills
+        has_terrain = highlands
+       }
+       development = 20
+      }
+     }
+    }
+    AND = {
+     custom_trigger_tooltip = {
+      tooltip = bos_finish_developments_forest_trigger_tt
+      has_unlocked_estate_privilege = { estate_privilege = estate_burghers_forest_expansion }
+     }
+     calc_true_if = {
+      amount = 10
+      all_owned_province = {
+       has_terrain = forest
+       development = 20
+      }
+     }
+    }
+   }
+  }
+
 		effect = {
-   capital_scope = {
-    area = {
-     add_province_modifier = {
-      name = growth_of_capital
-      duration = 7300
+   custom_tooltip = bos_finish_developments_a_tt
+   tooltip = {
+    unlock_estate_privilege = {
+     estate_privilege = estate_burghers_forest_expansion
+    }
+   }
+   custom_tooltip = bos_newline
+   custom_tooltip = bos_finish_developments_b_tt
+   tooltip = {
+    unlock_estate_privilege = {
+     estate_privilege = estate_burghers_mountain_expansion
+    }
+   }
+   hidden_effect = {
+    if = {
+     limit = {
+      has_unlocked_estate_privilege = { estate_privilege = estate_burghers_mountain_expansion }
+     }
+     unlock_estate_privilege = {
+      estate_privilege = estate_burghers_forest_expansion
+     }
+    }
+    else = {
+     unlock_estate_privilege = {
+      estate_privilege = estate_burghers_mountain_expansion
      }
     }
    }
@@ -261,49 +334,51 @@ bos_2 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = {
-		tag = BOS
-
-	}
+	potential = { tag = BOS }
 
 	bos_approach_austria = {
 		icon = mission_diplomatic_relation
 		position = 2
-		required_missions = {
-			bos_civil_war
-		}
-		provinces_to_highlight = { }
-		trigger = {
-			OR = {
-				HAB = {
-					has_100_opinion_improved_relation = {
-						target = ROOT
-					}
-				}
-				bos_civil_war_check_opposing_support_trigger = {
-					faction = HAB
-				}
-				bos_civil_war_resolved_trigger = yes
-			}
+		required_missions = { bos_civil_war }
+		provinces_to_highlight = {  }
+  ai_weight = {
+   factor = 1000
+  }
+		trigger = { bos_civil_war_can_get_support_trigger = { faction = HAB }  }
 
-		}
 		effect = {
-   if = {
-    limit = {
-     bos_civil_war_resolved_trigger = yes
+			if = {
+				limit = { bos_has_country_support_trigger = { faction = HAB }  }
+				bos_civil_war_gain_support_effect = { faction = HAB }
+			}
+			else = { bos_civil_war_gain_support_effect = { faction = HAB }  }
+		}
+	}
+
+ bos_army_and_buildings = {
+		icon = mission_noble_council
+		position = 4
+		required_missions = { bos_resolve_civil_war }
+		provinces_to_highlight = {  }
+
+		trigger = {
+   num_of_allies = 2
+			army_size_percentage = 1
+   calc_true_if = {
+    amount = 4
+    all_owned_province = {
+     bos_has_any_low_tier_building = yes
     }
-    custom_tooltip = bos_bypass_civil_war_mission_tt
    }
-   else_if = {
-    limit = {
-     bos_civil_war_check_opposing_support_trigger = { faction = HAB }
-    }
-    custom_tooltip = bos_bypass_support_mission_tt
-   }
-   else = {
-    bos_civil_war_gain_support_effect = {
-     faction = HAB
-    }
+  }
+
+		effect = {
+   add_adm_power = 50
+   create_general = { tradition = 33 }
+   custom_tooltip = bos_newline
+   add_country_modifier = {
+    name = "lan_affable_leadership"
+    duration = 7300
    }
   }
 	}
@@ -311,224 +386,227 @@ bos_2 = {
 	bos_reconquer_dalmatia = {
 		icon = dalmatian_conquest
 		position = 5
-		required_missions = {
-			bos_rebuild_bosnia
-		}
+		required_missions = { bos_rebuild_bosnia }
 		provinces_to_highlight = {
-   OR = {
-    province_id = 136
-    province_id = 4753
-    province_id = 4754
-   }
-  }
-  trigger = {
-   owns_core_province = 136
-   owns_core_province = 4753
-   owns_core_province = 4754
-  }
+			OR = {
+				province_id = 136
+				province_id = 4753
+				province_id = 4754
+			}
+		}
+
+		trigger = {
+			owns_core_province = 136
+			owns_core_province = 4753
+			owns_core_province = 4754
+		}
+
 		effect = {
-   136 = {
-    add_province_modifier = {
-     name = bos_italian_land_reclaimed
-     duration = 36500
-    }
+   add_country_modifier = {
+    name = "bos_pre_fleet_built"
+    duration = 9125
    }
-   4753 = {
-    add_province_modifier = {
-     name = bos_italian_land_reclaimed
-     duration = 36500
-    }
-   }
-   4754 = {
-    add_province_modifier = {
-     name = bos_italian_land_reclaimed
-     duration = 36500
-    }
-   }
-  }
+			136 = {
+				add_province_modifier = {
+					name = "bos_italian_land_reclaimed"
+					duration = 36500
+				}
+			}
+			4753 = {
+				add_province_modifier = {
+					name = "bos_italian_land_reclaimed"
+					duration = 36500
+				}
+			}
+			4754 = {
+				add_province_modifier = {
+					name = "bos_italian_land_reclaimed"
+					duration = 36500
+				}
+			}
+		}
 	}
 
 	bos_develop_ports = {
 		icon = mission_develop_nevas_port
 		position = 6
-		required_missions = {
-			bos_reconquer_dalmatia
-		}
+		required_missions = { bos_reconquer_dalmatia }
 		provinces_to_highlight = {
-    OR = {
-     AND = {
-      province_id = 136
-      NOT = { development = 12 }
-     }
-     AND = {
-      province_id = 4753
-      NOT = { development = 20 }
-     }
-     AND = {
-      province_id = 4754
-      NOT = { development = 12 }
-    }
-   }
-  }
+			OR = {
+				AND = {
+					province_id = 136
+					NOT = { development = 12 }
+				}
+				AND = {
+					province_id = 4753
+					NOT = { development = 20 }
+				}
+				AND = {
+					province_id = 4754
+					NOT = { development = 12 }
+				}
+			}
+		}
+
 		trigger = {
-   136 = {
-    is_core = ROOT
-    owned_by = ROOT
-    development = 12
-   }
-   4753 = {
-    is_core = ROOT
-    owned_by = ROOT
-    development = 20
-   }
-   4754 = {
-    is_core = ROOT
-    owned_by = ROOT
-    development = 12
-   }
-  }
+			136 = {
+				is_core = ROOT
+				owned_by = ROOT
+				development = 12
+			}
+			4753 = {
+				is_core = ROOT
+				owned_by = ROOT
+				development = 20
+			}
+			4754 = {
+				is_core = ROOT
+				owned_by = ROOT
+				development = 12
+			}
+		}
+
 		effect = {
-   4753 = {
-    add_province_modifier = {
-     name = important_natural_harbor
-     duration = -1
-    }
-   }
-   croatia_area = {
-    limit = {
-     NOT = {
-      owned_by = ROOT
-     }
-    }
-    add_permanent_claim = ROOT
-   }
-  }
+			4753 = {
+				add_province_modifier = {
+					name = "important_natural_harbor"
+					duration = -1
+				}
+			}
+			croatia_area = {
+				limit = { NOT = { owned_by = ROOT }  }
+				add_permanent_claim = ROOT
+			}
+		}
 	}
 
 	bos_bos_fleet = {
 		icon = mission_establish_high_seas_navy
 		position = 7
-		required_missions = {
-			bos_develop_ports
-		}
-		provinces_to_highlight = { }
-		trigger = {
-   navy_size_percentage = 1
-  }
+		required_missions = { bos_develop_ports }
+		provinces_to_highlight = {  }
+
+		trigger = { navy_size_percentage = 1 }
+
 		effect = {
-   add_country_modifier = {
-    name = bos_fleet_built
-    duration = 7300
-   }
-   130 = {
-    add_permanent_claim = ROOT
-   }
-   custom_tooltip = bos_gain_claims_on_italians_tt
-   hidden_effect = {
-    every_province = {
-     limit = {
-      owner = { culture_group = latin }
-      region = balkan_region
-      NOT = { province_id = 130 }
-     }
-     add_claim = ROOT
-    }
-   }
-  }
+			add_country_modifier = {
+				name = "bos_fleet_built"
+				duration = 7300
+			}
+			130 = { add_permanent_claim = ROOT }
+			custom_tooltip = bos_gain_claims_on_italians_tt
+			hidden_effect = {
+				every_province = {
+					limit = {
+						owner = { culture_group = latin }
+						region = balkan_region
+						NOT = { province_id = 130 }
+					}
+					add_claim = ROOT
+				}
+			}
+		}
 	}
 
 	bos_kill_venice = {
 		icon = mission_raid_on_venice
 		position = 8
-		required_missions = {
-			bos_bos_fleet
-		}
+		required_missions = { bos_bos_fleet }
 		provinces_to_highlight = {
-   OR = {
-    AND = {
-     owner = { culture_group = latin }
-     region = balkan_region
-    }
-    AND = {
-     province_id = 130
-     NOT = { owned_by = ROOT }
-    }
-   }
-  }
+			OR = {
+				AND = {
+					owner = { culture_group = latin }
+					region = balkan_region
+				}
+				AND = {
+					province_id = 130
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}
+
 		trigger = {
-   owns = 130
-   NOT = {
-    any_province = {
-     owner = { culture_group = latin }
-     region = balkan_region
-    }
-   }
-  }
+			owns = 130
+			NOT = {
+				any_province = {
+					owner = { culture_group = latin }
+					region = balkan_region
+				}
+			}
+		}
+
 		effect = {
-   130 = {
-    add_province_modifier = {
-     name = bos_italian_land_reclaimed
-     duration = 36500
-    }
+			130 = {
+				add_province_modifier = {
+					name = "bos_italian_land_reclaimed"
+					duration = 36500
+				}
+			}
+   add_power_projection = {
+    type = mission_rewards_power_projection
+    amount = 20
    }
-   add_prestige_or_monarch_power = {
-    amount = 25
-   }
-  }
- }
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+	}
+
 }
 bos_3 = {
 	slot = 3
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = {
-		tag = BOS
-
-	}
+	potential = { tag = BOS }
 
 	bos_civil_war = {
 		icon = mission_war_for_the_crown
 		position = 1
-		required_missions = { }
-		provinces_to_highlight = { }
-		trigger = {
-			OR = {
-				army_size_percentage = 1
-				bos_civil_war_resolved_trigger = yes
-			}
+		provinces_to_highlight = {  }
+  ai_weight = {
+   factor = 1000
+  }
+		trigger = { army_size_percentage = 1 }
 
-		}
 		effect = {
-			if = {
-				limit = {
-					bos_civil_war_resolved_trigger = yes
+			custom_tooltip = bos_civil_war_explanation_bos_tt
+			hidden_effect = {
+				if = {
+					limit = { ai = yes }
+					set_ai_attitude = {
+						attitude = attitude_friendly
+						who = ARA
+						locked = yes
+					}
+					set_ai_attitude = {
+						attitude = attitude_friendly
+						who = HAB
+						locked = yes
+					}
+					set_ai_attitude = {
+						attitude = attitude_friendly
+						who = SER
+						locked = yes
+					}
 				}
-				custom_tooltip = bos_bypass_civil_war_mission_tt
 			}
-			else = {
-				custom_tooltip = bos_civil_war_explanation_tt
-			}
-
 		}
 	}
 
 	bos_find_other_ally = {
-		icon = mission_diplomatic_relation
+		icon = mission_alliances
 		position = 2
-		required_missions = {
-			bos_civil_war
-		}
-		provinces_to_highlight = { }
-		trigger = {
-				num_of_allies = 1
-		}
+		required_missions = { bos_civil_war }
+		provinces_to_highlight = {  }
+  ai_weight = {
+   factor = 200
+  }
+		trigger = { num_of_allies = 1 }
+
 		effect = {
 			add_country_modifier = {
-				name = "lan_affable_leadership"
+				name = "bos_lets_diplomacy"
 				duration = 3650
 			}
-
 		}
 	}
 
@@ -536,168 +614,90 @@ bos_3 = {
 		icon = mission_crown_of_wenceslas
 		position = 3
 		required_missions = {
-			bos_approach_aragon bos_approach_serbia bos_approach_hungary bos_approach_austria
+			bos_approach_aragon
+			bos_approach_serbia
+			bos_approach_hungary
+			bos_approach_austria
 		}
 		provinces_to_highlight = {
-   area = bosnia_area
-   NOT = { owned_by = ROOT }
-  }
-		trigger = {
-			bos_civil_war_resolved_trigger = yes
-
+			area = bosnia_area
+			NOT = { owned_by = ROOT }
 		}
+  ai_weight = {
+   factor = 1000
+  }
+		trigger = { bos_civil_war_resolved_trigger = yes }
+
 		effect = {
-			if = {
-				limit = {
-					tag = BOS
-				}
-				every_province = {
-					limit = {
-						is_core = HRZ
-					}
-					add_core = BOS
-				}
-    if = {
-     limit = {
-      HRZ = { exists = yes }
-     }
-     hidden_effect = {
-      set_country_flag = bos_civil_war_resolved_diplomatically
-     }
-     custom_tooltip = bos_civil_war_diplomacy_warning_tt
-     every_province = {
-      limit = {
-       owned_by = HRZ
-      }
-      add_province_modifier = {
-       name = bos_civil_war_provice_mod
-       duration = 18250
-      }
-     }
-     BOS = {
-      inherit = HRZ
-     }
-    }
-    else = {
-     hidden_effect = {
-      set_country_flag = bos_civil_war_resolved_violently
-     }
-    }
-				HUN = {
-					remove_guarantee = BOS
-				}
-			}
-			if = {
-				limit = {
-					tag = HRZ
-				}
-				every_province = {
-					limit = {
-						is_core = BOS
-					}
-					add_core = HRZ
-				}
-    if = {
-     limit = {
-      BOS = { exists = yes }
-     }
-     hidden_effect = {
-      set_country_flag = bos_civil_war_resolved_diplomatically
-     }
-     custom_tooltip = bos_civil_war_diplomacy_warning_tt
-     every_province = {
-      limit = {
-       owned_by = BOS
-      }
-      add_province_modifier = {
-       name = bos_civil_war_provice_mod
-       duration = 18250
-      }
-     }
-     HRZ = {
-      inherit = BOS
-     }
-    }
-    else = {
-     hidden_effect = {
-      set_country_flag = bos_civil_war_resolved_violently
-     }
-    }
-				ARA = {
-					remove_guarantee = HRZ
-				}
-			}
 			east_adriatic_coast_area = {
 				if = {
 					limit = {
-						NOT = {
-							owned_by = ROOT
-						}
-						NOT = {
-							is_core = ROOT
-						}
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
 					}
 					add_claim = ROOT
 				}
 			}
-   4754 = { add_claim = ROOT }
+			4754 = { add_claim = ROOT }
 			add_legitimacy_equivalent = {
 				amount = 10
 				republican_tradition = 5
 			}
-			add_prestige_or_monarch_power = {
-				amount = 10
+			add_prestige_or_monarch_power = { amount = 10 }
+			hidden_effect = {
+				if = {
+					limit = { ai = yes }
+					set_ai_attitude = {
+						attitude = attitude_neutral
+						who = ARA
+						locked = no
+					}
+					set_ai_attitude = {
+						attitude = attitude_neutral
+						who = HAB
+						locked = no
+					}
+					set_ai_attitude = {
+						attitude = attitude_neutral
+						who = SER
+						locked = no
+					}
+				}
 			}
-
 		}
 	}
 
 	bos_rebuild_bosnia = {
 		icon = mission_build_up_to_force_limit
 		position = 4
-		required_missions = {
-			bos_resolve_civil_war
-		}
+		required_missions = { bos_resolve_civil_war }
 		provinces_to_highlight = {
-				owned_by = ROOT
-    NOT = { devastation = 0 }
+			owned_by = ROOT
+			NOT = { devastation = 0 }
 		}
-		trigger = {
-			army_size_percentage = 1
-			total_development = 40
-			manpower_percentage = 0.75
-			all_owned_province = {
-				devastation = 0
-			}
 
+		trigger = {
+			total_development = 40
+   stability = 1
+			manpower_percentage = 0.75
+			all_owned_province = { devastation = 0 }
 		}
+
 		effect = {
 			add_country_modifier = {
 				name = "thriving_arms_industry"
 				duration = 3650
 			}
 			east_adriatic_coast_area = {
-				limit = {
-					NOT = {
-						owned_by = ROOT
-					}
-				}
+				limit = { NOT = { owned_by = ROOT }  }
 				add_permanent_claim = ROOT
 			}
 			serbia_area = {
-				limit = {
-					NOT = {
-						owned_by = ROOT
-					}
-				}
+				limit = { NOT = { owned_by = ROOT }  }
 				add_permanent_claim = ROOT
 			}
 			rascia_area = {
-				limit = {
-					NOT = {
-						owned_by = ROOT
-					}
-				}
+				limit = { NOT = { owned_by = ROOT }  }
 				add_permanent_claim = ROOT
 			}
 		}
@@ -706,194 +706,230 @@ bos_3 = {
 	bos_ragusa = {
 		icon = mission_recover_konkan_ports
 		position = 5
-		required_missions = {
-			bos_rebuild_bosnia
-		}
-		provinces_to_highlight = {
-   province_id = 137
-  }
+		required_missions = { bos_rebuild_bosnia }
+		provinces_to_highlight = { province_id = 137 }
+
 		trigger = {
-   OR = {
-    owns_core_province = 137
-    RAG = { is_subject_of = ROOT }
-    bos_can_diplo_vassal_rag_trigger = yes
-   }
-  }
+			OR = {
+				owns_core_province = 137
+				RAG = { is_subject_of = ROOT }
+				bos_can_diplo_vassal_rag_trigger = yes
+			}
+		}
+
 		effect = {
-   if = {
-    limit = {
-     RAG = { is_subject_of = ROOT }
-     RAG = { exists = yes }
-    }
-    inherit = RAG
-   }
-   else_if = {
-    limit = {
-     bos_can_diplo_vassal_rag_trigger = yes
-    }
-    create_vassal = RAG
-    RAG = {
-     add_country_modifier = {
-      name = estate_burghers_economical_boost_neutral
-      duration = 3650
-     }
-    }
-   }
-   else_if = {
-    limit = {
-     has_country_flag = bos_civil_war_resolved_diplomatically
-    }
-    custom_tooltip = bos_ragusa_via_war_tt
-    hidden_effect = {
-     set_country_flag = bos_hum_ragusa_revolt
-    }
-    137 = {
-     add_province_modifier = {
-      name = bos_civil_war_provice_mod
-      duration = 7300
-     }
-    }
-   }
-   137 = {
-    add_province_modifier = {
-     name = dominant_trade_hub
-     duration = -1
-    }
-    add_province_modifier = {
-     name = bos_italian_land_reclaimed
-     duration = 36500
-    }
-   }
-   add_country_modifier = {
-    name = estate_burghers_economical_boost_neutral
-    duration = 3650
-   }
-  }
+			custom_tooltip = bos_ragusa_explanation_a_tt
+			tooltip = { inherit = RAG }
+			custom_tooltip = bos_newline
+			custom_tooltip = bos_ragusa_explanation_b_tt
+			tooltip = {
+				vassalize = RAG
+				RAG = {
+					add_country_modifier = {
+						name = "estate_burghers_economical_boost_neutral"
+						duration = 3650
+					}
+				}
+			}
+			custom_tooltip = bos_ragusa_explanation_c_tt
+			tooltip = {
+				custom_tooltip = bos_ragusa_via_war_tt
+				137 = {
+					add_province_modifier = {
+						name = "bos_civil_war_provice_mod"
+						duration = 7300
+					}
+				}
+			}
+			custom_tooltip = bos_ragusa_explanation_d_tt
+			tooltip = {
+				137 = {
+					add_province_modifier = {
+						name = "dominant_trade_hub"
+						duration = -1
+					}
+					add_province_modifier = {
+						name = "bos_italian_land_reclaimed"
+						duration = 36500
+					}
+				}
+				add_country_modifier = {
+					name = "estate_burghers_economical_boost_neutral"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						RAG = { is_subject_of = ROOT }
+						RAG = { exists = yes }
+					}
+					inherit = RAG
+				}
+				else_if = {
+					limit = { bos_can_diplo_vassal_rag_trigger = yes }
+					vassalize = RAG
+					RAG = {
+						add_country_modifier = {
+							name = "estate_burghers_economical_boost_neutral"
+							duration = 3650
+						}
+					}
+				}
+				else_if = {
+					limit = { has_country_flag = bos_civil_war_resolved_diplomatically }
+					hidden_effect = {
+						country_event = {
+							id = bos_missions.16
+							days = 24
+							random = 12
+							tooltip = bos_ragusa_via_war_tt
+						}
+					}
+					137 = {
+						add_province_modifier = {
+							name = "bos_civil_war_provice_mod"
+							duration = 7300
+						}
+					}
+				}
+				137 = {
+					add_province_modifier = {
+						name = "dominant_trade_hub"
+						duration = -1
+					}
+					add_province_modifier = {
+						name = "bos_italian_land_reclaimed"
+						duration = 36500
+					}
+				}
+				add_country_modifier = {
+					name = "estate_burghers_economical_boost_neutral"
+					duration = 3650
+				}
+			}
+		}
 	}
 
 	bos_hum_revolt = {
 		icon = invade_poland
 		position = 6
-		required_missions = {
-			bos_ragusa
-		}
+		required_missions = { bos_ragusa }
 		provinces_to_highlight = {
-   OR = {
-    province_id = 139
-    province_id = 1831
-    province_id = 137
-   }
-  }
+			OR = {
+				province_id = 139
+				province_id = 1831
+				province_id = 137
+			}
+		}
+
 		trigger = {
-   owns_core_province = 139
-   owns_core_province = 1831
-   owns_core_province = 137
-   OR = {
-    AND = {
-     has_country_flag = bos_civil_war_resolved_violently
-     1831 = {
-      NOT = { local_autonomy = 10 }
-      NOT = { unrest = 1 }
-      NOT = { controlled_by = REB }
-     }
-     139 = {
-      NOT = { local_autonomy = 10 }
-      NOT = { unrest = 1 }
-      NOT = { controlled_by = REB }
-     }
-    }
-    AND = {
-     has_country_flag = bos_civil_war_resolved_diplomatically
-     NOT = { has_country_flag = bos_hum_ragusa_revolt }
-     1831 = {
-      NOT = { controlled_by = REB }
-     }
-     139 = {
-      NOT = { controlled_by = REB }
-     }
-     137 = {
-      NOT = { controlled_by = REB }
-     }
-    }
-   }
-  }
+			owns_core_province = 139
+			owns_core_province = 1831
+			owns_core_province = 137
+			OR = {
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = bos_civil_war_resolved_violently
+						has_country_flag = bos_civil_war_resolved_violently
+					}
+					1831 = {
+						NOT = { local_autonomy = 10 }
+						NOT = { unrest = 1 }
+						NOT = { controlled_by = REB }
+					}
+					139 = {
+						NOT = { local_autonomy = 10 }
+						NOT = { unrest = 1 }
+						NOT = { controlled_by = REB }
+					}
+				}
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = bos_civil_war_resolved_diplomatically
+						has_country_flag = bos_civil_war_resolved_diplomatically
+					}
+					NOT = {
+						custom_trigger_tooltip = {
+							tooltip = bos_hum_ragusa_revolt_tt
+							has_country_flag = bos_hum_ragusa_revolt
+						}
+					}
+					1831 = { NOT = { controlled_by = REB }  }
+					139 = { NOT = { controlled_by = REB }  }
+					137 = { NOT = { controlled_by = REB }  }
+				}
+			}
+		}
+
 		effect = {
-   1831 = {
-    remove_province_modifier = bos_civil_war_provice_mod
-   }
-   139 = {
-    remove_province_modifier = bos_civil_war_provice_mod
-   }
-   137 = {
-    remove_province_modifier = bos_civil_war_provice_mod
-   }
-   add_reform_progress_medium_effect = yes
-  }
+			1831 = { remove_province_modifier = bos_civil_war_provice_mod }
+			139 = { remove_province_modifier = bos_civil_war_provice_mod }
+			137 = { remove_province_modifier = bos_civil_war_provice_mod }
+			add_reform_progress_medium_effect = yes
+		}
 	}
 
 	bos_croatia = {
 		icon = mission_integrate_croatia
 		position = 8
-		required_missions = {
-			bos_bos_fleet
-		}
+		required_missions = { bos_bos_fleet }
 		provinces_to_highlight = {
-   area = croatia_area
-   NOT = { owned_by = ROOT }
-  }
+			area = croatia_area
+			NOT = { owned_by = ROOT }
+		}
+
 		trigger = {
-   all_province = {
-    area = croatia_area
-    owned_by = ROOT
-    is_core = ROOT
-   }
-  }
+			all_province = {
+				area = croatia_area
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+
 		effect = {
-   add_accepted_culture_or_dip_power = {
-    culture = croatian
-    value = 100
-   }
-   slavonia_area = {
-    limit = {
-     NOT = {
-      owned_by = ROOT
-     }
-    }
-    add_permanent_claim = ROOT
-   }
-   carinthia_area = {
-    limit = {
-     NOT = {
-      owned_by = ROOT
-     }
-    }
-    add_permanent_claim = ROOT
-   }
-  }
+			add_accepted_culture_or_dip_power = {
+				culture = croatian
+				value = 100
+			}
+   custom_tooltip = bos_newline
+			slavonia_area = {
+				limit = { NOT = { owned_by = ROOT }  }
+				add_permanent_claim = ROOT
+			}
+			carinthia_area = {
+				limit = { NOT = { owned_by = ROOT }  }
+				add_permanent_claim = ROOT
+			}
+		}
 	}
 
 	bos_secure_our_future = {
 		icon = fight_bosnian_heresies
 		position = 9
 		required_missions = {
-			bos_turk_time bos_develop_capital bos_croatia bos_kill_venice
+			bos_turk_time
+			bos_develop_capital
+			bos_croatia
+			bos_kill_venice
 		}
-		provinces_to_highlight = {
-  }
+		provinces_to_highlight = {  }
+
 		trigger = {
-   is_great_power = yes
-   tur_owns_any_balkan_provices = no
-   religious_unity = 0.9
-   army_size_percentage = 0.9
-   navy_size_percentage = 0.9
-   total_development = 500
-  }
+			is_great_power = yes
+			tur_owns_any_balkan_provices = no
+			religious_unity = 0.9
+			army_size_percentage = 0.9
+			navy_size_percentage = 0.9
+			total_development = 500
+		}
+
 		effect = {
-   add_country_modifier = {
-    name = bos_secured_future
-    duration = -1
-   }
-  }
+			add_country_modifier = {
+				name = "bos_secured_future"
+				duration = -1
+			}
+		}
 	}
 }
 bos_4 = {
@@ -901,49 +937,65 @@ bos_4 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = {
-		tag = BOS
-
-	}
+	potential = { tag = BOS }
 
 	bos_approach_aragon = {
 		icon = mission_diplomatic_relation
 		position = 2
-		required_missions = {
-			bos_civil_war
-		}
-		provinces_to_highlight = { }
-		trigger = {
-			OR = {
-				ARA = {
-					has_100_opinion_improved_relation = {
-						target = ROOT
-					}
-				}
-				bos_civil_war_check_opposing_support_trigger = {
-					faction = ARA
-				}
-				bos_civil_war_resolved_trigger = yes
-			}
+		required_missions = { bos_civil_war }
+		provinces_to_highlight = {  }
+  ai_weight = {
+   factor = 1000
+  }
+		trigger = { bos_civil_war_can_get_support_trigger = { faction = ARA }  }
 
-		}
 		effect = {
-   if = {
-    limit = {
-     bos_civil_war_resolved_trigger = yes
-    }
-    custom_tooltip = bos_bypass_civil_war_mission_tt
+			if = {
+				limit = { bos_has_country_support_trigger = { faction = ARA }  }
+				bos_civil_war_gain_support_effect = { faction = ARA }
+				if = {
+					limit = {
+						tag = BOS
+						HRZ = { exists = yes }
+					}
+					ARA = { remove_guarantee = HRZ }
+				}
+			}
+			else = {
+				bos_civil_war_gain_support_effect = { faction = ARA }
+				if = {
+					limit = {
+						tag = BOS
+						HRZ = { exists = yes }
+					}
+					ARA = { remove_guarantee = HRZ }
+				}
+			}
+		}
+	}
+
+ bos_build_up = {
+		icon = mission_dominate_home_trade_node
+		position = 4
+		required_missions = { bos_resolve_civil_war }
+		provinces_to_highlight = {  }
+
+		trigger = {
+   OR = {
+    monthly_trade_income = 1
+    trader = 1
+    RAG = { transfers_trade_power_to = ROOT }
+    RAG = { alliance_with = ROOT }
    }
-   else_if = {
-    limit = {
-     bos_civil_war_check_opposing_support_trigger = { faction = ARA }
-    }
-    custom_tooltip = bos_bypass_support_mission_tt
-   }
-   else = {
-    bos_civil_war_gain_support_effect = {
-     faction = ARA
-    }
+  }
+
+		effect = {
+   add_dip_power = 50
+   add_mercantilism = 2
+   custom_tooltip = bos_newline
+   add_country_modifier = {
+    name = "bos_token_trade_buffs"
+    duration = 7300
    }
   }
 	}
@@ -951,159 +1003,195 @@ bos_4 = {
 	bos_hungary_fued = {
 		icon = king_of_hungary
 		position = 5
-		required_missions = {
-			bos_rebuild_bosnia
-		}
-		provinces_to_highlight = { }
+		required_missions = { bos_rebuild_bosnia }
+		provinces_to_highlight = {  }
+
 		trigger = {
-   OR = {
-    HUN = { exists = no }
-    bos_hating_on_hun = yes
-    bos_trying_to_amend_hun = yes
-   }
-  }
+			OR = {
+				HUN = { exists = no }
+				bos_hating_on_hun = yes
+				bos_trying_to_amend_hun = yes
+			}
+		}
+
 		effect = {
-   if = {
-    limit = {
-     HUN = { exists = no }
-     }
-     add_prestige_or_monarch_power = { amount = 10 }
-    }
-   else_if = {
-    limit = {
-     bos_hating_on_hun = yes
-    }
-    add_prestige_or_monarch_power = { amount = 20 }
-    HUN = {
-     add_historical_rival = BOS
-    }
-   }
-   else = {
-    remove_historical_rival = HUN
-    if = {
-     limit = {
-      HUN = { is_subject_of = ROOT }
-     }
-     add_prestige_or_monarch_power = { amount = 10 }
-    }
-   }
-  }
+			custom_tooltip = bos_hungary_fued_a_tt
+			tooltip = { remove_historical_rival = HUN }
+			custom_tooltip = bos_newline
+			custom_tooltip = bos_hungary_fued_b_tt
+			tooltip = {
+				remove_historical_rival = HUN
+				add_power_projection = {
+					type = bos_fueding_with_hungary
+					amount = 20
+				}
+			}
+			custom_tooltip = bos_newline
+			custom_tooltip = bos_hungary_fued_c_tt
+			tooltip = {
+				HUN = { add_historical_rival = BOS }
+				add_power_projection = {
+					type = bos_fueding_with_hungary
+					amount = 10
+				}
+				add_prestige_or_monarch_power = { amount = 10 }
+			}
+			custom_tooltip = bos_newline
+			custom_tooltip = bos_hungary_fued_d_tt
+			tooltip = {
+				HUN = { add_historical_rival = BOS }
+				add_permanent_power_projection = {
+					type = bos_fueding_with_hungary_perm
+					amount = 5
+				}
+				add_prestige_or_monarch_power = { amount = 10 }
+			}
+			custom_tooltip = bos_newline
+			custom_tooltip = bos_hungary_fued_e_tt
+			tooltip = {
+				add_power_projection = {
+					type = bos_fueding_with_hungary
+					amount = 5
+				}
+				add_prestige_or_monarch_power = { amount = 10 }
+			}
+			hidden_effect = {
+				if = {
+					limit = { HUN = { exists = no }  }
+					add_prestige_or_monarch_power = { amount = 10 }
+					add_power_projection = {
+						type = bos_fueding_with_hungary
+						amount = 5
+					}
+				}
+				else_if = {
+					limit = { bos_hating_on_hun = yes }
+					add_prestige_or_monarch_power = { amount = 15 }
+					if = {
+						limit = { has_been_eclipsed_by = HUN }
+						add_prestige_or_monarch_power = { amount = 10 }
+						add_permanent_power_projection = {
+							type = bos_fueding_with_hungary_perm
+							amount = 5
+						}
+					}
+					else = {
+						add_prestige_or_monarch_power = { amount = 10 }
+						add_power_projection = {
+							type = bos_fueding_with_hungary
+							amount = 10
+						}
+					}
+					HUN = { add_historical_rival = BOS }
+				}
+				else = {
+					remove_historical_rival = HUN
+					if = {
+						limit = { HUN = { is_subject_of = ROOT }  }
+						add_power_projection = {
+							type = bos_fueding_with_hungary
+							amount = 25
+						}
+					}
+				}
+			}
+		}
 	}
 
 	bos_turk_time = {
 		icon = mission_ottoman_diplomacy
 		position = 8
 		required_missions = {
-			bos_bos_fleet bos_hungary_fued bos_buildup_forts
+			bos_bos_fleet
+			bos_hungary_fued
+			bos_buildup_forts
 		}
-		provinces_to_highlight = { }
+		provinces_to_highlight = {  }
+
 		trigger = {
-   OR = {
-    war_score_against = {
-     who = TUR
-     value = -25
-    }
-    AND = {
-     OR = {
-      full_idea_group = offensive_ideas
-      full_idea_group = defensive_ideas
-      army_professionalism = 0.5
-     }
-     mil_power = 200
-     num_of_allies = 2
-     manpower_percentage = 0.9
-     army_size_percentage = 0.9
-    }
-   }
-  }
+			OR = {
+				war_score_against = {
+					who = TUR
+					value = -25
+				}
+				AND = {
+					OR = {
+						full_idea_group = offensive_ideas
+						full_idea_group = defensive_ideas
+						army_professionalism = 0.5
+					}
+					mil_power = 200
+					num_of_allies = 2
+					manpower_percentage = 0.9
+					army_size_percentage = 0.9
+				}
+			}
+		}
+
 		effect = {
-   custom_tooltip = bos_prepared_for_ottoman_invasion_tt
-   add_mil_power = -200
-   hidden_effect = {
-    set_country_flag = bos_prepared_for_ottoman_invasion
-   }
-  }
+			custom_tooltip = bos_prepared_for_ottoman_invasion_tt
+			add_mil_power = -200
+			hidden_effect = { set_country_flag = bos_prepared_for_ottoman_invasion }
+		}
 	}
+
 }
 bos_5 = {
 	slot = 5
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = {
-		tag = BOS
-
-	}
+	potential = { tag = BOS }
 
 	bos_approach_serbia = {
 		icon = mission_diplomatic_relation
 		position = 2
-		required_missions = {
-			bos_civil_war
-		}
-		provinces_to_highlight = { }
-		trigger = {
-			OR = {
-				SER = {
-					has_100_opinion_improved_relation = {
-						target = ROOT
-					}
-				}
-				bos_civil_war_check_opposing_support_trigger = {
-					faction = SER
-				}
-				bos_civil_war_resolved_trigger = yes
-			}
-
-		}
-		effect = {
-   if = {
-    limit = {
-     bos_civil_war_resolved_trigger = yes
-    }
-    custom_tooltip = bos_bypass_civil_war_mission_tt
-   }
-   else_if = {
-    limit = {
-     bos_civil_war_check_opposing_support_trigger = { faction = SER }
-    }
-    custom_tooltip = bos_bypass_support_mission_tt
-   }
-   else = {
-    bos_civil_war_gain_support_effect = {
-     faction = SER
-    }
-   }
+		required_missions = { bos_civil_war }
+		provinces_to_highlight = {  }
+  ai_weight = {
+   factor = 1000
   }
+		trigger = { bos_civil_war_can_get_support_trigger = { faction = SER }  }
+
+		effect = {
+			if = {
+				limit = { bos_has_country_support_trigger = { faction = SER }  }
+				bos_civil_war_gain_support_effect = { faction = SER }
+			}
+			else = { bos_civil_war_gain_support_effect = { faction = SER }  }
+		}
 	}
 
 	bos_krstjani_question = {
 		icon = regents_contracts
 		position = 5
-		required_missions = {
-			bos_rebuild_bosnia
-		}
-		provinces_to_highlight = { }
+		required_missions = { bos_rebuild_bosnia }
+		provinces_to_highlight = {  }
+
 		trigger = {
-   custom_trigger_tooltip = {
-    tooltip = bos_krstjani_question_has_resolved_tt
-    OR = {
-     has_country_flag = blk_catholic
-     has_country_flag = blk_krstjani
-    }
-   }
-  }
+			custom_trigger_tooltip = {
+				tooltip = bos_krstjani_question_has_resolved_tt
+				OR = {
+					has_country_flag = blk_catholic
+					has_country_flag = blk_krstjani
+				}
+			}
+		}
+
 		effect = {
-   if = {
-    limit = {
-     religion = krstjani
-    }
-    add_church_power = 50
-   }
-   else = {
-    add_papal_influence = 25
-   }
-  }
+			tooltip = { swap_non_generic_missions = yes }
+			custom_tooltip = bos_newline
+			custom_tooltip = bos_krstjani_question_a_tt
+			custom_tooltip = bos_newline
+			custom_tooltip = bos_krstjani_question_b_tt
+			hidden_effect = {
+				if = {
+					limit = { religion = krstjani }
+					add_church_power = 50
+				}
+				else = { add_papal_influence = 25 }
+			}
+		}
 	}
 }
 bos_catholic_branch = {
@@ -1114,114 +1202,119 @@ bos_catholic_branch = {
 	potential = {
 		tag = BOS
 		has_country_flag = blk_catholic
-
 	}
 
 	bos_catholic_1 = {
 		icon = sway_the_pope
 		position = 6
-		required_missions = {
-			bos_krstjani_question
-		}
-		provinces_to_highlight = { }
+		required_missions = { bos_krstjani_question }
+		provinces_to_highlight = {  }
+
 		trigger = {
-   OR = {
-    PAP = {
-     has_100_opinion_improved_relation = {
-      target = ROOT
-     }
-    }
-    religious_unity = 0.9
-   }
-  }
+			OR = {
+				PAP = { has_100_opinion_improved_relation = { target = ROOT }  }
+				alliance_with = PAP
+				religious_unity = 0.9
+			}
+		}
+
 		effect = {
-   country_event = {
-    id = bos_missions.10
-   }
-  }
+			country_event = { id = bos_missions.10 }
+			custom_tooltip = bos_catholic_djed_insight_tt
+		}
 	}
 
 	bos_catholic_2 = {
 		icon = mission_spread_the_reformation
 		position = 7
-		required_missions = {
-			bos_catholic_1
-		}
+		required_missions = { bos_catholic_1 }
 		provinces_to_highlight = {
-   owned_by = ROOT
-   religion_group = christian
-   NOT = { religion = catholic }
-  }
+			owned_by = ROOT
+			religion_group = christian
+			NOT = { religion = catholic }
+			has_owner_accepted_culture = yes
+		}
+
 		trigger = {
-   NOT = {
-    any_owned_province = {
-     religion_group = christian
-     NOT = { religion = catholic }
-    }
-   }
-  }
+			NOT = {
+				any_owned_province = {
+					religion_group = christian
+					NOT = {
+						religion = catholic
+						has_owner_accepted_culture = yes
+					}
+				}
+			}
+		}
+
 		effect = {
-   add_years_of_owned_provinces_manpower = {
-    years = 4
-    trigger = { religion = catholic }
-   }
-  }
+			add_years_of_owned_provinces_manpower = {
+				years = 4
+				trigger = {
+					religion = catholic
+					has_owner_accepted_culture = yes
+				}
+			}
+		}
 	}
 
 	bos_catholic_3 = {
 		icon = mission_european_church
 		position = 8
-		required_missions = {
-			bos_catholic_2
-		}
+		required_missions = { bos_catholic_2 }
 		provinces_to_highlight = {
-   owned_by = ROOT
-   NOT = { has_building = temple }
-   NOT = { has_building = cathedral }
-  }
+			owned_by = ROOT
+			NOT = { has_building = temple }
+			NOT = { has_building = cathedral }
+		}
+
 		trigger = {
-   calc_true_if = {
-    amount = 12
-    any_owned_province = {
-     OR = {
-      has_building = temple
-      has_building = cathedral
-     }
-    }
-   }
-  }
+			calc_true_if = {
+				amount = 12
+				all_owned_province = {
+					OR = {
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+			}
+		}
+
 		effect = {
-   add_country_modifier = {
-    name = bos_tax_meta
-    duration = 7300
-   }
-   add_treasury = 400 # go build a cathedral or two now
-  }
+			add_country_modifier = {
+				name = "bos_tax_meta"
+				duration = 7300
+			}
+			add_treasury = 400
+		}
 	}
 
 	bos_catholic_4 = {
 		icon = mission_balkan_conquest
 		position = 9
 		required_missions = {
-			bos_turk_time bos_catholic_3
+			bos_turk_time
+			bos_catholic_3
 		}
 		provinces_to_highlight = {
-   region = balkan_region
-   NOT = { religion = catholic }
-  }
+			region = balkan_region
+			NOT = { religion = catholic }
+		}
+
 		trigger = {
-   all_province = {
-    region = balkan_region
-    religion = catholic
-   }
-  }
+			all_province = {
+				region = balkan_region
+				religion = catholic
+			}
+		}
+
 		effect = {
-   add_papal_influence = 50
-   add_country_modifier = {
-    name = bos_catholic_empire
-    duration = -1
-   }
-  }
+			add_papal_influence = 50
+			add_country_modifier = {
+				name = "bos_catholic_empire"
+				duration = -1
+			}
+		}
 	}
 }
 bos_krstjani_branch = {
@@ -1232,114 +1325,120 @@ bos_krstjani_branch = {
 	potential = {
 		tag = BOS
 		has_country_flag = blk_krstjani
-
 	}
 
 	bos_krstjani_1 = {
 		icon = mission_european_church
 		position = 6
-		required_missions = {
-			bos_krstjani_question
-		}
+		required_missions = { bos_krstjani_question }
 		provinces_to_highlight = {
-   owned_by = ROOT
-   NOT = { has_province_modifier = blk_krstjani_hizas_no_uni_no_temple }
-   NOT = { has_province_modifier = blk_krstjani_hizas_temple }
-   NOT = { has_province_modifier = blk_krstjani_hizas_uni }
-  }
+			owned_by = ROOT
+			NOT = { has_province_modifier = blk_krstjani_hizas_no_uni_no_temple }
+			NOT = { has_province_modifier = blk_krstjani_hizas_temple }
+			NOT = { has_province_modifier = blk_krstjani_hizas_uni }
+		}
+
 		trigger = {
-   calc_true_if = {
-    any_owned_province = {
-     OR = {
-      has_province_modifier = blk_krstjani_hizas_no_uni_no_temple
-      has_province_modifier = blk_krstjani_hizas_temple
-      has_province_modifier = blk_krstjani_hizas_uni
-     }
-    }
-    amount = 10
-   }
-  }
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						has_province_modifier = blk_krstjani_hizas_no_uni_no_temple
+						has_province_modifier = blk_krstjani_hizas_temple
+						has_province_modifier = blk_krstjani_hizas_uni
+					}
+				}
+				amount = 10
+			}
+		}
+
 		effect = {
-   add_country_modifier = {
-    name = bos_tax_meta
-    duration = 7300
-   }
-   add_treasury = 200 # go build a church or two now
-  }
+			add_country_modifier = {
+				name = "bos_tax_meta"
+				duration = 7300
+			}
+			add_treasury = 200
+		}
 	}
 
 	bos_krstjani_2 = {
 		icon = mission_spread_the_reformation
 		position = 7
-		required_missions = {
-			bos_krstjani_1
-		}
+		required_missions = { bos_krstjani_1 }
 		provinces_to_highlight = {
-   owned_by = ROOT
-   religion = catholic
-  }
+			owned_by = ROOT
+			religion = catholic
+		}
+
 		trigger = {
-   NOT = {
-    any_owned_province = {
-     religion = catholic
-    }
-   }
-  }
+			NOT = {
+				any_owned_province = {
+					religion = catholic
+					has_owner_accepted_culture = yes
+				}
+			}
+		}
+
 		effect = {
-   add_years_of_owned_provinces_manpower = {
-    years = 4
-    trigger = { religion = krstjani }
-   }
-  }
+			add_years_of_owned_provinces_manpower = {
+				years = 4
+				trigger = {
+					religion = krstjani
+					has_owner_accepted_culture = yes
+				}
+			}
+		}
 	}
 
 	bos_krstjani_3 = {
 		icon = mission_bridge_the_heresy
 		position = 8
-		required_missions = {
-			bos_krstjani_2
-		}
+		required_missions = { bos_krstjani_2 }
 		provinces_to_highlight = {
-   owned_by = ROOT
-   NOT = { religion = krstjani }
-  }
+			owned_by = ROOT
+			NOT = { religion = krstjani }
+		}
+
 		trigger = {
-   custom_trigger_tooltip = {
-    tooltip = bos_kristjani_cement_mission_tt
-    has_global_flag = krstjani_cemented
-   }
-  }
+			custom_trigger_tooltip = {
+				tooltip = bos_kristjani_cement_mission_tt
+				has_global_flag = krstjani_cemented
+			}
+		}
+
 		effect = {
-   add_country_modifier = {
-    name = bos_krstjani_tolerance
-    duration = -1
-   }
-  }
+			add_country_modifier = {
+				name = "bos_krstjani_tolerance"
+				duration = -1
+			}
+		}
 	}
 
 	bos_krstjani_4 = {
 		icon = mission_balkan_conquest
 		position = 9
 		required_missions = {
-			bos_turk_time bos_krstjani_3
+			bos_turk_time
+			bos_krstjani_3
 		}
 		provinces_to_highlight = {
-   region = balkan_region
-   NOT = { religion = krstjani }
-  }
+			region = balkan_region
+			NOT = { religion = krstjani }
+		}
+
 		trigger = {
-   all_province = {
-    region = balkan_region
-    religion = krstjani
-   }
-  }
+			all_province = {
+				region = balkan_region
+				religion = krstjani
+			}
+		}
+
 		effect = {
-   add_church_power = 150
-   add_country_modifier = {
-    name = bos_krstjani_empire
-    duration = -1
-   }
-  }
+			add_church_power = 150
+			add_country_modifier = {
+				name = "bos_krstjani_empire"
+				duration = -1
+			}
+		}
 	}
 }
 bos_religion_branch = {
@@ -1353,50 +1452,52 @@ bos_religion_branch = {
 			has_country_flag = blk_krstjani
 		}
 		tag = BOS
-
 	}
 
 	bos_branch_1 = {
 		icon = mission_unknown_mission
 		position = 6
-		required_missions = {
-			bos_krstjani_question
-		}
-		provinces_to_highlight = { }
-		trigger = { }
-		effect = { }
+		required_missions = { bos_krstjani_question }
+		provinces_to_highlight = {  }
+
+		trigger = {  }
+
+		effect = {  }
 	}
 
 	bos_branch_2 = {
 		icon = mission_unknown_mission
 		position = 7
-		required_missions = {
-			bos_branch_1
-		}
-		provinces_to_highlight = { }
-		trigger = { }
-		effect = { }
+		required_missions = { bos_branch_1 }
+		provinces_to_highlight = {  }
+
+		trigger = {  }
+
+		effect = {  }
 	}
 
 	bos_branch_3 = {
 		icon = mission_unknown_mission
 		position = 8
-		required_missions = {
-			bos_branch_2
-		}
-		provinces_to_highlight = { }
-		trigger = { }
-		effect = { }
+		required_missions = { bos_branch_2 }
+		provinces_to_highlight = {  }
+
+		trigger = {  }
+
+		effect = {  }
 	}
 
 	bos_branch_4 = {
 		icon = mission_unknown_mission
 		position = 9
 		required_missions = {
-			bos_turk_time bos_branch_3
+			bos_turk_time
+			bos_branch_3
 		}
-		provinces_to_highlight = { }
-		trigger = { }
-		effect = { }
+		provinces_to_highlight = {  }
+
+		trigger = {  }
+
+		effect = {  }
 	}
 }

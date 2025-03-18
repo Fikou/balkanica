@@ -1,18 +1,26 @@
 bos_civil_war_gain_support_effect = {
  if = {
   limit = {
-   bos_civil_war_resolved_trigger = yes
-  }
-  custom_tooltip = bos_bypass_civil_war_mission_tt
- }
- else_if = {
-  limit = {
    NOT = { BOS = { has_country_flag = blk_$faction$_support }  }
    NOT = { HRZ = { has_country_flag = blk_$faction$_support }  }
   }
-  hidden_effect = { set_country_flag = blk_$faction$_support }
-  custom_tooltip = bos_other_faction_we_get_support_tt
+  hidden_effect = { bos_set_country_support_effect = { faction = $faction$ } }
+  if = {
+   limit = {
+    tag = BOS
+   }
+   custom_tooltip = bos_bos_gets_support_tt
+  }
+  if = {
+   limit = {
+    tag = HRZ
+   }
+   custom_tooltip = bos_hrz_gets_support_tt
+  }
   custom_tooltip = bos_civil_war_$faction$_support_tt
  }
- else = { custom_tooltip = bos_other_faction_got_support_effect_tt }
+}
+
+bos_set_country_support_effect ={
+ set_country_flag = blk_$faction$_support
 }

@@ -28,7 +28,18 @@ country_event = {
     trade_goods = gold
    }
    clr_province_flag = bos_temp_exploiting_silver
-   change_trade_goods = random
+   if = {
+    limit = {
+     province_id = 4757
+    }
+    change_trade_goods = grain
+   }
+   if = {
+    limit = {
+     province_id = 1827
+    }
+    change_trade_goods = livestock
+   }
    add_base_production = -2
   }
  }
@@ -38,7 +49,14 @@ country_event = {
 country_event = {
  id = bos_missions.2
  title = bos_missions.2.title
- desc = bos_missions.2.desc
+ desc = {
+  desc = bos_missions.2.desc_a
+  trigger = { NOT = { mission_completed = bos_resolve_civil_war } }
+ }
+ desc = {
+  desc = bos_missions.2.desc_b
+  trigger = { mission_completed = bos_resolve_civil_war }
+ }
  picture = CHURCH_ESTATE_1_eventPicture
 
  fire_only_once = yes
@@ -47,16 +65,20 @@ country_event = {
   religion = krstjani
   tag = PAP
  }
- trigger = { # i'm not adding a trigger to check if the pope exists. they probably exist this early into the game.
+ trigger = { # i'm not adding a trigger to check if the pope exists. they PROBABLY exist this early into the game.
    tag = BOS
    religion = krstjani
    NOT = { has_country_flag = blk_catholic }
    NOT = { has_country_flag = blk_krstjani }
-   mission_completed = bos_resolve_civil_war
+   mission_completed = bos_civil_war
   }
 
  mean_time_to_happen = {
   months = 72
+  modifier = {
+   factor = 0.5
+   mission_completed = bos_resolve_civil_war
+  }
  }
 
  option = {
@@ -65,6 +87,7 @@ country_event = {
    set_country_flag = blk_krstjani
   }
   custom_tooltip = bos_missions_2_krstjani_tt
+  custom_tooltip = bos_newline
   PAP = {
    add_opinion = {
     who = ROOT
@@ -75,9 +98,10 @@ country_event = {
    who = PAP
    modifier = pope_rebuffed
   }
+  custom_tooltip = bos_newline
   swap_non_generic_missions = yes
   ai_chance = {
-   factor = 80
+   factor = 90
   }
  }
  option = {
@@ -85,7 +109,16 @@ country_event = {
   hidden_effect = {
    set_country_flag = blk_catholic
   }
+  if = {
+   limit = {
+    NOT = { mission_completed = bos_resolve_civil_war }
+   }
+   bos_civil_war_gain_support_effect = {
+    faction = PAP
+   }
+  }
   custom_tooltip = bos_missions_2_catholic_tt
+  custom_tooltip = bos_newline
   PAP = {
    add_opinion = {
     who = ROOT
@@ -96,8 +129,12 @@ country_event = {
    who = PAP
    modifier = pope_accepted
   }
-  add_stability = -1
+  add_country_modifier = {
+   name = bos_converted
+   duration = 7300
+  }
   change_religion = catholic
+  custom_tooltip = bos_newline
   every_owned_province = {
    limit = {
     religion = krstjani
@@ -107,16 +144,20 @@ country_event = {
     size = 0.75
    }
   }
+  custom_tooltip = bos_newline
   swap_non_generic_missions = yes
   ai_chance = {
-   factor = 20
+   factor = 10
    modifier = {
-    factor = 0
-    NOT = { stability = 2 } # ai manages to get up to 2 stab, sure, they can convert. but i'd rather they not nation ruin
+    factor = 0 # f the pope we're never converting
+    OR = {
+     is_rival = PAP
+     PAP = { is_rival = ROOT }
+    }
    }
    modifier = {
-    factor = 0
-    NOT = { manpower_percentage = 0.25 } # likewise, ai doesn't have the manpower to handle rebels - don't nation ruin
+    factor = 18 # turns it into 66% odds to convert, because we want to keep our alliance!
+    alliance_with = PAP
    }
   }
  }
@@ -188,6 +229,10 @@ country_event = {
     type = cb_vassalize_mission
     months = 300
    }
+   add_opinion = {
+    who = ROOT
+    modifier = bos_declined_post_support
+   }
   }
   ai_chance = {
    factor = 0
@@ -229,6 +274,10 @@ country_event = {
     type = cb_border_war
     months = 240
    }
+   add_opinion = {
+    who = ROOT
+    modifier = bos_declined_post_support
+   }
   }
   ai_chance = {
    factor = 0
@@ -257,7 +306,7 @@ country_event = {
 
  option = {
   name = bos_missions.6.a
-  ARA = { create_vassal = ROOT }
+  ARA = { vassalize = ROOT }
   ai_chance = {
    factor = 0
   }
@@ -269,6 +318,10 @@ country_event = {
     target = ROOT
     type = cb_vassalize_mission
     months = 480
+   }
+   add_opinion = {
+    who = ROOT
+    modifier = bos_declined_post_support
    }
   }
   ai_chance = {
@@ -359,7 +412,7 @@ country_event = {
      }
      AND = {
       land_forcelimit = ROOT
-      total_development = ROOT
+      has_eclipsed = ROOT
      }
     }
    }
@@ -450,6 +503,323 @@ country_event = {
   }
   ai_chance = {
    factor = 20
+  }
+ }
+}
+
+# end of the civil war
+country_event = {
+ id = bos_missions.11
+ title = bos_missions.11.title
+ desc = bos_missions.11.desc
+ picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  tag = BOS
+  NOT = { mission_completed = bos_resolve_civil_war }
+  bos_civil_war_resolved_trigger = yes
+ }
+
+ mean_time_to_happen = {
+  days = 7
+ }
+
+ immediate = {
+  hidden_effect = {
+   complete_mission = bos_civil_war
+   complete_mission = bos_approach_aragon
+   complete_mission = bos_approach_hungary
+   complete_mission = bos_approach_serbia
+   complete_mission = bos_approach_austria
+  }
+ }
+ option = {
+  name = bos_missions.11.a
+  if = {
+   limit = {
+    tag = BOS
+   }
+   every_province = {
+    limit = {
+     is_core = HRZ
+     NOT = { is_core = BOS }
+    }
+    add_core = BOS
+   }
+   if = {
+    limit = {
+     HRZ = { exists = yes }
+    }
+    hidden_effect = {
+     set_country_flag = bos_civil_war_resolved_diplomatically
+    }
+    custom_tooltip = bos_civil_war_diplomacy_warning_tt
+    every_province = {
+     limit = {
+      owned_by = HRZ
+     }
+     add_province_modifier = {
+      name = bos_civil_war_provice_mod
+      duration = 18250
+     }
+    }
+    BOS = {
+     inherit = HRZ
+    }
+   }
+   else = {
+    hidden_effect = {
+     set_country_flag = bos_civil_war_resolved_violently
+    }
+   }
+   HUN = {
+    remove_guarantee = BOS
+   }
+  }
+  if = {
+   limit = {
+    tag = HRZ
+   }
+   every_province = {
+    limit = {
+     is_core = BOS
+     NOT = { is_core = HRZ }
+    }
+    add_core = HRZ
+   }
+   if = {
+    limit = {
+     BOS = { exists = yes }
+    }
+    hidden_effect = {
+     set_country_flag = bos_civil_war_resolved_diplomatically
+    }
+    custom_tooltip = bos_civil_war_diplomacy_warning_tt
+    every_province = {
+     limit = {
+      owned_by = BOS
+     }
+     add_province_modifier = {
+      name = bos_civil_war_provice_mod
+      duration = 18250
+     }
+    }
+    HRZ = {
+     inherit = BOS
+    }
+   }
+   else = {
+    hidden_effect = {
+     set_country_flag = bos_civil_war_resolved_violently
+    }
+   }
+   ARA = {
+    remove_guarantee = HRZ
+   }
+  }
+ }
+}
+
+# cannot get hungary support
+country_event = {
+ id = bos_missions.12
+ title = bos_missions.12.title
+ desc = bos_missions.12.desc
+ picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  OR = {
+   tag = BOS
+   bos_civil_war_check_if_supporting_hrz_trigger = { faction = HUN }
+  }
+  OR = {
+   tag = HRZ
+   bos_civil_war_check_if_supporting_bos_trigger = { faction = HUN }
+  }
+  mission_completed = bos_civil_war
+  NOT = { mission_completed = bos_resolve_civil_war }
+  NOT = { mission_completed = bos_approach_hungary }
+ }
+
+ mean_time_to_happen = {
+  days = 3
+ }
+
+ immediate = {
+  hidden_effect = {
+   complete_mission = bos_approach_hungary
+  }
+ }
+
+ option = {
+  name = bos_missions.12.a
+ }
+}
+
+# cannot get austria support
+country_event = {
+ id = bos_missions.13
+ title = bos_missions.13.title
+ desc = bos_missions.13.desc
+ picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  OR = {
+   tag = BOS
+   bos_civil_war_check_if_supporting_hrz_trigger = { faction = HAB }
+  }
+  OR = {
+   tag = HRZ
+   bos_civil_war_check_if_supporting_bos_trigger = { faction = HAB }
+  }
+  mission_completed = bos_civil_war
+  NOT = { mission_completed = bos_resolve_civil_war }
+  NOT = { mission_completed = bos_approach_austria }
+ }
+
+ mean_time_to_happen = {
+  days = 3
+ }
+
+ immediate = {
+  hidden_effect = {
+   complete_mission = bos_approach_austria
+  }
+ }
+
+ option = {
+  name = bos_missions.13.a
+ }
+}
+
+# cannot get serbia support
+country_event = {
+ id = bos_missions.14
+ title = bos_missions.14.title
+ desc = bos_missions.14.desc
+ picture = NOBLE_ESTATE_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  OR = {
+   tag = BOS
+   bos_civil_war_check_if_supporting_hrz_trigger = { faction = SER }
+  }
+  OR = {
+   tag = HRZ
+   bos_civil_war_check_if_supporting_bos_trigger = { faction = SER }
+  }
+  mission_completed = bos_civil_war
+  NOT = { mission_completed = bos_resolve_civil_war }
+  NOT = { mission_completed = bos_approach_serbia }
+ }
+
+ mean_time_to_happen = {
+  days = 3
+ }
+
+ immediate = {
+  hidden_effect = {
+   complete_mission = bos_approach_serbia
+  }
+ }
+
+ option = {
+  name = bos_missions.14.a
+ }
+}
+
+# cannot get aragon support
+country_event = {
+ id = bos_missions.15
+ title = bos_missions.15.title
+ desc = bos_missions.15.desc
+ picture = NOBLE_ESTATE_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  OR = {
+   tag = BOS
+   bos_civil_war_check_if_supporting_hrz_trigger = { faction = ARA }
+  }
+  OR = {
+   tag = HRZ
+   bos_civil_war_check_if_supporting_bos_trigger = { faction = ARA }
+  }
+  mission_completed = bos_civil_war
+  NOT = { mission_completed = bos_resolve_civil_war }
+  NOT = { mission_completed = bos_approach_aragon }
+ }
+
+ mean_time_to_happen = {
+  days = 3
+ }
+
+ immediate = {
+  hidden_effect = {
+   complete_mission = bos_approach_aragon
+  }
+ }
+
+ option = {
+  name = bos_missions.15.a
+ }
+}
+
+# hum and ragusa revolt is brewing
+country_event = {
+ id = bos_missions.16
+ title = bos_missions.16.title
+ desc = bos_missions.16.desc
+ picture = ANGRY_MOB_eventPicture
+
+ is_triggered_only = yes
+
+ immediate = {
+  hidden_effect = {
+   set_country_flag = bos_hum_ragusa_revolt
+  }
+ }
+
+ option = {
+  name = bos_missions.16.a
+ }
+}
+
+# Choosing between mountain and hill privilages
+country_event = {
+ id = bos_missions.17
+ title = bos_missions.17.title
+ desc = bos_missions.17.desc
+ picture = FALUN_COPPER_MINE_eventPicture
+
+ is_triggered_only = yes
+
+ option = {
+  name = bos_missions.17.a
+  custom_tooltip = unlock_privilege_estate_burghers_mountain_expansion_tt
+  hidden_effect = {
+   unlock_estate_privilege = {
+    estate_privilege = estate_burghers_mountain_expansion
+   }
+  }
+  ai_chance = {
+   factor = 100
+  }
+ }
+ option = {
+  name = bos_missions.17.b
+  custom_tooltip = unlock_privilege_estate_burghers_forest_expansion_tt
+  hidden_effect = {
+   unlock_estate_privilege = {
+    estate_privilege = estate_burghers_forest_expansion
+   }
+  }
+  ai_chance = {
+   factor = 0
   }
  }
 }
