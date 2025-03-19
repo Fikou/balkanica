@@ -141,7 +141,7 @@
  bos_civil_war_provice_mod:0 "Aftermath of the Civil War"
  desc_bos_civil_war_provice_mod:0 "Resolving the civil war diplomatically has left the rival faction with some local power."
  bos_civil_war_diplomacy_warning_tt:0 "§RSolving the civil war through diplomacy will leave the rival faction with some local power.§!"
- bos_ragusa_via_war_tt:0 "§RStjepan I Kosaca's followers may be displeased, and may use what little local power they have left to contest your conquest.§!"
+ bos_ragusa_via_war_tt:0 "§RThe people of Hum may be displeased, and may use what little local power they have left to contest your conquest.§!"
  bos_found_srebrenica_tt:0 "Expand silver mining in Srebrenica. §GThis will be permanent.§!\n"
  bos_exploit_serbia_silver_temp_tt:0 "\nExploit the silver veins of Raksa and Kolubara. §RThis will be temporary.§!\n"
  bos_recently_setup_silver_mining:0 "Srebrenica Silver Mining Resumed"
@@ -278,7 +278,7 @@
  bos_missions.15.a:0 "We will not be outdone."
 
  bos_missions.16.title:0 "Rumbles in Hum"
- bos_missions.16.desc:0 "With our recent conquest of Ragusa, the people of Hum are up in arms. Decades ago, the people of Ragusa supported our rival, the Lord of Hum (Stjepan I Kosaca) during the civil war. While the nobles of Hum agreed to our rule in exchange for token autonomy, they now see our aggressive expansion into their former supporter as a betrayal. They seek to rise up again, threatening to undo the peace we have worked so hard to achieve. This revolt must be quelled."
+ bos_missions.16.desc:0 "With our recent conquest of Ragusa, the people of Hum are up in arms. Decades ago, the people of Ragusa supported our rival, the Lord of Hum during the civil war. While the nobles of Hum agreed to our rule in exchange for token autonomy, they now see our aggressive expansion into their former supporter as a betrayal. They seek to rise up again, threatening to undo the peace we have worked so hard to achieve. This revolt must be quelled."
  bos_missions.16.a:0 "Trouble in paradise."
 
  bos_krstjani_question_a_tt:0 "If we convert to §YCatholicism§!:\nGain §G25§! papal influence."
