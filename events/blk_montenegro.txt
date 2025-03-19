@@ -21,7 +21,7 @@ country_event = {
  }
 
  mean_time_to_happen = {
-  months = 6
+  years = 25
  }
 
  option = {
@@ -41,6 +41,133 @@ country_event = {
 
   ai_chance = {
    factor = 50
+  }
+ }
+}
+
+country_event = {
+ id = montenegro_flavor.2
+ title = montenegro_flavor.2.title
+ desc = montenegro_flavor.2.desc
+ picture = NOBLE_ESTATE_DEMANDS_eventPicture
+
+ fire_only_once = yes
+ is_triggered_only = yes
+
+ trigger = {
+  tag = SER
+  NOT = { exists = MON }
+  NOT = { has_country_flag = zeta_happened }
+  OR = {
+   owns = 138
+   owns = 4754
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 1
+ }
+
+ option = {
+  name = "montenegro_flavor.2.a"
+  custom_tooltip = montenegro_flavor.2.tt
+  hidden_effect = {
+   every_owned_province = {
+    limit = {
+     is_core = MON
+    }
+    discover_country = MON
+    clear_rebels = yes
+    cede_province = MON
+   }
+   add_truce_with = MON
+   MON = {
+    define_ruler = {
+     dynasty = "Crnojevic"
+    }
+    add_truce_with = SER
+   }
+   reverse_add_opinion = {
+    modifier = released_us_freely
+    who = MON
+   }
+  }
+  ai_chance = {
+   factor = 15
+   modifier = {
+    factor = 1.5
+    rebel_progress_at_least = { value = 80 }
+   }
+   modifier = {
+    factor = 2
+    is_at_war = yes
+   }
+   modifier = {
+    factor = 3
+    NOT = { stability = -1 }
+   }
+   modifier = {
+    factor = 8
+    is_bankrupt = yes
+   }
+  }
+ }
+
+ option = {
+  name = "montenegro_flavor.2.b"
+  trigger = { ai = no }
+  custom_tooltip = montenegro_flavor.2.tt
+  hidden_effect = {
+   every_owned_province = {
+    limit = {
+     is_core = MON
+    }
+    discover_country = MON
+    clear_rebels = yes
+    cede_province = MON
+   }
+   add_truce_with = MON
+   MON = {
+    define_ruler = {
+     dynasty = "Crnojevic"
+    }
+    add_truce_with = SER
+   }
+   reverse_add_opinion = {
+    modifier = released_us_freely
+    who = MON
+   }
+  }
+  switch_tag = MON
+
+  ai_chance = {
+   factor = 0
+  }
+ }
+
+ option = {
+  name = "montenegro_flavor.2.c"
+  MON = {
+   random_core_province = {
+    limit = {
+     owned_by = ROOT
+    }
+    spawn_rebels = {
+     type = nationalist_rebels
+     size = 2
+     separatists_target = MON
+     win = yes
+    }
+   }
+  }
+
+  ai_chance = {
+   factor = 85
+  }
+ }
+ immediate = {
+  hidden_effect = {
+   set_country_flag = zeta_happened
   }
  }
 }

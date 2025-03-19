@@ -1890,7 +1890,7 @@ south_slavic = {
 		}
 		dynasty_names = {
 			"Trpimirovic" "Mihaljevic" "Subic" "Hrvatinic" 
-			"Kosaca" "Vukcic" "Vukasin" "Dukasin" "Babonic" "Frankopan" "Kacic" "Draskovic" 
+			"Vukcic" "Vukasin" "Dukasin" "Babonic" "Frankopan" "Kacic" "Draskovic" 
 			"Bebek" "Svetoslavic" "Krešimirovic" "Domagojevic" "Feštetic" "Gorjanski"
 			"Svacic" "Kobilic" "Lackovic" "Šubic"
 			"Berislavic" "Nepilic" "Jalacic" "Zrinski" "Garaj" "Eltz" "Kaboga" 
@@ -1960,7 +1960,7 @@ south_slavic = {
 		}
 		dynasty_names = {
 			Boricevic Bogopenec Berislavic Hranusic Kotromanic Kulinic Kristic Kurjakovic Nikolic
-			Nelipcic Purcic Radivojevic Sankovic Vojsalic Vlatkovic Visevic Zlatonosovic
+			Nelipcic Purcic Radivojevic Sankovic Vojsalic Vlatkovic Visevic Zlatonosovic Kosaca
 		}
 	}
 	bulgarian = {
@@ -2798,7 +2798,7 @@ slavic = {
 		}
 		dynasty_names = {
 			"Trpimirovic" "Mihaljevic" "Subic" "Hrvatinic" 
-			"Kosaca" "Vukcic" "Vukasin" "Dukasin" "Babonic" "Frankopan" "Kacic" "Draskovic" 
+			"Vukcic" "Vukasin" "Dukasin" "Babonic" "Frankopan" "Kacic" "Draskovic" 
 			"Bebek" "Svetoslavic" "Krešimirovic" "Domagojevic" "Feštetic" "Gorjanski"
 			"Svacic" "Kobilic" "Lackovic" "Šubic"
 			"Berislavic" "Nepilic" "Jalacic" "Zrinski" "Garaj" "Eltz" "Kaboga" 
@@ -2865,7 +2865,7 @@ slavic = {
 		}
 		dynasty_names = {
 			Boricevic Bogopenec Berislavic Hranusic Kotromanic Kulinic Kristic Kurjakovic Nikolic
-			Nelipcic Purcic Radivojevic Sankovic Vojsalic Vlatkovic Visevic Zlatonosovic
+			Nelipcic Purcic Radivojevic Sankovic Vojsalic Vlatkovic Visevic Zlatonosovic Kosaca
 		}
 	}
 	bulgarian_new = {

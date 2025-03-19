@@ -113,6 +113,20 @@
  montenegro_flavor.1.a:0 "A bishop's life for me!"
  montenegro_flavor.1.b:0 "A dream cannot be a basis for a state."
 
+ montenegro_flavor.2.title:0 "A Noble Request"
+ montenegro_flavor.2.desc:0 "The noble family of Crnojevic has made demands. They want to leave our suzerainty and rule the territory of Zeta on their own. Should we let them lead their own destiny or face an open rebellion?"
+ montenegro_flavor.2.a:0 "That's one less thing to worry about."
+ montenegro_flavor.2.b:0 "I wonder how they will fare..."
+ montenegro_flavor.2.c:0 "Raise the armies!"
+ montenegro_flavor.2.tt:0 "Release Zeta from all of our provinces they have cores on."
+
+ bosnia_flavor.1.title:0 "Civil War!"
+ bosnia_flavor.1.desc:0 "Since Tvrtko's death in September 1443 and the election of Thomas as the King of Bosnia the realm has been experiencing a Civil War. The powerful Duke of Hum, Stjepan, does not recognize the rule of our king and is pursuing his own ambitions.\nTo end the civil war, we have to either crush them militarily, set up a royal marriage between us or get the support of several powers in the region."
+ bosnia_flavor.1.a:0 "Let's get to it, then."
+ hum_flavor.1.title:0 "Civil War!"
+ hum_flavor.1.desc:0 "Since Tvrtko's death in September 1443 and the election of Thomas as the King of Bosnia the realm has been experiencing a Civil War. The nobles have went against Radivoj, the true heir to Bosnia, who has ended up at our court.\nTo end the civil war, we have to either crush them militarily, set up a royal marriage between us or get the support of several powers in the region."
+ hum_flavor.1.a:0 "Time to deal with the false king."
+
  maintain_the_free_church_reform:0 "Maintain the Free Church"
  maintain_the_free_church_reform_desc:0 "The Bosnian Church has been attacked by many foreign powers for giving refuge to other faiths. By preserving its independence, we resist their influence and keep our identity."
  bosnian_elective_kingdom_reform:0 "Bosnian Elective Monarchy"

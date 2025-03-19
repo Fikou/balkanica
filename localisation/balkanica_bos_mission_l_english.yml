@@ -132,6 +132,7 @@
  bos_civil_war_PAP_support_tt:0 "The Papal States support you unconditionally if you convert to Catholicism."
  bos_other_faction_dead_tt:0 "We annexed or vassalized the other faction."
  bos_civil_war_resolved_through_marriage_tt:0 "The §YBosnian civil war§! has been resolved through marriage."
+ bos_civil_war_resolved_through_election_tt:0 "The §YBosnian civil war§! has been resolved through electing the anti-king."
  bos_civil_war_resolved_diplomatically_tt:0 "We have support of §Ythree§! major powers."
  bos_civil_war_resolved_inconclusively_tt:0 "The §YBosnian civil war§! has been resolved inconclusively due to foreign invasion."
  bos_civil_war_resolved_through_foreign_invaders_tt:0 "The §YBosnian civil war§! has been resolved through foreign invasion."
@@ -188,6 +189,8 @@
  desc_bos_converted:0 "Converted to Catholicism"
 
  bos_declined_post_support:0 "Broke our Promise"
+
+ government_events.3.h:0 "Elect the anti-king, Radivoj Ostojic."
 
  bos_hungary_fued_tt:0 "If we §Gmake amends§! with @HUN §YHungary§!, through marriage or alliance, we will §Ylose historical rival§! status.\n\nIf we make @HUN §YHungary§! into a subject, we will §Ylose historical rival§! status and also gain §Ypower projection§!.\n\nIf we §Rcontinue the feud§!, by rivalling or insulting them, they will §Ygain historical rival status with us§!, but we will be rewarded §Ypower projection§!. This power projection is §Ypermanent§! if @HUN §YHungary§! has §Yeclipsed§! us.\n"
 

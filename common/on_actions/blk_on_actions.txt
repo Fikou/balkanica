@@ -1,3 +1,16 @@
+on_startup = {
+ events = {
+  bosnia_flavor.1
+  hum_flavor.1
+ }
+}
+
+on_monarch_death = {
+ events = {
+  montenegro_flavor.2
+ }
+}
+
 on_extend_regency = {
  if = {
   limit = {

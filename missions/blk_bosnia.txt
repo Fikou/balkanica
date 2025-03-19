@@ -659,6 +659,23 @@ bos_3 = {
 				republican_tradition = 5
 			}
 			add_prestige_or_monarch_power = { amount = 10 }
+   if = {
+    limit = {
+     has_ruler = "Stjepan Tomaš Ostojic"
+    }
+    change_ruler_stat = {
+     type = adm
+     amount = 1
+    }
+    change_ruler_stat = {
+     type = dip
+     amount = 1
+    }
+    change_ruler_stat = {
+     type = mil
+     amount = 1
+    }
+   }
 			hidden_effect = {
 				if = {
 					limit = { ai = yes }

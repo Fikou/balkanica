@@ -1,5 +1,6 @@
 country_decisions = {
  ally_aragon = {
+  major = yes
   potential = {
    OR = {
     tag = HRZ
@@ -30,6 +31,7 @@ country_decisions = {
  }
 
  ally_hungary = {
+  major = yes
   potential = {
    OR = {
     tag = HRZ
@@ -60,6 +62,7 @@ country_decisions = {
  }
 
  ally_austria = {
+  major = yes
   potential = {
    OR = {
     tag = HRZ
@@ -84,12 +87,13 @@ country_decisions = {
   }
   effect = {}
   ai_will_do = {
-   factor = 200
+   factor = 400
   }
-  ai_importance = 500
+  ai_importance = 1000
  }
 
  ally_serbia = {
+  major = yes
   potential = {
    OR = {
     tag = HRZ
@@ -114,8 +118,8 @@ country_decisions = {
   }
   effect = {}
   ai_will_do = {
-   factor = 200
+   factor = 400
   }
-  ai_importance = 500
+  ai_importance = 1000
  }
 }

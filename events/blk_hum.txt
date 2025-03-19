@@ -1,0 +1,16 @@
+namespace = hum_flavor
+
+country_event = {
+ id = hum_flavor.1
+ title = hum_flavor.1.title
+ desc = hum_flavor.1.desc
+ picture = CIVIL_WAR_eventPicture
+ is_triggered_only = yes
+ fire_only_once = yes
+ trigger = {
+  tag = HRZ
+ }
+ option = {
+  name = hum_flavor.1.a
+ }
+}

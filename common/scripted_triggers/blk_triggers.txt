@@ -109,19 +109,21 @@ bos_civil_war_resolved_through_marriage_trigger = {
  }
 }
 
+bos_civil_war_resolved_through_election_trigger = {
+ custom_trigger_tooltip = {
+  tooltip = bos_civil_war_resolved_through_election_tt
+  tag = BOS
+  BOS = {
+   has_ruler = "Radivoj"
+   dynasty = "Ostojic"
+  }
+ }
+}
+
 bos_civil_war_resolved_diplomatically_trigger = {
  custom_trigger_tooltip = {
   tooltip = bos_civil_war_resolved_diplomatically_tt
   OR = {
-   # civil war gets automatically resolved "diplomatically" by 1454 if both sides are ai
-   # because i don't know how to make the ai focus on the civil war
-   AND = {
-    tag = BOS
-    BOS = { ai = yes }
-    HRZ = { ai = yes }
-    is_year = 1454
-   }
-   # otherwise check for the support
    calc_true_if = {
     amount = 3
     bos_has_country_support_trigger = { faction = HUN }
@@ -181,6 +183,7 @@ bos_civil_war_resolved_trigger = {
    OR = {
     bos_civil_war_resolved_through_violence_trigger = yes
     bos_civil_war_resolved_through_marriage_trigger = yes
+    bos_civil_war_resolved_through_election_trigger = yes
     bos_civil_war_resolved_diplomatically_trigger = yes
     bos_civil_war_resolved_through_foreign_invaders_trigger = yes
   }
