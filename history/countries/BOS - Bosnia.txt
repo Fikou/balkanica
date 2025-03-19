@@ -6,7 +6,6 @@ religion = krstjani
 technology_group = eastern
 capital = 3002	# Sarajevo
 historical_rival = HUN
-historical_rival = SER
 
 1389.1.1 = {
 	government_rank = 1

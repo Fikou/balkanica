@@ -556,6 +556,20 @@ country_event = {
     religion = krstjani
    }
   }
+  modifier = {
+   factor = 0.5
+   development_in_provinces = {
+    value = 160
+    religion = krstjani
+   }
+  }
+  modifier = {
+   factor = 0.25
+   development_in_provinces = {
+    value = 200
+    religion = krstjani
+   }
+  }
  }
 
  option = {

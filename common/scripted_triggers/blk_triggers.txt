@@ -11,22 +11,45 @@ has_100_opinion_improved_relation = {
 
  # maybe add a tooltip to this later?
 bos_has_country_support_trigger = {
- $tag$ = { has_country_flag = blk_$faction$_support }
+ has_country_flag = blk_$faction$_support
 }
 
-bos_civil_war_check_opposing_support_trigger = {
+bos_civil_war_check_if_supporting_bos_trigger = {
  custom_trigger_tooltip = {
-  tooltip = bos_other_faction_got_support_trigger_tt
-  OR = {
-   AND = {
-    tag = BOS
-    bos_has_country_support_trigger = { tag = BOS faction = $faction$ }
-   }
-   AND = {
-    tag = HRZ
-    bos_has_country_support_trigger = { tag = HRZ faction = $faction$ }
+  tooltip = bos_hrz_got_support_trigger_tt
+  tag = BOS
+  BOS = { bos_has_country_support_trigger = { faction = $faction$ } }
+ }
+}
+
+bos_civil_war_check_if_supporting_hrz_trigger = {
+ custom_trigger_tooltip = {
+  tooltip = bos_hrz_got_support_trigger_tt
+  tag = HRZ
+  HRZ = { bos_has_country_support_trigger = { faction = $faction$ } }
+ }
+}
+
+bos_civil_war_can_get_support_trigger = {
+ OR = {
+  alliance_with = $faction$
+  marriage_with = $faction$
+  reverse_has_opinion = {
+   who =  $faction$
+   value = 75
+  }
+  hidden_trigger = {
+   $faction$ = {
+    is_subject_of_type_with_overlord = {
+     who = ROOT
+     type = personal_union
+    }
    }
   }
+  hidden_trigger = {
+   $faction$ = { overlord_of = BOS }
+  }
+  $faction$ = { has_100_opinion_improved_relation = { target = ROOT } }
  }
 }
 
@@ -64,18 +87,22 @@ bos_civil_war_resolved_diplomatically_trigger = {
  custom_trigger_tooltip = {
   tooltip = bos_civil_war_resolved_diplomatically_tt
   OR = {
+   # civil war gets automatically resolved "diplomatically" by 1454 if both sides are ai
+   # because i don't know how to make the ai focus on the civil war
    AND = {
     tag = BOS
     BOS = { ai = yes }
     HRZ = { ai = yes }
     is_year = 1454
    }
+   # otherwise check for the support
    calc_true_if = {
     amount = 3
     bos_has_country_support_trigger = { faction = HUN }
     bos_has_country_support_trigger = { faction = HAB }
     bos_has_country_support_trigger = { faction = ARA }
     bos_has_country_support_trigger = { faction = SER }
+    bos_has_country_support_trigger = { faction = PAP }
    }
   }
  }
@@ -93,23 +120,19 @@ bos_civil_war_resolved_trigger = {
 }
 
 bos_can_diplo_vassal_rag_trigger = {
- AND = {
+ RAG = {
   hidden_trigger = {
-   RAG = { exists = yes }
-   RAG = { ai = yes }
+   exists = yes
+   ai = yes
   }
-  RAG = { alliance_with = ROOT }
-  RAG = {
-   has_opinion = {
-    who = ROOT
-    value = 150
-   }
+  alliance_with = ROOT
+  has_opinion = {
+   who = ROOT
+   value = 150
   }
-  RAG = {
-   trust = {
-    who = ROOT
-    value = 75
-   }
+  trust = {
+   who = ROOT
+   value = 75
   }
  }
 }
@@ -149,6 +172,16 @@ bos_hating_on_hun = {
 bos_trying_to_amend_hun = {
  OR = {
   alliance_with = HUN
+  marriage_with = HUN
   HUN = { is_subject_of = ROOT }
+ }
+}
+
+bos_has_any_low_tier_building = {
+ OR = {
+  has_building = temple
+  has_building = marketplace
+  has_building = workshop
+  has_building = barracks
  }
 }

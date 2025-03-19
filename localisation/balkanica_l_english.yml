@@ -59,8 +59,11 @@
  desc_blk_krstjani_hizas:0 "The hižas, or houses, are small local monasteries that serve as the center of religious life in the church. We must establish them in every province to strengthen our faith."
  blk_krstjani_hizas_tt:0 "Gain a tax modifier in every owned Krstjani province. Stronger in less developed provinces."
  blk_krstjani_hizas_temple:0 "Integrated Local Hiža"
+ desc_blk_krstjani_hizas_temple:0 "The hiža has been integrated into the local temple, and now serves as a center of religious life in this province."
  blk_krstjani_hizas_no_uni_no_temple:0 "Strong Local Hiža"
+ desc_blk_krstjani_hizas_no_uni_no_temple:0 "With no local temple, the hiža is a strong center of religious life in this province."
  blk_krstjani_hizas_uni:0 "Weak Local Hiža"
+ desc_blk_krstjani_hizas_uni:0 "The hiža has been integrated into the local university, and now serves as a center of religious life in this province."
 
  blk_krstjani_gosti:0 "§YInvite the Gosti§!"
  desc_blk_krstjani_gosti:0 "The Gosti are wandering mendicants who travel the land spreading the word of the church. They are wise, and will be of great help in advising our ruler"

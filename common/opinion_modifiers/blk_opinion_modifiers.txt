@@ -37,3 +37,8 @@ pope_accepted = {
  opinion = 30
  yearly_decay = 1
 }
+
+bos_declined_post_support = {
+ opinion = -50
+ yearly_decay = 1
+}
