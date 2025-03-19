@@ -1,0 +1,121 @@
+country_decisions = {
+ ally_aragon = {
+  potential = {
+   OR = {
+    tag = HRZ
+    tag = BOS
+   }
+   ai = yes
+   NOT = { BOS = { mission_completed = bos_approach_aragon } }
+   NOT = { HRZ = { mission_completed = hrz_approach_aragon } }
+  }
+  allow = {
+   OR = {
+    reverse_has_opinion = {
+     who = ARA
+     value = 75
+    }
+    marriage_with = ARA
+    alliance_with = ARA
+    ARA = {
+     has_100_opinion_improved_relation = { target = ROOT }
+    }
+   }
+  }
+  effect = {}
+  ai_will_do = {
+   factor = 400
+  }
+  ai_importance = 1000
+ }
+
+ ally_hungary = {
+  potential = {
+   OR = {
+    tag = HRZ
+    tag = BOS
+   }
+   ai = yes
+   NOT = { BOS = { mission_completed = bos_approach_hungary } }
+   NOT = { HRZ = { mission_completed = hrz_approach_hungary } }
+  }
+  allow = {
+   OR = {
+    reverse_has_opinion = {
+     who = HUN
+     value = 75
+    }
+    marriage_with = HUN
+    alliance_with = HUN
+    HUN = {
+     has_100_opinion_improved_relation = { target = ROOT }
+    }
+   }
+  }
+  effect = {}
+  ai_will_do = {
+   factor = 400
+  }
+  ai_importance = 1000
+ }
+
+ ally_austria = {
+  potential = {
+   OR = {
+    tag = HRZ
+    tag = BOS
+   }
+   ai = yes
+   NOT = { BOS = { mission_completed = bos_approach_austria } }
+   NOT = { HRZ = { mission_completed = hrz_approach_austria } }
+  }
+  allow = {
+   OR = {
+    reverse_has_opinion = {
+     who = HAB
+     value = 75
+    }
+    marriage_with = HAB
+    alliance_with = HAB
+    HAB = {
+     has_100_opinion_improved_relation = { target = ROOT }
+    }
+   }
+  }
+  effect = {}
+  ai_will_do = {
+   factor = 200
+  }
+  ai_importance = 500
+ }
+
+ ally_serbia = {
+  potential = {
+   OR = {
+    tag = HRZ
+    tag = BOS
+   }
+   ai = yes
+   NOT = { BOS = { mission_completed = bos_approach_serbia } }
+   NOT = { HRZ = { mission_completed = hrz_approach_serbia } }
+  }
+  allow = {
+   OR = {
+    reverse_has_opinion = {
+     who = SER
+     value = 75
+    }
+    marriage_with = SER
+    alliance_with = SER
+    SER = {
+     has_100_opinion_improved_relation = { target = ROOT }
+    }
+   }
+  }
+  effect = {}
+  ai_will_do = {
+   factor = 200
+  }
+  ai_importance = 500
+ }
+}

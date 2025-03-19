@@ -20,7 +20,7 @@ country_decisions = {
 			NOT = { tag = PAP }
    NOT = { tag = ILY }
 			OR = {
-				NOT = { exists = CRO}
+				NOT = { exists = CRO }
 				ai = no
 			}
 			OR = {

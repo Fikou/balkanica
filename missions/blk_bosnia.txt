@@ -9,9 +9,9 @@ bos_1 = {
 		icon = mission_diplomatic_relation
 		position = 2
 		required_missions = { bos_civil_war }
-		provinces_to_highlight = {  }
-  ai_weight = {
-   factor = 1000
+		provinces_to_highlight = {
+   owned_by = HUN
+   has_discovered = ROOT
   }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = HUN }  }
 
@@ -340,9 +340,9 @@ bos_2 = {
 		icon = mission_diplomatic_relation
 		position = 2
 		required_missions = { bos_civil_war }
-		provinces_to_highlight = {  }
-  ai_weight = {
-   factor = 1000
+		provinces_to_highlight = {
+   owned_by = HAB
+   has_discovered = ROOT
   }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = HAB }  }
 
@@ -600,7 +600,15 @@ bos_3 = {
   ai_weight = {
    factor = 200
   }
-		trigger = { num_of_allies = 1 }
+		trigger = {
+   num_of_allies = 1 
+   any_ally = {
+    NOT = { tag = ARA }
+    NOT = { tag = HAB }
+    NOT = { tag = SER }
+    NOT = { tag = HUN }
+   }
+  }
 
 		effect = {
 			add_country_modifier = {
@@ -951,9 +959,9 @@ bos_4 = {
 		icon = mission_diplomatic_relation
 		position = 2
 		required_missions = { bos_civil_war }
-		provinces_to_highlight = {  }
-  ai_weight = {
-   factor = 1000
+		provinces_to_highlight = {
+   owned_by = ARA
+   has_discovered = ROOT
   }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = ARA }  }
 
@@ -1155,9 +1163,9 @@ bos_5 = {
 		icon = mission_diplomatic_relation
 		position = 2
 		required_missions = { bos_civil_war }
-		provinces_to_highlight = {  }
-  ai_weight = {
-   factor = 1000
+		provinces_to_highlight = {
+   owned_by = SER
+   has_discovered = ROOT
   }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = SER }  }
 
