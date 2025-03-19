@@ -226,11 +226,16 @@
  request_regency_action_title:0 "Request Regency"
  request_regency_action_desc:0 "While they don't have a capable ruler, we will be the overlord of §Y[From.GetName]§! until their heir grows to §Y15§! years old, or until our ruler dies."
  request_regency_action_tooltip:0 "Ask that §Y[From.GetName]§! hand their heir over to us, making us the country's §YRegent§!."
- request_regency_allowtip:0 "They must have a young heir."
+ request_regency_allowtip:0 "Has an underage Heir"
+ request_regency_allowtip2:0 "Has not given Regency rights to another country"
  request_regency_action_dialog:0 "[This.GetName] requests custody of our heir, making them the Regent of our nation until they grow up."
  cancel_request_regency_action_title:0 "Cancel Regency Request"
  cancel_request_regency_action_desc:0 "We will no longer become the temporary overlord of §Y[From.GetName]§! if their ruler dies without a capable heir."
  cancel_request_regency_action_tooltip:0 "Cancel our request to be the §YRegent§! of §Y[From.GetName]§!."
+
+ DIPLO_REGENCY:0 "Already in a Regency"
+ DIPLO_CONSORT:0 "Has a Consort to handle Regency"
+ DIPLO_SAME_DYNASTY:0 "Same Dynasty"
 
  legitimist_rebels_demands:0 "Return of the Rightful Heir"
  legitimist_rebels_demands_desc:0 "The nobles demand we immediately leave as Regent and let the heir take the throne."

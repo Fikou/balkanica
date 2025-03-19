@@ -92,6 +92,10 @@ on_new_monarch_effect = {
 }
 
 on_monarch_death_effect = {
+ if = {
+  limit = { has_country_flag = has_regency_request }
+  clr_country_flag = has_regency_request
+ }
  every_country = {
   reverse_remove_opinion = {
    who = ROOT
