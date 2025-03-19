@@ -1,0 +1,255 @@
+hrz_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HRZ }
+
+	hrz_approach_hungary = {
+		icon = mission_diplomatic_relation
+		position = 2
+		required_missions = { hrz_civil_war }
+		provinces_to_highlight = {  }
+
+		trigger = { bos_civil_war_can_get_support_trigger = { faction = HUN }  }
+
+		effect = {
+			if = {
+				limit = { bos_has_country_support_trigger = { faction = HUN }  }
+				bos_civil_war_gain_support_effect = { faction = HUN }
+				if = {
+					limit = {
+						tag = HRZ
+						BOS = { exists = yes }
+					}
+					HUN = { remove_guarantee = BOS }
+				}
+			}
+			else = {
+				bos_civil_war_gain_support_effect = { faction = HUN }
+				if = {
+					limit = {
+						tag = HRZ
+						BOS = { exists = yes }
+					}
+					HUN = { remove_guarantee = BOS }
+				}
+			}
+		}
+	}
+}
+hrz_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HRZ }
+
+	hrz_approach_austria = {
+		icon = mission_diplomatic_relation
+		position = 2
+		required_missions = { hrz_civil_war }
+		provinces_to_highlight = {  }
+
+		trigger = { bos_civil_war_can_get_support_trigger = { faction = HAB }  }
+
+		effect = {
+			if = {
+				limit = { bos_has_country_support_trigger = { faction = HAB }  }
+				bos_civil_war_gain_support_effect = { faction = HAB }
+			}
+			else = { bos_civil_war_gain_support_effect = { faction = HAB }  }
+		}
+	}
+}
+hrz_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HRZ }
+
+	hrz_civil_war = {
+		icon = mission_war_for_the_crown
+		position = 1
+		provinces_to_highlight = {  }
+
+		trigger = { army_size_percentage = 1 }
+
+		effect = {
+			custom_tooltip = bos_civil_war_explanation_hrz_tt
+			hidden_effect = {
+				if = {
+					limit = { ai = yes }
+					set_ai_attitude = {
+						attitude = attitude_friendly
+						who = ARA
+						locked = yes
+					}
+					set_ai_attitude = {
+						attitude = attitude_friendly
+						who = HAB
+						locked = yes
+					}
+					set_ai_attitude = {
+						attitude = attitude_friendly
+						who = SER
+						locked = yes
+					}
+					set_ai_attitude = {
+						attitude = attitude_friendly
+						who = HUN
+						locked = yes
+					}
+				}
+			}
+		}
+	}
+
+	hrz_find_other_ally = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { hrz_civil_war }
+		provinces_to_highlight = {  }
+
+		trigger = { num_of_allies = 1 }
+
+		effect = {
+			add_country_modifier = {
+				name = "bos_lets_diplomacy"
+				duration = 3650
+			}
+		}
+	}
+
+	hrz_resolve_civil_war = {
+		icon = mission_crown_of_wenceslas
+		position = 3
+		required_missions = {
+			hrz_approach_aragon
+			hrz_approach_serbia
+			hrz_approach_hungary
+			hrz_approach_austria
+		}
+		provinces_to_highlight = {
+			area = bosnia_area
+			NOT = { owned_by = ROOT }
+		}
+
+		trigger = { bos_civil_war_resolved_trigger = yes }
+
+		effect = {
+   bosnia_area = {
+    limit = {
+     NOT = { owned_by = ROOT }
+     NOT = { is_core = ROOT }
+    }
+    add_permanent_claim = ROOT
+   }
+			east_adriatic_coast_area = {
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_claim = ROOT
+				}
+			}
+			4754 = { add_claim = ROOT }
+			add_legitimacy_equivalent = {
+				amount = 10
+				republican_tradition = 5
+			}
+			add_prestige_or_monarch_power = { amount = 10 }
+			hidden_effect = {
+				if = {
+					limit = { ai = yes }
+					set_ai_attitude = {
+						attitude = attitude_neutral
+						who = ARA
+						locked = no
+					}
+					set_ai_attitude = {
+						attitude = attitude_neutral
+						who = HAB
+						locked = no
+					}
+					set_ai_attitude = {
+						attitude = attitude_neutral
+						who = SER
+						locked = no
+					}
+     set_ai_attitude = {
+      attitude = attitude_neutral
+      who = HUN
+      locked = no
+     }
+				}
+			}
+		}
+	}
+}
+hrz_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HRZ }
+
+	hrz_approach_aragon = {
+		icon = mission_diplomatic_relation
+		position = 2
+		required_missions = { hrz_civil_war }
+		provinces_to_highlight = {  }
+
+		trigger = { bos_civil_war_can_get_support_trigger = { faction = ARA }  }
+
+		effect = {
+			if = {
+				limit = { bos_has_country_support_trigger = { faction = ARA }  }
+				bos_civil_war_gain_support_effect = { faction = ARA }
+				if = {
+					limit = {
+						tag = BOS
+						HRZ = { exists = yes }
+					}
+					ARA = { remove_guarantee = HRZ }
+				}
+			}
+			else = {
+				bos_civil_war_gain_support_effect = { faction = ARA }
+				if = {
+					limit = {
+						tag = BOS
+						HRZ = { exists = yes }
+					}
+					ARA = { remove_guarantee = HRZ }
+				}
+			}
+		}
+	}
+}
+hrz_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = HRZ }
+
+	hrz_approach_serbia = {
+		icon = mission_diplomatic_relation
+		position = 2
+		required_missions = { hrz_civil_war }
+		provinces_to_highlight = {  }
+
+		trigger = { bos_civil_war_can_get_support_trigger = { faction = SER }  }
+
+		effect = {
+			if = {
+				limit = { bos_has_country_support_trigger = { faction = SER }  }
+				bos_civil_war_gain_support_effect = { faction = SER }
+			}
+			else = { bos_civil_war_gain_support_effect = { faction = SER }  }
+		}
+	}
+}

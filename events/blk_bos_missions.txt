@@ -516,7 +516,10 @@ country_event = {
 
  fire_only_once = yes
  trigger = {
-  tag = BOS
+  OR = {
+   tag = BOS
+   tag = HRZ
+  }
   NOT = { mission_completed = bos_resolve_civil_war }
   bos_civil_war_resolved_trigger = yes
  }
@@ -538,84 +541,101 @@ country_event = {
   name = bos_missions.11.a
   if = {
    limit = {
-    tag = BOS
+    bos_civil_war_resolved_through_foreign_invaders_trigger = yes
    }
-   every_province = {
-    limit = {
-     is_core = HRZ
-     NOT = { is_core = BOS }
+   custom_tooltip = bos_civil_war_resolved_inconclusively_tt
+   hidden_effect = {
+    set_country_flag = bos_civil_war_resolved_inconclusively
+    HUN = {
+     remove_guarantee = BOS
     }
-    add_core = BOS
-   }
-   if = {
-    limit = {
-     HRZ = { exists = yes }
+    ARA = {
+     remove_guarantee = HRZ
     }
-    hidden_effect = {
-     set_country_flag = bos_civil_war_resolved_diplomatically
-    }
-    custom_tooltip = bos_civil_war_diplomacy_warning_tt
-    every_province = {
-     limit = {
-      owned_by = HRZ
-     }
-     add_province_modifier = {
-      name = bos_civil_war_provice_mod
-      duration = 18250
-     }
-    }
-    BOS = {
-     inherit = HRZ
-    }
-   }
-   else = {
-    hidden_effect = {
-     set_country_flag = bos_civil_war_resolved_violently
-    }
-   }
-   HUN = {
-    remove_guarantee = BOS
    }
   }
-  if = {
-   limit = {
-    tag = HRZ
-   }
-   every_province = {
+  else ={
+   if = {
     limit = {
-     is_core = BOS
-     NOT = { is_core = HRZ }
+     tag = BOS
     }
-    add_core = HRZ
+    every_province = {
+     limit = {
+      is_core = HRZ
+      NOT = { is_core = BOS }
+     }
+     add_core = BOS
+    }
+    if = {
+     limit = {
+      bos_civil_war_resolved_through_violence_trigger = no
+     }
+     hidden_effect = {
+      set_country_flag = bos_civil_war_resolved_diplomatically
+     }
+     custom_tooltip = bos_civil_war_diplomacy_warning_tt
+     every_province = {
+      limit = {
+       owned_by = HRZ
+      }
+      add_province_modifier = {
+       name = bos_civil_war_provice_mod
+       duration = 18250
+      }
+     }
+     BOS = {
+      inherit = HRZ
+     }
+    }
+    else = {
+     hidden_effect = {
+      set_country_flag = bos_civil_war_resolved_violently
+     }
+    }
+    HUN = {
+     remove_guarantee = BOS
+    }
    }
    if = {
     limit = {
-     BOS = { exists = yes }
+     tag = HRZ
     }
-    hidden_effect = {
-     set_country_flag = bos_civil_war_resolved_diplomatically
-    }
-    custom_tooltip = bos_civil_war_diplomacy_warning_tt
     every_province = {
      limit = {
-      owned_by = BOS
+      is_core = BOS
+      NOT = { is_core = HRZ }
      }
-     add_province_modifier = {
-      name = bos_civil_war_provice_mod
-      duration = 18250
+     add_core = HRZ
+    }
+    if = {
+     limit = {
+      bos_civil_war_resolved_through_violence_trigger = no
+     }
+     hidden_effect = {
+      set_country_flag = bos_civil_war_resolved_diplomatically
+     }
+     custom_tooltip = bos_civil_war_diplomacy_warning_tt
+     every_province = {
+      limit = {
+       owned_by = BOS
+      }
+      add_province_modifier = {
+       name = bos_civil_war_provice_mod
+       duration = 18250
+      }
+     }
+     HRZ = {
+      inherit = BOS
      }
     }
-    HRZ = {
-     inherit = BOS
+    else = {
+     hidden_effect = {
+      set_country_flag = bos_civil_war_resolved_violently
+     }
     }
-   }
-   else = {
-    hidden_effect = {
-     set_country_flag = bos_civil_war_resolved_violently
+    ARA = {
+     remove_guarantee = HRZ
     }
-   }
-   ARA = {
-    remove_guarantee = HRZ
    }
   }
  }

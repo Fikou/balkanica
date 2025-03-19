@@ -563,7 +563,7 @@ bos_3 = {
 		position = 1
 		provinces_to_highlight = {  }
   ai_weight = {
-   factor = 1000
+   factor = 100
   }
 		trigger = { army_size_percentage = 1 }
 
@@ -629,6 +629,13 @@ bos_3 = {
 		trigger = { bos_civil_war_resolved_trigger = yes }
 
 		effect = {
+   bosnia_area = {
+    limit = {
+     NOT = { owned_by = ROOT }
+     NOT = { is_core = ROOT }
+    }
+    add_permanent_claim = ROOT
+   }
 			east_adriatic_coast_area = {
 				if = {
 					limit = {

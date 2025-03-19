@@ -131,7 +131,8 @@
  bos_other_faction_dead_tt:0 "We annexed or vassalized the other faction."
  bos_civil_war_resolved_through_marriage_tt:0 "The §YBosnian civil war§! has been resolved through marriage."
  bos_civil_war_resolved_diplomatically_tt:0 "We have support of §Ythree§! major powers."
- bos_civil_war_resolved_diplomatically:0 "The §YBosnian civil war§! has been resolved diplomatically."
+ bos_civil_war_resolved_inconclusively_tt:0 "The §YBosnian civil war§! has been resolved inconclusively due to foreign invasion."
+ bos_civil_war_resolved_through_foreign_invaders_tt:0 "The §YBosnian civil war§! has been resolved through foreign invasion."
  bos_civil_war_resolved_violently:0 "The §YBosnian civil war§! has been resolved through war."
  bos_hum_ragusa_revolt_tt:0 "NOT:\n    §RUnrest is brewing in Hum and Ragusa.§!"
  bos_bypass_civil_war_mission_tt:0 "§GThe Bosnian civil war has been resolved.§!\nThis mission can be bypassed."
@@ -291,8 +292,8 @@
  bos_missions.17.a:0 "Develop the hills and mountains."
  bos_missions.17.b:0 "Develop the forests."
 
- bos_lets_diplomacy:0 "Bosnian Diplomacy"
- desc_bos_lets_diplomacy:0 "Bosnian Diplomacy"
+ bos_lets_diplomacy:0 "Desperate Diplomacy"
+ desc_bos_lets_diplomacy:0 "Desperate Diplomacy"
 
  bos_finish_developments_mountain_trigger_tt:0 "We chose to focus on the §Yhills and mountains§!"
  bos_finish_developments_forest_trigger_tt:0 "We chose to focus on the §Yforests§!"

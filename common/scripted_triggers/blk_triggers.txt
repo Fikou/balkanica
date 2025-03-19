@@ -60,14 +60,16 @@ bos_civil_war_resolved_through_violence_trigger = {
    limit = { tag = BOS }
    OR = {
     HRZ = { exists = no }
-    HRZ = { is_subject_of = BOS }
+    HRZ = { is_subject_of_type_with_overlord = { who = BOS type = vassal } }
+    HRZ = { is_subject_of_type_with_overlord = { who = BOS type = march } }
    }
   }
   if = {
    limit = { tag = HRZ }
    OR = {
     BOS = { exists = no }
-    BOS = { is_subject_of = HRZ }
+    BOS = { is_subject_of_type_with_overlord = { who = HRZ type = vassal } }
+    BOS = { is_subject_of_type_with_overlord = { who = HRZ type = march } }
    }
   }
  }
@@ -108,6 +110,47 @@ bos_civil_war_resolved_diplomatically_trigger = {
  }
 }
 
+# this just checks that someone else walked in and annexed / vassalized one of the parties
+bos_civil_war_resolved_through_foreign_invaders_trigger = {
+ custom_trigger_tooltip = {
+  tooltip = bos_civil_war_resolved_through_foreign_invaders_tt
+  OR = {
+   # is BOS and someone vassalized HRZ
+   AND = {
+    tag = BOS
+    HRZ = { is_subject = yes }
+    NOT = { BOS = { overlord_of = HRZ } }
+   }
+   # is HRZ and someone vassalized BOS
+   AND = {
+    tag = HRZ
+    BOS = { is_subject = yes }
+    NOT = { HRZ = { overlord_of = BOS } }
+   }
+   # is BOS, HRZ has been annexed, and all HRZ cores are owned by another country
+   AND = {
+    tag = BOS
+    HRZ = { exists = no }
+    all_province = {
+     is_core = HRZ
+     NOT = { owned_by = BOS }
+    }
+   }
+   # is HRZ, BOS has been annexed, and all BOS cores (that are not Trauvina and Hum) are owned by another country
+   AND = {
+    tag = HRZ
+    BOS = { exists = no }
+    all_province = {
+     is_core = BOS
+     NOT = { owned_by = HRZ }
+     NOT = { province_id = 139 }
+     NOT = { province_id = 1831 }
+    }
+   }
+  }
+ }
+}
+
 bos_civil_war_resolved_trigger = {
  custom_trigger_tooltip = {
   tooltip = bos_civil_war_resolved_tt
@@ -115,6 +158,7 @@ bos_civil_war_resolved_trigger = {
     bos_civil_war_resolved_through_violence_trigger = yes
     bos_civil_war_resolved_through_marriage_trigger = yes
     bos_civil_war_resolved_diplomatically_trigger = yes
+    bos_civil_war_resolved_through_foreign_invaders_trigger = yes
   }
  }
 }
