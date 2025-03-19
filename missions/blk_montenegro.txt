@@ -37,6 +37,7 @@ mon_1 = {
      add_base_tax = 2
     }
    }
+   unlock_holy_order = { type = order_of_the_dragon }
    add_country_modifier = {
     name = mon_revitalized_christians
     duration = 5475
