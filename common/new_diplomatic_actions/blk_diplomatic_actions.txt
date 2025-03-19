@@ -152,11 +152,18 @@ request_regency_action = {
   has_government_attribute = can_request_regency
  }
  is_allowed = {
-  custom_tooltip = request_regency_allowtip
-  FROM = {
-   has_heir = yes
-   NOT = { heir_age = 15 }
+  custom_trigger_tooltip = {
+   tooltip = request_regency_allowtip
+   FROM = {
+    has_heir = yes
+    NOT = { heir_age = 15 }
+   }
   }
+  custom_trigger_tooltip = {
+   tooltip = request_regency_allowtip2
+   FROM = { NOT = { has_country_flag = has_regency_request } }
+  }
+  is_in_extended_regency = no
  }
  ai_acceptance = {
   add_entry = {
@@ -171,7 +178,7 @@ request_regency_action = {
    
    multiply_variable = {
     which = ai_value
-    value = -75
+    value = -100
    }
   }
   add_entry = {
@@ -254,7 +261,7 @@ request_regency_action = {
    }
   }
   add_entry = {
-   name = ANNEX_SAME_CULTURE
+   name = DIPLO_CULTURE
    limit = { FROM = { culture_group = ROOT } }
    export_to_variable = { variable_name = ai_value value = 1 }
    multiply_variable = { which = ai_value value = 10 }
@@ -266,7 +273,7 @@ request_regency_action = {
    multiply_variable = { which = ai_value value = 20 }
   }
   add_entry = {
-   name = DIPLO_ROYAL_MARRIAGE_BETWEEN
+   name = MARREQTITLE
    limit = { FROM = { marriage_with = ROOT } }
    export_to_variable = { variable_name = ai_value value = 1 }
    multiply_variable = { which = ai_value value = 10 }
@@ -276,6 +283,29 @@ request_regency_action = {
    limit = { FROM = { is_neighbor_of = ROOT } }
    export_to_variable = { variable_name = ai_value value = 1 }
    multiply_variable = { which = ai_value value = 10 }
+  }
+  add_entry = {
+   name = DIPLO_SAME_DYNASTY
+   limit = { FROM = { dynasty = ROOT } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = 20 }
+  }
+  add_entry = {
+   name = DIPLO_REGENCY
+   limit = { FROM = { has_regency = yes } }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = -15 }
+  }
+  add_entry = {
+   name = DIPLO_CONSORT
+   limit = {
+    OR = {
+     FROM = { has_consort_regency = yes }
+     FROM = { has_consort = yes }
+    }
+   }
+   export_to_variable = { variable_name = ai_value value = 1 }
+   multiply_variable = { which = ai_value value = -30 }
   }
   add_entry = {
    name = DIPLO_BORDER_DISTANCE_TT
@@ -308,6 +338,9 @@ request_regency_action = {
    add_opinion = {
     who = FROM
     modifier = requested_regency
+   }
+   FROM = {
+    set_country_flag = has_regency_request
    }
   }
  }

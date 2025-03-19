@@ -1,0 +1,19 @@
+mon_black_mountain_mod = {
+ fort_level = 1
+ local_garrison_size = 0.25
+ local_garrison_damage = 0.5
+ local_fort_maintenance_modifier = -0.5
+}
+
+mon_printing_press_mod = {
+ local_development_cost = -0.35
+ province_trade_power_value = 5
+ institution_growth = 3
+}
+
+mon_revitalized_christians = {
+ manpower_in_true_faith_provinces = 0.25
+ reinforce_speed = 0.15
+ recover_army_morale_speed = 0.15
+ land_morale = 0.15
+}

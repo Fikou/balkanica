@@ -1,0 +1,163 @@
+mon_1 = {
+ slot = 1
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = MON } 
+
+ mon_found_monastery = {
+  icon = fund_the_monasteries
+  position = 1
+  provinces_to_highlight = { province_id = 138 } 
+
+  trigger = {
+   138 = {
+    OR = {
+     has_building = temple
+     has_building = cathedral
+    }
+    development = 12
+   }
+   treasury = 150
+  } 
+
+  effect = {
+   add_treasury = -150
+   138 = {
+    if = {
+     limit = {
+      NOT = { has_building = cathedral }
+     }
+     hidden_effect = {
+      remove_building = temple
+     }
+     add_building = cathedral
+    }
+    else = {
+     add_base_tax = 2
+    }
+   }
+   add_country_modifier = {
+    name = mon_revitalized_christians
+    duration = 5475
+   }
+  } 
+ }
+
+ mon_printing_house = {
+  icon = mission_state_manufactories
+  position = 2
+  required_missions = { mon_found_monastery } 
+  provinces_to_highlight = { province_id = 138 } 
+
+  trigger = {
+   138 = {
+    OR = {
+     has_building = workshop
+     has_building = counting_house
+    }
+    development = 20
+   }
+   treasury = 300
+  } 
+
+  effect = {
+   add_treasury = -300
+   138 = {
+    add_province_modifier = {
+     name = mon_printing_press_mod
+     duration = -1
+    }
+    change_trade_goods = paper
+    add_institution_embracement = {
+     which = printing_press 
+     value = 100 
+    }
+   }
+  } 
+ }
+
+ mon_regain_sovereignty = {
+  icon = assert_our_sovereignty
+  position = 3
+  provinces_to_highlight = {
+   province_id = 138
+   province_id = 4754
+  } 
+
+  trigger = {
+   is_subject = no
+   owns_core_province = 138
+   owns_core_province = 4754
+  } 
+
+  effect = {
+   add_prestige = 20
+   add_stability_or_adm_power_per_stab = { amount = 2 }
+   rascia_area = {
+    limit = {
+     NOT = { is_core = ROOT }
+     NOT = { is_permanent_claim = ROOT }
+    }
+    add_permanent_claim = ROOT
+   }
+  } 
+ }
+
+ mon_black_mountain = {
+  icon = alpine_fortifications
+  position = 4
+  required_missions = { mon_regain_sovereignty } 
+  provinces_to_highlight = { province_id = 138 } 
+
+  trigger = {
+   138 = {
+    if = {
+     limit = {
+      root = { mil_tech = 24 }
+     }
+     has_building = fort_18th
+    }
+    else_if = {
+     limit = {
+      root = { mil_tech = 19 }
+     }
+     has_building = fort_17th
+    }
+    else_if = {
+     limit = {
+      root = { mil_tech = 14 }
+     }
+     has_building = fort_16th
+    }
+    else = {
+     has_building = fort_15th
+    }
+    has_building = ramparts
+    OR = {
+     has_building = barracks
+     has_building = training_fields
+    }
+   }
+  }
+
+  effect = {
+   override_country_name = MON_D
+   138 = {
+    move_capital_effect = yes
+    rename_capital = "Cetinje"
+    add_province_modifier = {
+     name = mon_black_mountain_mod
+     duration = -1
+    }
+   }
+   serbia_area = {
+    limit = {
+     NOT = { is_core = ROOT }
+     NOT = { is_permanent_claim = ROOT }
+    }
+    add_permanent_claim = ROOT
+   }
+  }
+ }
+}

@@ -1,0 +1,17 @@
+cli_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = CLI } 
+
+	new_missiona = {
+		icon = mission_invade_the_deccan_dlh
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
