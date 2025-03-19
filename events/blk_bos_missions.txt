@@ -172,9 +172,18 @@ country_event = {
 
  fire_only_once = yes
  trigger = {
-  tag = BOS
-  mission_completed = bos_resolve_civil_war
-  bos_has_country_support_trigger = { faction = HUN }
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_resolve_civil_war
+    bos_has_country_support_trigger = { faction = HUN }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_resolve_civil_war
+    bos_has_country_support_trigger = { faction = HUN }
+   }
+  }
  }
 
  mean_time_to_happen = {
@@ -196,10 +205,19 @@ country_event = {
 
  fire_only_once = yes
  trigger = {
-  tag = BOS
   HAB = { exists = yes }
-  mission_completed = bos_resolve_civil_war
-  bos_has_country_support_trigger = { faction = HAB }
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_resolve_civil_war
+    bos_has_country_support_trigger = { faction = HAB }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_resolve_civil_war
+    bos_has_country_support_trigger = { faction = HAB }
+   }
+  }
  }
 
  mean_time_to_happen = {
@@ -249,10 +267,19 @@ country_event = {
 
  fire_only_once = yes
  trigger = {
-  tag = BOS
   SER = { exists = yes }
-  mission_completed = bos_resolve_civil_war
-  bos_has_country_support_trigger = { faction = SER }
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_resolve_civil_war
+    bos_has_country_support_trigger = { faction = SER }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_resolve_civil_war
+    bos_has_country_support_trigger = { faction = SER }
+   }
+  }
  }
 
  mean_time_to_happen = {
@@ -294,10 +321,19 @@ country_event = {
 
  fire_only_once = yes
  trigger = {
-  tag = BOS
   ARA = { exists = yes }
-  mission_completed = bos_resolve_civil_war
-  bos_has_country_support_trigger = { faction = ARA }
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_resolve_civil_war
+    bos_has_country_support_trigger = { faction = ARA }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_resolve_civil_war
+    bos_has_country_support_trigger = { faction = ARA }
+   }
+  }
  }
 
  mean_time_to_happen = {
@@ -517,10 +553,15 @@ country_event = {
  fire_only_once = yes
  trigger = {
   OR = {
-   tag = BOS
-   tag = HRZ
+   AND = {
+    tag = BOS
+    NOT = { mission_completed = bos_resolve_civil_war }
+   }
+   AND = {
+    tag = HRZ
+    NOT = { mission_completed = hrz_resolve_civil_war }
+   }
   }
-  NOT = { mission_completed = bos_resolve_civil_war }
   bos_civil_war_resolved_trigger = yes
  }
 
@@ -530,11 +571,26 @@ country_event = {
 
  immediate = {
   hidden_effect = {
-   complete_mission = bos_civil_war
-   complete_mission = bos_approach_aragon
-   complete_mission = bos_approach_hungary
-   complete_mission = bos_approach_serbia
-   complete_mission = bos_approach_austria
+   if = {
+    limit = {
+     tag = BOS
+    }
+    complete_mission = bos_civil_war
+    complete_mission = bos_approach_aragon
+    complete_mission = bos_approach_hungary
+    complete_mission = bos_approach_serbia
+    complete_mission = bos_approach_austria
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    complete_mission = hrz_civil_war
+    complete_mission = hrz_approach_aragon
+    complete_mission = hrz_approach_hungary
+    complete_mission = hrz_approach_serbia
+    complete_mission = hrz_approach_austria
+   }
   }
  }
  option = {
@@ -651,16 +707,21 @@ country_event = {
  fire_only_once = yes
  trigger = {
   OR = {
-   tag = BOS
-   bos_civil_war_check_if_supporting_hrz_trigger = { faction = HUN }
+   AND = {
+    tag = BOS
+    mission_completed = bos_civil_war
+    NOT = { mission_completed = bos_resolve_civil_war }
+    NOT = { mission_completed = bos_approach_hungary }
+    bos_civil_war_check_if_supporting_hrz_trigger = { faction = HUN }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_civil_war
+    NOT = { mission_completed = hrz_resolve_civil_war }
+    NOT = { mission_completed = hrz_approach_hungary }
+    bos_civil_war_check_if_supporting_bos_trigger = { faction = HUN }
+   }
   }
-  OR = {
-   tag = HRZ
-   bos_civil_war_check_if_supporting_bos_trigger = { faction = HUN }
-  }
-  mission_completed = bos_civil_war
-  NOT = { mission_completed = bos_resolve_civil_war }
-  NOT = { mission_completed = bos_approach_hungary }
  }
 
  mean_time_to_happen = {
@@ -669,7 +730,18 @@ country_event = {
 
  immediate = {
   hidden_effect = {
-   complete_mission = bos_approach_hungary
+   if = {
+    limit = {
+     tag = BOS
+    }
+    complete_mission = bos_approach_hungary
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    complete_mission = hrz_approach_hungary
+   }
   }
  }
 
@@ -688,16 +760,21 @@ country_event = {
  fire_only_once = yes
  trigger = {
   OR = {
-   tag = BOS
-   bos_civil_war_check_if_supporting_hrz_trigger = { faction = HAB }
+   AND = {
+    tag = BOS
+    mission_completed = bos_civil_war
+    NOT = { mission_completed = bos_resolve_civil_war }
+    NOT = { mission_completed = bos_approach_austria }
+    bos_civil_war_check_if_supporting_hrz_trigger = { faction = HAB }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_civil_war
+    NOT = { mission_completed = hrz_resolve_civil_war }
+    NOT = { mission_completed = hrz_approach_austria }
+    bos_civil_war_check_if_supporting_bos_trigger = { faction = HAB }
+   }
   }
-  OR = {
-   tag = HRZ
-   bos_civil_war_check_if_supporting_bos_trigger = { faction = HAB }
-  }
-  mission_completed = bos_civil_war
-  NOT = { mission_completed = bos_resolve_civil_war }
-  NOT = { mission_completed = bos_approach_austria }
  }
 
  mean_time_to_happen = {
@@ -706,7 +783,18 @@ country_event = {
 
  immediate = {
   hidden_effect = {
-   complete_mission = bos_approach_austria
+   if = {
+    limit = {
+     tag = BOS
+    }
+    complete_mission = bos_approach_austria
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    complete_mission = hrz_approach_austria
+   }
   }
  }
 
@@ -725,16 +813,21 @@ country_event = {
  fire_only_once = yes
  trigger = {
   OR = {
-   tag = BOS
-   bos_civil_war_check_if_supporting_hrz_trigger = { faction = SER }
+   AND = {
+    tag = BOS
+    mission_completed = bos_civil_war
+    NOT = { mission_completed = bos_resolve_civil_war }
+    NOT = { mission_completed = bos_approach_serbia }
+    bos_civil_war_check_if_supporting_hrz_trigger = { faction = SER }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_civil_war
+    NOT = { mission_completed = hrz_resolve_civil_war }
+    NOT = { mission_completed = hrz_approach_serbia }
+    bos_civil_war_check_if_supporting_bos_trigger = { faction = SER }
+   }
   }
-  OR = {
-   tag = HRZ
-   bos_civil_war_check_if_supporting_bos_trigger = { faction = SER }
-  }
-  mission_completed = bos_civil_war
-  NOT = { mission_completed = bos_resolve_civil_war }
-  NOT = { mission_completed = bos_approach_serbia }
  }
 
  mean_time_to_happen = {
@@ -743,7 +836,18 @@ country_event = {
 
  immediate = {
   hidden_effect = {
-   complete_mission = bos_approach_serbia
+   if = {
+    limit = {
+     tag = BOS
+    }
+    complete_mission = bos_approach_serbia
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    complete_mission = hrz_approach_serbia
+   }
   }
  }
 
@@ -762,16 +866,21 @@ country_event = {
  fire_only_once = yes
  trigger = {
   OR = {
-   tag = BOS
-   bos_civil_war_check_if_supporting_hrz_trigger = { faction = ARA }
+   AND = {
+    tag = BOS
+    mission_completed = bos_civil_war
+    NOT = { mission_completed = bos_resolve_civil_war }
+    NOT = { mission_completed = bos_approach_aragon }
+    bos_civil_war_check_if_supporting_hrz_trigger = { faction = ARA }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_civil_war
+    NOT = { mission_completed = hrz_resolve_civil_war }
+    NOT = { mission_completed = hrz_approach_aragon }
+    bos_civil_war_check_if_supporting_bos_trigger = { faction = ARA }
+   }
   }
-  OR = {
-   tag = HRZ
-   bos_civil_war_check_if_supporting_bos_trigger = { faction = ARA }
-  }
-  mission_completed = bos_civil_war
-  NOT = { mission_completed = bos_resolve_civil_war }
-  NOT = { mission_completed = bos_approach_aragon }
  }
 
  mean_time_to_happen = {
@@ -780,7 +889,18 @@ country_event = {
 
  immediate = {
   hidden_effect = {
-   complete_mission = bos_approach_aragon
+   if = {
+    limit = {
+     tag = BOS
+    }
+    complete_mission = bos_approach_aragon
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    complete_mission = hrz_approach_aragon
+   }
   }
  }
 
