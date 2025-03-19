@@ -118,7 +118,9 @@
  bos_civil_war_explanation_hrz_tt:0 "To resolve the civil war, you must defeat the @BOS §YKralj of Bosnia§!.\n\nYou can accomplish this §Ydiplomatically§! by by obtaining support from §Ythree§! major powers, by managing to obtain a §Yroyal marriage§! with §YBosnia§!, or through §Ywar§!."
 
  bos_hrz_got_support_trigger_tt:0 "This nation has pledged support to the @HRZ §YLord of Hum§!."
+ bos_hrz_got_support_trigger_tt_inverted:0 "NOT: This nation has pledged support to the @HRZ §YLord of Hum§!."
  bos_bos_got_support_trigger_tt:0 "This nation has pledged support to the @BOS §YKralj of Bosnia§!."
+ bos_bos_got_support_trigger_tt_inverted:0 "NOT: This nation has pledged support to the @BOS §YKralj of Bosnia§!."
 
  bos_bos_gets_support_tt:0 "§GThis power will support our claim to Bosnia.§!\nThey will not support the @HRZ §YLord of Hum§!."
  bos_hrz_gets_support_tt:0 "§GThis power will support our claim to Bosnia.§!\nThe will not support the @BOS §YKralj of Bosnia§!."

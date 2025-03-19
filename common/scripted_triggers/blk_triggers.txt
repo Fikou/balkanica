@@ -17,20 +17,44 @@ bos_has_country_support_trigger = {
 bos_civil_war_check_if_supporting_bos_trigger = {
  custom_trigger_tooltip = {
   tooltip = bos_hrz_got_support_trigger_tt
-  tag = BOS
   BOS = { bos_has_country_support_trigger = { faction = $faction$ } }
+ }
+}
+
+bos_civil_war_check_if_supporting_bos_trigger_inverted = {
+ custom_trigger_tooltip = {
+  tooltip = bos_bos_got_support_trigger_tt_inverted
+  NOT = { bos_civil_war_check_if_supporting_bos_trigger = { faction = $faction$ } }
  }
 }
 
 bos_civil_war_check_if_supporting_hrz_trigger = {
  custom_trigger_tooltip = {
   tooltip = bos_hrz_got_support_trigger_tt
-  tag = HRZ
   HRZ = { bos_has_country_support_trigger = { faction = $faction$ } }
  }
 }
 
+bos_civil_war_check_if_supporting_hrz_trigger_inverted = {
+ custom_trigger_tooltip = {
+  tooltip = bos_hrz_got_support_trigger_tt_inverted
+  NOT = { bos_civil_war_check_if_supporting_hrz_trigger = { faction = $faction$ } }
+ }
+}
+
 bos_civil_war_can_get_support_trigger = {
+ if = {
+  limit ={
+   tag = HRZ
+  }
+  bos_civil_war_check_if_supporting_bos_trigger_inverted = { faction = $faction$ }
+ }
+ if = {
+  limit ={
+   tag = BOS
+  }
+  bos_civil_war_check_if_supporting_hrz_trigger_inverted = { faction = $faction$ }
+ }
  OR = {
   alliance_with = $faction$
   marriage_with = $faction$
