@@ -1,0 +1,158 @@
+
+blk_rag_update_catholic_trade_effect = {
+ hidden_effect = {
+  set_variable = { which = num_catholics value = 0 }
+  every_known_country = {
+   limit = {
+    rag_nation_gives_rag_catholic_trade_trigger = yes
+   }
+   ROOT = { change_variable  = { which = num_catholics value = 1 } }
+  }
+  remove_country_modifier = rag_catholic_trade_1
+  remove_country_modifier = rag_catholic_trade_2
+  remove_country_modifier = rag_catholic_trade_3
+  remove_country_modifier = rag_catholic_trade_4
+  remove_country_modifier = rag_catholic_trade_5
+  remove_country_modifier = rag_catholic_trade_6
+  remove_country_modifier = rag_catholic_trade_7
+  remove_country_modifier = rag_catholic_trade_8
+  remove_country_modifier = rag_catholic_trade_9
+  remove_country_modifier = rag_catholic_trade_10
+  if = { limit = { check_variable = { which = num_catholics value = 10 } }
+   add_country_modifier = { name = rag_catholic_trade_10 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_catholics value = 9 } }
+   add_country_modifier = { name = rag_catholic_trade_9 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_catholics value = 8 } }
+   add_country_modifier = { name = rag_catholic_trade_8 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_catholics value = 7 } }
+   add_country_modifier = { name = rag_catholic_trade_7 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_catholics value = 6 } }
+   add_country_modifier = { name = rag_catholic_trade_6 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_catholics value = 5 } }
+   add_country_modifier = { name = rag_catholic_trade_5 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_catholics value = 4 } }
+   add_country_modifier = { name = rag_catholic_trade_4 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_catholics value = 3 } }
+   add_country_modifier = { name = rag_catholic_trade_3 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_catholics value = 2 } }
+   add_country_modifier = { name = rag_catholic_trade_2 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_catholics value = 1 } }
+   add_country_modifier = { name = rag_catholic_trade_1 duration = -1 }
+  }
+ }
+}
+
+blk_rag_update_muslim_trade_effect = {
+ hidden_effect = {
+  set_variable = { which = num_muslims value = 0 }
+  every_known_country = {
+   limit = {
+    rag_nation_gives_rag_muslim_trade_trigger = yes
+   }
+   ROOT = { change_variable  = { which = num_muslims value = 1 } }
+  }
+  remove_country_modifier = rag_muslim_trade_1
+  remove_country_modifier = rag_muslim_trade_2
+  remove_country_modifier = rag_muslim_trade_3
+  remove_country_modifier = rag_muslim_trade_4
+  remove_country_modifier = rag_muslim_trade_5
+  remove_country_modifier = rag_muslim_trade_6
+  remove_country_modifier = rag_muslim_trade_7
+  remove_country_modifier = rag_muslim_trade_8
+  remove_country_modifier = rag_muslim_trade_9
+  remove_country_modifier = rag_muslim_trade_10
+  if = { limit = { check_variable = { which = num_muslims value = 10 } }
+   add_country_modifier = { name = rag_muslim_trade_10 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_muslims value = 9 } }
+   add_country_modifier = { name = rag_muslim_trade_9 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_muslims value = 8 } }
+   add_country_modifier = { name = rag_muslim_trade_8 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_muslims value = 7 } }
+   add_country_modifier = { name = rag_muslim_trade_7 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_muslims value = 6 } }
+   add_country_modifier = { name = rag_muslim_trade_6 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_muslims value = 5 } }
+   add_country_modifier = { name = rag_muslim_trade_5 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_muslims value = 4 } }
+   add_country_modifier = { name = rag_muslim_trade_4 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_muslims value = 3 } }
+   add_country_modifier = { name = rag_muslim_trade_3 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_muslims value = 2 } }
+   add_country_modifier = { name = rag_muslim_trade_2 duration = -1 }
+  }
+  else_if = { limit = { check_variable = { which = num_muslims value = 1 } }
+   add_country_modifier = { name = rag_muslim_trade_1 duration = -1 }
+  }
+ }
+}
+
+blk_rag_update_tributary_buff_effect = {
+ hidden_effect = {
+  if = {
+   limit = { NOT = { is_subject_of_type = tributary_state } }
+   remove_country_modifier = rag_tribute_buff_1
+   remove_country_modifier = rag_tribute_buff_2
+   remove_country_modifier = rag_tribute_buff_3
+   remove_country_modifier = rag_tribute_buff_4
+   remove_country_modifier = rag_tribute_buff_5
+  }
+  else = {
+   export_to_variable = {
+    which = overlord_dev
+    value = total_development
+    who = overlord
+   }
+   export_to_variable = {
+    which = our_dev
+    value = total_development
+    who = ROOT
+   }
+   subtract_variable = {
+    which = overlord_dev
+    which = our_dev
+   }
+   remove_country_modifier = rag_tribute_buff_1
+   remove_country_modifier = rag_tribute_buff_2
+   remove_country_modifier = rag_tribute_buff_3
+   remove_country_modifier = rag_tribute_buff_4
+   remove_country_modifier = rag_tribute_buff_5
+   if = {
+    limit = { check_variable = { which = overlord_dev value = 500 } }
+    add_country_modifier = { name = rag_tribute_buff_5 duration = -1 }
+   }
+   else_if = {
+    limit = { check_variable = { which = overlord_dev value = 400 } }
+    add_country_modifier = { name = rag_tribute_buff_4 duration = -1 }
+   }
+   else_if = {
+    limit = { check_variable = { which = overlord_dev value = 300 } }
+    add_country_modifier = { name = rag_tribute_buff_3 duration = -1 }
+   }
+   else_if = {
+    limit = { check_variable = { which = overlord_dev value = 200 } }
+    add_country_modifier = { name = rag_tribute_buff_2 duration = -1 }
+   }
+   else_if = {
+    limit = { check_variable = { which = overlord_dev value = 100 } }
+    add_country_modifier = { name = rag_tribute_buff_1 duration = -1 }
+   }
+  }
+ }
+}

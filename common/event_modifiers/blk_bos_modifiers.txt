@@ -158,3 +158,16 @@ bos_lets_diplomacy = {
 	diplomatic_reputation = 1
 	improve_relation_modifier = 0.2
 }
+
+# given to hun for supporting bos at game start
+supporting_bosnia = {
+ diplomatic_upkeep = 1
+}
+# given to ara for supporting hrz at game start
+supporting_hum = {
+ diplomatic_upkeep = 1
+}
+# given to hun for supporting rag at game start
+supporting_ragusa = {
+ diplomatic_upkeep = 1
+}

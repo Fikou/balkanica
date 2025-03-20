@@ -212,8 +212,8 @@ tur_owns_any_balkan_provices = {
   OR = {
    exists = no
    NOT = {
-    any_owned_province = {
-     region = balkan_region
+    balkan_region = {
+     owned_by = TUR
     }
    }
   }

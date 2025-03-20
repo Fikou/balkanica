@@ -18,7 +18,8 @@ country_decisions = {
 			NOT = { tag = CRO }
    NOT = { tag = DAL }
 			NOT = { tag = PAP }
-   NOT = { tag = ILY }
+   NOT = { tag = ILY } # BALKANICA EDIT
+   NOT = { tag = RAG } # BALKANICA EDIT
 			OR = {
 				NOT = { exists = CRO }
 				ai = no
@@ -214,5 +215,5 @@ country_decisions = {
 			factor = 1
 		}
 	}
-	
+
 }

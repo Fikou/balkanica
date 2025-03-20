@@ -33,7 +33,7 @@ czech_localisation = {
 		2 = KRALOVNA
 		3 = CISAROVNA
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -85,7 +85,7 @@ slovak_localisation = {
 		2 = KRALOVNA
 		3 = CISAROVNA_SK
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -119,7 +119,7 @@ georgian = {
         2 = MEPE
         3 = IMPERATORI
     }
-	
+
     ruler_female = {
         1 = MTAVARI
         2 = MEPE
@@ -148,7 +148,7 @@ georgian = {
 		1 = HEIR_fem
 		2 = PRINTSESA
 		3 = PRINTSESA
-	
+
 	}
 
     trigger = {
@@ -193,7 +193,7 @@ stateless_society = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -217,19 +217,19 @@ kongo_tribal_kingdom = {
 		2 = TRIBAL_KINGDOM
 		3 = TRIBAL_EMPIRE
 	}
-	
+
 	ruler_male = {
 		1 = CHIEF
 		2 = MWENE_KONGO
 		3 = GREAT_MWENE_KONGO
 	}
-	
+
 	ruler_female = {
 		1 = CHIEFTESS
 		2 = MWENE_KONGO_fem
 		3 = GREAT_MWENE_KONGO_fem
 	}
-	
+
 	consort_male  = {
 		1 = PRINCE_CONSORT
 		2 = PRINCE_CONSORT
@@ -241,7 +241,7 @@ kongo_tribal_kingdom = {
 		2 = QUEEN_CONSORT
 		3 = EMPRESS_CONSORT
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -328,7 +328,7 @@ islamic_caliphate = {
 		2 = SULTANA
 		3 = CALIPHA
 	}
-	
+
 	consort_male = {
 		1 = EMIR_CONSORT
 		2 = SULTAN_CONSORT
@@ -340,7 +340,7 @@ islamic_caliphate = {
 		2 = SULTANA
 		3 = SULTANA
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -419,7 +419,7 @@ revolutionary_spanish_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		is_revolutionary_republic_trigger = yes
 		tag = SPA
@@ -456,7 +456,7 @@ revolutionary_swedish_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		is_revolutionary_republic_trigger = yes
 		OR = {
@@ -500,7 +500,7 @@ revolutionary_danish_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		is_revolutionary_republic_trigger = yes
 		OR = {
@@ -547,7 +547,7 @@ revolutionary_ottoman_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		is_revolutionary_republic_trigger = yes
 		tag = TUR
@@ -584,7 +584,7 @@ revolutionary_german_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		is_revolutionary_republic_trigger = yes
 		OR = {
@@ -607,7 +607,7 @@ gov_revolutionary_republic = {
 		2 = GOV_REVOLUTIONARY_REPUBLIC
 		3 = GOV_REVOLUTIONARY_REPUBLIC
 	}
-	
+
 	ruler_male = {
 		1 = CONSUL
 		2 = CONSUL
@@ -631,7 +631,7 @@ gov_revolutionary_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		is_revolutionary_republic_trigger = yes
 	}
@@ -664,7 +664,7 @@ gov_polish_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		OR = {
 			primary_culture = polish
@@ -734,7 +734,7 @@ gov_prussian_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		has_reform = prussian_republic_reform
 	}
@@ -746,19 +746,19 @@ gov_admiralty = {
 		2 = HIGH_ADMIRALTY
 		3 = SUPREME_ADMIRALTY
 	}
-	
+
 	ruler_male = {
 		1 = LORD_ADMIRAL
 		2 = LORD_HIGH_ADMIRAL
 		3 = SUPREME_ADMIRAL
 	}
-	
+
 	ruler_female = {
 		1 = LORD_ADMIRAL_fem
 		2 = LORD_HIGH_ADMIRAL_fem
 		3 = SUPREME_ADMIRAL_fem
 	}
-	
+
 	consort_male = {
 		1 = CONSORT
 		2 = CONSORT
@@ -770,7 +770,7 @@ gov_admiralty = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		OR = {
 			has_reform = admiralty_regime_reform
@@ -785,19 +785,19 @@ gov_english_commonwealth = {
 		2 = COMMONWEALTH
 		3 = COMMONWEALTH
 	}
-	
+
 	ruler_male = {
 		1 = LORD_PROTECTOR
 		2 = LORD_PROTECTOR
 		3 = LORD_PROTECTOR
 	}
-	
+
 	ruler_female = {
 		1 = LADY_PROTECTOR
 		2 = LADY_PROTECTOR
 		3 = LADY_PROTECTOR
 	}
-	
+
 	consort_male = {
 		1 = CONSORT
 		2 = CONSORT
@@ -809,7 +809,7 @@ gov_english_commonwealth = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		has_reform = protectorate_parliament_reform
 	}
@@ -842,7 +842,7 @@ savonarola_unique = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		has_ruler_flag = savonarola_flag
 	}
@@ -876,7 +876,7 @@ military_dictatorship = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		OR = {
 			has_reform = military_dictatorship_reform
@@ -915,7 +915,7 @@ greek_pirate_government = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		has_government_attribute = is_pirate_republic_reform
 		NOT = { has_reform = pirate_king_reform }
@@ -927,23 +927,23 @@ pirate_daimyo_government = {
 	rank = {
 		1 = PIRATE_DAIMYO
 	}
-	
+
 	ruler_male = {
 		1 = LORD
 	}
-	
+
 	ruler_female = {
 		1 = LADY
 	}
-	
+
 	consort_male = {
 		1 = LORD
 	}
-	
+
 	consort_female = {
 		1 = LADY
 	}
-	
+
 	trigger = {
 		tag = SOO
 		has_government_attribute = is_pirate_republic_reform
@@ -981,7 +981,7 @@ pirate_government = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		has_government_attribute = is_pirate_republic_reform
 		NOT = { has_reform = pirate_king_reform }
@@ -1019,7 +1019,7 @@ pirate_kingdom = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		has_reform = pirate_king_reform
 	}
@@ -1052,7 +1052,7 @@ synthetic_nation = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		tag = SYN
 	}
@@ -1064,19 +1064,19 @@ yuan_empire = {
 		2 = KHANATE
 		3 = KHAGANATE
 	}
-	
+
 	ruler_male = {
 		1 = JINONG
 		2 = KHAN
 		3 = KHAGAN
 	}
-	
+
 	ruler_female = {
 		1 = JINONG
 		2 = KHATUN
 		3 = GREAT_KHATUN
 	}
-	
+
 	consort_male = {
 		1 = BEILE
 		2 = KHAN
@@ -1088,7 +1088,7 @@ yuan_empire = {
 		2 = KHANUM
 		3 = YEKHE_KHANUM
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = KHANZADEH
@@ -1100,7 +1100,7 @@ yuan_empire = {
 		2 = KHANUM
 		3 = KHANUM
 	}
-	
+
 	trigger = {
 		OR = {
 			tag = YUA
@@ -1135,7 +1135,7 @@ ilkhanate_march = {
 	heir_female = {
 		1 = KHANUM
 	}
-	
+
 	trigger = {
 		tag = ILK
 		is_march = yes
@@ -1146,15 +1146,15 @@ celestial_parliament = {
 	rank = {
 		3 = PARLIAMENT_OF_HEAVEN
 	}
-	
+
 	ruler_male = {
 		3 = EMPEROR
 	}
-	
+
 	ruler_female = {
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		3 = PRINCE_CONSORT
 	}
@@ -1162,7 +1162,7 @@ celestial_parliament = {
 	consort_female = {
 		3 = EMPRESS_CONSORT
 	}
-	
+
 	heir_male = {
 		3 = HEIR
 	}
@@ -1170,7 +1170,7 @@ celestial_parliament = {
 	heir_female = {
 		3 = HEIR_fem
 	}
-	
+
 	trigger = {
 		has_reform = celestial_empire
 		has_reform = parliamentary_reform
@@ -1181,7 +1181,7 @@ celestial_parliament = {
 ottoman_marches = {
 	rank = {
 		1 = PASHALIK
-	}	
+	}
 
 	ruler_male = {
 		1 = PASHA
@@ -1190,7 +1190,7 @@ ottoman_marches = {
 	ruler_female = {
 		1 = PASHA
 	}
-	
+
 	heir_male = {
 		1 = PASHAZADE
 	}
@@ -1198,15 +1198,15 @@ ottoman_marches = {
 	heir_female = {
 		1 = PASHAZADE
 	}
-	
+
 	consort_male = {
 		1 = BEY
 	}
-	
+
 	consort_female = {
 		1 = HATUN
 	}
-	
+
 	trigger = {
 		is_march = yes
 		religion_group = muslim
@@ -1228,7 +1228,7 @@ ottoman_vassals = {
 	ruler_female = {
 		1 = HATUN
 	}
-	
+
 	heir_male = {
 		1 = BEYSADE
 	}
@@ -1236,11 +1236,11 @@ ottoman_vassals = {
 	heir_female = {
 		1 = BEYSADI
 	}
-	
+
 	consort_male = {
 		1 = BEY
 	}
-	
+
 	consort_female = {
 		1 = HATUN
 	}
@@ -1276,7 +1276,7 @@ ottoman_eyalets = {
 		2 = BEYLERBEY
 		3 = BEYLERBEY
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -1288,13 +1288,13 @@ ottoman_eyalets = {
 		2 = HEIR_fem
 		3 = HEIR_fem
 	}
-	
+
 	consort_male = {
 		1 = BEY
 		2 = BEY
 		3 = BEY
 	}
-	
+
 	consort_female = {
 		1 = HATUN
 		2 = HATUN
@@ -1328,7 +1328,7 @@ ottoman_barbary_eyalets = {
 		2 = BEYLERBEY
 		3 = BEYLERBEY
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -1340,13 +1340,13 @@ ottoman_barbary_eyalets = {
 		2 = HEIR_fem
 		3 = HEIR_fem
 	}
-	
+
 	consort_male = {
 		1 = BEY
 		2 = BEY
 		3 = BEY
 	}
-	
+
 	consort_female = {
 		1 = HATUN
 		2 = HATUN
@@ -1368,7 +1368,7 @@ march_christian_monarchy = {
 		2 = VICEROYALTY
 		3 = EMPIRE
 	}
-	
+
 	ruler_male = {
 		1 = MARGRAVE
 		2 = VICEROY
@@ -1377,10 +1377,10 @@ march_christian_monarchy = {
 
 	ruler_female = {
 		1 = MARGRAVINE
-		2 = VICEREINE	
+		2 = VICEREINE
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = MARGRAVE_CONSORT
 		2 = VICEROY_CONSORT
@@ -1419,19 +1419,19 @@ gov_papal_government_elector = {
 		2 = PAPACY
 		3 = PAPACY
 	}
-	
+
 	ruler_male = {
 		1 = POPE_ELECTOR
 		2 = POPE_ELECTOR
 		3 = POPE_ELECTOR
 	}
-	
+
 	ruler_female  ={
 		1 = POPETTE_ELECTOR
 		2 = POPETTE_ELECTOR
 		3 = POPETTE_ELECTOR
 	}
-	
+
 	consort_male = {
 		1 = CONSORT
 		2 = CONSORT
@@ -1443,7 +1443,7 @@ gov_papal_government_elector = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -1455,7 +1455,7 @@ gov_papal_government_elector = {
 		2 = HEIR_fem
 		3 = HEIR_fem
 	}
-	
+
 	trigger = {
 		has_reform = papacy_reform
 			is_elector = yes
@@ -1482,19 +1482,19 @@ palatine_electorate = {
 		2 = ELECTRESS_PALATINE
 		3 = EMPRESS
 	}
-	
+
 	consort_male  = {
 		1 = ELECTOR
 		2 = ELECTOR
 		3 = ELECTOR
 	}
-	
+
 	consort_female = {
 		1 = ELECTRESS
 		2 = ELECTRESS
 		3 = ELECTRESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -1506,7 +1506,7 @@ palatine_electorate = {
 		2 = HEIR_fem
 		3 = HEIR_fem
 	}
-	
+
 	trigger = {
 		government = monarchy
 		is_elector = yes
@@ -1529,10 +1529,10 @@ palatine_monarchy = {
 
 	ruler_female = {
 		1 = COUNTESS_PALATINE
-		2 = QUEEN_PALATINE	
+		2 = QUEEN_PALATINE
 		3 = EMPRESS
 	}
-	
+
 	consort_male  = {
 		1 = PRINCE_CONSORT
 		2 = PRINCE_CONSORT
@@ -1555,18 +1555,20 @@ palatine_monarchy = {
 		2 = HEIR_fem
 		3 = HEIR_fem
 	}
-	
+
 	trigger = {
 		government = monarchy
 		tag = PAL
 	}
 }
 
+# BALKANICA EDIT
+# for hum, after taking on herzog
 herzegovina_monarchy = {
 	rank = {
-		1 = DUCHY
-		2 = KINGDOM
-  3 = EMPIRE
+		1 = VOJVODSTVO
+		2 = KRALJEVINA
+		3 = CARSTVO
 	}
 
 	ruler_male = {
@@ -1580,7 +1582,7 @@ herzegovina_monarchy = {
 		2 = PRINCESS_HERCEGI
   2 = EMPRESS_HERCEGI
 	}
-	
+
 	consort_male  = {
 		1 = PRINCE_CONSORT
 		2 = PRINCE_CONSORT
@@ -1604,7 +1606,7 @@ herzegovina_monarchy = {
 		2 = HEIR_fem
   3 = HEIR_fem
 	}
-	
+
 	trigger = {
 		government = monarchy
 		tag = HRZ
@@ -1612,6 +1614,7 @@ herzegovina_monarchy = {
 	}
 }
 
+# for hum, before taking on herzog
 hum_monarchy = {
 	rank = {
 		1 = DUCHY
@@ -1624,7 +1627,7 @@ hum_monarchy = {
 	ruler_female = {
 		1 = GRAND_DUCHESS
 	}
-	
+
 	consort_male  = {
 		1 = PRINCE_CONSORT
 	}
@@ -1640,7 +1643,7 @@ hum_monarchy = {
 	heir_female = {
 		1 = HEIR_fem
 	}
-	
+
 	trigger = {
 		government = monarchy
   government_rank = 1
@@ -1648,6 +1651,7 @@ hum_monarchy = {
   NOT = { has_country_flag = adopt_herceg_title }
 	}
 }
+# BALAKANICA EDIT END
 
 #HRE
 
@@ -1666,22 +1670,22 @@ holy_roman_electors_monarchy = {
 
 	ruler_female = {
 		1 = PRINCESS_ELECTOR
-		2 = QUEEN_ELECTOR	
+		2 = QUEEN_ELECTOR
 		3 = EMPRESS
 	}
-	
+
 	consort_male  = {
 		1 = ELECTOR
 		2 = ELECTOR
 		3 = ELECTOR
 	}
-	
+
 	consort_female = {
 		1 = ELECTRESS
 		2 = ELECTRESS
 		3 = ELECTRESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -1693,7 +1697,7 @@ holy_roman_electors_monarchy = {
 		2 = HEIR_fem
 		3 = HEIR_fem
 	}
-	
+
 	trigger = {
 		government = monarchy
 		is_elector = yes
@@ -1732,7 +1736,7 @@ holy_roman_electors_bishoprics = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -1782,7 +1786,7 @@ holy_roman_electors_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		is_elector = yes
@@ -1820,7 +1824,7 @@ trade_company_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		has_reform = trade_company_government
 	}
@@ -1838,15 +1842,15 @@ japanese_shogunate = {
 	ruler_male = {
 		3 = SHOGUN
 		2 = KING
-		1 = LORD		
+		1 = LORD
 	}
-	
+
 	ruler_female = {
 		3 = SHOGUNESS
 		2 = QUEEN
-		1 = LADY		
+		1 = LADY
 	}
-	
+
 	consort_male = {
 		1 = LORD
 		2 = LORD
@@ -1909,7 +1913,7 @@ islamic_syncretism_kingdoms = { #For countries in a node being converted to isla
 		2 = SULTANA
 		3 = SULTANA
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -1959,13 +1963,13 @@ french_kingdom = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = DAUPHIN
 		2 = DAUPHIN
 		3 = DAUPHIN
 	}
-	
+
 	heir_female = {
 		1 = DAUPHINE
 		2 = DAUPHINE
@@ -2012,7 +2016,7 @@ dutch_monarchy = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = monarchy
 		has_reform = stadthalter_monarchy_reform
@@ -2051,7 +2055,7 @@ sharifs_of_mecca = {
 		2 = EMIRA
 		3 = EMIRA
 	}
-	
+
 	heir_male = {
 		1 = SHARIFZADE
 		2 = SHARIFZADE
@@ -2063,7 +2067,7 @@ sharifs_of_mecca = {
 		2 = SHARIFZADE
 		3 = SHARIFZADE
 	}
-	
+
 	trigger = {
 		religion_group = muslim
 		OR = {
@@ -2093,7 +2097,7 @@ avar_nutsals = {
 		2 = KHATUN
 		3 = GREAT_KHATUN
 	}
-	
+
 	consort_male = {
 		1 = PRINCE
 		2 = KHAN
@@ -2111,13 +2115,13 @@ avar_nutsals = {
 		2 = HEIR
 		3 = HEIR
 	}
-	
+
 	heir_female = {
 		1 = HEIR_fem
 		2 = HEIR_fem
 		3 = HEIR_fem
 	}
-	
+
 	trigger = {
 		tag = AVR
 		government = monarchy
@@ -2154,19 +2158,19 @@ dais_of_najran = {
 		2 = SULTANA
 		3 = PADISHAH_CONSORT
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
 		3 = HEIR
 	}
-	
+
 	heir_female = {
 		1 = HEIR_fem
 		2 = HEIR_fem
 		3 = HEIR_fem
 	}
-	
+
 	trigger = {
 		religion_group = muslim
 		tag = NJR
@@ -2191,7 +2195,7 @@ malian_monarchy = {
 		2 = MANSA
 		3 = GREAT_MANSA_fem
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -2203,7 +2207,7 @@ malian_monarchy = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -2240,7 +2244,7 @@ arabic_tribal = {
 		2 = EMIRA
 		3 = GREAT_EMIRA
 	}
-	
+
 	consort_male = {
 		1 = MALIK
 		2 = EMIR_CONSORT
@@ -2252,7 +2256,7 @@ arabic_tribal = {
 		2 = EMIRA
 		3 = EMIRA
 	}
-	
+
 	heir_male = {
 		1 = MALIK
 		2 = AMIRZADE
@@ -2290,7 +2294,7 @@ muslim_tribal = {
 		2 = SULTANA
 		3 = GREAT_SULTANA
 	}
-	
+
 	consort_male = {
 		1 = MALIK
 		2 = SULTAN_CONSORT
@@ -2302,7 +2306,7 @@ muslim_tribal = {
 		2 = SULTANA
 		3 = SULTANA
 	}
-	
+
 	heir_male = {
 		1 = MALIK
 		2 = SHAHZADE
@@ -2352,7 +2356,7 @@ kathiawar_tribal_monarchy = { #Sammas of Sindh are also Jams
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -2392,7 +2396,7 @@ sistan_monarchy = {
 		2 = SHAH
 		3 = SHAHANSHAH
 	}
-	
+
 	consort_male = {
 		1 = MIRZA
 		2 = SHAH_CONSORT
@@ -2404,7 +2408,7 @@ sistan_monarchy = {
 		2 = KHANUM
 		3 = KHANUM
 	}
-	
+
 	heir_male = {
 		1 = MIRZA
 		2 = SHAHZADE
@@ -2442,7 +2446,7 @@ turcoman_persian_monarchy = {
 		2 = SHAH
 		3 = SHAHANSHAH
 	}
-	
+
 	consort_male = {
 		1 = MIRZA
 		2 = SHAH_CONSORT
@@ -2454,7 +2458,7 @@ turcoman_persian_monarchy = {
 		2 = KHANUM
 		3 = KHANUM
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = SHAHZADE
@@ -2490,7 +2494,7 @@ persian_monarchy = {
 		2 = SHAH
 		3 = SHAHANSHAH
 	}
-	
+
 	consort_male = {
 		1 = MIRZA
 		2 = SHAH_CONSORT
@@ -2502,7 +2506,7 @@ persian_monarchy = {
 		2 = SHAHBANU
 		3 = SHAHBANU
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = SHAHZADE
@@ -2551,7 +2555,7 @@ somali_monarchy = {
 		2 = BOQORAD
 		3 = BOQORAD
 	}
-	
+
 	heir_male = {
 		1 = AMIR
 		2 = AMIR
@@ -2563,7 +2567,7 @@ somali_monarchy = {
 		2 = AMIRAD
 		3 = AMIRAD
 	}
-	
+
 	trigger = {
 		government = monarchy
 		primary_culture = somali
@@ -2585,7 +2589,7 @@ lithuanian_monarchy = {
 
 	ruler_female = {
 		1 = GRAND_DUCHESS
-		2 = QUEEN	
+		2 = QUEEN
 		3 = EMPRESS
 	}
 
@@ -2597,10 +2601,10 @@ lithuanian_monarchy = {
 
 	consort_female = {
 		1 = GRAND_DUCHESS
-		2 = QUEEN	
+		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -2637,7 +2641,7 @@ cristopher_of_bavaria_monarchy = {
 		2 = ARCHQUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = ARCHDUKE_CONSORT
 		2 = KING_CONSORT
@@ -2740,10 +2744,10 @@ austrian_monarchy = {
 
 	ruler_female = {
 		1 = ARCHDUCHESS
-		2 = QUEEN	
+		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = ARCHDUKE_CONSORT
 		2 = KING_CONSORT
@@ -2755,7 +2759,7 @@ austrian_monarchy = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -2792,7 +2796,7 @@ turkish_monarchy = {
 		2 = SULTAN_fem
 		3 = PADISHAH
 	}
-	
+
 	heir_male = {
 		1 = VALI_AHAD
 		2 = VALI_AHAD
@@ -2803,7 +2807,7 @@ turkish_monarchy = {
 		2 = VALI_AHAD
 		3 = VALI_AHAD
 	}
-	
+
 	consort_male = {
 		1 = BEY
 		2 = SULTAN_CONSORT
@@ -2839,7 +2843,7 @@ theodoro_monarchy = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -2851,7 +2855,7 @@ theodoro_monarchy = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -2871,11 +2875,13 @@ theodoro_monarchy = {
 }
 
 croatian_monarchy = {
+ # BALKANICA EDIT
 	rank = {
-		1 = PRINCEDOM
-		2 = KINGDOM
-		3 = EMPIRE
+		1 = BANATE
+		2 = KRALJEVSTVO
+		3 = CARSTVO
 	}
+ # BALKANICA EDIT
 
 	ruler_male = {
 		1 = BAN_TITLE
@@ -2900,7 +2906,7 @@ croatian_monarchy = {
 		2 = KRALJICA
 		3 = CARICA
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -2940,7 +2946,7 @@ finnish_monarchy = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = GRAND_DUKE_CONSORT
 		2 = KING_CONSORT
@@ -2952,7 +2958,7 @@ finnish_monarchy = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -2989,7 +2995,7 @@ grand_duchy_of_tuscany = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = GRAND_DUKE_CONSORT
 		2 = KING_CONSORT
@@ -3038,7 +3044,7 @@ grand_duchy_of_baden = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = GRAND_DUKE_CONSORT
 		2 = KING_CONSORT
@@ -3050,7 +3056,7 @@ grand_duchy_of_baden = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -3088,7 +3094,7 @@ grand_duchy_of_luxembourg = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = GRAND_DUKE_CONSORT
 		2 = KING_CONSORT
@@ -3100,7 +3106,7 @@ grand_duchy_of_luxembourg = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -3138,7 +3144,7 @@ serbian_feudal_monarchy = {
 		2 = DESPOTISSA
 		3 = CARICA
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = PRINCE_CONSORT
@@ -3150,7 +3156,7 @@ serbian_feudal_monarchy = {
 		2 = DESPOTISSA
 		3 = CARICA
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -3164,11 +3170,14 @@ serbian_feudal_monarchy = {
 	}
 
 	trigger = {
-		government = monarchy
-		OR = {
+	government = monarchy
+ # BALKANICA EDIT
+ OR = {
 			has_reform = feudalism_reform
 			has_reform = autocracy_reform
+   has_reform = serbian_despotate_reform
 		}
+  # BALKANICA EDIT
 		OR = {
 			primary_culture = serbian
 			primary_culture = serbian_new
@@ -3244,7 +3253,7 @@ serbian_monarchy = {
 		2 = KRALJICA
 		3 = CARICA
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = PRINCE_CONSORT
@@ -3256,7 +3265,7 @@ serbian_monarchy = {
 		2 = KRALJICA
 		3 = CARICA
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -3293,7 +3302,7 @@ byzantine_monarchy = {
 
 	ruler_female = {
 		1 = DESPOTISSA
-		2 = AUTOKRATEIRA 
+		2 = AUTOKRATEIRA
 		3 = BASILISSA
 	}
 
@@ -3305,7 +3314,7 @@ byzantine_monarchy = {
 
 	consort_female = {
 		1 = DESPOTISSA
-		2 = AUTOKRATEIRA 
+		2 = AUTOKRATEIRA
 		3 = BASILISSA
 	}
 
@@ -3347,7 +3356,7 @@ greek_monarchy = {	#Greeks without Byzantine Ties
 
 	ruler_female = {
 		1 = DUCHESS
-		2 = QUEEN 
+		2 = QUEEN
 		3 = EMPRESS
 	}
 
@@ -3359,7 +3368,7 @@ greek_monarchy = {	#Greeks without Byzantine Ties
 
 	consort_female = {
 		1 = DUCHESS
-		2 = QUEEN 
+		2 = QUEEN
 		3 = EMPRESS
 	}
 
@@ -3402,7 +3411,7 @@ arakanese_monarchy = { #Buddhist state that used Muslim titles.
 		2 = SULTANA
 		3 = GREAT_SULTANA
 	}
-	
+
 	consort_male = {
 		1 = EMIR_CONSORT
 		2 = SULTAN_CONSORT
@@ -3511,7 +3520,7 @@ albanian_monarchy = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -3551,7 +3560,7 @@ qing_monarchy = {
 		2 = JUNWANG
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = WANG
 		2 = WANG
@@ -3600,7 +3609,7 @@ egyptian_monarchy = {
 		2 = SULTANA
 		3 = GREAT_SULTANA
 	}
-	
+
 	consort_male = {
 		1 = CONSORT
 		2 = SULTAN_CONSORT
@@ -3679,7 +3688,7 @@ pagan_egyptian_monarchy = {
 		2 = PHARAOH_fem
 		3 = GREAT_PHARAOH_fem
 	}
-	
+
 	consort_male = {
 		1 = CONSORT
 		2 = KING_CONSORT
@@ -3734,7 +3743,7 @@ pagan_greek_monarchy = {
 		2 = BASILISSA
 		3 = HEGEMON_fem
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = PRINCE_CONSORT
@@ -3858,7 +3867,7 @@ pagan_roman_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		OR = {
@@ -3890,7 +3899,7 @@ jurchen_monarchy = {
 		2 = KHATUN
 		3 = GREAT_KHATUN
 	}
-	
+
 	consort_male = {
 		1 = BEILE
 		2 = KHAN
@@ -3902,7 +3911,7 @@ jurchen_monarchy = {
 		2 = KHANUM
 		3 = KHANUM
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -3939,7 +3948,7 @@ romanian_monarchy = {
 		2 = KRALJICA
 		3 = CARICA
 	}
-	
+
 	consort_male = {
 		1 = VOIVODE
 		2 = KRALJ
@@ -3988,25 +3997,25 @@ hyderabad_state_monarchy = {
 		2 = NIZAM_BEGUM
 		3 = PADISHAH
 	}
-	
+
 	consort_male = {
 		1 = NAWAB
 		2 = NIZAM
 		3 = PADISHAH
 	}
-	
+
 	consort_female = {
 		1 = NAWAB_BEGUM
 		2 = NIZAM_BEGUM
 		3 = PADISHAH_BEGUM
 	}
-	
+
 	heir_male = {
 		1 = NAWABZADA
 		2 = NIZAMZADA
 		3 = SHAHZADE
 	}
-	
+
 	heir_female = {
 		1 = NAWAB_BEGUM
 		2 = NIZAM_BEGUM
@@ -4037,25 +4046,25 @@ muslim_indian_monarchy = {
 		2 = SULTANA
 		3 = PADISHAH
 	}
-	
+
 	consort_male = {
 		1 = MIRZA
 		2 = KHAN
 		3 = PADISHAH_CONSORT
 	}
-	
+
 	consort_female = {
 		1 = NAWAB_BEGUM
 		2 = SULTANA_BEGUM
 		3 = PADISHAH_BEGUM
 	}
-	
+
 	heir_male = {
 		1 = NAWABZADA
 		2 = MIRZA
 		3 = SHAHZADE
 	}
-	
+
 	heir_female = {
 		1 = NAWAB_BEGUM
 		2 = NIZAM_BEGUM
@@ -4093,7 +4102,7 @@ bharat_monarchy = {
 		2 = MAHARANI
 		3 = CHHATRAPATI
 	}
-	
+
 	consort_male = {
 		1 = RAJA
 		2 = MAHARAJA
@@ -4105,13 +4114,13 @@ bharat_monarchy = {
 		2 = MAHARANI
 		3 = CHHATRAPATI
 	}
-	
+
 	heir_male = {
 		1 = RAJKUMAR
 		2 = RAJKUMAR
 		3 = RAJKUMAR
 	}
-	
+
 	heir_female = {
 		1 = RAJKUMARI
 		2 = RAJKUMARI
@@ -4142,25 +4151,25 @@ hindu_rajput_monarchy = {
 		2 = MAHARANI
 		3 = CHHATRAPATI
 	}
-	
+
 	consort_male = {
 		1 = RANA
 		2 = MAHARANA
 		3 = CHHATRAPATI
 	}
-	
+
 	consort_female = {
 		1 = RANI
 		2 = MAHARANI
 		3 = CHHATRAPATI
 	}
-	
+
 	heir_male = {
 		1 = RAJKUMAR
 		2 = RAJKUMAR
 		3 = RAJKUMAR
 	}
-	
+
 	heir_female = {
 		1 = RAJKUMARI
 		2 = RAJKUMARI
@@ -4192,7 +4201,7 @@ maratha_peshwas = {
 		2 = MAHARANI
 		3 = PESHWA
 	}
-	
+
 	consort_male = {
 		1 = RAJA
 		2 = MAHARAJA
@@ -4204,13 +4213,13 @@ maratha_peshwas = {
 		2 = MAHARANI
 		3 = PESHWIN
 	}
-	
+
 	heir_male = {
 		1 = RAJKUMAR
 		2 = RAJKUMAR
 		3 = RAJKUMAR
 	}
-	
+
 	heir_female = {
 		1 = RAJKUMARI
 		2 = RAJKUMARI
@@ -4247,7 +4256,7 @@ hindu_maratha_monarchy = {
 		2 = MAHARANI
 		3 = CHHATRAPATI
 	}
-	
+
 	consort_male = {
 		1 = RAJA
 		2 = MAHARAJA
@@ -4259,13 +4268,13 @@ hindu_maratha_monarchy = {
 		2 = MAHARANI
 		3 = PESHWIN
 	}
-	
+
 	heir_male = {
 		1 = RAJKUMAR
 		2 = RAJKUMAR
 		3 = RAJKUMAR
 	}
-	
+
 	heir_female = {
 		1 = RAJKUMARI
 		2 = RAJKUMARI
@@ -4297,7 +4306,7 @@ kaffa_monarchy = {
 		2 = TATO_FEM
 		3 = ATIO_FEM
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -4346,25 +4355,25 @@ ethiopian_monarchies = {
 		2 = NIGIST
 		3 = NIGISTE_NIGIST
 	}
-	
+
 	consort_male = {
 		1 = JANHOY
 		2 = JANHOY
 		3 = JANHOY
 	}
-	
+
 	consort_female = {
 		1 = ITEGE
 		2 = ITEGE
 		3 = ITEGE
 	}
-	
+
 	heir_male = {
 		1 = ABETO
 		2 = ABETO
 		3 = ABETO
 	}
-	
+
 	heir_female = {
 		1 = LE_ELT
 		2 = LE_ELT
@@ -4400,7 +4409,7 @@ nkore_monarchy = {
 		2 = MUGO
 		3 = GREAT_MUGO
 	}
-	
+
 	consort_male = {
 		1 = PRINCE
 		2 = MUGABE
@@ -4497,7 +4506,7 @@ lunda_monarchy = {
 		2 = MULOPWE_fem
 		3 = GREAT_MULOPWE_fem
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -4548,7 +4557,7 @@ mutapa_monarchy = {
 		2 = MWENEMUTAPA_fem
 		3 = GREAT_MWENEMUTAPA_fem
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -4597,7 +4606,7 @@ torwa_monarchy = {
 		2 = GRAND_MAMBO_fem
 		3 = GREAT_MAMBO_fem
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -4646,7 +4655,7 @@ rwanda_burundi_monarchy = {
 		2 = UMUGABEKAZI
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -4692,10 +4701,10 @@ ganda_monarchy = {
 
 	ruler_female = {
 		1 = PRINCESS
-		2 = NNABAGEREKA 
+		2 = NNABAGEREKA
 		3 = GREAT_NNABAGEREKA
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -4741,10 +4750,10 @@ antemoro_monarchy = {
 
 	ruler_female = {
 		1 = PRINCESS
-		2 = QUEEN 
+		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -4790,10 +4799,10 @@ betsimisaraka_monarchy = {
 
 	ruler_female = {
 		1 = PRINCESS
-		2 = QUEEN 
+		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -4842,7 +4851,7 @@ filipino_rajanate = {
 		2 = RANI
 		3 = MAHARANI
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = RAJA
@@ -4943,7 +4952,7 @@ burman_monarchy = {
 		2 = QUEEN
 		3 = CHHATRAPATI
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -4994,7 +5003,7 @@ barangay_polity = {
 		2 = LAKAN
 		3 = GREAT_LAKAN_fem
 	}
-	
+
 	consort_male = {
 		1 = PRINCE_CONSORT
 		2 = KING_CONSORT
@@ -5075,15 +5084,20 @@ south_slavic_monarchy = {
 
 	trigger = {
 		government = monarchy
+  # BALKANICA EDIT
 		OR = {
-			primary_culture = croatian_new
-			primary_culture = serbian_new
 			primary_culture = slovene_new
-			primary_culture = bosnian_new
 			primary_culture = bulgarian_new
 			culture_group = south_slavic
 		}
-		NOT = { tag = CLI }
+  # All of these guys have their own more specific localizations
+		NOT = { primary_culture = croatian }
+		NOT = { primary_culture = croatian_new }
+  NOT = { primary_culture = serbian }
+  NOT = { primary_culture = serbian_new }
+  NOT = { primary_culture = bosnian }
+  NOT = { primary_culture = bosnian_new }
+  # BALKANICA EDIT
 	}
 }
 
@@ -5105,7 +5119,7 @@ irish_peerage_monarchy = {
 		2 = HIGH_QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = EARL
 		2 = HIGH_KING
@@ -5160,7 +5174,7 @@ irish_clan_monarchy = {
 		2 = HIGH_QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = KING
 		2 = HIGH_KING
@@ -5258,7 +5272,7 @@ muscovite_monarchy = {
 		2 = GREAT_KNIAGINIA
 		3 = TSARITSA
 	}
-	
+
 	consort_male = {
 		1 = GREAT_KNIAZ
 		2 = GREAT_KNIAZ
@@ -5568,7 +5582,7 @@ chinese_monarchy = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	consort_male = {
 		1 = CONSORT
 		2 = CONSORT
@@ -5617,7 +5631,7 @@ hindu_monarchy = {
 		2 = MAHARANI
 		3 = CHHATRAPATI
 	}
-	
+
 	consort_male = {
 		1 = RAJA
 		2 = MAHARAJA
@@ -5629,13 +5643,13 @@ hindu_monarchy = {
 		2 = MAHARANI
 		3 = MAHARANI
 	}
-	
+
 	heir_male = {
 		1 = RAJKUMAR
 		2 = RAJKUMAR
 		3 = RAJKUMAR
 	}
-	
+
 	heir_female = {
 		1 = RAJKUMARI
 		2 = RAJKUMARI
@@ -5719,25 +5733,25 @@ muslim_monarchy = {
 		2 = SULTANA
 		3 = GREAT_SULTANA
 	}
-	
+
 	consort_male = {
 		1 = EMIR_CONSORT
 		2 = SULTAN_CONSORT
 		3 = SULTAN_CONSORT
 	}
-	
+
 	consort_female = {
 		1 = EMIRA
 		2 = SULTANA
 		3 = SULTANA
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = SHAHZADE
 		3 = SHAHZADE
 	}
-	
+
 	heir_female = {
 		1 = HEIR_fem
 		2 = SHAHZADE
@@ -5901,7 +5915,7 @@ zaporozhian_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		has_reform = cossacks_reform
@@ -5938,7 +5952,7 @@ ragusan_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
   OR = {
@@ -5978,7 +5992,7 @@ dutch_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		primary_culture = dutch
@@ -6017,7 +6031,7 @@ russian_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		OR = {
@@ -6068,7 +6082,7 @@ south_slavic_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		OR = {
@@ -6115,7 +6129,7 @@ florentine_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		OR = {
@@ -6155,7 +6169,7 @@ ambrosian_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		has_reform = ambrosian_republic
 	}
@@ -6191,7 +6205,7 @@ german_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		culture_group = germanic
@@ -6228,7 +6242,7 @@ italian_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		culture_group = latin
@@ -6265,7 +6279,7 @@ hindu_republic = { #Based on titles in Maratha administration
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		religion = hinduism
@@ -6302,7 +6316,7 @@ buddhist_noble_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		has_reform = noble_elite_reform
 		OR = {
@@ -6342,7 +6356,7 @@ muslim_republic = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	trigger = {
 		government = republic
 		religion_group = muslim
@@ -6353,7 +6367,7 @@ march_eastern_christian_monarchy = {
 	rank = {
 		1 = PRINCEDOM
 	}
-	
+
 	ruler_male = {
 		1 = PRINCE
 	}
@@ -6369,7 +6383,7 @@ march_eastern_christian_monarchy = {
 	consort_female = {
 		1 = PRINCESS
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 	}
@@ -6377,9 +6391,9 @@ march_eastern_christian_monarchy = {
 	heir_female = {
 		1 = HEIR_fem
 	}
-	
+
 	#Standard titles for Heirs and Consorts
-	
+
 	trigger = {
 		government = monarchy
 		NOT = { has_reform = principality }
@@ -6409,7 +6423,7 @@ gov_holy_horde = {
 		2 = GRAND_CRUSADER_fem
 		3 = GRAND_CRUSADER_fem
 	}
-	
+
 	consort_male = {
 		1 = CONSORT
 		2 = CONSORT
@@ -6421,7 +6435,7 @@ gov_holy_horde = {
 		2 = CONSORT
 		3 = CONSORT
 	}
-	
+
 	heir_male = {
 		1 = HEIR
 		2 = HEIR
@@ -6461,7 +6475,7 @@ gov_japanese_divine_empire = {
 		2 = GODDESS_EMPRESS
 		3 = GODDESS_EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = OUJI
 		2 = OUJI

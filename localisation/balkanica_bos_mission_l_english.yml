@@ -304,3 +304,20 @@
  bos_finish_developments_forest_trigger_tt:0 "We chose to focus on the §Yforests§!"
  bos_finish_developments_a_tt:0 "If we chose to focus on the §Yhills and mountains§!:"
  bos_finish_developments_b_tt:0 "If we chose to focus on the §Yforests§!:"
+
+ supporting_hum:0 "Supporting Hum"
+ desc_supporting_hum:0 "Supporting Hum in the Bosnian Civil War"
+ supporting_ragusa:0 "Supporting Ragusa"
+ desc_supporting_ragusa:0 "Supporting Ragusa's independence"
+ supporting_bosnia:0 "Supporting Bosnia"
+ desc_supporting_bosnia:0 "Supporting Bosnia in the Bosnian Civil War"
+
+ bos_missions.100.title:0 "Hungarian Influence"
+ bos_missions.100.desc:0 "The Kingdom of Hungary has influence accross the Balkans.\n\nNext door, our regent, John Hunyadi, has put their support beind the current Kralj of Bosnia, Stjepan Tomas Kotromanic.\n\nFurther south, we still receive nominal tribute from the Republic of Ragusa."
+ bos_missions.100.a:0 "The game is set."
+ bos_missions_100_tt:0 "§MThese modifiers will be removed if you revoke your guarantees over Bosnia and Ragusa, or they cease to exist.§!"
+
+ bos_missions.104.title:0 "Aragonese Influence"
+ bos_missions.104.desc:0 "The Kingdom of Aragon seeks to broaden their influence in the Balkans.\n\nThe current king, Alfonso V, has thrown his support behind the rebellious Lord of Hum, Stjepan Kosaca."
+ bos_missions.104.a:0 "The game is set."
+ bos_missions_104_tt:0 "§MThis modifier will be removed if you revoke your guarantee over Hum, or they cease to exist.§!"

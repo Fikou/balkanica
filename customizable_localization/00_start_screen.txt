@@ -16,6 +16,17 @@ defined_text = {
     name = StartScreenTitle
 	random = no
 
+# BALKANICA GO HERE
+ text = {
+  localisation_key = string_screen_title_bosnia
+  trigger = {
+   OR = {
+    tag = BOS
+    tag = HRZ
+   }
+  }
+ }
+
 	text = {
 
         localisation_key = string_screen_title_plural

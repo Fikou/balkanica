@@ -102,20 +102,40 @@ country_decisions = {
    owns_core_province = 129 # Ljubljana
    owns_core_province = 1826 # Senj
    owns_core_province = 4174 # Durazzo
-   num_of_owned_provinces_with = {
-    value = 4
-    culture = albanian
-    is_overseas = no
+   if = {
+    limit = { mission_completed = rag_illyria }
+    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+     value = 4
+     culture = albanian
+     is_overseas = no
+    }
+    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+     value = 4
+     culture = dalmatian
+     is_overseas = no
+    }
+    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+     value = 25
+     culture_group = south_slavic
+     is_overseas = no
+    }
    }
-   num_of_owned_provinces_with = {
-    value = 4
-    culture = dalmatian
-    is_overseas = no
-   }
-   num_of_owned_provinces_with = {
-    value = 25
-    culture_group = south_slavic
-    is_overseas = no
+   else = {
+    num_of_owned_provinces_with = {
+     value = 4
+     culture = albanian
+     is_overseas = no
+    }
+    num_of_owned_provinces_with = {
+     value = 4
+     culture = dalmatian
+     is_overseas = no
+    }
+    num_of_owned_provinces_with = {
+     value = 25
+     culture_group = south_slavic
+     is_overseas = no
+    }
    }
 		}
 		effect = {
@@ -151,7 +171,21 @@ country_decisions = {
 					set_government_rank = 2
 				}
 			}
-   
+   if = {
+    limit = {
+     mission_completed = rag_illyria
+    }
+    every_subject_country = {
+     limit = {
+      is_south_slavic_or_dalmatian_culture = yes
+      capital_scope = { continent = europe }
+      NOT = { total_development = 150 }
+      NOT = { liberty_desire = 50 }
+     }
+     ROOT = { inherit = PREV }
+    }
+   }
+
 			add_prestige = 25
 			on_change_tag_effect = yes
 			add_country_modifier = {
@@ -168,7 +202,7 @@ country_decisions = {
      update_entire_culture_foreign = { culture = dalmatian }
     }
    }
-   if = { 
+   if = {
     limit = { NOT = { has_updated_culture = { culture = albanian } } }
     if = {
      limit = { primary_culture = albanian }
@@ -244,5 +278,5 @@ country_decisions = {
 			factor = 1
 		}
 	}
-	
+
 }

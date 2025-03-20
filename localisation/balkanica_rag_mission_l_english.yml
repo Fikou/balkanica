@@ -1,0 +1,252 @@
+﻿l_english:
+ rag_italian_neogtiation_title:0 "Negotiate with the Italians"
+ rag_italian_neogtiation_desc:0 "Not all Italian states are our enemies. In fact, the enemy of our enemy is, logically, our friend. We should negotiate with the Italian states on the opposite side of the peninsula, to find common ground and perhaps even form an alliance against Venice and Naples."
+
+ rag_temples_title:0 "[Root.Capital.GetCapitalName] Temple Complex"
+ rag_temples_desc:0 "Being an inadvertent bulwark of Christianity in the Balkans, [Root.Capital.GetCapitalName] has become an important city for Catholic refugees and pilgrims alike. To accommodate the influx of people, we should build a grand temple complex in the city, which will not only serve as a place of worship, but also as a mighty fortress to protect the city from any would-be conquerors."
+
+ rag_sieze_genoa_title:0 "Sieze Genoese Possessions"
+ rag_sieze_genoa_desc:0 "The Genoese, while outwardly friendly, have been encroaching on our regional trade. However their power is waning, and we should take advantage of this by seizing their possessions across the Mediterranean and in the Black Sea."
+
+ rag_conquer_venice_title:0 "Conquer Venice"
+ rag_conquer_venice_desc:0 "The Venitians thought us weak, but we proved them wrong, and took their Dalmatian possessions. The Venetians thought us insignificant, but we proved them wrong, and expelled them from the Adriatic. The Venetians thought us a mere city-state, but we will prove them wrong again and again, until Venezia has fallen."
+
+ rag_future_title:0 "And Ahead"
+ rag_future_desc:0 "With the Mediterranean at large under our mercantile control, we must look to the future. We have the power to shape the world as we see fit."
+
+ rag_christian_trade_title:0 "Christian Trade"
+ rag_christian_trade_desc:0 "To our west, across the Adriatic Sea, lies the Italian Peninsula. Center of the Catholic world, the Italian states are a major source of trade for us. We have much to gain from maintaining good relations with them - particularly in trading Catholic goods to the Muslim world."
+
+ rag_dalmatia_title:0 "Expand the Republic"
+ rag_dalmatia_desc:0 "While many of our patritians are content with our current borders, we must look to the future. We need to expand our territory, Dalmatia is a prime target. It is time to take the fight to the Venetians."
+
+ rag_dominate_adriatic_title:0 "Dominate the Adriatic"
+ rag_dominate_adriatic_desc:0 "With our coast expanded, our grasp over the trade of the Adriatic is stronger than ever - over half of all shipping in the region passes through our ports."
+
+ rag_kill_venice_title:0 "Expel the Venetians"
+ rag_kill_venice_desc:0 "There is only one final step in our quest for dominance over the Adriatic - the expulsion of the Venetians. We must drive them from the region, and secure our place as the true dominant power in the Adriatic."
+
+ bos_defy_turks_title:0 "Defy the Turks"
+ bos_defy_turks_desc:0 "Long have we paid tribute to the Ottomans, but no longer. We have grown strong since our days as a fledgling city-state, and we are no longer content to be a subject of the Turks. It is time to liberate our slavic brothers from the tyranny of the Ottomans."
+
+ rag_freedom_for_anything_title:0 "Never Sell Freedom"
+ rag_freedom_for_anything_desc:0 "§gNon bene pro toto libertas venditur auro - Freedom is not to be sold for all the treasures of the world.§!\n\nThis is the motto of the Republic of Ragusa, and it is a motto that we have lived by for centuries. We have been a free city for over 100 years, and we are willing to give everything to keep it that way.\n\nMany nations have approached us threatening to conquer our lands, but through our expert maneuvering (and deep, deep coffers), we have managed to keep our independence."
+
+ rag_illyria_title:0 "Illyrian Dreams"
+ rag_illyria_desc:0 "Our [Root.GovernmentName] has grown strong, and our borders have expanded. We have taken lands from the Venetians, the Bosnians, and the Serbians, and we have secured our place as the dominant power in the Adriatic.\n\nBut we shall not stop there. Our patricians dream of a new Illyria, freeing the Balkans from the yoke of the Ottomans and the Hungarians, and uniting the region under our banner."
+
+ rag_mutual_allies_title:0 "Find Mutual Allies"
+ rag_mutual_allies_desc:0 "Now that we have a contract securing our independence, we should look to the future. We need to find allies - not for protection, but for expansion."
+
+ rag_serb_gold_title:0 "Exploit Serbian Silver"
+ rag_serb_gold_desc:0 "Serbia is a land of great silver deposits, and their rudimentary mining techniques mean that they are not exploiting them to their full potential. It is time to bring down the Despot of Serbia, and put their silver to good use."
+
+ rag_liberate_albania_title:0 "Liberate Albania"
+ rag_liberate_albania_desc:0 "For centuries, the Albanians have been oppressed by the west and east alike. We have an opportunity to give them freedom under our banner."
+
+ rag_free_balkans_title:0 "Balkan Liberty"
+ rag_free_balkans_desc:0 "With the Ottomans driven from the Balkans and Illyria united as a single, defiant nation, the Balkans have finally been freed from tyrants and conquerors. Long live Illyria!"
+
+ rag_dev_rag_title:0 "Ragusa, Pearl of Ragusa"
+ rag_dev_rag_desc:0 "We have collected a great deal of wealth from our trade between the east and the west, and it is time to invest it in our own city. [Root.Capital.GetCapitalName] will be the envy of the Adriatic - nay - the entire Mediterranean. We will build grand palaces, magnificent temples, and mighty fortresses. [Root.Capital.GetCapitalName] will be the pearl of the [Root.GetName]."
+
+ rag_muslim_trade_title:0 "Islamic Trade"
+ rag_muslim_trade_desc:0 "To our east, across the Balkans and the Bosporus, lies Arabia and the Levant. Center of the Muslim world, the Islamic states are a major source of trade for us. We have much to gain from maintaining good relations with them - particularly in trading Islamic goods to the Christian world."
+
+ rag_kill_bosnia_title:0 "Betray the Bosnians"
+ rag_kill_bosnia_desc:0 "Bosnia and Ragusa have had close ties for centuries, but their recent instability has made them a liability. We should take advantage of their weakness and seize their lands for ourselves."
+
+ rag_croats_title:0 "Onwards to Croatia"
+ rag_croats_desc:0 "Croatia has fertile land and key ports which would be of great benefit to us. Fortunately, with Bosnia recently secure, we have an ample land border with said land. It is time to expand further."
+
+ rag_austria_title:0 "Secure the Border"
+ rag_austria_desc:0 "Carnolia is the border between the Balkans and all of Germany. Leaving it unguarded would be a mistake. We should secure the border with Austria, and take Carnolia for ourselves."
+
+ rag_cyprus_title:0 "Race to Cyprus"
+ rag_cyprus_desc:0 "We have heard rumors that the perfidious Venetians are planning to seize the island of Cyprus from the Lusignan dynasty to further their reach in the Eastern Mediterranean. We should act quickly to secure the island for ourselves, before the Venetians can get their hands on it.\n\nIf we can show them definitive proof that the Venitians are planning to invade, they may be willing to help us in our endeavor."
+
+ rag_egypt_title:0 "Trade of Alexandria"
+ rag_egypt_desc:0 "Egypt is a land of great wealth, and more importantly, one of the main routes for trade beyond the Levant. If we want to expand our trade, especially in spices and other luxury goods, we cannot allow the Mamluks to control the region, and potentially cut us off from Asia."
+
+ rag_beyond_egypt_title:0 "And Beyond"
+ rag_beyond_egypt_desc:0 "With our trade routes into Asia secured, we must look to the future. We have the power to shape the world as we see fit."
+
+ rag_fleetmax_title:0 "Hoist the Sails"
+ rag_fleetmax_desc:0 "In order to protect our trade interests, it is time to build a powerful navy. We should focus on building a fleet of galleys to contest the Venitians and Genoans, or a fleet of light ships to protect our trade interests.\n\nAdditionally, it would be wise to raise a central shipyard in [Root.Capital.GetCapitalName] to maintain these new ships."
+
+ rag_expanding_markets_title:0 "Expanding our Markets"
+ rag_expanding_markets_desc:0 "Now that we are no longer at risk of Mamluk interference, we have the opportunity to acquire trading posts all along the Red Sea, East Africa, and even India and Indonesia. We should take advantage of this opportunity to expand our trade network."
+
+ ragusa_freedom_mission_if_tt:0 "If the event chain §Y'Treaty of [Root.GetName]'§! has not fired:"
+ ragusa_freedom_mission_tt:0 "Triggers the event chain §Y'Treaty of [Root.GetName]'§!, allowing you to become a §Ytributary state§! of the Ottomans (or another nation guaranteeing your independence)."
+ ragusa_freedom_mission_reward_tt:0 "While a §Ytributary state§! of any nation, you will receive §Gpowerful trade bonuses§! that scales with the development gap between you and your overlord, ranging from a minimum of 100 to a maximum of 500 development.\n\nUnlocks a §Ydecision§! allowing you to change your tributary overlord to another nation by paying your current overlord a lump sum."
+ ragusa_warning_careful_tt:0 "§RIf you refuse to become another nation's tributary, it may be some time before you get another opportunity to do so.§!\n"
+
+ ragusa_flavor.1.title:0 "Treaty of [Root.GetName]: An [ragusa_tributary_sovereign.GetName] Tributary?"
+ ragusa_flavor.1.desc:0 "Not 100 years ago, our mightly [Root.GovernmentName] of [Root.GetName] achieved independence from the Republic of Venice. Ever since, we have been situated on a knife's edge. While our regular payments to the Kingdom of Hungary and Ottoman Sultanate have kept us safe, we are still at risk of being our agreements falling through, leaving us vulnerable to the Venetians once more.\n\nIt has been suggested by many patricians that we consider a formal tributary agreement with the [ragusa_tributary_sovereign.GetAdjective] [ragusa_tributary_sovereign.GovernmentName] in order to secure our independence.\n\nWhile this would mean a loss of some of our sovereignty and autonomy, it would also offer us a guarantee of protection from our enemies - so long as we continue to pay our dues."
+ ragusa_flavor.1.a:0 "Send an offer to [ragusa_tributary_sovereign.GetName] for a tributary agreement."
+ ragusa_flavor.1.b:0 "Isn't there anyone else we can ask?"
+ ragusa_flavor.1.c:0 "We may be too small to stand alone, but we are too proud to be a subject."
+
+ ragusa_flavor.2.title:0 "Treaty of [Root.GetName]: A [From.GetAdjective] Proposal"
+ ragusa_flavor.2.desc:0 "The [From.GetAdjective] [From.GovernmentName] has approached us with an interesting offer. They propose a formal tributary agreement, in which they would pay us a regular tribute in exchange for our protection. De facto, the [From.GovernmentName] of [From.GetName] would become a subject of us, but de jure, they would maintain the right to govern themselves, their land, and their diplomacy.\n\nThe [From.GetAdjective] can certain extract more wealth from their city than we can, making this a tempting offer."
+ ragusa_flavor.2.a:0 "Accept the [From.GetAdjective] proposal."
+ ragusa_flavor.2.b:0 "We are not in a position to protect others."
+
+ ragusa_flavor.3.title:0 "Treaty of [Root.GetName]: [From.GetName] Accepts"
+ ragusa_flavor.3.desc:0 "The [ragusa_tributary_sovereign.GetAdjective] [ragusa_tributary_sovereign.GovernmentName] has accepted our offer of a tributary agreement. We can now rest easy, knowing we have a powerful nation to protect us from harm."
+ ragusa_flavor.3.a:0 "We are safe."
+
+ ragusa_flavor.4.title:0 "Treaty of [Root.GetName]: [From.GetName] Declines"
+ ragusa_flavor.4.desc:0 "The [From.GetAdjective] [From.GovernmentName] has declined our offer of a tributary agreement. It seems they are not interested in protecting us, even with the promise of vast wealth."
+ ragusa_flavor.4.a:0 "We will protect ourselves, then."
+ ragusa_flavor.4.b:0 "Fine, contact the next highest bidder."
+ ragusa_offer_tt:0 "We will send an offer to the §Y[ragusa_tributary_sovereign.GetAdjective] [ragusa_tributary_sovereign.GovernmentName]§!.\n§GIf they accept, we will become a tributary§!."
+ ragusa_accept_tt:0 "We accept their proposal, making §Y[From.GetName]§! our tributary§!."
+ ragusa_decline_tt:0 "We decline their proposal.\n§RThey will potentially approach other nations for protection§!."
+ ragusa_alt_offer_tt:0 "We will send an offer to the §Y[ragusa_tributary_sovereign_alt.GetAdjective] [ragusa_tributary_sovereign_alt.GovernmentName]§! instead.\n§GIf they accept, we will become a tributary§!."
+ ragusa_final_tt:0 "We become a tributary state of the §Y[ragusa_tributary_sovereign.GetAdjective] [ragusa_tributary_sovereign.GovernmentName]§!."
+
+ rag_trade_power_per_catholic_tt:0 "Gain §G+3%§! trade efficiency per §YCatholic§! nation that fulfills the criteria, up to §Y30%§!. This is an ongoing effect (updates annually)."
+ rag_trade_power_per_muslim_tt:0 "Gain §G+3%§! trade steering per §YMuslim§! nation that fulfills the criteria, up to §Y30%§!. This is an ongoing effect (updates annually)."
+
+ rag_catholic_trade_1:0 "Christian Trade: §GLevel 1§!"
+ desc_rag_catholic_trade_1:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_catholic_trade_2:0 "Christian Trade: §GLevel 2§!"
+ desc_rag_catholic_trade_2:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_catholic_trade_3:0 "Christian Trade: §GLevel 3§!"
+ desc_rag_catholic_trade_3:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_catholic_trade_4:0 "Christian Trade: §GLevel 4§!"
+ desc_rag_catholic_trade_4:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_catholic_trade_5:0 "Christian Trade: §GLevel 5§!"
+ desc_rag_catholic_trade_5:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_catholic_trade_6:0 "Christian Trade: §GLevel 6§!"
+ desc_rag_catholic_trade_6:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_catholic_trade_7:0 "Christian Trade: §GLevel 7§!"
+ desc_rag_catholic_trade_7:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_catholic_trade_8:0 "Christian Trade: §GLevel 8§!"
+ desc_rag_catholic_trade_8:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_catholic_trade_9:0 "Christian Trade: §GLevel 9§!"
+ desc_rag_catholic_trade_9:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_catholic_trade_10:0 "Christian Trade: §GLevel 10§!"
+ desc_rag_catholic_trade_10:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+
+ rag_muslim_trade_1:0 "Islamic Trade: §GLevel 1§!"
+ desc_rag_muslim_trade_1:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_muslim_trade_2:0 "Islamic Trade: §GLevel 2§!"
+ desc_rag_muslim_trade_2:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_muslim_trade_3:0 "Islamic Trade: §GLevel 3§!"
+ desc_rag_muslim_trade_3:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_muslim_trade_4:0 "Islamic Trade: §GLevel 4§!"
+ desc_rag_muslim_trade_4:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_muslim_trade_5:0 "Islamic Trade: §GLevel 5§!"
+ desc_rag_muslim_trade_5:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_muslim_trade_6:0 "Islamic Trade: §GLevel 6§!"
+ desc_rag_muslim_trade_6:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_muslim_trade_7:0 "Islamic Trade: §GLevel 7§!"
+ desc_rag_muslim_trade_7:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_muslim_trade_8:0 "Islamic Trade: §GLevel 8§!"
+ desc_rag_muslim_trade_8:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_muslim_trade_9:0 "Islamic Trade: §GLevel 9§!"
+ desc_rag_muslim_trade_9:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+ rag_muslim_trade_10:0 "Islamic Trade: §GLevel 10§!"
+ desc_rag_muslim_trade_10:0 "Ragusa is a major hub for trade between Christian and Muslim nations."
+
+ rag_tribute_buff_1:0 "Tributary State: §GLevel 1§!"
+ desc_rag_tribute_buff_1:0 "Ragusa is a tributary state of a powerful nation."
+ rag_tribute_buff_2:0 "Tributary State: §GLevel 2§!"
+ desc_rag_tribute_buff_2:0 "Ragusa is a tributary state of a powerful nation."
+ rag_tribute_buff_3:0 "Tributary State: §GLevel 3§!"
+ desc_rag_tribute_buff_3:0 "Ragusa is a tributary state of a powerful nation."
+ rag_tribute_buff_4:0 "Tributary State: §GLevel 4§!"
+ desc_rag_tribute_buff_4:0 "Ragusa is a tributary state of a powerful nation."
+ rag_tribute_buff_5:0 "Tributary State: §GLevel 5§!"
+ desc_rag_tribute_buff_5:0 "Ragusa is a tributary state of a powerful nation."
+
+ rag_more_favors_conquer_fast:0 "Mutually Beneficial Alliances"
+ desc_rag_more_favors_conquer_fast:0 "Mutually Beneficial Alliances"
+
+ rag_devving_rag:0 "Ragusa Grows"
+ desc_rag_devving_rag:0 "Ragusa Grows"
+ rag_devving_rag_finished:0 "Ragusa, Pearl of Ragusa"
+ desc_rag_devving_rag_finished:0 "Ragusa, Pearl of Ragusa"
+
+ ragusa_fleed_assign_naval_doctrine_tt:0 "Select §YAdriatic Fleet§! naval doctrine at no cost."
+
+ rag_opinion_muslims:0 "Trading with the Islamic World"
+ desc_rag_opinion_muslims:0 "Trading with the Islamic World"
+ rag_opinion_catholics:0 "Trading with the Catholic World"
+ desc_rag_opinion_catholics:0 "Trading with the Catholic World"
+
+ rag_bos_conquest:0 "Conquest of Bosnia"
+ desc_rag_bos_conquest:0 "Conquest of Bosnia"
+ rag_serb_conquest:0 "Conquest of Serbia"
+ desc_rag_serb_conquest:0 "Conquest of Serbia"
+
+ provice_group_rag_coast:0 "Adriatic Coast"
+
+ ragusa_cyprus_a_tt:0 "If @CYP §YCyprus§! exists, is at peace, is not a subject nation, is not our rival, and we have a spy network of size §Y50§! in @VEN §YVenice§!:\n\nWe will warn the Cypriots of the Venetian threat, and offer to protect them in exchange for them §Gbecoming our tributary§!. This §Ytributary§! status will automatically downgrade to §Yvassal§! status after §Y25§! years."
+ ragusa_cyprus_b_tt:0 "Regardless, the following will happen:"
+
+ ragusa_flavor.7.title:0 "An Offer from [From.GetName]"
+ ragusa_flavor.7.desc:0 "[From.GetName] has approached us with terrifying news! They have come to our court with definitive proof that the Venetians are planning to invade our homeland soon!\n\n[From.GetName] ALSO have approached us with an offer - they will help us secure the island of Cyprus for ourselves, if we agree to become their tributary state."
+ ragusa_flavor.7.a:0 "Accept the offer."
+ ragusa_flavor.7.b:0 "This 'proof' is clearly a forgery."
+
+ ragusa_flavor_7_tt:0 "We will become a tributary state of the §Y[From.GetAdjective] [From.GovernmentName]§!.\n\nAfter §Y25§! years, we will automatically downgrade to a §Rvassal§!!"
+
+ ragusa_flavor_8.title:0 "Cyprus Secured"
+ ragusa_flavor_8.desc:0 "Cyprus was concerned about the proof we presented to them, and have agreed to become our tributary state in exchange for our protection. We have secured the island for ourselves, and have a powerful ally in the region."
+ ragusa_flavor_8.a:0 "Cyprus is ours! Well, sort of."
+
+ ragusa_flavor_8_tt:0 "@CYP §YCyprus§! has become our tributary state.\n\nIf we hold them as a tributary for §Y25§! years, they will automatically downgrade to a §Gvassal§!."
+
+ ragusa_flavor.9.title:0 "Cyprus Declines"
+ ragusa_flavor.9.desc:0 "Cyprus has declined our offer of protection, and has instead chosen to fend for themselves. It seems they do not believe the Venetians are a threat, or that we are capable of protecting them."
+ ragusa_flavor.9.a:0 "Did they find out about the forgery?"
+ ragusa_flavor.9.b:0 "Abandon Cyprus."
+
+ ragusa_flavor_9_tt:0 "Bypass the mission §YRace to Cyprus§!. Receive no rewards."
+
+ ragusa_flavor.10.title:0 "Renegotiating the Cyprus Deal"
+ ragusa_flavor.10.desc:0 "25 years have passed since we secured Cyprus as our tributary state. It is time to reign in the agreement."
+ ragusa_flavor.10.a:0 "Should have read the fine print."
+
+ ragusa_illyria_free_annex_tt:0 "Allows our §YSouth Slavic§!, §YAlbanian§!, and §YDalmatian§! vassals to contribute to the province count necessary to form @ILY §YIllyria§!.\n\nUpon forming @ILY §YIllyria§!, all §YSouth Slavic§!, §YAlbanian§!, and §YDalmatian§! vassals under §Y150§! development and below §Y50§! liberty desire will be inherited."
+
+ ragusa_italian_negotiation_tt:0 "If we completed this mission through alliances:\nGain §G10§! §Yfavors§! and §G25§! §Ytrust§! with every ally that fulfills the criteria.\n\nIf we completed this mission without via subjugation or a trade league:"
+
+ rag_negotation_sans_alliances:0 "Negotiate with the Italians"
+ desc_rag_negotation_sans_alliances:0 "Negotiate with the Italians"
+
+ rag_colonize_new_world:0 "Liberation of the New World"
+ desc_rag_colonize_new_world:0 "Liberation of the New World"
+ rag_colonize_old_world:0 "Liberation of the Old World"
+ desc_rag_colonize_old_world:0 "Liberation of the Old World"
+
+ rag_illyria_morale:0 "Dreams of Illyria"
+ desc_rag_illyria_morale:0 "Dreams of Illyria"
+
+ rag_illyria_balkans:0 "Balkan Liberty"
+
+ rag_free_balkans:0 "Balkan Liberty"
+ desc_rag_free_balkans:0 "Balkan Liberty"
+
+ rag_free_market:0 "Free Markets"
+ desc_rag_free_market:0 "Free Markets"
+
+ ragusa_seize_genoa_tt:0 "Every owned province with a @GEN §YGenoan§! core (or is one of the listed provinces) gains the following modifier:"
+
+ rag_croatian_land:0 "Fields of Croatia"
+ desc_rag_croatian_land:0 "Fields of Croatia"
+
+ rag_tur_defied:0 "Defied the Turks"
+ desc_rag_tur_defied:0 "Defied the Turks"
+
+ rag_tur_defied_prov_mod:0 "Witnessed Turkish Defiance"
+ desc_rag_tur_defied_prov_mod:0 "Witnessed Turkish Defiance"
+
+ rag_secured_border:0 "Illyrian Borders Secured"
+ desc_rag_secured_border:0 "Illyrian Borders Secured"
+
+ ragusa_defy_turks_tt:0 "Every §YSouth Slavic§!, §YAlbanian§!, §YGreek§!, §YRomanian§!, and §YDalmatian§! culture province not owned by the @TUR §YOttomans§! will gain the following modifier:"

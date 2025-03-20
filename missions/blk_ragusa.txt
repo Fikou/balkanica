@@ -1,0 +1,1272 @@
+rag_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = RAG }
+
+	rag_temples = {
+		icon = mission_early_game_buildings
+		position = 2
+		required_missions = { rag_christian_trade }
+		provinces_to_highlight = {
+    is_capital_of = ROOT
+  }
+
+		trigger = {
+    capital_scope = {
+     has_tax_building_trigger = yes
+     has_any_ongoing_construction = no
+    }
+    treasury = 100
+   }
+
+		effect = {
+   capital_scope = {
+    add_base_tax = 1
+    add_base_manpower = 1
+    custom_tooltip = bos_newline
+    if = {
+     limit = {
+      has_fort_building_trigger = no
+     }
+     add_building_construction = {
+      building = fort_15th
+      speed = 0.5
+      cost = 0.5
+     }
+    }
+    add_province_modifier = {
+     name = rag_devving_rag #25 years
+     duration = 9125
+    }
+   }
+  }
+	}
+
+	rag_italian_neogtiation = {
+		icon = mission_rule_italy
+		position = 3
+		required_missions = { rag_temples }
+		provinces_to_highlight = {
+   is_capital = yes
+   NOT = {
+    owned_by = VEN
+   }
+   NOT = {
+    owned_by = NAP
+   }
+   if = {
+    limit = {
+     OR = {
+      VEN = { exists = yes }
+      NAP = { exists = yes }
+     }
+    }
+    owner = {
+     OR = {
+      is_rival = VEN
+      is_rival = NAP
+     }
+    }
+   }
+   else = {
+    region = italy_region
+   }
+  }
+
+		trigger = {
+   any_country = {
+    NOT = { tag = VEN }
+    NOT = { tag = NAP }
+    if = {
+     limit = {
+      VEN = { exists = no }
+      NAP = { exists = no }
+     }
+     capital_scope = {
+      region = italy_region
+     }
+    }
+    else = {
+     OR = {
+      is_rival = VEN
+      is_rival = NAP
+     }
+    }
+    OR = {
+     alliance_with = ROOT
+     overlord_of = ROOT
+     is_subject_of = ROOT
+     is_in_trade_league_with = ROOT
+    }
+   }
+  }
+
+		effect = {
+   if = {
+    limit = { 4700 = { NOT = { owned_by = ROOT } } }
+    4700 = { add_permanent_claim = ROOT }
+   }
+   if = {
+    limit = { 2348 = { NOT = { owned_by = ROOT } } }
+    2348 = { add_permanent_claim = ROOT }
+   }
+   if = {
+    limit = { 285 = { NOT = { owned_by = ROOT } } }
+    285 = { add_permanent_claim = ROOT }
+   }
+   if = {
+    limit = { 2447 = { NOT = { owned_by = ROOT } } }
+    2447 = { add_permanent_claim = ROOT }
+   }
+   if = {
+    limit = { 286 = { NOT = { owned_by = ROOT } } }
+    286 = { add_permanent_claim = ROOT }
+   }
+   corsica_sardinia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+   baleares_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+   custom_tooltip = bos_newline
+   custom_tooltip = ragusa_italian_negotiation_tt
+   tooltip = {
+    add_country_modifier = {
+     name = rag_negotation_sans_alliances
+     duration = 9125
+    }
+   }
+   hidden_effect = {
+    if = {
+     limit = {
+      all_ally = {
+       NOT = { capital_scope = { region = italy_region } }
+       NOT = { is_rival = VEN }
+       NOT = { is_rival = NAP }
+      }
+     }
+     add_country_modifier = {
+      name = rag_negotation_sans_alliances
+      duration = 9125
+     }
+    }
+    else_if = {
+     limit = {
+      VEN = { exists = no }
+      NAP = { exists = no }
+     }
+     every_ally = {
+      limit = {
+       capital_scope = {
+        region = italy_region
+       }
+      }
+      ROOT = {
+       add_favors = {
+        who = PREV
+        amount = 10
+       }
+       add_trust = {
+        who = PREV
+        value = 25
+        mutual = yes
+       }
+      }
+     }
+    }
+    else = {
+     every_ally = {
+      limit = {
+       OR = {
+        is_rival = VEN
+        is_rival = NAP
+       }
+      }
+      ROOT = {
+       add_favors = {
+        who = PREV
+        amount = 10
+       }
+       add_trust = {
+        who = PREV
+        value = 25
+        mutual = yes
+       }
+      }
+     }
+    }
+   }
+  }
+	}
+
+	rag_sieze_genoa = {
+		icon = mission_raid_on_genoa
+		position = 5
+		required_missions = { rag_italian_neogtiation }
+		provinces_to_highlight = {
+   OR = {
+    is_core = GEN
+    province_id = 1247
+    province_id = 2348
+    province_id = 2447
+    province_id = 285
+    province_id = 286
+    province_id = 4700
+   }
+  }
+
+		trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    value = 4
+    OR = {
+     is_core = GEN
+     province_id = 1247
+     province_id = 2348
+     province_id = 2447
+     province_id = 285
+     province_id = 286
+     province_id = 4700
+    }
+   }
+  }
+
+		effect = {
+   custom_tooltip = ragusa_seize_genoa_tt
+   tooltip = {
+    101 = {
+     add_province_modifier = {
+      name = local_goods_in_demand
+      duration = 7300
+     }
+    }
+   }
+   hidden_effect = {
+    every_province = {
+     limit = {
+      OR = {
+       owned_by = ROOT
+       owner = { is_subject_of = ROOT }
+      }
+      OR = {
+       is_core = GEN
+       province_id = 1247
+       province_id = 2348
+       province_id = 2447
+       province_id = 285
+       province_id = 286
+       province_id = 4700
+      }
+     }
+     add_province_modifier = {
+      name = local_goods_in_demand
+      duration = 7300
+     }
+    }
+   }
+  }
+	}
+
+	rag_conquer_venice = {
+		icon = mission_control_venice
+		position = 6
+		required_missions = {
+			rag_sieze_genoa
+			rag_kill_venice
+		}
+		provinces_to_highlight = {
+   OR = {
+    province_id = 113
+    area = venetia_area
+   }
+  }
+
+		trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    value = 5
+    OR = {
+     province_id = 113
+     area = venetia_area
+    }
+   }
+  }
+
+		effect = {
+   add_permanent_power_projection = {
+    type = rag_illyria_balkans
+    amount = 10
+   }
+   add_prestige_or_monarch_power = { amount = 20 }
+  }
+	}
+
+	rag_future = {
+		icon = mission_look_west
+		position = 8
+		required_missions = { rag_conquer_venice }
+		provinces_to_highlight = {
+   OR = {
+    area = baleares_area
+    area = corsica_sardinia_area
+   }
+  }
+
+		trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    value = 3
+    OR = {
+     area = baleares_area
+     area = corsica_sardinia_area
+    }
+   }
+  }
+
+		effect = {
+   add_splendor = 50
+   create_explorer = {
+    tradition = 80
+   }
+   add_country_modifier = {
+    name = rag_colonize_new_world #100 years
+    duration = 36500
+   }
+  }
+	}
+}
+rag_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = RAG }
+
+	rag_christian_trade = {
+		icon = mal_trade_with_europeans
+		position = 1
+		provinces_to_highlight = {  }
+
+		trigger = {
+   calc_true_if = {
+    amount = 2
+    all_known_country = {
+     rag_nation_gives_rag_catholic_trade_trigger = yes
+    }
+   }
+  }
+
+		effect = {
+   custom_tooltip = rag_trade_power_per_catholic_tt
+   hidden_effect = {
+    blk_rag_update_catholic_trade_effect = yes
+   }
+   custom_tooltip = bos_newline
+   add_country_modifier = {
+    name = rag_opinion_catholics
+    duration = -1
+   }
+   if = {
+    limit = {
+     monthly_trade_income = 2
+    }
+    add_years_of_trade_income = {
+     years = 2
+     custom_tooltip = zim_dominate_upstream_trade_ct
+    }
+   }
+   else = {
+    add_years_of_trade_income = {
+     years = 4
+     custom_tooltip = zan_settle_trade_posts_ct
+    }
+   }
+  }
+	}
+
+	rag_dalmatia = {
+		icon = dalmatian_conquest
+		position = 3
+		required_missions = { rag_christian_trade }
+		provinces_to_highlight = {
+   NOT = { owned_by = ROOT }
+   province_group = provice_group_rag_coast
+  }
+
+		trigger = {
+   calc_true_if = {
+    amount = 4
+    provice_group_rag_coast = {
+     owned_by = ROOT
+     is_core = ROOT
+    }
+   }
+  }
+
+		effect = {
+   every_province = {
+    limit = {
+     NOT = { owned_by = ROOT }
+     province_group = provice_group_rag_coast
+    }
+    add_permanent_claim = ROOT
+   }
+  }
+	}
+
+	rag_dominate_adriatic = {
+		icon = capture_adriatic_ports
+		position = 4
+		required_missions = {
+			rag_italian_neogtiation
+			rag_dalmatia
+			rag_mutual_allies
+		}
+		provinces_to_highlight = {
+   OR = {
+    province_id = 137
+    province_id = 4753
+   }
+  }
+
+		trigger = {
+   owns_core_province = 137
+   owns_core_province = 4753
+   4753 = {
+    development = 16
+   }
+   137 = {
+    development = 20
+   }
+   137 = {
+    trade_share = {
+     country = ROOT
+     share = 50
+    }
+   }
+  }
+
+		effect = {
+   137 = {
+    add_province_modifier = {
+     name = "dominant_trade_hub"
+     duration = -1
+    }
+   }
+   4753 = {
+    add_province_modifier = {
+     name = "important_natural_harbor"
+     duration = -1
+    }
+   }
+  }
+	}
+
+	rag_kill_venice = {
+		icon = mission_raid_on_venice
+		position = 5
+		required_missions = { rag_dominate_adriatic }
+		provinces_to_highlight = {
+   province_group = provice_group_rag_coast
+   owner = {
+    capital_scope = {
+     region = italy_region
+    }
+   }
+  }
+
+		trigger = {
+   owns_core_province = 4753
+   owns_core_province = 137
+   provice_group_rag_coast = {
+    type = ALL
+    owner = {
+     capital_scope = {
+      NOT = { region = italy_region }
+     }
+    }
+   }
+  }
+
+		effect = {
+   # gain temp claim on all trade centers in the adriatic (venice/ragusa)
+   venetia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_claim = ROOT
+   }
+   if = {
+    limit = { 113 = { NOT = { owned_by = ROOT } } }
+    113 = { add_claim = ROOT }
+   }
+   if = {
+    limit = { 2977 = { NOT = { owned_by = ROOT } } }
+    2977 = { add_claim = ROOT }
+   }
+   if = {
+    limit = { 4738 = { NOT = { owned_by = ROOT } } }
+    4738 = { add_claim = ROOT }
+   }
+   custom_tooltip = bos_newline
+   add_power_projection = {
+    type = mission_rewards_power_projection
+    amount = 20
+   }
+   add_prestige_or_monarch_power = { amount = 20 }
+  }
+	}
+
+	bos_defy_turks = {
+		icon = mission_ottoman_diplomacy
+		position = 7
+		required_missions = { rag_illyria }
+		provinces_to_highlight = {
+   OR = {
+    area = bulgaria_area
+    area = silistria_area
+    province_id = 3001
+    province_id = 4780
+   }
+  }
+
+		trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    value = 7
+    OR = {
+     province_id = 3001
+     province_id = 4780
+     area = bulgaria_area
+     area = silistria_area
+    }
+   }
+  }
+
+		effect = {
+   if = {
+    limit = {
+     TUR = { exists = yes }
+    }
+    TUR = {
+     add_country_modifier = {
+      name = rag_tur_defied
+      duration = 10950
+     }
+    }
+   }
+   custom_tooltip = ragusa_defy_turks_tt
+   tooltip = {
+    137 = {
+     add_province_modifier = {
+      name = rag_tur_defied_prov_mod
+      duration = 10950
+     }
+    }
+   }
+   hidden_effect = {
+    every_province = {
+     limit = {
+      NOT = { owned_by = TUR }
+      OR = {
+       is_south_slavic_or_dalmatian_culture = yes
+       culture = greek
+       culture = romanian
+      }
+     }
+     add_province_modifier = {
+      name = rag_tur_defied_prov_mod
+      duration = 10950
+     }
+    }
+   }
+  }
+	}
+}
+rag_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = RAG }
+
+	rag_freedom_for_anything = {
+		icon = personal_diplomacy
+		position = 2
+		required_missions = {
+			rag_christian_trade
+			rag_muslim_trade
+		}
+		provinces_to_highlight = {  }
+
+		trigger = {
+   army_size_percentage = 1
+   monthly_trade_income = 1
+  }
+
+		effect = {
+   # future idea: represent the "ragusa road"
+   custom_tooltip = ragusa_freedom_mission_if_tt
+   tooltip = {
+    country_event = {
+     id = ragusa_flavor.1
+     tooltip = ragusa_freedom_mission_tt
+    }
+   }
+   hidden_effect = {
+    if = {
+     limit = {
+      NOT = { has_country_flag = rag_treaty_of_rag_fired }
+     }
+     country_event = {
+      id = ragusa_flavor.1
+      tooltip = ragusa_freedom_mission_tt
+     }
+    }
+    blk_rag_update_tributary_buff_effect = yes
+   }
+   custom_tooltip = bos_newline
+   custom_tooltip = ragusa_freedom_mission_reward_tt
+   custom_tooltip = bos_newline
+   east_adriatic_coast_area = {
+    limit = {
+     NOT = { owned_by = ROOT }
+    }
+    add_permanent_claim = ROOT
+   }
+   4754 = {
+    add_permanent_claim = ROOT
+   }
+   bosnia_area = {
+    limit = {
+     NOT = { owned_by = ROOT }
+    }
+    add_claim = ROOT
+   }
+   1828 = {
+    add_claim = ROOT
+   }
+  }
+	}
+
+	rag_mutual_allies = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { rag_freedom_for_anything }
+		provinces_to_highlight = {  }
+
+		trigger = {
+   num_of_allies = 2
+  }
+
+		effect = {
+   add_country_modifier = {
+    name = rag_more_favors_conquer_fast
+    duration = 7300
+   }
+  }
+	}
+
+	rag_serb_gold = {
+		icon = defeat_the_serbs
+		position = 4
+		required_missions = {
+			rag_kill_bosnia
+			rag_mutual_allies
+		}
+		provinces_to_highlight = {
+   OR = {
+    area = serbia_area
+    area = rascia_area
+   }
+  }
+
+		trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    value = 6
+    OR = {
+     area = serbia_area
+     area = rascia_area
+    }
+   }
+  }
+
+		effect = {
+   serbia_area = {
+    limit = {
+     owned_by = ROOT
+     owner = { is_subject_of = ROOT }
+    }
+    add_province_modifier = {
+     name = rag_serb_conquest
+     duration = 9125
+    }
+   }
+   rascia_area = {
+    limit = {
+     owned_by = ROOT
+     owner = { is_subject_of = ROOT }
+    }
+    add_province_modifier = {
+     name = rag_serb_conquest
+     duration = 9125
+    }
+   }
+   bulgaria_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_claim = ROOT
+   }
+   silistria_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_claim = ROOT
+   }
+   if = { limit = { 3001 = { NOT = { owned_by = ROOT } } }
+    3001 = { add_claim = ROOT }
+   }
+   if = { limit = { 4780 = { NOT = { owned_by = ROOT } } }
+    4780 = { add_claim = ROOT }
+   }
+  }
+	}
+
+	rag_dev_rag = {
+		icon = develop_our_capital
+		position = 5
+		required_missions = { rag_serb_gold }
+		provinces_to_highlight = {
+   OR = {
+    province_id = 137
+    province_id = 112
+   }
+  }
+
+		trigger = {
+   137 = {
+    development = 30
+    higher_development_than = 112
+    num_free_building_slots = 0
+   }
+   stability = 1
+  }
+
+		effect = {
+   add_splendor = 100
+   custom_tooltip = bos_newline
+   137 = {
+    add_or_upgrade_trade_building = yes
+    custom_tooltip = bos_newline
+    set_center_level_3_center_of_trade = yes
+    custom_tooltip = bos_newline
+    add_province_modifier = {
+     name = rag_devving_rag_finished
+     duration = -1
+    }
+   }
+  }
+	}
+
+	rag_illyria = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = {
+			rag_kill_venice
+			rag_croats
+			rag_dev_rag
+		}
+		provinces_to_highlight = {
+   is_south_slavic_or_dalmatian_culture = yes
+  }
+
+		trigger = {
+   calc_true_if = {
+    amount = 15
+    all_province = {
+     is_south_slavic_or_dalmatian_culture = yes
+     OR = {
+      owned_by = ROOT
+      owner = { is_subject_of = ROOT }
+     }
+    }
+   }
+  }
+
+		effect = {
+   # free integration of bosnia and serbia and croatia vassals
+   custom_tooltip = ragusa_illyria_free_annex_tt
+   custom_tooltip = bos_newline
+   add_country_modifier = {
+    name = rag_illyria_morale
+    duration = 9125
+   }
+  }
+	}
+
+	rag_liberate_albania = {
+		icon = mission_protect_albania
+		position = 7
+		required_missions = { rag_illyria }
+		provinces_to_highlight = {
+   area = albania_area
+  }
+
+		trigger = {
+			albania_area = {
+				type = all
+    OR = {
+     owned_by = ROOT
+     owner = { is_subject_of = ROOT }
+    }
+			}
+  }
+
+		effect = {
+   add_army_tradition_or_mil_power = { amount = 20 }
+   custom_tooltip = bos_newline
+   create_general_with_pips = {
+    tradition = 75
+    add_fire = 2
+    add_siege = 2
+    culture = albanian
+   }
+  }
+	}
+
+	rag_free_balkans = {
+		icon = mission_balkan_conquest
+		position = 8
+		required_missions = {
+			rag_liberate_albania
+			bos_defy_turks
+			rag_austria
+		}
+		provinces_to_highlight = {
+   owned_by = TUR
+   region = balkan_region
+  }
+
+		trigger = {
+   tag = ILY
+   tur_owns_any_balkan_provices = no
+  }
+
+		effect = {
+   add_splendor = 100
+   custom_tooltip = bos_newline
+   add_country_modifier = {
+    name = rag_free_balkans
+    duration = -1
+   }
+   add_permanent_power_projection = {
+    type = rag_illyria_balkans
+    amount = 10
+   }
+   add_prestige_or_monarch_power = { amount = 50 }
+  }
+	}
+}
+rag_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = RAG }
+
+	rag_muslim_trade = {
+		icon = mission_market_place_with_asian_traders
+		position = 1
+		provinces_to_highlight = {  }
+
+		trigger = {
+   calc_true_if = {
+    amount = 2
+    all_known_country = {
+     rag_nation_gives_rag_muslim_trade_trigger = yes
+    }
+   }
+  }
+
+		effect = {
+   custom_tooltip = rag_trade_power_per_muslim_tt
+   hidden_effect = {
+    blk_rag_update_muslim_trade_effect = yes
+   }
+   custom_tooltip = bos_newline
+   add_country_modifier = {
+    name = rag_opinion_muslims
+    duration = -1
+   }
+   if = {
+    limit = {
+     monthly_trade_income = 2
+    }
+    add_years_of_trade_income = {
+     years = 2
+     custom_tooltip = zim_dominate_upstream_trade_ct
+    }
+   }
+   else = {
+    add_years_of_trade_income = {
+     years = 4
+     custom_tooltip = zan_settle_trade_posts_ct
+    }
+   }
+  }
+	}
+
+	rag_kill_bosnia = {
+		icon = fight_bosnian_heresies
+		position = 3
+		required_missions = { rag_muslim_trade }
+		provinces_to_highlight = {
+   OR = {
+    area = bosnia_area
+    province_id = 1828
+   }
+  }
+
+		trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    value = 4
+    OR ={
+     province_id = 1828
+     area = bosnia_area
+    }
+   }
+  }
+
+		effect = {
+   bosnia_area = {
+    limit = {
+     owned_by = ROOT
+    }
+    add_province_modifier = {
+     name = rag_bos_conquest
+     duration = 7300
+    }
+   }
+   if = {
+    limit ={
+     1828 = { owned_by = ROOT }
+    }
+    1828 = {
+     add_province_modifier = {
+      name = rag_bos_conquest
+      duration = 9125
+     }
+    }
+   }
+   rascia_area = {
+    limit = {
+     NOT = { owned_by = ROOT }
+    }
+    add_claim = ROOT
+   }
+   croatia_area = {
+    limit = {
+     NOT = { owned_by = ROOT }
+    }
+    add_claim = ROOT
+   }
+   4757 = {
+    add_claim = ROOT
+   }
+   141 = {
+    add_claim = ROOT
+   }
+  }
+	}
+
+	rag_croats = {
+		icon = mission_integrate_croatia
+		position = 5
+		required_missions = { rag_kill_bosnia }
+		provinces_to_highlight = {
+   area = croatia_area
+  }
+
+		trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    value = 3
+    area = croatia_area
+   }
+  }
+
+		effect = {
+   croatia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_claim = ROOT
+   }
+   slavonia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_claim = ROOT
+   }
+   carinthia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_claim = ROOT
+   }
+   albania_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_claim = ROOT
+   }
+   custom_tooltip = bos_newline
+   add_country_modifier = {
+    name = rag_croatian_land
+    duration = 9125
+   }
+  }
+	}
+
+	rag_austria = {
+		icon = connect_further_austria
+		position = 7
+		required_missions = { rag_illyria }
+		provinces_to_highlight = {
+   OR = {
+    area = carinthia_area
+    area = slavonia_area
+   }
+  }
+
+		trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    value = 7
+    OR = {
+     area = carinthia_area
+     area = slavonia_area
+    }
+   }
+  }
+
+		effect = {
+   add_country_modifier = {
+    name = rag_secured_border
+    duration = 7300
+   }
+   129 = {
+    add_province_modifier = {
+     name = bos_usora_fort_temp_modifier
+     duration = -1
+    }
+   }
+  }
+	}
+}
+rag_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = RAG }
+
+	rag_fleetmax = {
+		icon = mission_establish_high_seas_navy
+		position = 2
+		required_missions = { rag_muslim_trade }
+		provinces_to_highlight = {
+   is_capital_of = ROOT
+ }
+
+		trigger = {
+   navy_size_percentage = 1
+   OR = {
+    galley_fraction = 0.5
+    light_ship_fraction = 0.5
+   }
+   treasury = 50
+   137 = {
+    has_any_ongoing_construction = no
+   }
+  }
+
+		effect = {
+   custom_tooltip = ragusa_fleed_assign_naval_doctrine_tt
+   hidden_effect = {
+    set_naval_doctrine = adriatic_fleet_naval_doctrine
+   }
+   137 = {
+    add_building_construction = {
+     building = shipyard
+     speed = 1
+     cost = 0.5
+    }
+   }
+   if = { limit = { 126 = { NOT = { owned_by = ROOT } } }
+    126 = { add_permanent_claim = ROOT }
+   }
+   if = { limit = { 163 = { NOT = { owned_by = ROOT } } }
+    163 = { add_permanent_claim = ROOT }
+   }
+   if = { limit = { 320 = { NOT = { owned_by = ROOT } } }
+    320 = { add_permanent_claim = ROOT }
+   }
+   if = { limit = { 321 = { NOT = { owned_by = ROOT } } }
+    321 = { add_permanent_claim = ROOT }
+   }
+  }
+	}
+
+	rag_cyprus = {
+		icon = kingdom_of_cyprus
+		position = 3
+		required_missions = { rag_fleetmax }
+		provinces_to_highlight = {
+   province_id = 321
+  }
+
+		trigger = {
+   OR = {
+    owns_or_subject_of = 321
+    AND = {
+     has_spy_network_in = {
+      who = VEN
+      value = 50
+     }
+     CYP = {
+      exists = yes
+      is_at_war = no
+      is_subject = no }
+      NOT = {is_rival = ROOT }
+     }
+     NOT = { is_rival = CYP }
+   }
+  }
+
+		effect = {
+   # if cyprus exists, is independent, is not a rival and we have 50 spy network in venice
+   # gain them as a tributary, which we can downgrade to a vassal later
+   custom_tooltip = ragusa_cyprus_a_tt
+   custom_tooltip = bos_newline
+   # if cyprus is already a subject, or we own it already, add province modifier
+   custom_tooltip = ragusa_cyprus_b_tt
+   custom_tooltip = bos_newline
+   321 = {
+    add_province_modifier = {
+     name = "dominant_trade_hub"
+     duration = -1
+    }
+   }
+   delta_area = {
+    add_claim = ROOT
+   }
+   bahari_area = {
+    add_claim = ROOT
+   }
+  }
+	}
+
+	rag_egypt = {
+		icon = mission_egyptian_mamluk_soldier
+		position = 5
+		required_missions = { rag_cyprus }
+		provinces_to_highlight = {
+   OR = {
+    area = delta_area
+    area = bahari_area
+   }
+  }
+
+		trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    value = 5
+    OR = {
+     area = delta_area
+     area = bahari_area
+    }
+   }
+  }
+
+		effect = {
+   add_country_modifier = {
+    name = rag_free_market
+    duration = 18250
+   }
+  }
+	}
+
+	rag_expanding_markets = {
+		icon = mission_african_gold
+		position = 6
+		required_missions = { rag_egypt }
+		provinces_to_highlight = {
+   province_has_center_of_trade_of_level = 1
+   OR = {
+    continent = africa
+    continent = asia
+   }
+   NOT = {
+    OR = {
+     AND = {
+      is_owned_by_trade_company = yes
+      owned_by = ROOT
+     }
+     owner = { is_subject_of = ROOT }
+    }
+   }
+  }
+
+		trigger = {
+   calc_true_if = {
+    amount = 12
+    all_owned_province = {
+     province_has_center_of_trade_of_level = 1
+     OR = {
+      AND = {
+       is_owned_by_trade_company = yes
+       owned_by = ROOT
+      }
+      owner = { is_subject_of = ROOT }
+     }
+     OR = {
+      continent = africa
+      continent = asia
+     }
+    }
+   }
+  }
+
+		effect = {
+   362 = {
+    add_province_modifier = {
+     name = dominant_trade_hub
+     duration = -1
+    }
+   }
+   363 = {
+    add_province_modifier = {
+     name = dominant_trade_hub
+     duration = -1
+    }
+   }
+  }
+	}
+	rag_beyond_egypt = {
+		icon = mam_harness_spice_trade
+		position = 8
+		required_missions = { rag_expanding_markets }
+		provinces_to_highlight = {
+   OR = {
+    superregion = india_superregion
+    superregion = east_indies_superregion
+   }
+  }
+
+		trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    value = 6
+    OR = {
+     superregion = india_superregion
+     superregion = east_indies_superregion
+    }
+   }
+  }
+
+		effect = {
+   add_splendor = 50
+   create_explorer = {
+    tradition = 80
+   }
+   add_country_modifier = {
+    name = rag_colonize_old_world #100 years
+    duration = 36500
+   }
+  }
+	}
+}

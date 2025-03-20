@@ -1,0 +1,513 @@
+namespace = ragusa_flavor
+
+# ragusan tributary status
+country_event = {
+ id = ragusa_flavor.1
+ title = ragusa_flavor.1.title
+ picture = WESTERNISATION_eventPicture
+
+ desc = ragusa_flavor.1.desc
+
+ fire_only_once = yes
+
+ trigger = {
+  OR = {
+   tag = RAG
+   tag = DAL
+   tag = ILY
+  }
+  is_subject = no
+  is_in_trade_league = no
+  is_at_war = no
+  NOT = { mission_completed = rag_freedom_for_anything }
+  OR = {
+   TUR = {
+    exists = yes
+    has_eclipsed = ROOT
+    NOT = { offensive_war_with = ROOT }
+    NOT = { defensive_war_with = ROOT } # lol
+    # no guarantee check in case Otto AI cancels it game start
+   }
+   any_country = {
+    has_guaranteed = ROOT
+    has_eclipsed = ROOT
+   }
+  }
+ }
+
+ immediate = {
+  hidden_effect = {
+   set_country_flag = rag_treaty_of_rag_fired
+   if = {
+    limit = {
+     TUR = {
+      exists = yes
+      has_eclipsed = ROOT
+      NOT = { offensive_war_with = ROOT }
+      NOT = { defensive_war_with = ROOT } # lol
+     }
+    }
+    TUR = { save_event_target_as = ragusa_tributary_sovereign }
+   }
+   else = {
+    random_country = {
+     limit = {
+      has_guaranteed = ROOT
+      has_eclipsed = ROOT
+     }
+     save_event_target_as = ragusa_tributary_sovereign
+    }
+   }
+   random_country = {
+    limit = {
+     has_guaranteed = ROOT
+     has_eclipsed = ROOT
+     NOT = { tag = event_target:ragusa_tributary_sovereign }
+    }
+    save_event_target_as = ragusa_tributary_sovereign_alt
+   }
+  }
+ }
+
+ mean_time_to_happen = {
+  months = 120
+  modifier = {
+   factor = 0.5
+   any_country = {
+    is_claim = 137
+   }
+  }
+ }
+
+ # send the offer to become tributary
+ option = {
+  name = ragusa_flavor.1.a
+  event_target:ragusa_tributary_sovereign = {
+   country_event = {
+    id = ragusa_flavor.2
+    days = 7
+    random = 7
+    tooltip = ragusa_offer_tt
+   }
+  }
+  ai_chance = {
+   factor = 100
+  }
+ }
+ # look for someone else
+ option = {
+  name = ragusa_flavor.1.b
+  trigger = {
+   any_country = {
+    has_guaranteed = ROOT
+    has_eclipsed = ROOT
+    NOT = { tag = event_target:ragusa_tributary_sovereign }
+   }
+  }
+  event_target:ragusa_tributary_sovereign_alt = {
+   save_event_target_as = ragusa_tributary_sovereign
+   country_event = {
+    id = ragusa_flavor.2
+    days = 7
+    random = 7
+    tooltip = ragusa_alt_offer_tt
+   }
+  }
+  ai_chance = {
+   factor = 0
+  }
+ }
+ # we can defend ourselves
+ option = {
+  name = ragusa_flavor.1.c
+  custom_tooltip = ragusa_warning_careful_tt
+  add_prestige_or_monarch_power = { amount = 10 }
+  ai_chance = {
+   factor = 0
+  }
+ }
+}
+
+# ragusa asks for tributary status
+country_event = {
+ id = ragusa_flavor.2
+ title = ragusa_flavor.2.title
+ picture = BURGHER_ESTATE_eventPicture
+
+ desc = ragusa_flavor.2.desc
+
+ is_triggered_only = yes
+
+ # accept
+ option = {
+  name = ragusa_flavor.2.a
+  FROM = {
+   country_event = {
+    id = ragusa_flavor.3
+    days = 7
+    random = 7
+    tooltip = ragusa_accept_tt
+   }
+  }
+  ai_chance = {
+   factor = 190
+   modifier = {
+    factor = 0.1
+    ai_attitude = {
+     who = FROM
+     attitude = attitude_hostile
+    }
+   }
+  }
+ }
+ # refuse
+ option = {
+  name = ragusa_flavor.2.b
+  FROM = {
+   country_event = {
+    id = ragusa_flavor.4
+    days = 7
+    random = 7
+    tooltip = ragusa_decline_tt
+   }
+  }
+  ai_chance = {
+   factor = 10
+   modifier = {
+    factor = 0
+    FROM = {
+     mission_completed = rag_freedom_for_anything
+    }
+   }
+   modifier = {
+    factor = 0
+    ai_attitude = {
+     who = FROM
+     attitude = attitude_domineering
+    }
+   }
+  }
+ }
+}
+
+# they accepted our offer
+country_event = {
+ id = ragusa_flavor.3
+ title = ragusa_flavor.3.title
+ picture = DIPLOMACY_SIGNING_eventPicture
+
+ desc = ragusa_flavor.3.desc
+
+ is_triggered_only = yes
+ major = yes
+ major_trigger = {
+  NOT = { tag = event_target:ragusa_tributary_sovereign }
+  OR = {
+   tag = ALB
+   tag = ARA
+   tag = BOS
+   tag = BYZ
+   tag = CRO
+   tag = DAL
+   tag = GEN
+   tag = HRZ
+   tag = HUN
+   tag = NAP
+   tag = SER
+   tag = VEN
+   AND = {
+    event_target:ragusa_tributary_sovereign = { tag = TUR }
+    tag = PAP
+   }
+   AND = {
+    event_target:ragusa_tributary_sovereign = { tag = HUN }
+    tag = TUR
+   }
+   AND = {
+    OR = {
+     event_target:ragusa_tributary_sovereign = { tag = TUR }
+     event_target:ragusa_tributary_sovereign = { tag = HUN }
+    }
+    tag = HAB
+   }
+  }
+ }
+ option = {
+  name = ragusa_flavor.3.a
+  add_prestige = -20
+  # while we are tribute of someone of a different religion, we will gain trade buffs
+  custom_tooltip = ragusa_final_tt
+  event_target:ragusa_tributary_sovereign = {
+   hidden_effect = {
+    set_country_flag = forced_tributary_state
+    create_subject = {
+     subject_type = tributary_state
+     subject = ROOT
+    }
+    clr_country_flag = forced_tributary_state
+   }
+   remove_guarantee = ROOT
+  }
+  hidden_effect = {
+   every_country = {
+    limit = {
+     ai = yes
+     has_guaranteed = ROOT
+    }
+    remove_guarantee = ROOT
+   }
+  }
+ }
+}
+
+# they refused our offer
+country_event = {
+ id = ragusa_flavor.4
+ title = ragusa_flavor.4.title
+ picture = DEBATE_REPUBLICAN_eventPicture
+
+ desc = ragusa_flavor.4.desc
+
+ is_triggered_only = yes
+
+ immediate = {
+  hidden_effect = {
+   event_target:ragusa_tributary_sovereign = {
+    set_country_flag = ragusa_tributary_refused
+   }
+   random_country = {
+    limit = {
+     has_guaranteed = ROOT
+     has_eclipsed = ROOT
+     NOT = { has_country_flag = ragusa_tributary_refused }
+    }
+    save_event_target_as = ragusa_tributary_sovereign
+   }
+  }
+ }
+
+ option = {
+  name = ragusa_flavor.4.a
+ }
+ option = {
+  name = ragusa_flavor.4.b
+  trigger = {
+   any_country = {
+    has_guaranteed = ROOT
+    has_eclipsed = ROOT
+    NOT = { has_country_flag = ragusa_tributary_refused }
+   }
+   # maybe unnecessary, but just in case
+   event_target:ragusa_tributary_sovereign = {
+    NOT = { has_country_flag = ragusa_tributary_refused }
+   }
+  }
+  event_target:ragusa_tributary_sovereign = {
+   country_event = {
+    id = ragusa_flavor.2
+    days = 7
+    random = 7
+    tooltip = ragusa_offer_tt
+   }
+  }
+ }
+}
+
+# update the catholic / muslim trade modifiers
+country_event = {
+ id = ragusa_flavor.5
+
+ hidden = yes
+
+ trigger = {
+  OR = {
+   tag = RAG
+   tag = DAL
+   tag = ILY
+  }
+  is_month = 0
+  NOT = { is_month = 1 }
+  OR = {
+   mission_completed = rag_muslim_trade
+   mission_completed = rag_christian_trade
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 1
+ }
+
+ option = {
+  if = {
+   limit = { mission_completed = rag_muslim_trade }
+   blk_rag_update_muslim_trade_effect = yes
+  }
+  if = {
+   limit = { mission_completed = rag_christian_trade }
+   blk_rag_update_catholic_trade_effect = yes
+  }
+ }
+}
+
+# give buff for being a tributary
+country_event = {
+ id = ragusa_flavor.6
+
+ hidden = yes
+
+ trigger = {
+  OR = {
+   tag = RAG
+   tag = DAL
+   tag = ILY
+  }
+  is_month = 0
+  NOT = { is_month = 1 }
+  mission_completed = rag_freedom_for_anything
+  OR = {
+   is_subject_of_type = tributary_state
+   has_country_modifier = rag_tribute_buff_1
+   has_country_modifier = rag_tribute_buff_2
+   has_country_modifier = rag_tribute_buff_3
+   has_country_modifier = rag_tribute_buff_4
+   has_country_modifier = rag_tribute_buff_5
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 1
+ }
+
+ option = {
+  blk_rag_update_tributary_buff_effect = yes
+ }
+}
+
+# offer to cyprus
+country_event = {
+ id = ragusa_flavor.7
+ title = ragusa_flavor.7.title
+ picture = DIPLOMACY_eventPicture
+
+ desc = ragusa_flavor.7.desc
+
+ fire_only_once = yes
+
+ is_triggered_only = yes
+
+ option = {
+  name = ragusa_flavor.7.a
+  custom_tooltip = ragusa_flavor_7_tt
+  hidden_effect = {
+   FROM = {
+    set_country_flag = forced_tributary_state
+    create_subject = {
+     subject_type = tributary_state
+     subject = ROOT
+    }
+    clr_country_flag = forced_tributary_state
+    country_event = {
+     id = ragusa_flavor.8
+     days = 3
+     random = 3
+    }
+   }
+  }
+  ai_chance = {
+   factor = 100
+  }
+ }
+ option = {
+  name = ragusa_flavor.7.b
+  ai_chance = {
+   factor = 0
+  }
+ }
+}
+
+# cyprus accepted our offer
+country_event = {
+ id = ragusa_flavor.8
+ title = ragusa_flavor.8.title
+ picture = DIPLOMACY_SIGNING_eventPicture
+
+ desc = ragusa_flavor.8.desc
+
+ is_triggered_only = yes
+ major = yes
+ major_trigger = {
+  tag = BYZ
+  tag = GEN
+  tag = KNI
+  tag = MAM
+  tag = TUR
+  tag = VEN
+ }
+
+ option = {
+  name = ragusa_flavor.8.a
+  custom_tooltip = ragusa_flavor_8_tt
+  321 = {
+   remove_claim = ROOT
+  }
+  hidden_effect = {
+   set_country_flag = rag_has_cypriot_tributary
+  }
+ }
+}
+
+# cyprus declined our offer
+country_event = {
+ id = ragusa_flavor.9
+ title = ragusa_flavor.9.title
+ picture = DEBATE_REPUBLICAN_eventPicture
+
+ desc = ragusa_flavor.9.desc
+
+ is_triggered_only = yes
+
+ option = {
+  name = ragusa_flavor.9.a
+ }
+ option = {
+  name = ragusa_flavor.b.a
+  321 = {
+   remove_claim = ROOT
+  }
+  custom_tooltip = ragusa_flavor_9_tt
+  hidden_effect = {
+   complete_mission = rag_cyprus
+  }
+ }
+}
+
+# cyprus downgrades to vassal
+country_event = {
+ id = ragusa_flavor.10
+ title = ragusa_flavor.10.title
+ picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+
+ desc = ragusa_flavor.10.desc
+
+ fire_only_once = yes
+
+ trigger = {
+  had_country_flag = {
+   flag = rag_has_cypriot_tributary
+   days = 9125
+  }
+  CYP = {
+   exists = yes
+   is_subject_of_type_with_overlord = {
+    who = ROOT
+    type = tributary_state
+   }
+  }
+ }
+
+ option = {
+  name = ragusa_flavor.10.a
+  vassalize = CYP
+  clr_country_flag = rag_has_cypriot_tributary
+ }
+}

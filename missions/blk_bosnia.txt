@@ -606,7 +606,7 @@ bos_3 = {
    factor = 200
   }
 		trigger = {
-   num_of_allies = 1 
+   num_of_allies = 1
    any_ally = {
     NOT = { tag = ARA }
     NOT = { tag = HAB }
@@ -922,8 +922,8 @@ bos_3 = {
 		}
 
 		trigger = {
-			all_province = {
-				area = croatia_area
+			croatia_area = {
+				type = ALL
 				owned_by = ROOT
 				is_core = ROOT
 			}
@@ -1345,8 +1345,8 @@ bos_catholic_branch = {
 		}
 
 		trigger = {
-			all_province = {
-				region = balkan_region
+			balkan_region = {
+				type = ALL
 				religion = catholic
 			}
 		}
@@ -1476,8 +1476,8 @@ bos_krstjani_branch = {
 		}
 
 		trigger = {
-			all_province = {
-				region = balkan_region
+			balkan_region = {
+				type = ALL
 				religion = krstjani
 			}
 		}

@@ -1,0 +1,212 @@
+rag_catholic_trade_1 = {
+ trade_efficiency = 0.03
+}
+rag_catholic_trade_2 = {
+ trade_efficiency = 0.06
+}
+rag_catholic_trade_3 = {
+ trade_efficiency = 0.09
+}
+rag_catholic_trade_4 = {
+ trade_efficiency = 0.12
+}
+rag_catholic_trade_5 = {
+ trade_efficiency = 0.15
+}
+rag_catholic_trade_6 = {
+ trade_efficiency = 0.18
+}
+rag_catholic_trade_7 = {
+ trade_efficiency = 0.21
+}
+rag_catholic_trade_8 = {
+ trade_efficiency = 0.24
+}
+rag_catholic_trade_9 = {
+ trade_efficiency = 0.27
+}
+rag_catholic_trade_10 = {
+ trade_efficiency = 0.30
+}
+
+rag_muslim_trade_1 = {
+ trade_steering = 0.03
+}
+rag_muslim_trade_2 = {
+ trade_steering = 0.06
+}
+rag_muslim_trade_3 = {
+ trade_steering = 0.09
+}
+rag_muslim_trade_4 = {
+ trade_steering = 0.12
+}
+rag_muslim_trade_5 = {
+ trade_steering = 0.15
+}
+rag_muslim_trade_6 = {
+ trade_steering = 0.18
+}
+rag_muslim_trade_7 = {
+ trade_steering = 0.21
+}
+rag_muslim_trade_8 = {
+ trade_steering = 0.24
+}
+rag_muslim_trade_9 = {
+ trade_steering = 0.27
+}
+rag_muslim_trade_10 = {
+ trade_steering = 0.30
+}
+
+# scales based on dev difference - per 100 dev
+rag_tribute_buff_1 = {
+ trade_range_modifier = 0.05
+ global_trade_power = 0.02
+ global_prov_trade_power_modifier = 0.04
+ global_ship_trade_power = 0.04
+ placed_merchant_power = 4
+ picture = "placed_merchant_power"
+}
+rag_tribute_buff_2 = {
+ trade_range_modifier = 0.10
+ global_trade_power = 0.04
+ global_prov_trade_power_modifier = 0.08
+ global_ship_trade_power = 0.08
+ placed_merchant_power = 8
+ picture = "placed_merchant_power"
+}
+rag_tribute_buff_3 = {
+ trade_range_modifier = 0.15
+ global_trade_power = 0.06
+ global_prov_trade_power_modifier = 0.12
+ global_ship_trade_power = 0.12
+ placed_merchant_power = 12
+ picture = "placed_merchant_power"
+}
+rag_tribute_buff_4 = {
+ trade_range_modifier = 0.20
+ global_trade_power = 0.08
+ global_prov_trade_power_modifier = 0.16
+ global_ship_trade_power = 0.16
+ placed_merchant_power = 16
+ picture = "placed_merchant_power"
+}
+rag_tribute_buff_5 = {
+ trade_range_modifier = 0.25
+ global_trade_power = 0.10
+ global_prov_trade_power_modifier = 0.20
+ global_ship_trade_power = 0.20
+ placed_merchant_power = 20
+ merchants = 1
+ picture = "placed_merchant_power"
+}
+
+rag_more_favors_conquer_fast = {
+	monthly_favor_modifier = 0.25
+	diplomatic_reputation = 1
+ picture = "monthly_favor_modifier"
+}
+
+rag_devving_rag = {
+ local_development_cost = -0.3
+ local_defensiveness = 0.15
+}
+
+rag_devving_rag_finished = {
+ local_defensiveness = 0.25
+ local_ship_cost = -0.15
+ local_development_cost = -0.3
+ local_development_cost_modifier = -0.1
+ picture = "local_development_cost_modifier"
+}
+
+rag_opinion_catholics = {
+ relation_with_same_religion = 5
+ relation_with_heretics = 15
+}
+
+rag_opinion_muslims = {
+ relation_with_heathens = 15
+}
+
+rag_bos_conquest = {
+ local_tolerance_of_heretics = 1
+ local_unrest = 1
+ local_autonomy = -0.05
+ picture = "local_tolerance_of_heretics"
+}
+
+rag_serb_conquest = {
+ tax_income = 8
+ local_unrest = 1
+ local_autonomy = -0.05
+ picture = "tax_income"
+}
+
+rag_negotation_sans_alliances = {
+ diplomatic_reputation = 1.5
+ relation_with_same_religion = 5
+}
+
+rag_colonize_new_world = {
+ global_colonial_growth = 25
+ colonists = 1
+ range = 0.5
+ cb_on_primitives = yes
+ picture = "colonists"
+}
+
+rag_colonize_old_world = {
+ global_colonial_growth = 25
+ colonists = 1
+ range = 0.5
+ cb_on_overseas = yes
+ picture = "colonists"
+}
+
+rag_illyria_morale = {
+ land_morale = 0.1
+}
+
+rag_free_balkans = {
+ development_cost_modifier = -0.05
+ land_morale = 0.1
+ global_unrest = -1
+ tolerance_heretic = 1
+ manpower_in_culture_group_provinces = 0.1
+ # gov strengthened
+ prestige = 1
+	legitimacy = 1
+ devotion = 1
+ horde_unity = 1
+ republican_tradition = 0.5
+}
+
+rag_free_market = {
+ cb_on_overseas = yes
+ trade_range_modifier = 0.5
+ trade_steering = 0.1
+ transfer_trade_power_reasons = 10
+}
+
+rag_tur_defied = {
+ land_morale = -0.2
+ global_unrest = 2
+ monthly_ottoman_decadence = 0.1
+}
+
+rag_tur_defied_prov_mod = {
+ local_unrest = -2
+}
+
+rag_croatian_land = {
+ land_forcelimit_modifier = 0.1
+}
+
+rag_secured_border = {
+ rival_border_fort_maintenance = -0.33
+ defensiveness = 0.2
+ global_defender_dice_roll_bonus = 1
+}

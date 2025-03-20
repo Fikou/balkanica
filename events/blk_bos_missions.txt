@@ -963,3 +963,144 @@ country_event = {
   }
  }
 }
+
+# misc support stuff
+country_event = {
+ id = bos_missions.100
+ title = bos_missions.100.title
+ desc = bos_missions.100.desc
+ picture = WESTERNISATION_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  tag = HUN
+  has_guaranteed = BOS
+  has_guaranteed = RAG
+ }
+
+ mean_time_to_happen = {
+  days = 7
+ }
+
+ option = {
+  name = bos_missions.100.a
+  custom_tooltip = bos_missions_100_tt
+  custom_tooltip = bos_newline
+  add_country_modifier = {
+   name = supporting_bosnia
+   duration = -1
+  }
+  add_country_modifier = {
+   name = supporting_ragusa
+   duration = -1
+  }
+ }
+}
+
+country_event = {
+ id = bos_missions.101
+
+ trigger = {
+  tag = HUN
+  has_country_modifier = supporting_bosnia
+  OR = {
+   NOT = { has_guaranteed = BOS }
+   BOS = { exists = no }
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 1
+ }
+
+ fire_only_once = yes
+ hidden = yes
+
+ option = {
+  remove_country_modifier = supporting_bosnia
+  ai_chance = {
+   factor = 1
+  }
+ }
+}
+
+country_event = {
+ id = bos_missions.102
+
+ trigger = {
+  tag = HUN
+  has_country_modifier = supporting_ragusa
+  OR = {
+   NOT = { has_guaranteed = RAG }
+   RAG = { exists = no }
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 1
+ }
+
+ fire_only_once = yes
+ hidden = yes
+
+ option = {
+  remove_country_modifier = supporting_ragusa
+  ai_chance = {
+   factor = 1
+  }
+ }
+}
+
+country_event = {
+ id = bos_missions.104
+ title = bos_missions.104.title
+ desc = bos_missions.104.desc
+ picture = WESTERNISATION_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  tag = ARA
+  has_guaranteed = HRZ
+ }
+
+ mean_time_to_happen = {
+  days = 7
+ }
+
+ option = {
+  name = bos_missions.104.a
+  custom_tooltip = bos_missions_104_tt
+  custom_tooltip = bos_newline
+  add_country_modifier = {
+   name = supporting_hum
+   duration = -1
+  }
+ }
+}
+
+country_event = {
+ id = bos_missions.105
+
+ trigger = {
+  tag = ARA
+  has_country_modifier = supporting_hum
+  OR = {
+   NOT = { has_guaranteed = HRZ }
+   HRZ = { exists = no }
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 1
+ }
+
+ fire_only_once = yes
+ hidden = yes
+
+ option = {
+  remove_country_modifier = supporting_hum
+  ai_chance = {
+   factor = 1
+  }
+ }
+}

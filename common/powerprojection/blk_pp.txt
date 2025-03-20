@@ -9,3 +9,9 @@ bos_fueding_with_hungary_perm = {
  power = 5
  decay = no
 }
+
+rag_illyria_balkans = {
+ max = 20
+ power = 10
+ decay = no
+}

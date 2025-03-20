@@ -1,0 +1,8 @@
+# At game start, Ragusa enjoyed protection from Hungary and the Ottomans
+# It wasn't until 1454 did they sign a treaty becoming a tributary of the Ottomans
+guarantee = {
+	first = HUN
+	second = RAG
+	start_date = 1444.1.1
+	end_date = 1454.1.1
+}
