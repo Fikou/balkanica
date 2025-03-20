@@ -94,6 +94,7 @@ mon_1 = {
   effect = {
    add_prestige = 20
    add_stability_or_adm_power_per_stab = { amount = 2 }
+   unlock_holy_order = { type = order_of_the_dragon }
    rascia_area = {
     limit = {
      NOT = { is_core = ROOT }
@@ -151,7 +152,6 @@ mon_1 = {
      duration = -1
     }
    }
-   unlock_holy_order = { type = order_of_the_dragon }
    serbia_area = {
     limit = {
      NOT = { is_core = ROOT }

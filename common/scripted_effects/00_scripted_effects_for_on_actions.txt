@@ -120,6 +120,7 @@ on_monarch_death_effect = {
       NOT = { is_subject_other_than_tributary_trigger = yes }
      }
      has_government_attribute = can_request_regency
+     NOT = { is_subject_other_than_tributary_trigger = yes }
     }
     create_subject = {
      subject_type = regency

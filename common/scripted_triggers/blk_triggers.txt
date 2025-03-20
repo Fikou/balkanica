@@ -114,8 +114,7 @@ bos_civil_war_resolved_through_election_trigger = {
   tooltip = bos_civil_war_resolved_through_election_tt
   tag = BOS
   BOS = {
-   has_ruler = "Radivoj"
-   dynasty = "Ostojic"
+   has_ruler_flag = elected_radivoj
   }
  }
 }

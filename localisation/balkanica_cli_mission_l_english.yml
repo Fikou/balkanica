@@ -1,5 +1,50 @@
 ﻿l_english:
- new_missiona_title:0 ""
- new_missiona_desc:0 ""
+ cli_seize_carniola_title:0 "Seize Carniola"
+ cli_seize_carniola_desc:0 ""
+
+ cli_renovate_ljubljana_title:0 "Renovate Ljubljana"
+ cli_renovate_ljubljana_desc:0 ""
+
+ cli_web_loyalty_title:0 "Web of Loyalty"
+ cli_web_loyalty_desc:0 ""
+
+ cli_hungarian_succession_title:0 "Hungarian Succession"
+ cli_hungarian_succession_desc:0 ""
+
+ cli_take_banate_title:0 "Take the Banate"
+ cli_take_banate_desc:0 ""
+
+ cli_recover_dalmatia_title:0 "Recover Dalmatia"
+ cli_recover_dalmatia_desc:0 ""
+
+ cli_ladislaus_title:0 "Take Control of Ladislaus"
+ cli_ladislaus_desc:0 ""
+
+ cli_austrian_succession_title:0 "Austrian Succession"
+ cli_austrian_succession_desc:0 ""
+
+ cli_secure_succession_title:0 "Break the Pact"
+ cli_secure_succession_desc:0 ""
+
+ cli_reform_kingdom_title:0 "Reform the Kingdom"
+ cli_reform_kingdom_desc:0 ""
+
+ cli_bohemian_succession_title:0 "Bohemian Succession"
+ cli_bohemian_succession_desc:0 ""
+
+ cli_take_electorate_title:0 "Take the Electorate"
+ cli_take_electorate_desc:0 ""
+
+ cli_conquer_despotate_title:0 "Conquer the Despotate"
+ cli_conquer_despotate_desc:0 ""
+
+ cli_bosnia_claims_title:0 "Restore our Bosnian Claims"
+ cli_bosnia_claims_desc:0 ""
+
+ cli_bosnia_king_title:0 "King of Bosnia"
+ cli_bosnia_king_desc:0 ""
+
+ cli_purge_heretics_title:0 "Purge the Heretics"
+ cli_purge_heretics_desc:0 ""
 
 

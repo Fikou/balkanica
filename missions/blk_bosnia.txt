@@ -587,6 +587,11 @@ bos_3 = {
 						who = SER
 						locked = yes
 					}
+					set_ai_attitude = {
+						attitude = attitude_friendly
+						who = HUN
+						locked = yes
+					}
 				}
 			}
 		}
@@ -694,6 +699,11 @@ bos_3 = {
 						who = SER
 						locked = no
 					}
+     set_ai_attitude = {
+      attitude = attitude_neutral
+      who = HUN
+      locked = no
+     }
 				}
 			}
 		}

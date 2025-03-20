@@ -140,9 +140,10 @@ request_regency_action = {
  require_acceptance = yes
  is_visible = {
   FROM = {
-   NOT = { is_subject = yes }
+   NOT = { is_subject_other_than_tributary_trigger = yes }
    has_government_attribute = heir
   }
+  NOT = { is_subject_other_than_tributary_trigger = yes }
   NOT = {
    has_opinion_modifier = {
     who = FROM

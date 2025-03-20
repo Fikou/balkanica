@@ -5,9 +5,206 @@ cli_1 = {
 	has_country_shield = yes
 	potential = { tag = CLI } 
 
-	new_missiona = {
-		icon = mission_invade_the_deccan_dlh
+	cli_seize_carniola = {
+		icon = mission_unite_home_region
 		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_renovate_ljubljana = {
+		icon = develop_our_capital
+		position = 3
+		required_missions = { cli_seize_carniola } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_web_loyalty = {
+		icon = mission_noble_council
+		position = 4
+		required_missions = { cli_renovate_ljubljana } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+cli_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = CLI } 
+
+	cli_hungarian_succession = {
+		icon = mission_destroy_the_hungarians
+		position = 2
+		required_missions = { cli_ladislaus } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_take_banate = {
+		icon = mission_integrate_croatia
+		position = 3
+		required_missions = { cli_hungarian_succession } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_recover_dalmatia = {
+		icon = byz_aegean_islands
+		position = 4
+		required_missions = { cli_take_banate } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+cli_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = CLI } 
+
+	cli_ladislaus = {
+		icon = the_hungarian_succession
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_austrian_succession = {
+		icon = mission_the_austrian_succession
+		position = 2
+		required_missions = { cli_ladislaus } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_secure_succession = {
+		icon = mission_plc_governance_act
+		position = 4
+		required_missions = { cli_austrian_succession } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_reform_kingdom = {
+		icon = mission_empire
+		position = 5
+		required_missions = {
+			cli_web_loyalty
+			cli_recover_dalmatia
+			cli_secure_succession
+			cli_conquer_despotate
+			cli_purge_heretics
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+cli_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = CLI } 
+
+	cli_bohemian_succession = {
+		icon = bohemian_borderlands
+		position = 2
+		required_missions = { cli_ladislaus } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_take_electorate = {
+		icon = mission_rb_control_electors
+		position = 3
+		required_missions = { cli_bohemian_succession } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_conquer_despotate = {
+		icon = defeat_the_serbs
+		position = 4
+		required_missions = { cli_bosnia_king } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+cli_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = CLI } 
+
+	cli_bosnia_claims = {
+		icon = union_with_naples
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_bosnia_king = {
+		icon = mission_war_for_the_crown
+		position = 3
+		required_missions = { cli_bosnia_claims } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+
+	cli_purge_heretics = {
+		icon = fight_bosnian_heresies
+		position = 4
+		required_missions = { cli_bosnia_king } 
 		provinces_to_highlight = {  } 
 
 		trigger = {  } 
