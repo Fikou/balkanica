@@ -2,11 +2,23 @@
  cli_seize_carniola_title:0 "Seize Carniola"
  cli_seize_carniola_desc:0 ""
 
- cli_renovate_ljubljana_title:0 "Renovate Ljubljana"
+ cli_renovate_ljubljana_title:0 "Renovate Laibach"
  cli_renovate_ljubljana_desc:0 ""
 
  cli_web_loyalty_title:0 "Web of Loyalty"
  cli_web_loyalty_desc:0 ""
+
+ cli_take_upper_austria_title:0 "Take to the Mountains"
+ cli_take_upper_austria_desc:0 ""
+
+ cli_take_lower_austria_title:0 "Conquer Wien"
+ cli_take_lower_austria_desc:0 ""
+
+ cli_breed_lipizzan_title:0 "Breed the Lipizzan"
+ cli_breed_lipizzan_desc:0 ""
+
+ cli_build_trieste_title:0 "The Free Port of Trieste"
+ cli_build_trieste_desc:0 ""
 
  cli_hungarian_succession_title:0 "Hungarian Succession"
  cli_hungarian_succession_desc:0 ""
@@ -17,17 +29,26 @@
  cli_recover_dalmatia_title:0 "Recover Dalmatia"
  cli_recover_dalmatia_desc:0 ""
 
+ cli_prepare_for_venice_title:0 "Prepare the Navy"
+ cli_prepare_for_venice_desc:0 ""
+
+ cli_end_venice_title:0 "End the Latin Threat"
+ cli_end_venice_desc:0 ""
+
  cli_ladislaus_title:0 "Take Control of Ladislaus"
  cli_ladislaus_desc:0 ""
 
  cli_austrian_succession_title:0 "Austrian Succession"
  cli_austrian_succession_desc:0 ""
 
- cli_secure_succession_title:0 "Break the Pact"
- cli_secure_succession_desc:0 ""
+ cli_break_pact_title:0 "Break the Pact"
+ cli_break_pact_desc:0 ""
 
- cli_reform_kingdom_title:0 "Reform the Kingdom"
+ cli_reform_kingdom_title:0 "Reform the Principality"
  cli_reform_kingdom_desc:0 ""
+
+ cli_restore_order_title:0 "Revitalize the Order"
+ cli_restore_order_desc:0 ""
 
  cli_bohemian_succession_title:0 "Bohemian Succession"
  cli_bohemian_succession_desc:0 ""
@@ -38,6 +59,9 @@
  cli_conquer_despotate_title:0 "Conquer the Despotate"
  cli_conquer_despotate_desc:0 ""
 
+ cli_protect_serbs_title:0 "Protect the Serbians"
+ cli_protect_serbs_desc:0 ""
+
  cli_bosnia_claims_title:0 "Restore our Bosnian Claims"
  cli_bosnia_claims_desc:0 ""
 
@@ -46,5 +70,62 @@
 
  cli_purge_heretics_title:0 "Purge the Heretics"
  cli_purge_heretics_desc:0 ""
+
+ cli_protect_albanians_title:0 "Protect the Albanians"
+ cli_protect_albanians_desc:0 ""
+
+ cli_launch_crusade_title:0 "Launch a Crusade"
+ cli_launch_crusade_desc:0 ""
+
+ cli_recover_bulgaria_title:0 "Recover Bulgaria"
+ cli_recover_bulgaria_desc:0 ""
+
+ cli_take_constantinople_title:0 "Drive out the Turks"
+ cli_take_constantinople_desc:0 ""
+
+ cli_be_cilli_title:0 "§OBe Cilli§!"
+ cli_be_cilli_desc:0 ""
+
+ cli_convert_illyria_title:0 "§OGermanize Illyria§!"
+ cli_convert_illyria_desc:0 ""
+
+ cli_german_industry_title:0 "§OGerman Industry§!"
+ cli_german_industry_desc:0 ""
+
+ cli_illyrian_renaissance_title:0 "§OIllyrian Renaissance§!"
+ cli_illyrian_renaissance_desc:0 ""
+
+ cli_educating_population_title:0 "§OEducating the Population§!"
+ cli_educating_population_desc:0 ""
+
+ cli_mediterranean_dominance_title:0 "§OMediterranean Dominance§!"
+ cli_mediterranean_dominance_desc:0 ""
+
+ cli_branch_1_title:0 "Branching Mission"
+ cli_branch_1_desc:0 ""
+
+ cli_branch_2_title:0 "Branching Mission"
+ cli_branch_2_desc:0 ""
+
+ cli_branch_3_title:0 "Branching Mission"
+ cli_branch_3_desc:0 ""
+
+ cli_protect_borders_title:0 "§OSave Imperial Borders§!"
+ cli_protect_borders_desc:0 ""
+
+ cli_old_order_title:0 "§OAn Old World Order§!"
+ cli_old_order_desc:0 ""
+
+ cli_spread_to_romania_title:0 "§OSpread to Romania§!"
+ cli_spread_to_romania_desc:0 ""
+
+ cli_cradle_of_civilization_title:0 "§OCradle of Civilization§!"
+ cli_cradle_of_civilization_desc:0 ""
+
+ cli_branch_4_title:0 "Branching Mission"
+ cli_branch_4_desc:0 ""
+
+ cli_branch_5_title:0 "Branching Mission"
+ cli_branch_5_desc:0 ""
 
 

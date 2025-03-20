@@ -377,7 +377,7 @@ cilli_principality_reform = {
  potential = {
   OR = { 
    has_reform = cilli_principality_reform
-   mission_completed = cli_reform_the_principality
+   mission_completed = cli_reform_kingdom
    culture = slovene
    culture = slovene_new
   }
@@ -385,7 +385,7 @@ cilli_principality_reform = {
  trigger = {
   OR = { 
    has_reform = cilli_principality_reform
-   mission_completed = cli_reform_the_principality
+   mission_completed = cli_reform_kingdom
   }
  }
  modifiers = {

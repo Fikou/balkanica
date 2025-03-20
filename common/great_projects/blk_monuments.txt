@@ -249,8 +249,7 @@ ljubljana_castle = {
   }
   conditional_modifier = {
    trigger = {
-    # owner = { mission_completed = cli_reconquer_ljubljana }
-    tag = CLI
+    owner = { mission_completed = cli_renovate_ljubljana }
    }
    modifier = {
     legitimacy = 0.25
@@ -258,8 +257,7 @@ ljubljana_castle = {
   }
   conditional_modifier = {
    trigger = {
-    # owner = { mission_completed = cli_make_cool_dungeons }
-    tag = CLI
+    owner = { mission_completed = cli_web_loyalty }
    }
    modifier = {
     global_spy_defence = 0.15
