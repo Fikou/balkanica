@@ -505,6 +505,10 @@ country_event = {
   }
  }
 
+ mean_time_to_happen = {
+  days = 7
+ }
+
  option = {
   name = ragusa_flavor.10.a
   vassalize = CYP

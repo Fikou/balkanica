@@ -1027,10 +1027,16 @@ rag_4 = {
 
 		trigger = {
    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-    value = 7
+    value = 6
     OR = {
      area = carinthia_area
      area = slavonia_area
+    }
+   }
+   129 = {
+    OR = {
+     owned_by = ROOT
+     owner = { is_subject_of = ROOT }
     }
    }
   }
@@ -1119,13 +1125,14 @@ rag_5 = {
       who = VEN
       value = 50
      }
+     NOT = { is_rival = CYP }
      CYP = {
       exists = yes
       is_at_war = no
-      is_subject = no }
+      is_subject = no
       NOT = {is_rival = ROOT }
      }
-     NOT = { is_rival = CYP }
+    }
    }
   }
 
@@ -1134,6 +1141,27 @@ rag_5 = {
    # gain them as a tributary, which we can downgrade to a vassal later
    custom_tooltip = ragusa_cyprus_a_tt
    custom_tooltip = bos_newline
+   hidden_effect = {
+    if = {
+     limit = {
+      CYP = { exists = yes }
+      CYP = { is_at_war = no }
+      CYP = { is_subject = no }
+      CYP = { NOT = { is_rival = ROOT } }
+      NOT = { is_rival = CYP }
+      has_spy_network_in = {
+       who = VEN
+       value = 50
+      }
+     }
+     CYP = {
+      country_event = {
+       id = ragusa_flavor.7
+       days = 7
+      }
+     }
+    }
+   }
    # if cyprus is already a subject, or we own it already, add province modifier
    custom_tooltip = ragusa_cyprus_b_tt
    custom_tooltip = bos_newline
