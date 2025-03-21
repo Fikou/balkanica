@@ -203,7 +203,7 @@ rag_1 = {
   }
 	}
 
-	rag_sieze_genoa = {
+	rag_seize_genoa = {
 		icon = mission_raid_on_genoa
 		position = 5
 		required_missions = { rag_italian_neogtiation }
@@ -274,7 +274,7 @@ rag_1 = {
 		icon = mission_control_venice
 		position = 6
 		required_missions = {
-			rag_sieze_genoa
+			rag_seize_genoa
 			rag_kill_venice
 		}
 		provinces_to_highlight = {

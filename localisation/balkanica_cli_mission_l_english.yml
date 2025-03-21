@@ -7,6 +7,7 @@
 
  cli_web_loyalty_title:0 "Web of Loyalty"
  cli_web_loyalty_desc:0 "We can sense it everywhere. The nobles are not to be trusted. We have to create a secure court that cannot be breached by a whisper from a dissenter. Build the dungeons!"
+ cli_web_loyalty_tt:0 "The §YLjubljana Castle§! will now further grant §GForeign Spy Detection§! and §GSpy Network Construction§!."
 
  cli_take_upper_austria_title:0 "Take to the Mountains"
  cli_take_upper_austria_desc:0 "The usefulness of our friendliness towards the Habsubrgs has ran dry. We must resume our war with them and maintain a hold over the Alps."
@@ -63,7 +64,7 @@
  cli_protect_serbs_desc:0 "The Serbians in our realm are disunited, with the Kingdom of Hungary forcing them to give away Belgrade in the north, and the Venetians taking suzerainty over Kotor in the south. We have to unite their lands once again."
 
  cli_bosnia_claims_title:0 "Restore our Bosnian Claims"
- cli_bosnia_claims_desc:0 "Hermann II of Celje was heir presumptive to the king of Bosnia, Tvrtko II. Even though he died prematurely, we still have claims to the Bosnian throne, and can raise them again."
+ cli_bosnia_claims_desc:0 "Hermann II of Cilli was heir presumptive to the king of Bosnia, Tvrtko II. Even though he died prematurely, we still have claims to the Bosnian throne, and can raise them again."
 
  cli_bosnia_king_title:0 "King of Bosnia"
  cli_bosnia_king_desc:0 "With the ongoing Civil War in Bosnia, we have a great opportunity to use our claims and swoop in as the true heirs of the kingdom."
@@ -128,4 +129,8 @@
  cli_branch_5_title:0 "Branching Mission"
  cli_branch_5_desc:0 "This mission is a §YBranching Mission§!. Through events or through other missions, this mission will be replaced with a new, final version."
 
+ cli_carniolan_development:0 "Windic Development"
+ desc_cli_carniolan_development:0 "With the Windic March in our hands, we can focus on it more than the spread out Austrians."
 
+ free_port_of_trieste:0 "Free Port of Trieste"
+ desc_free_port_of_trieste:0 "The city of Trieste's semi-autonomous port entices lots of people to trade in it."

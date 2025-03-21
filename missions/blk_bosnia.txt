@@ -1035,7 +1035,7 @@ bos_4 = {
 
 		effect = {
    add_dip_power = 50
-   add_mercantilism = 2
+   add_mercantilism_or_monarch_power = { amount = 2 }
    custom_tooltip = bos_newline
    add_country_modifier = {
     name = "bos_token_trade_buffs"

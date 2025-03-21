@@ -1,552 +1,743 @@
 cli_1 = {
-	slot = 1
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 1
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_seize_carniola = {
-		icon = mission_unite_home_region
-		position = 1
-		provinces_to_highlight = {  } 
+ cli_seize_carniola = {
+  icon = mission_unite_home_region
+  position = 1
+  provinces_to_highlight = { 
+   area = carinthia_area
+   NOT = { country_or_non_sovereign_subject_holds = ROOT }
+  } 
 
-		trigger = {  } 
+  trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				area = carinthia_area
+				value = 4
+			}
+  }
 
-		effect = {  } 
-	}
+  effect = {
+   carinthia_area = {
+    limit = {
+     country_or_non_sovereign_subject_holds = ROOT 
+    }
+    add_nationalism = -10
+    add_province_modifier = {
+     name = cli_carniolan_development
+     duration = 5475
+    }
+   }
+  } 
+ }
 
-	cli_renovate_ljubljana = {
-		icon = develop_our_capital
-		position = 2
-		required_missions = { cli_seize_carniola } 
-		provinces_to_highlight = {  } 
+ cli_renovate_ljubljana = {
+  icon = develop_our_capital
+  position = 2
+  required_missions = { cli_seize_carniola } 
+  provinces_to_highlight = { province_id = 129 } 
 
-		trigger = {  } 
+  trigger = {
+   owns_core_province = 129
+   129 = {
+    development = 25
+    OR = {
+     has_building = temple
+     has_building = cathedral
+    }
+    OR = {
+     has_building = marketplace
+     has_building = trade_depot
+     has_building = stock_exchange
+    }
+    OR = {
+     has_building = barracks
+     has_building = training_fields
+    }
+   }
+  } 
 
-		effect = {  } 
-	}
+  effect = {
+   set_capital = 129
+   129 = {
+    add_province_modifier = {
+     name = capital_expansion_modifier
+     duration = 3650
+    }
+    change_trade_goods = paper
+    if = {
+     limit = {
+      NOT = { province_has_center_of_trade_of_level = 1 }
+     }
+     center_of_trade = 1
+    }
+    else_if = {
+     limit = {
+      NOT = { province_has_center_of_trade_of_level = 3 }
+     }
+     add_center_of_trade_level = 1
+    }
+    else = { add_base_production = 3 }
+    if = {
+     limit = { 
+      has_dlc = "Leviathan" 
+      NOT = { 
+       has_great_project = {
+        type = ljubljana_castle
+        tier = 3 
+       }
+      }
+     }
+     add_great_project_tier = {
+      type = ljubljana_castle
+      tier = 1 
+     }
+    }
+    else = {
+     add_base_tax = 3 
+     add_base_manpower = 3 
+    }
+   }
+  }
+ }
 
-	cli_web_loyalty = {
-		icon = mission_noble_council
-		position = 4
-		required_missions = { cli_renovate_ljubljana } 
-		provinces_to_highlight = {  } 
+ cli_web_loyalty = {
+  icon = mission_noble_council
+  position = 4
+  required_missions = { cli_renovate_ljubljana } 
+  provinces_to_highlight = {} 
 
-		trigger = {  } 
+  trigger = {
+   crown_land_share = 40
+   OR = {
+    full_idea_group = spy_ideas
+    full_idea_group = court_ideas
+    AND = {
+     if = {
+      limit = {
+       has_estate = estate_church
+      }
+      estate_loyalty = {
+       estate = estate_church
+       loyalty = 60
+      }
+     }
+     if = {
+      limit = {
+       has_estate = estate_nobles
+      }
+      estate_loyalty = {
+       estate = estate_nobles
+       loyalty = 60
+      }
+     }
+     if = {
+      limit = {
+       has_estate = estate_burghers
+      }
+      estate_loyalty = {
+       estate = estate_burghers
+       loyalty = 60
+      }
+     }
+    }
+   }
+  } 
 
-		effect = {  } 
-	}
+  effect = {
+   custom_tooltip = cli_web_loyalty_tt
+   add_legitimacy_or_mil_power = {
+    amount = 10
+   }
+   change_estate_land_share = {
+    estate = all
+    share = -10
+   }
+  }
+ }
 
-	cli_take_upper_austria = {
-		icon = protect_against_austria
-		position = 5
-		required_missions = { cli_break_pact } 
-		provinces_to_highlight = {  } 
+ cli_take_upper_austria = {
+  icon = protect_against_austria
+  position = 5
+  required_missions = { cli_break_pact } 
+  provinces_to_highlight = {
+   OR = {
+    area = inner_austria_area
+    area = tirol_area
+   }
+   NOT = { country_or_non_sovereign_subject_holds = ROOT }
+  }
 
-		trigger = {  } 
+  trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    OR = {
+     area = inner_austria_area
+     area = tirol_area
+    }
+				value = 7
+			}
+  }
+ 
+  effect = {
+   add_prestige = 10
+   inner_austria_area = {
+    limit = {
+     country_or_non_sovereign_subject_holds = ROOT 
+    }
+    add_nationalism = -10
+   }
+   tirol_area = {
+    limit = {
+     country_or_non_sovereign_subject_holds = ROOT 
+    }
+    add_nationalism = -10
+   }
+   austria_proper_area = {
+				limit = { NOT = { owned_by = ROOT }  }
+				add_permanent_claim = ROOT
+			}
+  } 
+ }
 
-		effect = {  } 
-	}
+ cli_take_lower_austria = {
+  icon = humiliate_austria
+  position = 6
+  required_missions = { cli_take_upper_austria } 
+  provinces_to_highlight = {  } 
 
-	cli_take_lower_austria = {
-		icon = humiliate_austria
-		position = 6
-		required_missions = { cli_take_upper_austria } 
-		provinces_to_highlight = {  } 
+  trigger = {  } 
 
-		trigger = {  } 
+  effect = {  } 
+ }
 
-		effect = {  } 
-	}
+ cli_breed_lipizzan = {
+  icon = sav_union_with_naples
+  position = 7
+  required_missions = { cli_take_lower_austria } 
+  provinces_to_highlight = {  } 
 
-	cli_breed_lipizzan = {
-		icon = sav_union_with_naples
-		position = 7
-		required_missions = { cli_take_lower_austria } 
-		provinces_to_highlight = {  } 
+  trigger = {  } 
 
-		trigger = {  } 
-
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }
 cli_2 = {
-	slot = 2
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 2
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_build_trieste = {
-		icon = capture_adriatic_ports
-		position = 2
-		required_missions = { cli_seize_carniola } 
-		provinces_to_highlight = {  } 
+ cli_build_trieste = {
+  icon = capture_adriatic_ports
+  position = 2
+  required_missions = { cli_seize_carniola } 
+  provinces_to_highlight = {
+   province_id = 4738
+  } 
 
-		trigger = {  } 
+  trigger = {
+   owns_core_province = 4738
+   4738 = {
+    base_production = 10
+    OR = {
+     has_building = trade_depot
+     has_building = stock_exchange
+    }
+    OR = {
+     has_building = workshop
+     has_building = counting_house
+    }
+   }
+  } 
 
-		effect = {  } 
-	}
+  effect = {
+   4738 = {
+    change_trade_goods = naval_supplies
+    add_manufactory = yes
+    if = {
+     limit = {
+      NOT = { province_has_center_of_trade_of_level = 2 }
+     }
+     center_of_trade = 2
+    }
+    else_if = {
+     limit = {
+      NOT = { province_has_center_of_trade_of_level = 3 }
+     }
+     add_center_of_trade_level = 1
+    }
+    else = { add_base_production = 3 }
+    add_province_modifier = {
+     name = free_port_of_trieste
+     duration = -1
+    }
+   }
+  } 
+ }
 
-	cli_hungarian_succession = {
-		icon = mission_destroy_the_hungarians
-		position = 3
-		required_missions = { cli_ladislaus } 
-		provinces_to_highlight = {  } 
+ cli_hungarian_succession = {
+  icon = mission_destroy_the_hungarians
+  position = 3
+  required_missions = { cli_ladislaus } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_take_banate = {
-		icon = mission_integrate_croatia
-		position = 5
-		required_missions = { cli_hungarian_succession } 
-		provinces_to_highlight = {  } 
+ cli_take_banate = {
+  icon = mission_integrate_croatia
+  position = 5
+  required_missions = { cli_hungarian_succession } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_recover_dalmatia = {
-		icon = dalmatian_conquest
-		position = 6
-		required_missions = { cli_take_banate } 
-		provinces_to_highlight = {  } 
+ cli_recover_dalmatia = {
+  icon = dalmatian_conquest
+  position = 6
+  required_missions = { cli_take_banate } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_prepare_for_venice = {
-		icon = overshadow_venice
-		position = 7
-		required_missions = { cli_recover_dalmatia } 
-		provinces_to_highlight = {  } 
+ cli_prepare_for_venice = {
+  icon = overshadow_venice
+  position = 7
+  required_missions = { cli_recover_dalmatia } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_end_venice = {
-		icon = byz_aegean_islands
-		position = 8
-		required_missions = { cli_prepare_for_venice } 
-		provinces_to_highlight = {  } 
+ cli_end_venice = {
+  icon = byz_aegean_islands
+  position = 8
+  required_missions = { cli_prepare_for_venice } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }
 cli_3 = {
-	slot = 3
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 3
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_ladislaus = {
-		icon = the_hungarian_succession
-		position = 2
-		provinces_to_highlight = {  } 
+ cli_ladislaus = {
+  icon = the_hungarian_succession
+  position = 2
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_austrian_succession = {
-		icon = mission_the_austrian_succession
-		position = 3
-		required_missions = { cli_ladislaus } 
-		provinces_to_highlight = {  } 
+ cli_austrian_succession = {
+  icon = mission_the_austrian_succession
+  position = 3
+  required_missions = { cli_ladislaus } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_break_pact = {
-		icon = mission_plc_governance_act
-		position = 4
-		required_missions = { cli_austrian_succession } 
-		provinces_to_highlight = {  } 
+ cli_break_pact = {
+  icon = mission_plc_governance_act
+  position = 4
+  required_missions = { cli_austrian_succession } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_reform_kingdom = {
-		icon = mission_empire
-		position = 5
-		required_missions = {
-			cli_web_loyalty
-			cli_break_pact
-		}
-		provinces_to_highlight = {  } 
+ cli_reform_kingdom = {
+  icon = mission_empire
+  position = 5
+  required_missions = {
+   cli_web_loyalty
+   cli_break_pact
+  }
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }
 cli_4 = {
-	slot = 4
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 4
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_restore_order = {
-		icon = reformatio_sigismundi
-		position = 2
-		required_missions = { cli_bosnia_claims } 
-		provinces_to_highlight = {  } 
+ cli_restore_order = {
+  icon = reformatio_sigismundi
+  position = 2
+  required_missions = { cli_bosnia_claims } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_bohemian_succession = {
-		icon = bohemian_borderlands
-		position = 3
-		required_missions = { cli_ladislaus } 
-		provinces_to_highlight = {  } 
+ cli_bohemian_succession = {
+  icon = bohemian_borderlands
+  position = 3
+  required_missions = { cli_ladislaus } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_take_electorate = {
-		icon = mission_rb_control_electors
-		position = 4
-		required_missions = { cli_bohemian_succession } 
-		provinces_to_highlight = {  } 
+ cli_take_electorate = {
+  icon = mission_rb_control_electors
+  position = 4
+  required_missions = { cli_bohemian_succession } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_conquer_despotate = {
-		icon = defeat_the_serbs
-		position = 5
-		required_missions = { cli_bosnia_king } 
-		provinces_to_highlight = {  } 
+ cli_conquer_despotate = {
+  icon = defeat_the_serbs
+  position = 5
+  required_missions = { cli_bosnia_king } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_protect_serbs = {
-		icon = encroach_on_the_germans
-		position = 6
-		required_missions = { cli_conquer_despotate } 
-		provinces_to_highlight = {  } 
+ cli_protect_serbs = {
+  icon = encroach_on_the_germans
+  position = 6
+  required_missions = { cli_conquer_despotate } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }
 cli_5 = {
-	slot = 5
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 5
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_bosnia_claims = {
-		icon = union_with_naples
-		position = 1
-		provinces_to_highlight = {  } 
+ cli_bosnia_claims = {
+  icon = union_with_naples
+  position = 1
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_bosnia_king = {
-		icon = mission_war_for_the_crown
-		position = 4
-		required_missions = { cli_bosnia_claims } 
-		provinces_to_highlight = {  } 
+ cli_bosnia_king = {
+  icon = mission_war_for_the_crown
+  position = 4
+  required_missions = { cli_bosnia_claims } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_purge_heretics = {
-		icon = fight_bosnian_heresies
-		position = 5
-		required_missions = { cli_bosnia_king } 
-		provinces_to_highlight = {  } 
+ cli_purge_heretics = {
+  icon = fight_bosnian_heresies
+  position = 5
+  required_missions = { cli_bosnia_king } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_protect_albanians = {
-		icon = mission_protect_albania
-		position = 6
-		required_missions = { cli_purge_heretics } 
-		provinces_to_highlight = {  } 
+ cli_protect_albanians = {
+  icon = mission_protect_albania
+  position = 6
+  required_missions = { cli_purge_heretics } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_launch_crusade = {
-		icon = mission_crusade_for_varna
-		position = 7
-		required_missions = {
-			cli_protect_albanians
-			cli_protect_serbs
-		}
-		provinces_to_highlight = {  } 
+ cli_launch_crusade = {
+  icon = mission_crusade_for_varna
+  position = 7
+  required_missions = {
+   cli_protect_albanians
+   cli_protect_serbs
+  }
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_recover_bulgaria = {
-		icon = push_on_to_bulgaria
-		position = 8
-		required_missions = { cli_launch_crusade } 
-		provinces_to_highlight = {  } 
+ cli_recover_bulgaria = {
+  icon = push_on_to_bulgaria
+  position = 8
+  required_missions = { cli_launch_crusade } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_drive_out_turks = {
-		icon = mission_battle_of_varna
-		position = 9
-		required_missions = { cli_recover_bulgaria } 
-		provinces_to_highlight = {  } 
+ cli_drive_out_turks = {
+  icon = mission_battle_of_varna
+  position = 9
+  required_missions = { cli_recover_bulgaria } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }
 cli_german = {
-	slot = 3
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 3
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_be_cilli = {
-		icon = lead_the_empire
-		position = 7
-		required_missions = { cli_reform_kingdom } 
-		provinces_to_highlight = {  } 
+ cli_be_cilli = {
+  icon = lead_the_empire
+  position = 7
+  required_missions = { cli_reform_kingdom } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_convert_illyria = {
-		icon = promote_urbanization
-		position = 8
-		required_missions = { cli_be_cilli } 
-		provinces_to_highlight = {  } 
+ cli_convert_illyria = {
+  icon = promote_urbanization
+  position = 8
+  required_missions = { cli_be_cilli } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_german_industry = {
-		icon = industrialized_rhineland
-		position = 9
-		required_missions = { cli_convert_illyria } 
-		provinces_to_highlight = {  } 
+ cli_german_industry = {
+  icon = industrialized_rhineland
+  position = 9
+  required_missions = { cli_convert_illyria } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }
 cli_slavic = {
-	slot = 3
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 3
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_illyrian_renaissance = {
-		icon = secure_the_sava
-		position = 7
-		provinces_to_highlight = {  } 
+ cli_illyrian_renaissance = {
+  icon = secure_the_sava
+  position = 7
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_educating_population = {
-		icon = mission_early_modern_university
-		position = 8
-		required_missions = { cli_illyrian_renaissance } 
-		provinces_to_highlight = {  } 
+ cli_educating_population = {
+  icon = mission_early_modern_university
+  position = 8
+  required_missions = { cli_illyrian_renaissance } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_mediterranean_dominance = {
-		icon = mission_rb_mediterranean_authority
-		position = 9
-		required_missions = { cli_educating_population } 
-		provinces_to_highlight = {  } 
+ cli_mediterranean_dominance = {
+  icon = mission_rb_mediterranean_authority
+  position = 9
+  required_missions = { cli_educating_population } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }
 cli_branching = {
-	slot = 3
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 3
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_branch_1 = {
-		icon = mission_unknown_mission
-		position = 7
-		required_missions = { cli_reform_kingdom } 
-		provinces_to_highlight = {  } 
+ cli_branch_1 = {
+  icon = mission_unknown_mission
+  position = 7
+  required_missions = { cli_reform_kingdom } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_branch_2 = {
-		icon = mission_unknown_mission
-		position = 8
-		required_missions = { cli_branch_1 } 
-		provinces_to_highlight = {  } 
+ cli_branch_2 = {
+  icon = mission_unknown_mission
+  position = 8
+  required_missions = { cli_branch_1 } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_branch_3 = {
-		icon = mission_unknown_mission
-		position = 9
-		required_missions = { cli_branch_2 } 
-		provinces_to_highlight = {  } 
+ cli_branch_3 = {
+  icon = mission_unknown_mission
+  position = 9
+  required_missions = { cli_branch_2 } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }
 cli_german2 = {
-	slot = 4
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 4
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_protect_borders = {
-		icon = the_imperial_border
-		position = 8
-		required_missions = { cli_be_cilli } 
-		provinces_to_highlight = {  } 
+ cli_protect_borders = {
+  icon = the_imperial_border
+  position = 8
+  required_missions = { cli_be_cilli } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_old_order = {
-		icon = multicultural_empire
-		position = 9
-		required_missions = { cli_protect_borders } 
-		provinces_to_highlight = {  } 
+ cli_old_order = {
+  icon = multicultural_empire
+  position = 9
+  required_missions = { cli_protect_borders } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }
 cli_slavic2 = {
-	slot = 4
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 4
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_spread_to_romania = {
-		icon = mission_control_moldavia
-		position = 8
-		required_missions = { cli_illyrian_renaissance } 
-		provinces_to_highlight = {  } 
+ cli_spread_to_romania = {
+  icon = mission_control_moldavia
+  position = 8
+  required_missions = { cli_illyrian_renaissance } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_cradle_of_civilization = {
-		icon = mission_balkan_conquest
-		position = 9
-		required_missions = { cli_spread_to_romania } 
-		provinces_to_highlight = {  } 
+ cli_cradle_of_civilization = {
+  icon = mission_balkan_conquest
+  position = 9
+  required_missions = { cli_spread_to_romania } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }
 cli_branching2 = {
-	slot = 4
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = CLI } 
+ slot = 4
+ generic = no
+ ai = yes
+ has_country_shield = yes
+ potential = { tag = CLI } 
 
-	cli_branch_4 = {
-		icon = mission_unknown_mission
-		position = 8
-		required_missions = { cli_branch_1 } 
-		provinces_to_highlight = {  } 
+ cli_branch_4 = {
+  icon = mission_unknown_mission
+  position = 8
+  required_missions = { cli_branch_1 } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 
-	cli_branch_5 = {
-		icon = mission_unknown_mission
-		position = 9
-		required_missions = { cli_branch_4 } 
-		provinces_to_highlight = {  } 
+ cli_branch_5 = {
+  icon = mission_unknown_mission
+  position = 9
+  required_missions = { cli_branch_4 } 
+  provinces_to_highlight = {  } 
 
-		trigger = {  } 
+  trigger = {  } 
 
-		effect = {  } 
-	}
+  effect = {  } 
+ }
 }

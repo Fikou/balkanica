@@ -1,0 +1,9 @@
+cli_carniolan_development = {
+ local_development_cost = -0.10
+}
+
+free_port_of_trieste = {
+ min_local_autonomy = 25
+ province_trade_power_modifier = 0.5
+ trade_steering = 0.1
+}
