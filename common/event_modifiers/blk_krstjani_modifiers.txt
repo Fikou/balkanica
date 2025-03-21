@@ -10,11 +10,11 @@ blk_krstjani_ideas = {
 }
 
 blk_djed_cooldown = {
- picture = "global_heretic_missionary_strength" # make this the clergy influence icon
+ picture = "envoy_travel_time"
 }
 
 blk_krstjani_gosti_cooldown = {
- picture = "global_heretic_missionary_strength" # make this the burgher influence icon
+ picture = "envoy_travel_time"
 }
 
 blk_krstjani_hizas_temple = {

@@ -105,7 +105,7 @@
  ragusa_accept_tt:0 "We accept their proposal, making §Y[From.GetName]§! our tributary§!."
  ragusa_decline_tt:0 "We decline their proposal.\n§RThey will potentially approach other nations for protection§!."
  ragusa_alt_offer_tt:0 "We will send an offer to the §Y[ragusa_tributary_sovereign_alt.GetAdjective] [ragusa_tributary_sovereign_alt.GovernmentName]§! instead.\n§GIf they accept, we will become a tributary§!."
- ragusa_final_tt:0 "We become a tributary state of the §Y[ragusa_tributary_sovereign.GetAdjective] [ragusa_tributary_sovereign.GovernmentName]§!."
+ ragusa_final_tt:0 "We become §Ya tributary state§! of the §Y[ragusa_tributary_sovereign.GetAdjective] [ragusa_tributary_sovereign.GovernmentName]§!."
 
  rag_trade_power_per_catholic_tt:0 "Gain §G+3%§! trade efficiency per §YCatholic§! nation that fulfills the criteria, up to §Y30%§!. This is an ongoing effect (updates annually)."
  rag_trade_power_per_muslim_tt:0 "Gain §G+3%§! trade steering per §YMuslim§! nation that fulfills the criteria, up to §Y30%§!. This is an ongoing effect (updates annually)."
@@ -195,9 +195,9 @@
 
  ragusa_flavor_7_tt:0 "We will become a tributary state of the §Y[From.GetAdjective] [From.GovernmentName]§!.\n\nAfter §Y25§! years, we will automatically downgrade to a §Rvassal§!!"
 
- ragusa_flavor_8.title:0 "Cyprus Secured"
- ragusa_flavor_8.desc:0 "Cyprus was concerned about the proof we presented to them, and have agreed to become our tributary state in exchange for our protection. We have secured the island for ourselves, and have a powerful ally in the region."
- ragusa_flavor_8.a:0 "Cyprus is ours! Well, sort of."
+ ragusa_flavor.8.title:0 "Cyprus Secured"
+ ragusa_flavor.8.desc:0 "Cyprus was concerned about the proof we presented to them, and have agreed to become our tributary state in exchange for our protection. We have secured the island for ourselves, and have a powerful ally in the region."
+ ragusa_flavor.8.a:0 "Cyprus is ours! Well, sort of."
 
  ragusa_flavor_8_tt:0 "@CYP §YCyprus§! has become our tributary state.\n\nIf we hold them as a tributary for §Y25§! years, they will automatically downgrade to a §Gvassal§!."
 
@@ -250,3 +250,69 @@
  desc_rag_secured_border:0 "Illyrian Borders Secured"
 
  ragusa_defy_turks_tt:0 "Every §YSouth Slavic§!, §YAlbanian§!, §YGreek§!, §YRomanian§!, and §YDalmatian§! culture province not owned by the @TUR §YOttomans§! will gain the following modifier:"
+
+ rag_change_overlord:0 "Treaty of [Root.GetName]: Change Overlord"
+ desc_rag_change_overlord:0 "Allows you to pick another, stronger nation to replace your current overlord at the cost of §Y1000§! ducats."
+
+ rag_abandon_overlord:0 "Treaty of [Root.GetName]: Abandon Overlord"
+ desc_rag_abandon_overlord:0 "Allows you to pay your current overlord §Y1000§! ducats to become free."
+
+ rag_move_overlord_cd:0 "Recently Changed Sovereign"
+ desc_rag_move_overlord_cd:0 "Recently Changed Sovereign"
+
+ rag_abandon_fail:0 "Sovereign Refused Freedom"
+ desc_rag_abandon_fail:0 "Sovereign Refused Freedom"
+
+ ragusa_flavor.100.title:0 "Treaty of [Root.GetName]: Renegotiation"
+ ragusa_flavor.100.desc:0 "Our treaty with [overlord.GetName], while fruitful, has been a burden on our coffers. It is time to renegotiate the terms of our tributary agreement, and seek a lower paying bidder."
+ ragusa_flavor.100.a:0 "Actually, it's fine as is."
+ ragusa_flavor.100.b:0 "[ragusa_new_overlord_option_a.GetName] seems like a good choice."
+ ragusa_flavor.100.c:0 "[ragusa_new_overlord_option_b.GetName] seems like a good choice."
+ ragusa_flavor.100.d:0 "[ragusa_new_overlord_option_c.GetName] seems like a good choice."
+
+ ragusa_flavor_100_tt:0 "Offer §Y1000§! ducats to another nation to take us on as a §Ytributary state§! behind our current overlord's back.\n\n§RIf they accept, our old overlord may gain a subjugation casus belli against us.§!\n\n§MThe AI is more likely to accept if they have taken on debt or are bankrupt.§!"
+
+ ragusa_flavor.101.title:0 "Treaty of [From.GetName]: [From.GetName] Approaches"
+ ragusa_flavor.101.desc:0 "[From.GetName] has approached us with an offer to become their tributary state. They have been under the sovereignty of [From.overlord.GetName] for some time, and are looking to renegotiate their terms - or in other words, they would rather pay less to us than pay more to them. Of course, they're throwing in some money to sweeten the deal."
+ ragusa_flavor.101.a:0 "Accept the offer."
+ ragusa_flavor.101.b:0 "We're not in the business of poaching tributaries."
+
+ ragusa_flavor.102.title:0 "Treaty of [Root.GetName]: [From.GetName] Accepts"
+ ragusa_flavor.102.desc:0 "[From.GetName] has accepted our offer of a tributary agreement. The transfer of power has been completed, and we are now under protection of [From.GetName]."
+ ragusa_flavor.102.a:0 "We are safe... again."
+
+ ragusa_flavor_102_tt:0 "We become a §Ytributary state§! of the §Y[From.GetAdjective] [From.GovernmentName]§!."
+
+ ragusa_flavor.103.title:0 "Treaty of [Root.GetName]: [From.GetName] Declines"
+ ragusa_flavor.103.desc:0 "[From.GetName] has declined our offer of a tributary agreement. It seems they are not interested in protecting us, even with the promise of vast wealth."
+ ragusa_flavor.103.a:0 "A few more years under our current overlord won't hurt."
+
+ ragusa_flavor.104.title:0 "Treaty of [From.GetName]: [From.GetName] Renegotiates"
+ ragusa_flavor.104.desc:0 "[From.GetName] has renegotiated their tributary agreement with us without our consent. They are now paying tribute to [From.overlord.GetName] instead of us!"
+ ragusa_flavor.104.a:0 "We are not in a position to hunt them down."
+ ragusa_flavor.104.b:0 "Those traitors!"
+
+ ragusa_flavor.200.title:0 "Treaty of [Root.GetName]: Renegotiation"
+ ragusa_flavor.200.desc:0 "Our treaty with [overlord.GetName], while fruitful, has been a burden on our coffers. It is time to renegotiate the terms of our tributary agreement, and become fully free - our strength has grown, and we need not be a subject of anyone, anymore.
+ ragusa_flavor.200.a:0 "Actually, it's fine as is."
+ ragusa_flavor.200.b:0 "Seek freedom."
+
+ ragusa_flavor_200_tt:0 "Send an offer to [overlord.GetName] to become free, at the cost of §Y1000§! ducats.\n\n§MThe AI is more likely to accept if they have taken on debt or are bankrupt.§!"
+
+ ragusa_flavor.201.title:0 "Treaty of [From.GetName]: [From.GetName] Asks for Freedom"
+ ragusa_flavor.201.desc:0 "[From.GetName] has been our treasured tributary for some time, but they have grown strong enough to stand on their own. They have approached us with an offer to become free, and are sweetening the deal with a lump sum of money."
+ ragusa_flavor.201.a:0 "Accept the offer."
+ ragusa_flavor.201.b:0 "Decline the offer."
+
+ ragusa_flavor.202.title:0 "Treaty of [Root.GetName]: [From.GetName] Accepts"
+ ragusa_flavor.202.desc:0 "[From.GetName] has accepted our offer of freedom. The transfer of power has been completed, and we are now free from their rule."
+ ragusa_flavor.202.a:0 "We are free!"
+
+ ragusa_flavor.203.title:0 "Treaty of [Root.GetName]: [From.GetName] Declines"
+ ragusa_flavor.203.desc:0 "[From.GetName] has declined our offer of freedom. It seems they wish to continue exploiting our resources for their own gain."
+ ragusa_flavor.203.a:0 "We will have to try again later - or fight for our freedom."
+
+ rag_founding_new_trade_west:0 "Founding Western Trade"
+ desc_rag_founding_new_trade_west:0 "Founding Western Trade"
+ rag_founding_new_trade_east:0 "Founding Eastern Trade"
+ desc_rag_founding_new_trade_east:0 "Founding Eastern Trade"

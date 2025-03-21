@@ -232,6 +232,16 @@ country_event = {
    }
   }
  }
+
+ immediate = {
+  hidden_effect = {
+   add_country_modifier = {
+    name = rag_move_overlord_cd
+    duration = 7300
+   }
+  }
+ }
+
  option = {
   name = ragusa_flavor.3.a
   add_prestige = -20
@@ -470,7 +480,7 @@ country_event = {
   name = ragusa_flavor.9.a
  }
  option = {
-  name = ragusa_flavor.b.a
+  name = ragusa_flavor.9.b
   321 = {
    remove_claim = ROOT
   }
@@ -513,5 +523,383 @@ country_event = {
   name = ragusa_flavor.10.a
   vassalize = CYP
   clr_country_flag = rag_has_cypriot_tributary
+ }
+}
+
+# ragusa decision: choosing a new overlord
+country_event = {
+ id = ragusa_flavor.100
+ title = ragusa_flavor.100.title
+ picture = DIPLOMACY_eventPicture
+
+ desc = ragusa_flavor.100.desc
+
+ is_triggered_only = yes
+
+ immediate = {
+  hidden_effect = {
+   set_country_flag = rag_currently_negotiating
+   random_known_country = {
+    limit = {
+     has_eclipsed = ROOT
+     total_development = 150
+     NOT = { tag = overlord }
+    }
+    save_event_target_as = ragusa_new_overlord_option_a
+   }
+   random_known_country = {
+    limit = {
+     has_eclipsed = ROOT
+     total_development = 200
+     NOT = { tag = overlord }
+     NOT = { tag = event_target:ragusa_new_overlord_option_a }
+    }
+    save_event_target_as = ragusa_new_overlord_option_b
+   }
+   random_known_country = {
+    limit = {
+     has_eclipsed = ROOT
+     total_development = 300
+     NOT = { tag = overlord }
+     NOT = { tag = event_target:ragusa_new_overlord_option_a }
+     NOT = { tag = event_target:ragusa_new_overlord_option_b }
+    }
+    save_event_target_as = ragusa_new_overlord_option_c
+   }
+  }
+ }
+
+ option = {
+  name = ragusa_flavor.100.a
+  hidden_effect = {
+   clr_country_flag = rag_currently_negotiating
+  }
+  ai_chance = {
+   factor = 0
+  }
+ }
+ option = {
+  trigger = {
+   event_target:ragusa_new_overlord_option_a = { exists = yes }
+  }
+  name = ragusa_flavor.100.b
+  hidden_effect = {
+   event_target:ragusa_new_overlord_option_a = {
+    country_event = {
+     id = ragusa_flavor.101
+     days = 3
+     random = 3
+    }
+   }
+  }
+ }
+ option = {
+  trigger = {
+   event_target:ragusa_new_overlord_option_b = { exists = yes }
+  }
+  name = ragusa_flavor.100.c
+  hidden_effect = {
+    event_target:ragusa_new_overlord_option_b = {
+    country_event = {
+     id = ragusa_flavor.101
+     days = 3
+     random = 3
+    }
+   }
+  }
+ }
+ option = {
+  trigger = {
+   event_target:ragusa_new_overlord_option_c = { exists = yes }
+  }
+  name = ragusa_flavor.100.d
+  hidden_effect = {
+    event_target:ragusa_new_overlord_option_c = {
+    country_event = {
+     id = ragusa_flavor.101
+     days = 3
+     random = 3
+    }
+   }
+  }
+ }
+}
+
+# ragusa decision: sending the offer
+country_event = {
+ id = ragusa_flavor.101
+ title = ragusa_flavor.101.title
+ picture = DIPLOMACY_eventPicture
+
+ desc = ragusa_flavor.101.desc
+
+ is_triggered_only = yes
+
+ # accept
+ option = {
+  name = ragusa_flavor.101.a
+  hidden_effect = {
+   FROM = {
+    country_event = {
+     id = ragusa_flavor.102
+     days = 7
+    }
+   }
+  }
+  ai_chance = {
+   factor = 80
+  }
+ }
+ # refuse
+ option = {
+  name = ragusa_flavor.101.b
+  hidden_effect = {
+   FROM = {
+    country_event = {
+     id = ragusa_flavor.103
+     days = 7
+    }
+   }
+  }
+  ai_chance = {
+   factor = 20
+   modifier = {
+    factor = 0
+    OR = {
+     is_bankrupt = yes
+     num_of_loans = 1
+    }
+   }
+  }
+ }
+}
+
+# ragusa decision: they accepted our offer
+country_event = {
+ id = ragusa_flavor.102
+ title = ragusa_flavor.102.title
+ picture = DIPLOMACY_SIGNING_eventPicture
+
+ desc = ragusa_flavor.102.desc
+
+ is_triggered_only = yes
+
+ option = {
+  name = ragusa_flavor.102.a
+  add_treasury = -1000
+  overlord = { add_treasury = 1000 }
+  custom_tooltip = ragusa_flavor_102_tt
+  hidden_effect = {
+   grant_independence = yes
+   FROM = {
+    set_country_flag = forced_tributary_state
+    create_subject = {
+     subject_type = tributary_state
+     subject = ROOT
+    }
+    clr_country_flag = forced_tributary_state
+   }
+  }
+ }
+}
+
+# ragusa decision: they refused our offer
+country_event = {
+ id = ragusa_flavor.103
+ title = ragusa_flavor.103.title
+ picture = DEBATE_REPUBLICAN_eventPicture
+
+ desc = ragusa_flavor.103.desc
+
+ is_triggered_only = yes
+
+ immediate = {
+  hidden_effect = {
+   add_country_modifier = {
+    name = rag_move_overlord_cd
+    duration = 3650
+   }
+   clr_country_flag = rag_currently_negotiating
+  }
+ }
+
+ option = {
+  name = ragusa_flavor.103.a
+ }
+}
+
+#ragusa decision: informing the old overlord
+country_event = {
+ id = ragusa_flavor.104
+ title = ragusa_flavor.104.title
+ picture = DIPLOMACY_eventPicture
+
+ desc = ragusa_flavor.104.desc
+
+ is_triggered_only = yes
+
+ # whatever don't care
+ option = {
+  name = ragusa_flavor.104.a
+  ai_chance = {
+   factor = 50
+   modifier = {
+    factor = 0
+    FROM = {
+     any_owned_province = {
+      OR = {
+       is_core = ROOT
+       is_claim = ROOT
+      }
+     }
+    }
+   }
+  }
+ }
+ # wtf! (get a cb)
+ option = {
+  name = ragusa_flavor.104.b
+  add_casus_belli = {
+   target = FROM
+   type = cb_vassalize_mission
+   months = 7300
+  }
+  ai_chance = {
+   factor = 50
+  }
+ }
+}
+
+# ragusa decision 2: abandoning the overlord
+country_event = {
+ id = ragusa_flavor.200
+ title = ragusa_flavor.200.title
+ picture = DIPLOMACY_eventPicture
+
+ desc = ragusa_flavor.200.desc
+
+ is_triggered_only = yes
+
+ immediate = {
+  hidden_effect = {
+   set_country_flag = rag_currently_negotiating
+  }
+ }
+
+ # nevermind
+ option = {
+  name = ragusa_flavor.200.a
+  hidden_effect = {
+   clr_country_flag = rag_currently_negotiating
+  }
+  ai_chance = {
+   factor = 0
+  }
+ }
+ # abandon the overlord
+ option = {
+  name = ragusa_flavor.200.b
+  custom_tooltip = ragusa_flavor_200_tt
+  ai_chance = {
+   factor = 100
+  }
+ }
+}
+
+# ragusa decision 2: pondering the offer
+country_event = {
+ id = ragusa_flavor.201
+ title = ragusa_flavor.201.title
+ picture = DIPLOMACY_eventPicture
+
+ desc = ragusa_flavor.201.desc
+
+ is_triggered_only = yes
+
+ # accept
+ option = {
+  name = ragusa_flavor.201.a
+  hidden_effect = {
+    FROM = {
+    country_event = {
+     id = ragusa_flavor.202
+     days = 7
+    }
+   }
+  }
+  ai_chance = {
+   factor = 80
+  }
+ }
+ # refuse
+ option = {
+  name = ragusa_flavor.201.b
+  hidden_effect = {
+   FROM = {
+    country_event = {
+     id = ragusa_flavor.203
+     days = 7
+    }
+   }
+  }
+  ai_chance = {
+   factor = 20
+   modifier = {
+    factor = 0
+    OR = {
+     is_bankrupt = yes
+     num_of_loans = 1
+    }
+   }
+  }
+ }
+}
+
+# ragusa decision 2: they accepted our offer
+country_event = {
+ id = ragusa_flavor.202
+ title = ragusa_flavor.202.title
+ picture = DIPLOMACY_eventPicture
+
+ desc = ragusa_flavor.202.desc
+
+ is_triggered_only = yes
+
+ immediate = {
+  hidden_effect = {
+   clr_country_flag = rag_currently_negotiating
+  }
+ }
+
+ option = {
+  name = ragusa_flavor.202.a
+  add_treasury = -1000
+  overlord = { add_treasury = 1000 }
+  grant_independence = yes
+  blk_rag_update_tributary_buff_effect = yes
+ }
+}
+
+# ragusa decision 2: they refused our offer
+country_event = {
+ id = ragusa_flavor.203
+ title = ragusa_flavor.203.title
+ picture = DIPLOMACY_eventPicture
+
+ desc = ragusa_flavor.203.desc
+
+ is_triggered_only = yes
+
+ immediate = {
+  hidden_effect = {
+   clr_country_flag = rag_currently_negotiating
+  }
+ }
+ option = {
+  name = ragusa_flavor.203.a
+  add_country_modifier = {
+   name = rag_abandon_fail
+   duration = 7300
+  }
  }
 }

@@ -124,11 +124,14 @@ rag_devving_rag_finished = {
 
 rag_opinion_catholics = {
  relation_with_same_religion = 5
+ reverse_relation_with_same_religion = 5
  relation_with_heretics = 15
+ reverse_relation_with_heretic_religion = 15
 }
 
 rag_opinion_muslims = {
  relation_with_heathens = 15
+ reverse_relation_with_heathen_religion = 15
 }
 
 rag_bos_conquest = {
@@ -148,6 +151,7 @@ rag_serb_conquest = {
 rag_negotation_sans_alliances = {
  diplomatic_reputation = 1.5
  relation_with_same_religion = 5
+ reverse_relation_with_same_religion = 5
 }
 
 rag_colonize_new_world = {
@@ -209,4 +213,20 @@ rag_secured_border = {
  rival_border_fort_maintenance = -0.33
  defensiveness = 0.2
  global_defender_dice_roll_bonus = 1
+}
+
+rag_move_overlord_cd = {
+ picture = "envoy_travel_time"
+}
+
+rag_abandon_fail = {
+ liberty_desire = 33
+}
+
+rag_founding_new_trade_west = {
+ diplomats = 1
+}
+
+rag_founding_new_trade_east = {
+ diplomats = 1
 }

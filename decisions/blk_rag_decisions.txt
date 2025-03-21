@@ -1,0 +1,83 @@
+rag_change_overlord = {
+ color = { 160  82  128 }
+ potential = {
+  OR = {
+   tag = RAG
+   tag = DAL
+   tag = ILY
+  }
+  complete_mission = rag_freedom_for_anything
+  is_subject_of_type = tributary_state
+ }
+ allow = {
+  treasury = 1000
+  any_known_country = {
+   NOT = { tag = overlord }
+   has_eclipsed = ROOT
+   total_development = 150
+  }
+  is_subject_of_type = tributary_state
+  NOT = { has_country_modifier = rag_move_overlord_cd }
+  hidden_trigger = {
+   NOT = { has_country_flag = rag_currently_negotiating }
+  }
+ }
+ ai_importance = 100
+ ai_will_do = {
+  factor = 1
+  modifier = {
+   factor = 0
+   OR = {
+    num_of_loans = 1
+    is_bankrupt = yes
+    NOT = { liberty_desire = 5 }
+   }
+  }
+ }
+ effect = {
+  country_event = {
+   id = ragusa_flavor.100
+   tooltip = ragusa_flavor_100_tt
+  }
+ }
+}
+
+rag_abandon_overlord = {
+ color = { 160  82  128 }
+ potential = {
+  OR = {
+   AND = {
+    tag = RAG
+    total_development = 100
+   }
+   tag = DAL
+   tag = ILY
+  }
+  is_subject_of_type = tributary_state
+ }
+ allow = {
+  treasury = 1000
+  hidden_trigger = {
+   NOT = { has_country_flag = rag_currently_negotiating }
+  }
+  NOT = { has_country_modifier = rag_move_overlord_cd }
+ }
+ ai_importance = 100
+ ai_will_do = {
+  factor = 1
+  modifier = {
+   factor = 0
+   OR = {
+    num_of_loans = 1
+    is_bankrupt = yes
+    NOT = { liberty_desire = 5 }
+   }
+  }
+ }
+ effect = {
+  country_event = {
+   id = ragusa_flavor.200
+   tooltip = ragusa_flavor_200_tt
+  }
+ }
+}

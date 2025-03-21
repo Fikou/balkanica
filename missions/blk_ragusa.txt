@@ -367,6 +367,10 @@ rag_2 = {
     name = rag_opinion_catholics
     duration = -1
    }
+   add_country_modifier = {
+    name = rag_founding_new_trade_west
+    duration = 9125
+   }
    if = {
     limit = {
      monthly_trade_income = 2
@@ -599,7 +603,11 @@ rag_3 = {
 
 		trigger = {
    army_size_percentage = 1
-   monthly_trade_income = 1
+   OR = {
+    monthly_trade_income = 1
+    is_subject_of_type = tributary_state
+    has_advisor_of_type_and_level = { type = diplomatic level = 1 }
+   }
   }
 
 		effect = {
@@ -892,6 +900,10 @@ rag_4 = {
    add_country_modifier = {
     name = rag_opinion_muslims
     duration = -1
+   }
+   add_country_modifier = {
+    name = rag_founding_new_trade_east
+    duration = 9125
    }
    if = {
     limit = {
