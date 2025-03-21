@@ -251,11 +251,11 @@
 
  ragusa_defy_turks_tt:0 "Every §YSouth Slavic§!, §YAlbanian§!, §YGreek§!, §YRomanian§!, and §YDalmatian§! culture province not owned by the @TUR §YOttomans§! will gain the following modifier:"
 
- rag_change_overlord:0 "Treaty of [Root.GetName]: Change Overlord"
- desc_rag_change_overlord:0 "Allows you to pick another, stronger nation to replace your current overlord at the cost of §Y1000§! ducats."
+ rag_change_overlord_title:0 "Treaty of [Root.GetName]: Change Overlord"
+ rag_change_overlord_desc:0 "Allows you to pick another, stronger nation to replace your current overlord at the cost of §Y1000§! ducats."
 
- rag_abandon_overlord:0 "Treaty of [Root.GetName]: Abandon Overlord"
- desc_rag_abandon_overlord:0 "Allows you to pay your current overlord §Y1000§! ducats to become free."
+ rag_abandon_overlord_title:0 "Treaty of [Root.GetName]: Abandon Overlord"
+ rag_abandon_overlord_desc:0 "Allows you to pay your current overlord §Y1000§! ducats to become free."
 
  rag_move_overlord_cd:0 "Recently Changed Sovereign"
  desc_rag_move_overlord_cd:0 "Recently Changed Sovereign"
