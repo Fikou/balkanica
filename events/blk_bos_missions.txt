@@ -101,7 +101,7 @@ country_event = {
   custom_tooltip = bos_newline
   swap_non_generic_missions = yes
   ai_chance = {
-   factor = 90
+   factor = 40
   }
  }
  option = {
@@ -147,7 +147,7 @@ country_event = {
   custom_tooltip = bos_newline
   swap_non_generic_missions = yes
   ai_chance = {
-   factor = 10
+   factor = 60
    modifier = {
     factor = 0 # f the pope we're never converting
     OR = {
@@ -156,7 +156,7 @@ country_event = {
     }
    }
    modifier = {
-    factor = 18 # turns it into 66% odds to convert, because we want to keep our alliance!
+    factor = 2
     alliance_with = PAP
    }
   }

@@ -6,10 +6,10 @@
  bos_serbia_time_desc:0 "We have long quarrelled with the despot of Serbia. Decades ago we took large swathes of their territory, using their silver and gold mines to develop our fledging nation. Now our [Root.Monarch.GetTitle] desires the riches of their mines once again to fund our nation's continued growth."
 
  bos_dev_gold_title:0 "Develop Srebrenica"
- bos_dev_gold_desc:0 "The silver mines of Srebcenica are a critical part of our economy. We must develop them if we are to continue to grow."
+ bos_dev_gold_desc:0 "The silver mines of Srebrenica are a critical part of our economy. We must develop them if we are to continue to grow."
 
  bos_buildup_forts_title:0 "Fortify the Homeland"
- bos_buildup_forts_desc:0 "With Srebcenica developed and producing immense wealth, our neighbors eye us with envy. We must fortify our borders to protect our newfound wealth."
+ bos_buildup_forts_desc:0 "With Srebrenica developed and producing immense wealth, our neighbors eye us with envy. We must fortify our borders to protect our newfound wealth."
 
  bos_develop_capital_title:0 "Expand [Root.Capital.GetCapitalName]"
  bos_develop_capital_desc:0 "With the silver of Serbia flowing into our coffers, we must now turn to our capital. Nestled within the mountains, it shall become the jewel of the Balkans."
@@ -148,7 +148,7 @@
  bos_found_srebrenica_tt:0 "Expand silver mining in Srebrenica. §GThis will be permanent.§!\n"
  bos_exploit_serbia_silver_temp_tt:0 "\nExploit the silver veins of Raksa and Kolubara. §RThis will be temporary.§!\n"
  bos_recently_setup_silver_mining:0 "Srebrenica Silver Mining Resumed"
- desc_bos_recently_setup_silver_mining:0 "Srebcenica Silver Mining Resumed"
+ desc_bos_recently_setup_silver_mining:0 "Srebrenica Silver Mining Resumed"
  bos_temp_silver_mining:0 "Exploiting Serbian Silver"
  desc_bos_temp_silver_mining:0 "Exploiting Serbian Silver"
  bos_srebrenica_devd:0 "Srebrenica Silver Deposits"

@@ -1,0 +1,14 @@
+name = "Cilli-Habsburg War"
+war_goal = {
+	type = defend_capital_independence
+	casus_belli = cb_independence_war
+}
+
+1436.1.1 = {
+	add_attacker = HAB
+	add_defender = CLI
+}
+1443.8.11 = {
+ rem_attacker = HAB
+ rem_defender = CLI
+}

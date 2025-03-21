@@ -65,6 +65,7 @@ bos_1 = {
 		effect = {
 			custom_tooltip = bos_found_srebrenica_tt
 			4755 = {
+    rename_capital = "Srebrenica"
 				change_trade_goods = gold
 				add_province_modifier = {
 					name = "bos_recently_setup_silver_mining"

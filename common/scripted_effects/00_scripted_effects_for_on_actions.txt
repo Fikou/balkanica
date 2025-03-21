@@ -29,6 +29,63 @@ on_dependency_gained_effect = {
    }
    set_country_flag = regency_subject
   }
+  if = {
+   limit = {
+    FROM = { heir_age = 15 }
+   }
+   FROM = {
+    export_to_variable = {
+     variable_name = divide_age
+     value = trigger_value:heir_age
+     who = FROM
+    }
+    subtract_variable = {
+     which = divide_age
+     value = 15
+    }
+    divide_variable = {
+     which = divide_age
+     value = 5
+    }
+    round_variable = {
+     which = divide_age
+     value = -1
+    }
+    multiply_variable = {
+     which = divide_age
+     value = 5
+    }
+    set_variable = {
+     which = age_to_extend
+     value = 5
+    }
+    change_variable = {
+     which = age_to_extend
+     which = divide_age
+    }
+    set_variable = {
+     which = age_extended
+     value = 0
+    }
+    set_country_flag = no_extension_popup
+    while = {
+     limit = {
+      NOT = {
+       check_variable = {
+        which = age_extended
+        which = age_to_extend
+       }
+      }
+     }
+     extend_regency = 5
+     change_variable = {
+      which = age_extended
+      value = 5
+     }
+    }
+    clr_country_flag = no_extension_popup
+   }
+  }
  }
 }
 

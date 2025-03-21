@@ -333,7 +333,7 @@ cli_5 = {
 		effect = {  } 
 	}
 
-	cli_take_constantinople = {
+	cli_drive_out_turks = {
 		icon = mission_battle_of_varna
 		position = 9
 		required_missions = { cli_recover_bulgaria } 
