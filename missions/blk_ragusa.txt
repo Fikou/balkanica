@@ -606,7 +606,9 @@ rag_3 = {
    OR = {
     monthly_trade_income = 1
     is_subject_of_type = tributary_state
-    has_advisor_of_type_and_level = { type = diplomatic level = 1 }
+    trader = 1
+    diplomat = 1
+    statesman = 1
    }
   }
 
@@ -1087,6 +1089,7 @@ rag_5 = {
    OR = {
     galley_fraction = 0.5
     light_ship_fraction = 0.5
+    naval_reformer = 1
    }
    treasury = 50
    137 = {
