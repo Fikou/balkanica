@@ -6,7 +6,7 @@ rag_change_overlord = {
    tag = DAL
    tag = ILY
   }
-  complete_mission = rag_freedom_for_anything
+  mission_completed = rag_freedom_for_anything
   is_subject_of_type = tributary_state
  }
  allow = {
