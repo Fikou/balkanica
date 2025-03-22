@@ -15,3 +15,9 @@ rag_illyria_balkans = {
  power = 10
  decay = no
 }
+
+hum_tur_balkans = {
+ max = 25
+ power = 25
+ decay = no
+}

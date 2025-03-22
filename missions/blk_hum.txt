@@ -75,9 +75,7 @@ hrz_3 = {
 		provinces_to_highlight = {  }
 
 		trigger = { army_size_percentage = 1 }
-  ai_weight = {
-   factor = 100
-  }
+
 		effect = {
 			custom_tooltip = bos_civil_war_explanation_hrz_tt
 			hidden_effect = {
@@ -115,14 +113,14 @@ hrz_3 = {
 		provinces_to_highlight = {  }
 
 		trigger = {
-   num_of_allies = 1 
-   any_ally = {
-    NOT = { tag = ARA }
-    NOT = { tag = HAB }
-    NOT = { tag = SER }
-    NOT = { tag = HUN }
-   }
-  }
+			num_of_allies = 1
+			any_ally = {
+				NOT = { tag = ARA }
+				NOT = { tag = HAB }
+				NOT = { tag = SER }
+				NOT = { tag = HUN }
+			}
+		}
 
 		effect = {
 			add_country_modifier = {
@@ -147,17 +145,15 @@ hrz_3 = {
 		}
 
 		trigger = { bos_civil_war_resolved_trigger = yes }
-  ai_weight = {
-   factor = 1000
-  }
+
 		effect = {
-   bosnia_area = {
-    limit = {
-     NOT = { owned_by = ROOT }
-     NOT = { is_core = ROOT }
-    }
-    add_permanent_claim = ROOT
-   }
+			bosnia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			east_adriatic_coast_area = {
 				if = {
 					limit = {
@@ -191,14 +187,96 @@ hrz_3 = {
 						who = SER
 						locked = no
 					}
-     set_ai_attitude = {
-      attitude = attitude_neutral
-      who = HUN
-      locked = no
-     }
+					set_ai_attitude = {
+						attitude = attitude_neutral
+						who = HUN
+						locked = no
+					}
 				}
 			}
 		}
+	}
+
+	hrz_our_future = {
+		icon = fight_bosnian_heresies
+		position = 4
+		required_missions = { hrz_resolve_civil_war }
+		provinces_to_highlight = {  }
+
+		trigger = {
+   OR = {
+    TUR = { exists = no }
+    OR = {
+     TUR = { has_100_opinion_improved_relation = { target = HRZ } }
+     TUR = { owns = 3002 }
+     hidden_trigger = {
+      has_country_flag = adopt_herceg_title
+     }
+    }
+    OR = {
+     TUR = { is_rival = ROOT }
+     TUR = { has_been_insulted_by_root = yes }
+    }
+   }
+  }
+
+		effect = {
+   # if we have a good relation with the ottomans: become tributary, unlock herzog path
+   custom_tooltip = hrz_our_future_explanation_a_tt
+   hidden_effect = {
+    if = {
+     limit = {
+      TUR = { exists = yes }
+      OR = {
+       TUR = { has_100_opinion_improved_relation = { target = HRZ } }
+       TUR = { owns = 3002 }
+      }
+      NOT = {
+       AND = {
+        TUR = { is_rival = ROOT }
+        TUR = { has_been_insulted_by_root = yes }
+       }
+      }
+     }
+     set_country_flag = hrz_herzog_path
+     set_country_flag = adopt_herceg_title
+     TUR = {
+      set_country_flag = forced_tributary_state
+      create_subject = {
+       subject_type = tributary_state
+       subject = ROOT
+      }
+      clr_country_flag = forced_tributary_state
+     }
+     croatia_area = {
+      add_permanent_claim = ROOT
+     }
+     slavonia_area = {
+      add_permanent_claim = ROOT
+     }
+    }
+   }
+   # if we do x: unlock saintsava path
+   custom_tooltip = hrz_our_future_explanation_b_tt
+   hidden_effect = {
+    if = {
+     limit = {
+      OR = {
+       TUR = { is_rival = ROOT }
+       TUR = { has_been_insulted_by_root = yes }
+      }
+     }
+     set_country_flag = hrz_saintsava_path
+     croatia_area = {
+      add_permanent_claim = ROOT
+     }
+     slavonia_area = {
+      add_permanent_claim = ROOT
+     }
+    }
+   }
+   swap_non_generic_missions = yes
+  }
 	}
 }
 hrz_4 = {
@@ -263,5 +341,253 @@ hrz_5 = {
 			}
 			else = { bos_civil_war_gain_support_effect = { faction = SER }  }
 		}
+	}
+}
+hrz_saintsava_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+  tag = HRZ
+  has_country_flag = hrz_saintsava_path
+ }
+
+	hrz_christian_conversion = {
+		icon = geneva_conventions
+		position = 5
+		required_missions = { hrz_our_future }
+		provinces_to_highlight = {
+   owned_by = ROOT
+   NOT = { religion = ROOT }
+  }
+
+		trigger = {
+   development_in_provinces = {
+    value = 120
+    religion = ROOT
+   }
+  }
+
+		effect = {
+   add_stability_or_adm_power = yes
+  }
+	}
+}
+hrz_saintsava_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+  tag = HRZ
+  has_country_flag = hrz_saintsava_path
+ }
+	hrz_saintsava = {
+		icon = protectors_of_christendom
+		position = 5
+		required_missions = { hrz_our_future }
+		provinces_to_highlight = {  }
+
+		trigger = {
+   government_reform_progress = 50
+  }
+
+		effect = {
+   add_adm_power = 50
+   add_mil_power = 50
+   add_government_reform = duchy_of_saint_sava_reform
+  }
+	}
+}
+hrz_saintsava_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+  tag = HRZ
+  has_country_flag = hrz_saintsava_path
+ }
+	hrz_push_ottomans = {
+		icon = mission_balkan_conquest
+		position = 5
+		required_missions = { hrz_our_future }
+		provinces_to_highlight = {
+   region = balkan_region
+   owned_by = TUR
+  }
+
+		trigger = {
+   tur_owns_any_balkan_provices = no
+  }
+
+		effect = {
+   add_permanent_power_projection = {
+    type = hum_tur_balkans
+   }
+  }
+	}
+}
+hrz_herzog_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+  tag = HRZ
+  has_country_flag = hrz_herzog_path
+ }
+	hrz_establish_ourselves = {
+		icon = mission_european_politics
+		position = 5
+		required_missions = { hrz_our_future }
+		provinces_to_highlight = {  }
+
+		trigger = {
+   total_development = 120
+  }
+
+		effect = {
+   add_stability_or_adm_power = yes
+   add_power_projection = {
+    type = mission_rewards_power_projection
+    amount = 25
+   }
+  }
+	}
+}
+hrz_herzog_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+  tag = HRZ
+  has_country_flag = hrz_herzog_path
+ }
+	hrz_herzog = {
+		icon = mission_ottoman_diplomacy
+		position = 5
+		required_missions = { hrz_our_future }
+		provinces_to_highlight = {  }
+
+		trigger = {
+   government_reform_progress = 50
+  }
+
+		effect = {
+   add_dip_power = 50
+   add_government_reform = herzegovina_reform
+   if = {
+    limit = {
+     TUR = { exists = yes }
+    }
+    TUR = { add_historical_friend = ROOT }
+    add_historical_friend = TUR
+   }
+  }
+	}
+}
+hrz_herzog_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+  tag = HRZ
+  has_country_flag = hrz_herzog_path
+ }
+	hrz_do_something = {
+		icon = mission_strengthen_the_vegvar
+		position = 5
+		required_missions = { hrz_our_future }
+		provinces_to_highlight = {
+   is_neighbor_of = ROOT
+  }
+
+		trigger = {
+   calc_true_if = {
+    amount = 4
+    all_owned_province = {
+     has_fort_building_trigger = yes
+     any_neighbor_province = {
+      OR = {
+       owner = { is_rival = ROOT }
+       ROOT = { is_rival = owner }
+      }
+     }
+    }
+   }
+  }
+
+		effect = {
+   add_mil_power = 50
+   add_splendor = 100
+   add_army_tradition_or_mil_power = { amount = 25 }
+  }
+	}
+}
+hrz_branch_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+  tag = HRZ
+  NOT = { has_country_flag = hrz_herzog_path }
+  NOT = { has_country_flag = hrz_saintsava_path }
+ }
+	hrz_branching_21 = {
+		icon = mission_unknown_mission
+		position = 5
+		required_missions = { hrz_our_future }
+		provinces_to_highlight = {  }
+
+		trigger = {  }
+
+		effect = {  }
+	}
+}
+hrz_branch_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+  tag = HRZ
+  NOT = { has_country_flag = hrz_herzog_path }
+  NOT = { has_country_flag = hrz_saintsava_path }
+ }
+	hrz_branching_31 = {
+		icon = mission_unknown_mission
+		position = 5
+		required_missions = { hrz_our_future }
+		provinces_to_highlight = {  }
+
+		trigger = {  }
+
+		effect = {  }
+	}
+}
+hrz_branch_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+  tag = HRZ
+  NOT = { has_country_flag = hrz_herzog_path }
+  NOT = { has_country_flag = hrz_saintsava_path }
+ }
+	hrz_branching_41 = {
+		icon = mission_unknown_mission
+		position = 5
+		required_missions = { hrz_our_future }
+		provinces_to_highlight = {  }
+
+		trigger = {  }
+
+		effect = {  }
 	}
 }

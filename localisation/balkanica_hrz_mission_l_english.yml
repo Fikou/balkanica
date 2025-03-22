@@ -5,8 +5,17 @@
  hrz_approach_austria_title:0 "Approach Austria"
  hrz_approach_austria_desc:0 "Austria is a powerful nation, seeking to expand its influence in the Balkans. They may be willing to support our claim to the throne."
 
+ hrz_civil_war_title:0 "Civil War!"
+ hrz_civil_war_desc:0 "Bosnia in in civil war! Stjepan Kosaca, Lord of Hum, has raised an army against Stjepan Tomas Kotromanic, Kralj of Bosnia."
+
  hrz_find_other_ally_title:0 "Find Other Allies"
  hrz_find_other_ally_desc:0 "There are many powers in the Balkans, Italy, and beyond. Finding any nation willing to support our cause, no matter how big or small, would be invaluable."
+
+ hrz_resolve_civil_war_title:0 "Peace in Bosnia"
+ hrz_resolve_civil_war_desc:0 "Peace has been restored to Bosnia! Whether this is truly the end remains to be seen, but we should now celebrate and focus on rebuilding our nation."
+
+ hrz_our_future_title:0 "The Future of Hum"
+ hrz_our_future_desc:0 "We have secured our rule over Bosnia, but our future remains uncertain. The Ottomans encroach on our borders, and the Hungarians and Austrians seek to expand their influence in the Balkans. We must decide our future."
 
  hrz_approach_aragon_title:0 "Approach Aragon"
  hrz_approach_aragon_desc:0 "The King of Aragon, Alfonso V, while an unlikely ally, has shown interest in the Balkans. He may be willing to support our claim to the throne."
@@ -14,11 +23,34 @@
  hrz_approach_serbia_title:0 "Approach Serbia"
  hrz_approach_serbia_desc:0 "While Serbia may still be sore from our previous conflicts, they are one of our neighbors and may be willing to support our claim to the throne."
 
- hrz_resolve_civil_war_title:0 "Peace in Bosnia"
- hrz_resolve_civil_war_desc:0 "Peace has been restored to Bosnia! Whether this is truly the end remains to be seen, but we should now celebrate and focus on rebuilding our nation."
+ hrz_christian_conversion_title:0 "§OReligious Conversion§!"
+ hrz_christian_conversion_desc:0 ""
 
- hrz_civil_war_title:0 "Civil War!"
- hrz_civil_war_desc:0 "Bosnia in in civil war! Stjepan Kosaca, Lord of Hum, has raised an army against Stjepan Tomas Kotromanic, Kralj of Bosnia."
+ hrz_saintsava_title:0 "§OThe Duke of Saint Sava§!"
+ hrz_saintsava_desc:0 ""
 
- hrz_find_other_ally_title:0 "Find Other Allies"
- hrz_find_other_ally_desc:0 "There are many powers in the Balkans, Italy, and beyond. Finding any nation willing to support our cause, no matter how big or small, would be invaluable."
+ hrz_push_ottomans_title:0 "§OPush the Ottomans Out§!"
+ hrz_push_ottomans_desc:0 ""
+
+ hrz_establish_ourselves_title:0 "§OEstablish Ourselves§!"
+ hrz_establish_ourselves_desc:0 ""
+
+ hrz_herzog_title:0 "§OThe Herzog of Rum§!"
+ hrz_herzog_desc:0 ""
+
+ hrz_do_something_title:0 "§OFortify Against Christiandom§!"
+ hrz_do_something_desc:0 ""
+
+ hrz_branching_21_title:0 "Branching Mission"
+ hrz_branching_21_desc:0 "This mission unlock after selecting the future of Hum."
+
+ hrz_branching_31_title:0 "Branching Mission"
+ hrz_branching_31_desc:0 "This mission unlock after selecting the future of Hum."
+
+ hrz_branching_41_title:0 "Branching Mission"
+ hrz_branching_41_desc:0 "This mission unlock after selecting the future of Hum."
+
+ hrz_our_future_explanation_a_tt:0 "If we improve relations with the @TUR §YOttomans§!, or they conquer §YVisoki§!:\n\nWe will sway towards the @TUR §YOttomans§!, unlocking their administrative structure and becoming an @TUR §YOttomans§! tributary.\n"
+ hrz_our_future_explanation_b_tt:0 "If the @TUR §YOttomans§! are our rival, or we have insulted them:\n\nWe will maintain our independence and unlock a §Ytheocratic§! government.\n"
+
+ hum_tur_balkans:0 "Expelled the Ottomans"

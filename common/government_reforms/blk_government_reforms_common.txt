@@ -36,7 +36,7 @@ head_of_the_reformed_church_reform = {
 	custom_attributes = {
 		improved_defender_of_faith = yes	#Being Defender of Faith increases Dip Rep, Tolerance and Morale
 	}
-	
+
 	ai = {
 		factor = 1
 	}
@@ -63,7 +63,7 @@ maintain_the_free_church_reform = {
 	custom_attributes = {
 		clerical_ministers_tech_buff = yes
 	}
-	
+
 	ai = {
 		factor = 1
 	}
@@ -80,7 +80,7 @@ duchy_of_saint_sava_reform = {
  trigger = {
   OR = {
    has_reform = duchy_of_saint_sava_reform
-   mission_completed = hrz_abc
+   mission_completed = hrz_saintsava
   }
   OR = {
    religion = krstjani
@@ -145,7 +145,7 @@ kingdom_of_saint_sava_reform = {
  trigger = {
   OR = {
    has_reform = kingdom_of_saint_sava_reform
-   mission_completed = hrz_abc
+   mission_completed = hrz_saintsava
   }
   OR = {
    religion = krstjani
@@ -210,7 +210,7 @@ empire_of_saint_sava_reform = {
  trigger = {
   OR = {
    has_reform = empire_of_saint_sava_reform
-   mission_completed = hrz_abc
+   mission_completed = hrz_saintsava
   }
   OR = {
    religion = krstjani
