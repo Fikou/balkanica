@@ -1,0 +1,153 @@
+namespace = cilli_flavor
+
+country_event = {
+ id = cilli_flavor.1
+ title = cilli_flavor.1.title
+ desc = cilli_flavor.1.desc
+ picture = BAD_WITH_MONARCH_eventPicture
+ is_triggered_only = yes
+ fire_only_once = yes
+ trigger = {
+  tag = CLI
+ }
+ option = {
+  name = cilli_flavor.1.a
+ }
+ immediate = {
+  hidden_effect = {
+   add_country_modifier = {
+    name = cli_inheritance_agreement
+    duration = -1
+   }
+  }
+ }
+}
+
+country_event = {
+ id = cilli_flavor.2
+ title = cilli_flavor.2.title
+ desc = cilli_flavor.2.desc
+ picture = BAD_WITH_MONARCH_eventPicture
+ is_triggered_only = yes
+ fire_only_once = yes
+ trigger = {
+  has_country_modifier = cli_inheritance_agreement
+  NOT = { heir_dynasty = "von Cilli" }
+  NOT = { dynasty = "von Cilli" }
+  any_country = {
+   dynasty = "von Habsburg"
+   government = monarchy
+  }
+ }
+ immediate = {
+  hidden_effect = {
+   if = {
+    limit = {
+     STY = {
+      exists = yes
+      dynasty = "von Habsburg"
+      government = monarchy
+     }
+    }
+    STY = { save_event_target_as = habsburg_country }
+   }
+   else_if = {
+    limit = {
+     HAB = {
+      exists = yes
+      dynasty = "von Habsburg"
+      government = monarchy
+     }
+    }
+    HAB = { save_event_target_as = habsburg_country }
+   }
+   else = {
+    random_country = {
+     limit = {
+      dynasty = "von Habsburg"
+      government = monarchy
+     }
+     save_event_target_as = habsburg_country
+    }
+   }
+   event_target:habsburg_country = {
+    if = {
+     limit = {
+      is_subject_of = CLI
+     }
+     grant_independence = yes
+     define_ruler = {
+      regency = yes
+      force_republican_names = yes
+     }
+    }
+    create_subject = {
+     subject_type = integrated_personal_union
+     who = ROOT
+    }
+   }
+   every_core_province = {
+    limit = { owned_by = ROOT }
+    add_core = event_target:habsburg_country
+   }
+  }
+ }
+ option = {
+  name = cilli_flavor.2.a
+  event_target:habsburg_country = {
+   inherit = ROOT
+  }
+  ai_chance = {
+   factor = 90
+  }
+ }
+ option = {
+  name = cilli_flavor.2.b
+  add_stability = -1
+  declare_war_with_cb = {
+   casus_belli = cb_independence_war
+   who = event_target:habsburg_country
+  }
+  ai_chance = {
+   factor = 10
+   modifier = {
+    factor = 5
+    total_development = 100
+   }
+   modifier = {
+    factor = 10
+    total_development = event_target:habsburg_country
+   }
+  }
+ }
+}
+
+country_event = {
+	id = cilli_flavor.3
+	title = cilli_flavor.3.title
+	desc = cilli_flavor.3.desc
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = cilli_flavor.3.a
+		unlock_government_reform = {
+			government_reform = cilli_principality_reform
+		}
+		add_government_reform = cilli_principality_reform
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	option = {
+		name = cilli_flavor.3.b
+		unlock_government_reform = {
+			government_reform = cilli_principality_reform
+		}
+		change_government_reform_progress = 50
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

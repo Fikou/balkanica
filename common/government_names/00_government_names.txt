@@ -5090,6 +5090,10 @@ south_slavic_monarchy = {
 			primary_culture = bulgarian_new
 			culture_group = south_slavic
 		}
+  OR = {
+   NOT = { tag = CLI }
+   is_part_of_hre = no
+  }
   # All of these guys have their own more specific localizations
 		NOT = { primary_culture = croatian }
 		NOT = { primary_culture = croatian_new }

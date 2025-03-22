@@ -108,25 +108,6 @@
  krstjani_flavor.5.a:0 "The faith endures!"
  krstjani_resurgence:0 "Resurgent Krstjani Power"
 
- montenegro_flavor.1.title:0 "Crown or Cross?"
- montenegro_flavor.1.desc:0 "In a vision, $MONARCH$ saw $COUNTRY$ as the last bastion of Orthodoxy, leading the faithful with divine guidance and striking down the infidels in its path. Should we embrace this destiny and elevate the power of the Metropolitanate?"
- montenegro_flavor.1.a:0 "A bishop's life for me!"
- montenegro_flavor.1.b:0 "A dream cannot be a basis for a state."
-
- montenegro_flavor.2.title:0 "A Noble Request"
- montenegro_flavor.2.desc:0 "The noble family of Crnojevic has made demands. They want to leave our suzerainty and rule the territory of Zeta on their own. Should we let them lead their own destiny or face an open rebellion?"
- montenegro_flavor.2.a:0 "That's one less thing to worry about."
- montenegro_flavor.2.b:0 "I wonder how they will fare..."
- montenegro_flavor.2.c:0 "Raise the armies!"
- montenegro_flavor.2.tt:0 "Release Zeta from all of our provinces they have cores on."
-
- bosnia_flavor.1.title:0 "Civil War!"
- bosnia_flavor.1.desc:0 "Since Tvrtko's death in September 1443 and the election of Thomas as the King of Bosnia the realm has been experiencing a Civil War. The powerful Duke of Hum, Stjepan, does not recognize the rule of our king and is pursuing his own ambitions.\nTo end the civil war, we have to either crush them militarily, set up a royal marriage between us or get the support of several powers in the region."
- bosnia_flavor.1.a:0 "Let's get to it, then."
- hum_flavor.1.title:0 "Civil War!"
- hum_flavor.1.desc:0 "Since Tvrtko's death in September 1443 and the election of Thomas as the King of Bosnia the realm has been experiencing a Civil War. The nobles have went against Radivoj, the true heir to Bosnia, who has ended up at our court.\nTo end the civil war, we have to either crush them militarily, set up a royal marriage between us or get the support of several powers in the region."
- hum_flavor.1.a:0 "Time to deal with the false king."
-
  maintain_the_free_church_reform:0 "Maintain the Free Church"
  maintain_the_free_church_reform_desc:0 "The Bosnian Church has been attacked by many foreign powers for giving refuge to other faiths. By preserving its independence, we resist their influence and keep our identity."
  bosnian_elective_kingdom_reform:0 "Bosnian Elective Monarchy"
@@ -166,6 +147,7 @@
  dalmatian_new:0 "Dalmatian"
  albanian_new:0 "Albanian"
  albanian_g:0 "Albanian"
+ windic:0 "Windic"
 
  EMPEROR_HERCEG:0 "Supreme Herceg"
  EMPRESS_HERCEGI:0 "Supreme Hercegi"
@@ -190,9 +172,13 @@
  MON_D:0 "Montenegro"
  MON_D_ADJ:0 "Montenegrin"
  MON_D_ADJ2:0 "Montenegrin"
+ CLI_S:0 "Celje"
+ CLI_S_ADJ:0 "Celjan"
+ CLI_S_ADJ2:0 "Celjan"
 
  illyrian_nation_title:0 "Claim Illyrian Legacy"
  illyrian_nation_desc:0 "The people of Illyria have been fractured for far too long, beset by foreign powers and internal strife. It is time to reclaim the legacy of Illyricum from the ashes of history and unite the Albanians and Dalmatians with the South Slavs!"
+ illyrian_nation_tt:0 "The §YAlbanian§! and §YDalmatian§! cultures will join the §YSouth Slavic§! culture group."
 
  ILY_ideas:0 "Illyrian Ideas"
  ILY_ideas_start:0 "Illyrian Traditions"
@@ -266,9 +252,9 @@
  adriatic_fleet_naval_doctrine:0 "Adriatic Fleet"
  adriatic_fleet_naval_doctrine_desc:0 "To maintain any power in the Mediterranean we need to punch above our weight, constructing a greater amount of ships and packing them with more cannons and cargo."
 
- unlock_holy_order_order_of_the_dragon_tt:0 "Unlock the §YOrder of the Dragon§! Holy Order"
+ unlock_holy_order_order_of_the_dragon_tt:0 "Unlock the §YOrder of the Dragon§! Holy Order."
 
- VOJVODSTVO:0 "vojvodstvo"
+ VOJVODSTVO:0 "Vojvodstvo"
  KRALJEVINA:0 "Kraljevina"
  CARSTVO:0 "Carstvo"
  BANATE:0 "Banate"
@@ -281,3 +267,10 @@
  string_church_power_krstjani_info:0 "\n\n£DLC_cs §YKrstjani§! countries accumulate §YChurch Power§! over time. This can be used to activate temporary bonuses."
  string_start_government_ruler_elections:0 "£DLC_dom [Root.GetName] is an §Yelective monarchy§!. When a new ruler ascends to the throne, a §Yruler election§! is held similarly to a republic.\n\n"
  string_start_government_ruler_elections_plural:0 "£DLC_dom The [Root.GetName] are an §Yelective monarchy§!. When a new ruler ascends to the throne, a §Yruler election§! is held similarly to a republic.\n\n"
+
+ cb_imperial_cutdown:0 "Imperial Cut-Down"
+ cb_imperial_cutdown_desc:0 "To increase the size of the Empire, we have to cut other nations down-to-size."
+ take_capital_cutdown:0 "Take Capital"
+ take_capital_cutdown_desc:0 "War goal is to take the capital."
+ ALL_EUROPE_PROVS:0 "All European provinces"
+ IMPERIAL_CUTDOWN_WAR_NAME:0 "$ORDER$$FIRST$-$SECOND_NAME$ Imperial Cut-Down War"

@@ -192,24 +192,27 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
-   if = {
-    limit = { NOT = { has_updated_culture = { culture = dalmatian } } }
+   custom_tooltip = illyrian_nation_tt
+   hidden_effect = {
     if = {
-     limit = { primary_culture = dalmatian }
-     update_entire_culture = { culture = dalmatian }
+     limit = { NOT = { has_updated_culture = { culture = dalmatian } } }
+     if = {
+      limit = { primary_culture = dalmatian }
+      update_entire_culture = { culture = dalmatian }
+     }
+     else = {
+      update_entire_culture_foreign = { culture = dalmatian }
+     }
     }
-    else = {
-     update_entire_culture_foreign = { culture = dalmatian }
-    }
-   }
-   if = {
-    limit = { NOT = { has_updated_culture = { culture = albanian } } }
     if = {
-     limit = { primary_culture = albanian }
-     update_entire_culture = { culture = albanian }
-    }
-    else = {
-     update_entire_culture_foreign = { culture = albanian }
+     limit = { NOT = { has_updated_culture = { culture = albanian } } }
+     if = {
+      limit = { primary_culture = albanian }
+      update_entire_culture = { culture = albanian }
+     }
+     else = {
+      update_entire_culture_foreign = { culture = albanian }
+     }
     }
    }
 			east_adriatic_coast_area = {

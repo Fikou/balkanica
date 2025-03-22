@@ -343,6 +343,14 @@ germanic = {
 	gothic_ger = {
 		primary = FEO
 	}
+ windic = {
+  primary = CLI
+  dynasty_names = {
+			Bogenski Breski Celjski Crnomaljski Cresnjevec Hadik Izanski Jablaniski Koroski Lenkovic
+			Mocnik Pustalski Ptujski Rusbachi Strmski Savinjski Turjaski Visnjegorski Vovbrzani
+			Zovneski Zois Zagar Zelko
+		}
+ }
 	female_names = {
 		Adele Adelgunde Adelheid Adolfine Agatha Agnes Alexandra Alice Alina Aline Alma Alwina Alwine Amalia Amalie Amanda 
 		Amelie Andrea Angela Angelika Angelina Anika Anita Anja Anke Ann-Katrin Anna Anne Annegret Anneli Annelie Anneliese 

@@ -40,6 +40,7 @@ cro_1 = {
 					add_permanent_claim = ROOT
 				}
 			}
+   add_government_reform = croatian_sabor_reform #balkanica. not enough time to make croatia tree so this for now
 		}
 		ai_weight = {
 			factor = 500	#Reconquest
@@ -183,7 +184,7 @@ cro_2 = {
 		}
 		trigger = {
 			is_subject = no
-			tag = CRO
+			#tag = CRO
 		}
 		effect = {
 			add_legitimacy = 20

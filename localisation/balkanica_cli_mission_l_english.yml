@@ -8,6 +8,7 @@
  cli_web_loyalty_title:0 "Web of Loyalty"
  cli_web_loyalty_desc:0 "We can sense it everywhere. The nobles are not to be trusted. We have to create a secure court that cannot be breached by a whisper from a dissenter. Build the dungeons!"
  cli_web_loyalty_tt:0 "The §YLjubljana Castle§! will now further grant §GForeign Spy Detection§! and §GSpy Network Construction§!."
+ cli_web_loyalty_tt2:0 "The §YCoup Attempt§! disaster can §Gno longer fire§!."
 
  cli_take_upper_austria_title:0 "Take to the Mountains"
  cli_take_upper_austria_desc:0 "The usefulness of our friendliness towards the Habsubrgs has ran dry. We must resume our war with them and maintain a hold over the Alps."
@@ -17,6 +18,7 @@
 
  cli_breed_lipizzan_title:0 "Breed the Lipizzan"
  cli_breed_lipizzan_desc:0 "With our increased significance on the world stage, we find ourselves with an increased need for horses for our nobility and army. We should import some Iberian horses and start our own breeding operation."
+ cli_breed_lipizzan_tt:0 "Ally, have §G150§! opinion, a subject, or a trade relationship with any country that has their capital in the §YIberia§! or §YMaghreb§! region."
 
  cli_build_trieste_title:0 "The Free Port of Trieste"
  cli_build_trieste_desc:0 "The city of Trieste has long been losing its power as a trade hub, and has pretty much fallen to ruin from its glory days. We have to institute it as a free port and make it a place of importance again."
@@ -32,12 +34,13 @@
 
  cli_prepare_for_venice_title:0 "Prepare the Navy"
  cli_prepare_for_venice_desc:0 "With our success in taking back Dalmatia, we need to prepare against retaliation and create a fleet to have control over the Mediterranean."
+ cilli_trade_income:0 "Gain §G3§! years worth of trade income."
 
  cli_end_venice_title:0 "End the Latin Threat"
  cli_end_venice_desc:0 "As we have a powerful navy, now is the time to strike. We must take the capital province of Venice to end their overseas empire once and for all."
 
  cli_ladislaus_title:0 "Take Control of Ladislaus"
- cli_ladislaus_desc:0 "Ladislaus the Posthumous, the cousin of Ulrich II was chosen by his father's will to be the archduke of Austria, and king of Hungary and Bohemia. However, the Holy Roman Emperor, Friedrich III has taken the boy, making himself the ruler of Austria. We can't let this much power go into the hands of one man, so we will stoke the nobles to help us seize the boy."
+ cli_ladislaus_desc:0 "Ladislaus the Posthumous, the cousin of Ulrich II was chosen by his father's will to be the archduke of Austria, and king of Hungary and Bohemia. However, the Holy Roman Emperor, Friedrich III has taken the boy, making himself the ruler of Austria. We can't let this much power go into the hands of one man, so we will stoke the nobles to help us take him."
 
  cli_austrian_succession_title:0 "Austrian Succession"
  cli_austrian_succession_desc:0 "Now that we have taken Ladislaus, it's time to seize the Archduchy from his previous guardian."
@@ -47,6 +50,7 @@
 
  cli_reform_kingdom_title:0 "Reform the Principality"
  cli_reform_kingdom_desc:0 "Our court diplomacy and intrigue has been going fantastically. Our regency over Ladislaus has given us an example for the future, let us take more advantage of other countries!"
+ unlock_cilli_principality_reform_tt:0 "Unlock the '§YImperial Principality of Celje§!' government reform."
 
  cli_restore_order_title:0 "Revitalize the Order"
  cli_restore_order_desc:0 "After Sigismund's death, the importance of the Order of the Dragon fell. As we were one of its founding members, maybe it's time to revitalize it with our interests in the region increasing?"
@@ -59,24 +63,36 @@
 
  cli_conquer_despotate_title:0 "Conquer the Despotate"
  cli_conquer_despotate_desc:0 "The Despotate of Serbia is a weak, crumbling power. It stands no chance against the Ottoman Empire, and we could use their resources way better, therefore it is our duty to conquer it."
+ CLI_IF_SERBIA_VASSAL:0 "If §M[SER.GetName]§! is our §MSubject§!:"
+ CLI_IF_SERBIA_CONQUERED:0 "If §MSerbian Lands§! are §MConquered§!:"
 
  cli_protect_serbs_title:0 "Protect the Serbians"
  cli_protect_serbs_desc:0 "The Serbians in our realm are disunited, with the Kingdom of Hungary forcing them to give away Belgrade in the north, and the Venetians taking suzerainty over Kotor in the south. We have to unite their lands once again."
 
  cli_bosnia_claims_title:0 "Restore our Bosnian Claims"
  cli_bosnia_claims_desc:0 "Hermann II of Cilli was heir presumptive to the king of Bosnia, Tvrtko II. Even though he died prematurely, we still have claims to the Bosnian throne, and can raise them again."
+ cli_bosnia_claims_tt:0 "Ally, have §G150§! opinion, a marriage, or a subject relationship with any Christian country that has their capital in the §YBalkans§! or §YCarpathia§! region."
+ CLI_IF_RELATIONS_IMPROVED:0 "If we finish this mission through §MRelations and Spies§!:"
+ CLI_IF_BOSNIA_CONQUERED:0 "If we finish this mission through §MConquest or Vassalage§!:"
 
  cli_bosnia_king_title:0 "King of Bosnia"
  cli_bosnia_king_desc:0 "With the ongoing Civil War in Bosnia, we have a great opportunity to use our claims and swoop in as the true heirs of the kingdom."
 
  cli_purge_heretics_title:0 "Purge the Heretics"
  cli_purge_heretics_desc:0 "Much of Bosnia harbors heretics that don't follow either Catholicism or Orthodoxy, to hold a solid kingdom we need to religiously unite our people."
+ cli_purge_heretics_tt:0 "§GInherit§! our §YBosnian Subject§!."
+ CLI_IF_BOSNIA_UNDER_60:0 "If our §MBosnian Subject§! is §MUnder 60 Development§!:"
+ CLI_IF_BOSNIA_ABOVE_60:0 "If our §MBosnian Subject§! is §MAbove 60 Development§! or we don't have one:"
 
  cli_protect_albanians_title:0 "Protect the Albanians"
  cli_protect_albanians_desc:0 "While the League of Lezhe is trying their best, they simply do not have the resources to defend themselves against the Turkish threat. Let us engage in diplomacy with them and see what we can do."
+ CLI_IF_ALBANIA_CONQUERED:0 "If §MAlbanian Lands§! are §MConquered§!:"
+ CLI_IF_ALBANIA_BEFRIENDED:0 "If §M[ALB.GetName]§! is §MAllied or Guaranteed§!:"
 
  cli_launch_crusade_title:0 "Launch a Crusade"
  cli_launch_crusade_desc:0 "Now that we have secured our Balkan brothers, we must face what was actually threatening them- The Scourge of Europe, the Ottoman Empire. It's time to fight for Christendom!"
+ CLI_IN_CRUSADE:0 "If currently §Min a War§! against the §MOttomans§!:"
+ CLI_WON_CRUSADE:0 "If §MWon War§! against the Ottomans in the last §M10 Years§!:"
 
  cli_recover_bulgaria_title:0 "Recover Bulgaria"
  cli_recover_bulgaria_desc:0 "With the success of our Holy War we can establish a large frontline against the Ottomans, and secure the lands of our Bulgarian brethren."
@@ -84,23 +100,28 @@
  cli_drive_out_turks_title:0 "Drive out the Turks"
  cli_drive_out_turks_desc:0 "Our successes in the Balkans have proven that the Ottomans aren't such a mighty threat after all. We must do what the Hungarians couldn't and launch another Crusade to get them out of Europe entirely!"
 
- cli_be_cilli_title:0 "§OBe Cilli§!"
+ cli_be_cilli_title:0 "[Root.GetPreviewColorCLI]Be Cilli[Root.GetPreviewColorCLI_end]"
  cli_be_cilli_desc:0 "We need to take pride of our German heritage, and take lead over the Holy Roman Empire as the new rising power of it, as we have proven with our massive territorial increases."
+ cli_be_cilli_tt:0 "§RCompleting this mission will prevent you from forming other nations.§!"
 
- cli_convert_illyria_title:0 "§OGermanize Illyria§!"
- cli_convert_illyria_desc:0 "The South Slavic people of the Balkans live a different way of life from us, and are not assimilating well into the Holy Roman Empire. We have to increase our germanization efforts and get rid of the notions of Eastern Orthodoxy that have been plaguing them."
+ cli_convert_illyria_title:0 "[Root.GetPreviewColorCLI]Germanize Illyria[Root.GetPreviewColorCLI_end]"
+ cli_convert_illyria_desc:0 "The South Slavic people of the Balkans live a different way of life from us, and are not assimilating well into the Holy Roman Empire. We have to increase our germanization efforts and get rid of the heresies that have been plaguing them."
+ cli_convert_illyria_tt:0 "Ten owned provinces §Yfulfilling the requirements§! will receive §G1§! random development."
 
- cli_german_industry_title:0 "§OGerman Industry§!"
+ cli_german_industry_title:0 "[Root.GetPreviewColorCLI]German Industry[Root.GetPreviewColorCLI_end]"
  cli_german_industry_desc:0 "With a new culture in Illyria, we can finally start industrializing the region and creating loads of Manufactories to power our eonomy, fueling our efforts of dominance over Europe."
+ cli_german_industry_tt:0 "from the provinces in §YIllyria§!."
 
- cli_illyrian_renaissance_title:0 "§OIllyrian Renaissance§!"
+ cli_illyrian_renaissance_title:0 "[Root.GetPreviewColorCLI]Illyrian Renaissance[Root.GetPreviewColorCLI_end]"
  cli_illyrian_renaissance_desc:0 "Inspired by the classical heritage of our Illyrian ancestors, it's time for a new age of innovations, art and philosophy to take hold in our lands."
+ cli_illyrian_renaissance_tt:0 "Three random provinces §Yabove 25 development§! will receive a §YUniversity§!."
 
- cli_educating_population_title:0 "§OEducating the Population§!"
- cli_educating_population_desc:0 "With the Renaissance taking hold in our lands, it is a good time to start educating our populace and develop our nation. It's time to build schools and spread knowledge to the realm."
+ cli_educating_population_title:0 "[Root.GetPreviewColorCLI]Celje Trading Schools[Root.GetPreviewColorCLI_end]"
+ cli_educating_population_desc:0 "With the Renaissance taking hold in our lands, it is a good time to start educating our populace. We will build schools for up-and-coming traders and have massive benefits from it soon."
+ cli_educating_population_tt:0 "From now on, every province with a §YUniversity§! will gain §G+10§! §YTrade Power§!."
 
- cli_mediterranean_dominance_title:0 "§OMediterranean Dominance§!"
- cli_mediterranean_dominance_desc:0 "With our control over the east of the Mediterranean, it is our duty to exploit the land and sea we fought for to the best of our ability and become far and away the strongest trade power in the region, bringing security to our people."
+ cli_mediterranean_dominance_title:0 "[Root.GetPreviewColorCLI]Mediterranean Dominance[Root.GetPreviewColorCLI_end]"
+ cli_mediterranean_dominance_desc:0 "With our control over the east of the Mediterranean, it is our duty to exploit the land and sea we fought for!"
 
  cli_branch_1_title:0 "Branching Mission"
  cli_branch_1_desc:0 "This mission is a §YBranching Mission§!. Through events or through other missions, this mission will be replaced with a new, final version."
@@ -111,16 +132,17 @@
  cli_branch_3_title:0 "Branching Mission"
  cli_branch_3_desc:0 "This mission is a §YBranching Mission§!. Through events or through other missions, this mission will be replaced with a new, final version."
 
- cli_protect_borders_title:0 "§OSave Imperial Borders§!"
+ cli_protect_borders_title:0 "[Root.GetPreviewColorCLI]Save Imperial Borders[Root.GetPreviewColorCLI_end]"
  cli_protect_borders_desc:0 "Foreign powers have stopped taking the Holy Roman Empire seriously. As the Emperor, we have to secure the Imperial Border and show once again that we are the premier power in Europe."
 
- cli_old_order_title:0 "§OAn Old World Order§!"
+ cli_old_order_title:0 "[Root.GetPreviewColorCLI]An Old World Order[Root.GetPreviewColorCLI_end]"
  cli_old_order_desc:0 "With the success of our border defense, now it is time for the offense. We have to expand the size of the Empire if we wish to survive in Europe."
+ cli_old_order_tt:0 "Unlock the '§YImperial Cut-down§!' casus-belli on nations not in the §YHoly Roman Empire§! owning provinces in §YEurope§!. Releasing nations and vassals out of them only costs §G30.0%§! Warscore. We will have this casus-belli as long as we are the §YEmperor§!."
 
- cli_spread_to_romania_title:0 "§OSpread to Dacia§!"
+ cli_spread_to_romania_title:0 "[Root.GetPreviewColorCLI]Spread to Dacia[Root.GetPreviewColorCLI_end]"
  cli_spread_to_romania_desc:0 "The Romanians, while they don't speak our language, still share a lot in common with us, and we should strive to incorporate them in our Balkan Empire."
 
- cli_cradle_of_civilization_title:0 "§OCradle of Civilization§!"
+ cli_cradle_of_civilization_title:0 "[Root.GetPreviewColorCLI]Cradle of Civilization[Root.GetPreviewColorCLI_end]"
  cli_cradle_of_civilization_desc:0 "The Greeks have been the Cradle of Western Civilization, and while they have been powerless against the Ottoman Menace, we can still learn a lot from them, as they can from us. Let us incorporate their people and teachings for a better, more distinguished nation."
 
  cli_branch_4_title:0 "Branching Mission"
@@ -129,8 +151,49 @@
  cli_branch_5_title:0 "Branching Mission"
  cli_branch_5_desc:0 "This mission is a §YBranching Mission§!. Through events or through other missions, this mission will be replaced with a new, final version."
 
+ cli_this_is_a_branching_mission:0 "This is a §YBranching Mission§!. Complete §YReform the Principality§! Mission to preview each branch."
+ cli_slavic_branch:0 "Slavic Path"
+ cli_german_branch:0 "German Path"
+ cli_preview_slavic_branch:0 "Preview the '§OSlavic§!' Mission Tree."
+ cli_preview_german_branch:0 "Preview the '§OGerman§!' Mission Tree."
+
  cli_carniolan_development:0 "Windic Development"
  desc_cli_carniolan_development:0 "With the Windic March in our hands, we can focus on it more than the spread out Austrians."
+ cli_free_port_of_trieste:0 "Free Port of Trieste"
+ desc_cli_free_port_of_trieste:0 "The city of Trieste's semi-autonomous port entices lots of people to trade in it."
+ cli_lipizzan:0 "Lipizzaner Stallions"
+ desc_cli_lipizzan:0 "Our army and nobility are using the glorious Lipizzaner horses we have bred."
+ cli_serbian_protectors:0 "Serbian Protectors"
+ desc_cli_serbian_protectors:0 "We are seen more favorably by others for protecting the Serbian culture."
+ cli_warring_ottomans:0 "Warring the Turks"
+ desc_cli_warring_ottomans:0 "We are in a war for Christendom, our soldiers will not give up easily!"
+ cli_celebrating_crusade:0 "Celebrating Crusade Victory"
+ desc_cli_celebrating_crusade:0 "We have recently won a crusade against the Ottomans, making our people happier."
+ cli_shipbuilding:0 "Preparing the Fleet"
+ desc_cli_shipbuilding:0 "With a sizable coast, now is the decisive time to prepare a fleet to seize Venice!"
+ cli_inheritance_agreement:0 "Inheritance Agreement"
+ desc_cli_inheritance_agreement:0 "If our dynasty dies out, the Habsburgs will annex our lands!"
+ cli_be_cilli_mod:0 "Be Cilli"
+ desc_cli_be_cilli_mod:0 "We take pride in our German heritage and are not willing to change from it."
+ cli_germanized_illyria:0 "Germanized Illyria"
+ desc_cli_germanized_illyria:0 "With the people in Illyria being Germanized, we will be able to better utilize the lands."
+ cli_industrialized_illyria:0 "Industrialized Illyria"
+ desc_cli_industrialized_illyria:0 "Illyria is now a manufacturing powerhouse, being our nation's economic heartland."
+ cli_illyrian_renaissance_mod:0 "Illyrian Renaissance"
+ desc_cli_illyrian_renaissance_mod:0 "The ideas of the Renaissance are spreading through our lands."
+ cli_mediterranean_dominance_mod:0 "Mediterranean Dominance"
+ desc_cli_mediterranean_dominance_mod:0 "We have secured both sides of the Mediterranean, making collecting trade from each one easier."
+ cli_cradle_of_civilization_mod:0 "Cradle of Western Civilization"
+ desc_cli_cradle_of_civilization_mod:0 "Many of classical vilization's ideas originated in the city of Athens, making it the birthplace of Western Civilization."
 
- free_port_of_trieste:0 "Free Port of Trieste"
- desc_free_port_of_trieste:0 "The city of Trieste's semi-autonomous port entices lots of people to trade in it."
+ cilli_flavor.1.title:0 "An Agreement"
+ cilli_flavor.1.desc:0 "The rulers of Cilli have ended their war with the Habsburgs with an inheritance agreement. If either of the dynasties are wiped out, the other will inherit their lands. Seeing how much bigger they are, this does not favor us.\nWe must seek ways to break this pact."
+ cilli_flavor.1.a:0 "Let us begin."
+ cilli_flavor.2.title:0 "A Closure"
+ cilli_flavor.2.desc:0 "Our dynasty has died out. On the rights of the inheritance agreement, our lands are to be seized by the Habsburgs."
+ cilli_flavor.2.a:0 "And so it shall be."
+ cilli_flavor.2.b:0 "Crown a nobleman and fight!"
+ cilli_flavor.3.title:0 "Government Reforms"
+ cilli_flavor.3.desc:0 "Our court diplomacy and intrigue has been going fantastically. Our regencies have shown us the way, we should reform the government to do them more in the future!"
+ cilli_flavor.3.a:0 "Let's do it!"
+ cilli_flavor.3.b:0 "The time is not right."

@@ -104,19 +104,22 @@ legitimist_rebels = {
    country_event = { id = internal_conflicts.8 }
    end_disaster = internal_conflicts
   }
-  overlord = {
-   add_prestige = -25
-   add_opinion = {
-    who = PREV
-    modifier = lost_regency
-    years = 5
+  if = {
+   limit = { is_subject_of_type = regency }
+   overlord = {
+    add_prestige = -25
+    add_opinion = {
+     who = PREV
+     modifier = lost_regency
+     years = 5
+    }
+    reverse_add_opinion = {
+     who = PREV
+     modifier = lost_regency
+     years = 5
+    }
    }
-   reverse_add_opinion = {
-    who = PREV
-    modifier = lost_regency
-    years = 5
-   }
+   kill_ruler = yes
   }
-  kill_ruler = yes
  }
 }

@@ -11,6 +11,7 @@ regency = {
  restoration_cb = null
  uses_military_focus = no
  counts_for_borders = no
+ is_voluntary = yes
  can_transfer_in_peace = no
  can_send_missionary_to_subject = no
  does_overlord_size_count_for_warscore_cost = no

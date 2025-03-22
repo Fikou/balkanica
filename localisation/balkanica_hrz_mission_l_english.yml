@@ -57,3 +57,7 @@
 
  hrz_token_reward:0 "Bulwark in the Balkans"
  desc_hrz_token_reward:0 "Bulwark in the Balkans"
+
+ hum_flavor.1.title:0 "Civil War!"
+ hum_flavor.1.desc:0 "Since Tvrtko's death in September 1443 and the election of Thomas as the King of Bosnia the realm has been experiencing a Civil War. The nobles have went against Radivoj, the true heir to Bosnia, who has ended up at our court.\nTo end the civil war, we have to either crush them militarily, set up a royal marriage between us or get the support of several powers in the region."
+ hum_flavor.1.a:0 "Time to deal with the false king."

@@ -17,3 +17,15 @@
  desc_mon_black_mountain_mod:0 "Da je vjecna Crna Gora!"
  mon_printing_press_mod:0 "Printing House"
  desc_mon_printing_press_mod:0 "The Crnojevic printing house was the first of its kind in Southeastern Europe, and with it innovations and prosperity spread to our people."
+
+ montenegro_flavor.1.title:0 "Crown or Cross?"
+ montenegro_flavor.1.desc:0 "In a vision, $MONARCH$ saw $COUNTRY$ as the last bastion of Orthodoxy, leading the faithful with divine guidance and striking down the infidels in its path. Should we embrace this destiny and elevate the power of the Metropolitanate?"
+ montenegro_flavor.1.a:0 "A bishop's life for me!"
+ montenegro_flavor.1.b:0 "A dream cannot be a basis for a state."
+
+ montenegro_flavor.2.title:0 "A Noble Request"
+ montenegro_flavor.2.desc:0 "The noble family of Crnojevic has made demands. They want to leave our suzerainty and rule the territory of Zeta on their own. Should we let them lead their own destiny or face an open rebellion?"
+ montenegro_flavor.2.a:0 "That's one less thing to worry about."
+ montenegro_flavor.2.b:0 "I wonder how they will fare..."
+ montenegro_flavor.2.c:0 "Raise the armies!"
+ montenegro_flavor.2.tt:0 "Release Zeta from all of our provinces they have cores on."

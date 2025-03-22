@@ -140,46 +140,22 @@ bos_1 = {
 			OR = {
 				AND = {
 					province_id = 140
-					NOT = {
-						OR = {
-							has_building = fort_15th
-							has_building = fort_16th
-							has_building = fort_17th
-							has_building = fort_18th
-						}
-					}
+					has_fort_building_trigger = no
 				}
 				AND = {
 					area = rascia_area
-					NOT = {
-						OR = {
-							has_building = fort_15th
-							has_building = fort_16th
-							has_building = fort_17th
-							has_building = fort_18th
-						}
-					}
+					has_fort_building_trigger = no
 				}
 			}
 		}
 
 		trigger = {
 			140 = {
-				OR = {
-					has_building = fort_15th
-					has_building = fort_16th
-					has_building = fort_17th
-					has_building = fort_18th
-				}
+				has_fort_building_trigger = yes
 			}
 			any_owned_province = {
 				area = rascia_area
-				OR = {
-					has_building = fort_15th
-					has_building = fort_16th
-					has_building = fort_17th
-					has_building = fort_18th
-				}
+				has_fort_building_trigger = yes
 			}
 		}
 
@@ -192,12 +168,7 @@ bos_1 = {
 			}
 			rascia_area = {
 				limit = {
-					OR = {
-						has_building = fort_15th
-						has_building = fort_16th
-						has_building = fort_17th
-						has_building = fort_18th
-					}
+					has_fort_building_trigger = yes
 				}
 				add_province_modifier = {
 					name = "bos_misc_fort_temp_modifier"
@@ -233,7 +204,7 @@ bos_1 = {
 					}
 				}
 			}
-			country_event = { id = bos_missions.17 }
+			country_event = { id = bosnia_flavor.17 }
 			custom_tooltip = bos_develop_capital_event_tt
 		}
 	}
@@ -823,7 +794,7 @@ bos_3 = {
 					limit = { has_country_flag = bos_civil_war_resolved_diplomatically }
 					hidden_effect = {
 						country_event = {
-							id = bos_missions.16
+							id = bosnia_flavor.16
 							days = 24
 							random = 12
 							tooltip = bos_ragusa_via_war_tt
@@ -1263,7 +1234,7 @@ bos_catholic_branch = {
 		}
 
 		effect = {
-			country_event = { id = bos_missions.10 }
+			country_event = { id = bosnia_flavor.10 }
 			custom_tooltip = bos_catholic_djed_insight_tt
 		}
 	}
@@ -1316,10 +1287,7 @@ bos_catholic_branch = {
 			calc_true_if = {
 				amount = 12
 				all_owned_province = {
-					OR = {
-						has_building = temple
-						has_building = cathedral
-					}
+					has_tax_building_trigger = yes
 				}
 			}
 		}
