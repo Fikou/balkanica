@@ -140,6 +140,7 @@ bos_civil_war_resolved_through_foreign_invaders_trigger = {
  custom_trigger_tooltip = {
   tooltip = bos_civil_war_resolved_through_foreign_invaders_tt
   OR = {
+   has_country_flag = bos_civil_war_resolved_inconclusively
    # is BOS and someone vassalized HRZ
    AND = {
     tag = BOS
