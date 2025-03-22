@@ -571,20 +571,14 @@ country_event = {
 
  immediate = {
   hidden_effect = {
-   if = {
-    limit = {
-     tag = BOS
-    }
+   BOS = {
     complete_mission = bos_civil_war
     complete_mission = bos_approach_aragon
     complete_mission = bos_approach_hungary
     complete_mission = bos_approach_serbia
     complete_mission = bos_approach_austria
    }
-   if = {
-    limit = {
-     tag = HRZ
-    }
+   HRZ = {
     complete_mission = hrz_civil_war
     complete_mission = hrz_approach_aragon
     complete_mission = hrz_approach_hungary
@@ -601,13 +595,10 @@ country_event = {
    }
    custom_tooltip = bos_civil_war_resolved_inconclusively_tt
    hidden_effect = {
-    set_country_flag = bos_civil_war_resolved_inconclusively
-    HUN = {
-     remove_guarantee = BOS
-    }
-    ARA = {
-     remove_guarantee = HRZ
-    }
+    BOS = { set_country_flag = bos_civil_war_resolved_inconclusively }
+    HRZ = { set_country_flag = bos_civil_war_resolved_inconclusively }
+    HUN = { remove_guarantee = BOS }
+    ARA = { remove_guarantee = HRZ }
    }
   }
   else ={
