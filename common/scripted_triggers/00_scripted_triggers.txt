@@ -202,6 +202,7 @@ is_subject_other_than_tributary_trigger = { #Ie Tags that cannot conduct indepen
 		is_subject = yes
 		NOT = { is_subject_of_type = tributary_state }
 		NOT = { is_subject_of_type = cultural_sphere_of_influence_subject }
+  NOT = { is_subject_of_type = regency }
 	}
 }
 
@@ -212,6 +213,7 @@ is_free_or_tributary_trigger = { #I.e. Tags that can conduct independent diploma
 			is_subject = no
 			is_subject_of_type = tributary_state
 			is_subject_of_type = cultural_sphere_of_influence_subject
+   is_subject_of_type = regency
 		}
 	}
 }
@@ -633,6 +635,7 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { tag = RZI }
 				NOT = { tag = SCA }
     NOT = { tag = ILY }
+    NOT = { has_country_modifier = cli_be_cilli_mod }
 			}
 		}
 	}

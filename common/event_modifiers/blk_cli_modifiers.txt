@@ -2,8 +2,80 @@ cli_carniolan_development = {
  local_development_cost = -0.10
 }
 
-free_port_of_trieste = {
+cli_free_port_of_trieste = {
  min_local_autonomy = 25
  province_trade_power_modifier = 0.5
- trade_steering = 0.1
+ trade_efficiency = 0.05
+ trade_steering = 0.15
+}
+
+cli_trading_school = {
+ province_trade_power_value = 10
+}
+
+cli_cradle_of_civilization_mod = {
+ yearly_innovativeness = 0.1
+ reform_progress_growth = 0.15
+}
+
+cli_lipizzan = {
+ cavalry_power = 0.1
+ cavalry_flanking = 0.5
+ movement_speed = 0.1
+ prestige_decay = -0.01
+}
+
+cli_serbian_protectors = {
+ diplomatic_reputation = 1
+ improve_relation_modifier = 0.15
+ rival_border_fort_maintenance = -1
+}
+
+cli_warring_ottomans = {
+ land_morale = 0.1
+ recover_army_morale_speed = 0.25
+ reinforce_speed = 0.25
+ warscore_cost_vs_other_religion = -0.2
+}
+
+cli_celebrating_crusade = {
+ core_creation = -0.15
+ tolerance_own = 2
+ tolerance_heretic = 2
+ prestige_decay = -0.01
+}
+
+cli_shipbuilding = {
+ global_ship_cost = -0.15
+ global_ship_recruit_speed = -0.25
+}
+
+cli_inheritance_agreement = {
+ heir_chance = -0.5
+}
+
+cli_be_cilli_mod = {
+ imperial_authority = 0.1
+ diplomatic_upkeep = 1
+ culture_conversion_cost = -0.25
+ culture_conversion_time = -0.2
+}
+
+cli_germanized_illyria = {
+ development_cost_in_primary_culture = -0.15
+ same_culture_advisor_cost = -0.15
+ build_time = -0.1
+}
+
+cli_industrialized_illyria = {
+ production_efficiency = 0.15
+}
+
+cli_illyrian_renaissance_mod = {
+ idea_cost = -0.1
+ technology_cost = -0.1
+}
+
+cli_mediterranean_dominance_mod = {
+ reduced_trade_penalty_on_non_main_tradenode = 0.2
 }

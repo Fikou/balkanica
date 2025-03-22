@@ -1,7 +1,1112 @@
 namespace = bosnia_flavor
 
+# clears serbian gold mines
 country_event = {
  id = bosnia_flavor.1
+ title = bosnia_flavor.1.title
+ desc = bosnia_flavor.1.desc
+ picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+
+ trigger = {
+  any_owned_province = {
+   has_province_flag = bos_temp_exploiting_silver
+   has_province_modifier = bos_temp_silver_mining
+   trade_goods = gold
+  }
+ }
+
+ mean_time_to_happen = {
+  months = 12
+ }
+
+ option = {
+  name = bosnia_flavor.1.a
+  every_owned_province = {
+   limit = {
+    has_province_flag = bos_temp_exploiting_silver
+    has_province_modifier = bos_temp_silver_mining
+    trade_goods = gold
+   }
+   clr_province_flag = bos_temp_exploiting_silver
+   if = {
+    limit = {
+     province_id = 4757
+    }
+    change_trade_goods = grain
+   }
+   if = {
+    limit = {
+     province_id = 1827
+    }
+    change_trade_goods = livestock
+   }
+   add_base_production = -2
+  }
+ }
+}
+
+#papal legate
+country_event = {
+ id = bosnia_flavor.2
+ title = bosnia_flavor.2.title
+ desc = {
+  desc = bosnia_flavor.2.desc_a
+  trigger = { NOT = { mission_completed = bos_resolve_civil_war } }
+ }
+ desc = {
+  desc = bosnia_flavor.2.desc_b
+  trigger = { mission_completed = bos_resolve_civil_war }
+ }
+ picture = CHURCH_ESTATE_1_eventPicture
+
+ fire_only_once = yes
+ major = yes
+ major_trigger = {
+  religion = krstjani
+  tag = PAP
+ }
+ trigger = { # i'm not adding a trigger to check if the pope exists. they PROBABLY exist this early into the game.
+   tag = BOS
+   religion = krstjani
+   NOT = { has_country_flag = blk_catholic }
+   NOT = { has_country_flag = blk_krstjani }
+   mission_completed = bos_civil_war
+  }
+
+ mean_time_to_happen = {
+  months = 72
+  modifier = {
+   factor = 0.5
+   mission_completed = bos_resolve_civil_war
+  }
+ }
+
+ option = {
+  name = bosnia_flavor.2.a
+  hidden_effect = {
+   set_country_flag = blk_krstjani
+  }
+  custom_tooltip = bosnia_flavor_2_krstjani_tt
+  custom_tooltip = bos_newline
+  PAP = {
+   add_opinion = {
+    who = ROOT
+    modifier = pope_rebuffed
+   }
+  }
+  add_opinion = {
+   who = PAP
+   modifier = pope_rebuffed
+  }
+  custom_tooltip = bos_newline
+  swap_non_generic_missions = yes
+  ai_chance = {
+   factor = 40
+  }
+ }
+ option = {
+  name = bosnia_flavor.2.b
+  hidden_effect = {
+   set_country_flag = blk_catholic
+  }
+  if = {
+   limit = {
+    NOT = { mission_completed = bos_resolve_civil_war }
+   }
+   bos_civil_war_gain_support_effect = {
+    faction = PAP
+   }
+  }
+  custom_tooltip = bosnia_flavor_2_catholic_tt
+  custom_tooltip = bos_newline
+  PAP = {
+   add_opinion = {
+    who = ROOT
+    modifier = pope_accepted
+   }
+  }
+  add_opinion = {
+   who = PAP
+   modifier = pope_accepted
+  }
+  add_country_modifier = {
+   name = bos_converted
+   duration = 7300
+  }
+  change_religion = catholic
+  custom_tooltip = bos_newline
+  every_owned_province = {
+   limit = {
+    religion = krstjani
+   }
+   spawn_rebels = {
+    type = heretic_rebels
+    size = 0.75
+   }
+  }
+  custom_tooltip = bos_newline
+  swap_non_generic_missions = yes
+  ai_chance = {
+   factor = 60
+   modifier = {
+    factor = 0 # f the pope we're never converting
+    OR = {
+     is_rival = PAP
+     PAP = { is_rival = ROOT }
+    }
+   }
+   modifier = {
+    factor = 2
+    alliance_with = PAP
+   }
+  }
+ }
+}
+
+# hungary support post-civil-war resolved
+country_event = {
+ id = bosnia_flavor.3
+ title = bosnia_flavor.3.title
+ desc = bosnia_flavor.3.desc
+ picture = ANGRY_MOB_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_resolve_civil_war
+    bos_has_country_support_trigger = { faction = HUN }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_resolve_civil_war
+    bos_has_country_support_trigger = { faction = HUN }
+   }
+  }
+ }
+
+ mean_time_to_happen = {
+  months = 72
+ }
+
+ option = {
+  name = bosnia_flavor.3.a
+  add_stability = -1
+ }
+}
+
+# austria support post-civil-war resolved
+country_event = {
+ id = bosnia_flavor.4
+ title = bosnia_flavor.4.title
+ desc = bosnia_flavor.4.desc
+ picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  HAB = { exists = yes }
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_resolve_civil_war
+    bos_has_country_support_trigger = { faction = HAB }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_resolve_civil_war
+    bos_has_country_support_trigger = { faction = HAB }
+   }
+  }
+ }
+
+ mean_time_to_happen = {
+  months = 72
+ }
+
+ option = {
+  name = bosnia_flavor.4.a
+  croatia_area = {
+   add_claim = HAB
+  }
+  east_adriatic_coast_area = {
+   limit = {
+    NOT = { province_id = 137 }
+   }
+   add_claim = HAB
+  }
+  ai_chance = {
+   factor = 100
+  }
+ }
+ option = {
+  name = bosnia_flavor.4.b
+  HAB = {
+   add_casus_belli = {
+    target = ROOT
+    type = cb_vassalize_mission
+    months = 300
+   }
+   add_opinion = {
+    who = ROOT
+    modifier = bos_declined_post_support
+   }
+  }
+  ai_chance = {
+   factor = 0
+  }
+ }
+}
+
+# serbia support post-civil-war resolved
+country_event = {
+ id = bosnia_flavor.5
+ title = bosnia_flavor.5.title
+ desc = bosnia_flavor.5.desc
+ picture = NOBLE_ESTATE_DEMANDS_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  SER = { exists = yes }
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_resolve_civil_war
+    bos_has_country_support_trigger = { faction = SER }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_resolve_civil_war
+    bos_has_country_support_trigger = { faction = SER }
+   }
+  }
+ }
+
+ mean_time_to_happen = {
+  months = 72
+ }
+
+ option = {
+  name = bosnia_flavor.5.a
+  add_truce_with = SER
+  ai_chance = {
+   factor = 100
+  }
+ }
+ option = {
+  name = bosnia_flavor.5.b
+  SER = {
+   add_casus_belli = {
+    target = ROOT
+    type = cb_border_war
+    months = 240
+   }
+   add_opinion = {
+    who = ROOT
+    modifier = bos_declined_post_support
+   }
+  }
+  ai_chance = {
+   factor = 0
+  }
+ }
+}
+
+# aragon support post-civil-war resolved
+country_event = {
+ id = bosnia_flavor.6
+ title = bosnia_flavor.6.title
+ desc = bosnia_flavor.6.desc
+ picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  ARA = { exists = yes }
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_resolve_civil_war
+    bos_has_country_support_trigger = { faction = ARA }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_resolve_civil_war
+    bos_has_country_support_trigger = { faction = ARA }
+   }
+  }
+ }
+
+ mean_time_to_happen = {
+  months = 72
+ }
+
+ option = {
+  name = bosnia_flavor.6.a
+  ARA = { vassalize = ROOT }
+  ai_chance = {
+   factor = 0
+  }
+ }
+ option = {
+  name = bosnia_flavor.6.b
+  ARA = {
+   add_casus_belli = {
+    target = ROOT
+    type = cb_vassalize_mission
+    months = 480
+   }
+   add_opinion = {
+    who = ROOT
+    modifier = bos_declined_post_support
+   }
+  }
+  ai_chance = {
+   factor = 100
+  }
+ }
+}
+
+# hum and ragusa revolt!
+country_event = {
+ id = bosnia_flavor.7
+ title = bosnia_flavor.7.title
+ desc = bosnia_flavor.7.desc
+ picture = ANGRY_MOB_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  tag = BOS
+  has_country_flag = bos_hum_ragusa_revolt
+ }
+
+ mean_time_to_happen = {
+  months = 72
+ }
+
+ immediate = {
+  139 = {
+   spawn_rebels = {
+    size = 2
+    type = noble_rebels
+    friend = RAG
+    should_take_capital = yes
+    win = yes
+   }
+  }
+  1831 = {
+   spawn_rebels = {
+    size = 1
+    type = noble_rebels
+    friend = RAG
+    should_take_capital = yes
+    win = yes
+   }
+  }
+  137 = {
+   spawn_rebels = {
+    size = 1
+    type = nationalist_rebels
+    friend = RAG
+    separatists_target = RAG
+    should_take_capital = yes
+   }
+  }
+ }
+
+ option = {
+  name = bosnia_flavor.7.a
+  hidden_effect = {
+   clr_country_flag = bos_hum_ragusa_revolt
+  }
+ }
+}
+
+# fire ottoman prepared buff
+country_event = {
+ id = bosnia_flavor.8
+ title = bosnia_flavor.8.title
+ desc = bosnia_flavor.8.desc
+ picture = RELIGIOUS_WARS_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  tag = BOS
+  OR = {
+   AND = {
+    tur_owns_any_balkan_provices = yes
+    OR = {
+     defensive_war_with = TUR
+     offensive_war_with = TUR
+    }
+   }
+   AND = {
+    tur_owns_any_balkan_provices = no
+    any_country = {
+     OR = {
+      defensive_war_with = ROOT
+      offensive_war_with = ROOT
+     }
+     AND = {
+      land_forcelimit = ROOT
+      has_eclipsed = ROOT
+     }
+    }
+   }
+  }
+  has_country_flag = bos_prepared_for_ottoman_invasion
+ }
+
+ mean_time_to_happen = {
+  days = 30
+ }
+
+ option = {
+  name = bosnia_flavor.8.a
+  hidden_effect = {
+   clr_country_flag = bos_prepared_for_ottoman_invasion
+  }
+  if = {
+   limit = {
+    any_country = {
+     offensive_war_with = ROOT
+    }
+   }
+   add_country_modifier = {
+    name = bos_defensive_ottoman_invasion_buff
+    duration = -1
+   }
+  }
+  else = {
+   add_country_modifier = {
+    name = bos_offensive_ottoman_invasion_buff
+    duration = -1
+   }
+  }
+ }
+}
+
+# remove the buffs when the war ends
+country_event = {
+ id = bosnia_flavor.9
+ title = bosnia_flavor.9.title
+ desc = bosnia_flavor.9.desc
+ picture = MARCHING_PEASANTS_eventPicture
+
+ trigger = {
+  tag = BOS
+  is_at_war = no
+  OR = {
+   has_country_modifier = bos_defensive_ottoman_invasion_buff
+   has_country_modifier = bos_offensive_ottoman_invasion_buff
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 3
+ }
+
+ option = {
+  name = bosnia_flavor.9.a
+  remove_country_modifier = bos_defensive_ottoman_invasion_buff
+  remove_country_modifier = bos_offensive_ottoman_invasion_buff
+ }
+}
+
+# integrate or exile the djed
+country_event = {
+ id = bosnia_flavor.10
+ title = bosnia_flavor.10.title
+ desc = bosnia_flavor.10.desc
+ picture = CHURCH_ESTATE_1_eventPicture
+
+ is_triggered_only = yes
+
+ option = {
+  name = bosnia_flavor.10.a
+  add_country_modifier = {
+   name = bos_integrated_djed
+   duration = -1
+  }
+  ai_chance = {
+   factor = 80
+  }
+ }
+ option = {
+  name = bosnia_flavor.10.b
+  add_country_modifier = {
+   name = bos_exiled_djed
+   duration = -1
+  }
+  ai_chance = {
+   factor = 20
+  }
+ }
+}
+
+# end of the civil war
+country_event = {
+ id = bosnia_flavor.11
+ title = bosnia_flavor.11.title
+ desc = bosnia_flavor.11.desc
+ picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  OR = {
+   AND = {
+    tag = BOS
+    NOT = { mission_completed = bos_resolve_civil_war }
+   }
+   AND = {
+    tag = HRZ
+    NOT = { mission_completed = hrz_resolve_civil_war }
+   }
+  }
+  bos_civil_war_resolved_trigger = yes
+ }
+
+ mean_time_to_happen = {
+  days = 7
+ }
+
+ immediate = {
+  hidden_effect = {
+   if = {
+    limit = {
+     tag = BOS
+    }
+    complete_mission = bos_civil_war
+    complete_mission = bos_approach_aragon
+    complete_mission = bos_approach_hungary
+    complete_mission = bos_approach_serbia
+    complete_mission = bos_approach_austria
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    complete_mission = hrz_civil_war
+    complete_mission = hrz_approach_aragon
+    complete_mission = hrz_approach_hungary
+    complete_mission = hrz_approach_serbia
+    complete_mission = hrz_approach_austria
+   }
+  }
+ }
+ option = {
+  name = bosnia_flavor.11.a
+  if = {
+   limit = {
+    bos_civil_war_resolved_through_foreign_invaders_trigger = yes
+   }
+   custom_tooltip = bos_civil_war_resolved_inconclusively_tt
+   hidden_effect = {
+    set_country_flag = bos_civil_war_resolved_inconclusively
+    HUN = {
+     remove_guarantee = BOS
+    }
+    ARA = {
+     remove_guarantee = HRZ
+    }
+   }
+  }
+  else ={
+   if = {
+    limit = {
+     tag = BOS
+    }
+    every_province = {
+     limit = {
+      is_core = HRZ
+      NOT = { is_core = BOS }
+     }
+     add_core = BOS
+    }
+    if = {
+     limit = {
+      bos_civil_war_resolved_through_violence_trigger = no
+     }
+     hidden_effect = {
+      set_country_flag = bos_civil_war_resolved_diplomatically
+     }
+     custom_tooltip = bos_civil_war_diplomacy_warning_tt
+     every_province = {
+      limit = {
+       owned_by = HRZ
+      }
+      add_province_modifier = {
+       name = bos_civil_war_provice_mod
+       duration = 18250
+      }
+     }
+     BOS = {
+      inherit = HRZ
+     }
+    }
+    else = {
+     hidden_effect = {
+      set_country_flag = bos_civil_war_resolved_violently
+     }
+    }
+    HUN = {
+     remove_guarantee = BOS
+    }
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    every_province = {
+     limit = {
+      is_core = BOS
+      NOT = { is_core = HRZ }
+     }
+     add_core = HRZ
+    }
+    if = {
+     limit = {
+      bos_civil_war_resolved_through_violence_trigger = no
+     }
+     hidden_effect = {
+      set_country_flag = bos_civil_war_resolved_diplomatically
+     }
+     custom_tooltip = bos_civil_war_diplomacy_warning_tt
+     every_province = {
+      limit = {
+       owned_by = BOS
+      }
+      add_province_modifier = {
+       name = bos_civil_war_provice_mod
+       duration = 18250
+      }
+     }
+     HRZ = {
+      inherit = BOS
+     }
+    }
+    else = {
+     hidden_effect = {
+      set_country_flag = bos_civil_war_resolved_violently
+     }
+    }
+    ARA = {
+     remove_guarantee = HRZ
+    }
+   }
+  }
+ }
+}
+
+# cannot get hungary support
+country_event = {
+ id = bosnia_flavor.12
+ title = bosnia_flavor.12.title
+ desc = bosnia_flavor.12.desc
+ picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_civil_war
+    NOT = { mission_completed = bos_resolve_civil_war }
+    NOT = { mission_completed = bos_approach_hungary }
+    bos_civil_war_check_if_supporting_hrz_trigger = { faction = HUN }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_civil_war
+    NOT = { mission_completed = hrz_resolve_civil_war }
+    NOT = { mission_completed = hrz_approach_hungary }
+    bos_civil_war_check_if_supporting_bos_trigger = { faction = HUN }
+   }
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 3
+ }
+
+ immediate = {
+  hidden_effect = {
+   if = {
+    limit = {
+     tag = BOS
+    }
+    complete_mission = bos_approach_hungary
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    complete_mission = hrz_approach_hungary
+   }
+  }
+ }
+
+ option = {
+  name = bosnia_flavor.12.a
+ }
+}
+
+# cannot get austria support
+country_event = {
+ id = bosnia_flavor.13
+ title = bosnia_flavor.13.title
+ desc = bosnia_flavor.13.desc
+ picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_civil_war
+    NOT = { mission_completed = bos_resolve_civil_war }
+    NOT = { mission_completed = bos_approach_austria }
+    bos_civil_war_check_if_supporting_hrz_trigger = { faction = HAB }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_civil_war
+    NOT = { mission_completed = hrz_resolve_civil_war }
+    NOT = { mission_completed = hrz_approach_austria }
+    bos_civil_war_check_if_supporting_bos_trigger = { faction = HAB }
+   }
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 3
+ }
+
+ immediate = {
+  hidden_effect = {
+   if = {
+    limit = {
+     tag = BOS
+    }
+    complete_mission = bos_approach_austria
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    complete_mission = hrz_approach_austria
+   }
+  }
+ }
+
+ option = {
+  name = bosnia_flavor.13.a
+ }
+}
+
+# cannot get serbia support
+country_event = {
+ id = bosnia_flavor.14
+ title = bosnia_flavor.14.title
+ desc = bosnia_flavor.14.desc
+ picture = NOBLE_ESTATE_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_civil_war
+    NOT = { mission_completed = bos_resolve_civil_war }
+    NOT = { mission_completed = bos_approach_serbia }
+    bos_civil_war_check_if_supporting_hrz_trigger = { faction = SER }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_civil_war
+    NOT = { mission_completed = hrz_resolve_civil_war }
+    NOT = { mission_completed = hrz_approach_serbia }
+    bos_civil_war_check_if_supporting_bos_trigger = { faction = SER }
+   }
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 3
+ }
+
+ immediate = {
+  hidden_effect = {
+   if = {
+    limit = {
+     tag = BOS
+    }
+    complete_mission = bos_approach_serbia
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    complete_mission = hrz_approach_serbia
+   }
+  }
+ }
+
+ option = {
+  name = bosnia_flavor.14.a
+ }
+}
+
+# cannot get aragon support
+country_event = {
+ id = bosnia_flavor.15
+ title = bosnia_flavor.15.title
+ desc = bosnia_flavor.15.desc
+ picture = NOBLE_ESTATE_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  OR = {
+   AND = {
+    tag = BOS
+    mission_completed = bos_civil_war
+    NOT = { mission_completed = bos_resolve_civil_war }
+    NOT = { mission_completed = bos_approach_aragon }
+    bos_civil_war_check_if_supporting_hrz_trigger = { faction = ARA }
+   }
+   AND = {
+    tag = HRZ
+    mission_completed = hrz_civil_war
+    NOT = { mission_completed = hrz_resolve_civil_war }
+    NOT = { mission_completed = hrz_approach_aragon }
+    bos_civil_war_check_if_supporting_bos_trigger = { faction = ARA }
+   }
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 3
+ }
+
+ immediate = {
+  hidden_effect = {
+   if = {
+    limit = {
+     tag = BOS
+    }
+    complete_mission = bos_approach_aragon
+   }
+   if = {
+    limit = {
+     tag = HRZ
+    }
+    complete_mission = hrz_approach_aragon
+   }
+  }
+ }
+
+ option = {
+  name = bosnia_flavor.15.a
+ }
+}
+
+# hum and ragusa revolt is brewing
+country_event = {
+ id = bosnia_flavor.16
+ title = bosnia_flavor.16.title
+ desc = bosnia_flavor.16.desc
+ picture = ANGRY_MOB_eventPicture
+
+ is_triggered_only = yes
+
+ immediate = {
+  hidden_effect = {
+   set_country_flag = bos_hum_ragusa_revolt
+  }
+ }
+
+ option = {
+  name = bosnia_flavor.16.a
+ }
+}
+
+# Choosing between mountain and hill privilages
+country_event = {
+ id = bosnia_flavor.17
+ title = bosnia_flavor.17.title
+ desc = bosnia_flavor.17.desc
+ picture = FALUN_COPPER_MINE_eventPicture
+
+ is_triggered_only = yes
+
+ option = {
+  name = bosnia_flavor.17.a
+  custom_tooltip = unlock_privilege_estate_burghers_mountain_expansion_tt
+  hidden_effect = {
+   unlock_estate_privilege = {
+    estate_privilege = estate_burghers_mountain_expansion
+   }
+  }
+  ai_chance = {
+   factor = 100
+  }
+ }
+ option = {
+  name = bosnia_flavor.17.b
+  custom_tooltip = unlock_privilege_estate_burghers_forest_expansion_tt
+  hidden_effect = {
+   unlock_estate_privilege = {
+    estate_privilege = estate_burghers_forest_expansion
+   }
+  }
+  ai_chance = {
+   factor = 0
+  }
+ }
+}
+
+# misc support stuff
+country_event = {
+ id = bosnia_flavor.100
+ title = bosnia_flavor.100.title
+ desc = bosnia_flavor.100.desc
+ picture = WESTERNISATION_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  tag = HUN
+  has_guaranteed = BOS
+  has_guaranteed = RAG
+ }
+
+ mean_time_to_happen = {
+  days = 7
+ }
+
+ option = {
+  name = bosnia_flavor.100.a
+  custom_tooltip = bosnia_flavor_100_tt
+  custom_tooltip = bos_newline
+  add_country_modifier = {
+   name = supporting_bosnia
+   duration = -1
+  }
+  add_country_modifier = {
+   name = supporting_ragusa
+   duration = -1
+  }
+ }
+}
+
+country_event = {
+ id = bosnia_flavor.101
+
+ trigger = {
+  tag = HUN
+  has_country_modifier = supporting_bosnia
+  OR = {
+   NOT = { has_guaranteed = BOS }
+   BOS = { exists = no }
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 1
+ }
+
+ fire_only_once = yes
+ hidden = yes
+
+ option = {
+  remove_country_modifier = supporting_bosnia
+  ai_chance = {
+   factor = 1
+  }
+ }
+}
+
+country_event = {
+ id = bosnia_flavor.102
+
+ trigger = {
+  tag = HUN
+  has_country_modifier = supporting_ragusa
+  OR = {
+   NOT = { has_guaranteed = RAG }
+   RAG = { exists = no }
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 1
+ }
+
+ fire_only_once = yes
+ hidden = yes
+
+ option = {
+  remove_country_modifier = supporting_ragusa
+  ai_chance = {
+   factor = 1
+  }
+ }
+}
+
+country_event = {
+ id = bosnia_flavor.104
+ title = bosnia_flavor.104.title
+ desc = bosnia_flavor.104.desc
+ picture = WESTERNISATION_eventPicture
+
+ fire_only_once = yes
+ trigger = {
+  tag = ARA
+  has_guaranteed = HRZ
+ }
+
+ mean_time_to_happen = {
+  days = 7
+ }
+
+ option = {
+  name = bosnia_flavor.104.a
+  custom_tooltip = bosnia_flavor_104_tt
+  custom_tooltip = bos_newline
+  add_country_modifier = {
+   name = supporting_hum
+   duration = -1
+  }
+ }
+}
+
+country_event = {
+ id = bosnia_flavor.105
+
+ trigger = {
+  tag = ARA
+  has_country_modifier = supporting_hum
+  OR = {
+   NOT = { has_guaranteed = HRZ }
+   HRZ = { exists = no }
+  }
+ }
+
+ mean_time_to_happen = {
+  days = 1
+ }
+
+ fire_only_once = yes
+ hidden = yes
+
+ option = {
+  remove_country_modifier = supporting_hum
+  ai_chance = {
+   factor = 1
+  }
+ }
+}
+
+country_event = {
+ id = bosnia_flavor.1000
  title = bosnia_flavor.1.title
  desc = bosnia_flavor.1.desc
  picture = CIVIL_WAR_eventPicture

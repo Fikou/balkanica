@@ -3,7 +3,15 @@ cli_1 = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  OR = {
+   tag = CLI 
+   AND = {
+    was_tag = CLI
+    tag = ILY
+   }
+  }
+ } 
 
  cli_seize_carniola = {
   icon = mission_unite_home_region
@@ -15,9 +23,9 @@ cli_1 = {
 
   trigger = {
    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				area = carinthia_area
-				value = 4
-			}
+    area = carinthia_area
+    value = 4
+   }
   }
 
   effect = {
@@ -44,19 +52,9 @@ cli_1 = {
    owns_core_province = 129
    129 = {
     development = 25
-    OR = {
-     has_building = temple
-     has_building = cathedral
-    }
-    OR = {
-     has_building = marketplace
-     has_building = trade_depot
-     has_building = stock_exchange
-    }
-    OR = {
-     has_building = barracks
-     has_building = training_fields
-    }
+    has_tax_building_trigger = yes
+    has_trade_building_trigger = yes
+    has_manpower_building_trigger = yes
    }
   } 
 
@@ -149,12 +147,20 @@ cli_1 = {
 
   effect = {
    custom_tooltip = cli_web_loyalty_tt
+   custom_tooltip = cli_web_loyalty_tt2
    add_legitimacy_or_mil_power = {
     amount = 10
    }
-   change_estate_land_share = {
-    estate = all
-    share = -10
+   hidden_effect = {
+    if = {
+     limit = {
+      has_disaster = coup_attempt_disaster
+      NOT = { has_country_flag = plot_succeeded_flag }
+     }
+     country_event = { 
+      id = coup_in_palace_events.2
+     }
+    }
    }
   }
  }
@@ -177,12 +183,12 @@ cli_1 = {
      area = inner_austria_area
      area = tirol_area
     }
-				value = 7
-			}
+    value = 7
+   }
   }
  
   effect = {
-   add_prestige = 10
+   add_prestige_or_monarch_power = { amount = 10 }
    inner_austria_area = {
     limit = {
      country_or_non_sovereign_subject_holds = ROOT 
@@ -196,9 +202,9 @@ cli_1 = {
     add_nationalism = -10
    }
    austria_proper_area = {
-				limit = { NOT = { owned_by = ROOT }  }
-				add_permanent_claim = ROOT
-			}
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
   } 
  }
 
@@ -206,22 +212,92 @@ cli_1 = {
   icon = humiliate_austria
   position = 6
   required_missions = { cli_take_upper_austria } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   area = austria_proper_area
+   NOT = { country_or_non_sovereign_subject_holds = ROOT }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   austria_proper_area = {
+    type = all
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   owns_core_province = 134
+  } 
 
-  effect = {  } 
+  effect = {
+   austria_proper_area = {
+    limit = {
+     country_or_non_sovereign_subject_holds = ROOT 
+    }
+    add_nationalism = -10
+   }
+   add_reform_progress_medium_effect = yes
+  } 
  }
 
  cli_breed_lipizzan = {
   icon = sav_union_with_naples
   position = 7
   required_missions = { cli_take_lower_austria } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    province_id = 4738
+    AND = {
+     OR = {
+      region = iberia_region
+      region = maghreb_region
+     }
+     NOT = { country_or_non_sovereign_subject_holds = ROOT }
+    }
+   }
+  }
 
-  trigger = {  } 
+  trigger = {
+   OR = {
+    custom_trigger_tooltip = {
+     tooltip = cli_breed_lipizzan_tt
+     any_country = {
+      capital_scope = {
+       OR = {
+        region = iberia_region
+        region = maghreb_region
+       }
+      }
+      OR = {
+       has_opinion = {
+        who = ROOT
+        value = 150
+       }
+       alliance_with = ROOT
+       is_subject_of = ROOT
+       transfers_trade_power_to = ROOT
+       ROOT = { transfers_trade_power_to = PREV }
+      }
+     }
+    }
+    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+     OR = {
+      region = iberia_region
+      region = maghreb_region
+     }
+     value = 4
+    }
+   }
+   4738 = {
+    base_manpower = 10
+    has_manpower_building_trigger = yes
+   }
+   num_of_cavalry = 10
+  }
 
-  effect = {  } 
+  effect = {
+   add_prestige_or_monarch_power = { amount = 15 }
+   add_country_modifier = {
+    name = cli_lipizzan
+    duration = -1
+   }
+  } 
  }
 }
 cli_2 = {
@@ -229,15 +305,21 @@ cli_2 = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  OR = {
+   tag = CLI 
+   AND = {
+    was_tag = CLI
+    tag = ILY
+   }
+  }
+ } 
 
  cli_build_trieste = {
   icon = capture_adriatic_ports
   position = 2
   required_missions = { cli_seize_carniola } 
-  provinces_to_highlight = {
-   province_id = 4738
-  } 
+  provinces_to_highlight = { province_id = 4738 }
 
   trigger = {
    owns_core_province = 4738
@@ -248,8 +330,8 @@ cli_2 = {
      has_building = stock_exchange
     }
     OR = {
-     has_building = workshop
-     has_building = counting_house
+     has_shipyard_building_trigger = yes
+     has_dock_building_trigger = yes
     }
    }
   } 
@@ -272,7 +354,7 @@ cli_2 = {
     }
     else = { add_base_production = 3 }
     add_province_modifier = {
-     name = free_port_of_trieste
+     name = cli_free_port_of_trieste
      duration = -1
     }
    }
@@ -294,44 +376,138 @@ cli_2 = {
   icon = mission_integrate_croatia
   position = 5
   required_missions = { cli_hungarian_succession } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    owned_by = CRO
+    province_id = 152
+    province_id = 4756
+    province_id = 1767
+    province_id = 131
+    province_id = 4752
+    province_id = 1826
+   }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   152 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   4756 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   1767 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   131 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   4752 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   1826 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+  }
 
-  effect = {  } 
+  effect = {
+   add_ruler_personality = lawgiver_personality
+   change_ruler_stat = {
+    type = adm
+    amount = 1
+   }
+   CRO = {
+    if = {
+     limit = {
+      is_subject_of = ROOT
+     }
+     add_liberty_desire = -15
+    }
+   }
+  }
  }
 
  cli_recover_dalmatia = {
   icon = dalmatian_conquest
   position = 6
   required_missions = { cli_take_banate } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    province_id = 130
+    area = east_adriatic_coast_area
+   }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   130 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   east_adriatic_coast_area = {
+    type = all
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_years_of_trade_income = {
+    years = 3
+    custom_tooltip = cilli_trade_income
+   }
+   add_country_modifier = {
+    name = cli_shipbuilding
+    duration = 3650
+   }
+  }
  }
 
  cli_prepare_for_venice = {
   icon = overshadow_venice
   position = 7
   required_missions = { cli_recover_dalmatia } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {} 
 
-  trigger = {  } 
+  trigger = {
+   navy_size_percentage = 0.9
+   num_of_galley = 20
+  } 
 
-  effect = {  } 
+  effect = {
+   venetia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+   create_admiral = {
+    tradition = 80
+   }
+  }
  }
 
  cli_end_venice = {
   icon = byz_aegean_islands
   position = 8
   required_missions = { cli_prepare_for_venice } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   area = venetia_area
+  } 
 
-  trigger = {  } 
+  trigger = {
+   owns_core_province = 112
+   venetia_area = {
+    type = all
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   112 = {
+    add_trade_modifier = {
+     who = ROOT
+     duration = -1
+     power = 50
+     key = hun_adriatic_hegemony
+    }
+   }
+   add_prestige_or_monarch_power = { amount = 15 }
+  }
  }
 }
 cli_3 = {
@@ -339,7 +515,15 @@ cli_3 = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  OR = {
+   tag = CLI 
+   AND = {
+    was_tag = CLI
+    tag = ILY
+   }
+  }
+ } 
 
  cli_ladislaus = {
   icon = the_hungarian_succession
@@ -366,11 +550,20 @@ cli_3 = {
   icon = mission_plc_governance_act
   position = 4
   required_missions = { cli_austrian_succession } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {} 
 
-  trigger = {  } 
+  trigger = {
+   num_of_royal_marriages = 3
+   legitimacy = 100
+   has_heir = yes
+   heir_dynasty = "von Cilli"
+   heir_claim = 95
+  }
 
-  effect = {  } 
+  effect = {
+   add_stability_or_adm_power = yes
+   remove_country_modifier = cli_inheritance_agreement
+  } 
  }
 
  cli_reform_kingdom = {
@@ -380,11 +573,49 @@ cli_3 = {
    cli_web_loyalty
    cli_break_pact
   }
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {} 
 
   trigger = {  } 
 
-  effect = {  } 
+  effect = {
+   if = {
+				limit = {
+					ai = yes
+				}
+				random_list = {
+					2 = { set_country_flag = cli_slavic_branch }
+					1 = { set_country_flag = cli_german_branch }
+				}
+				swap_non_generic_missions = yes
+			}
+			else = {
+				enable_branching_mission_review_without_ai = {
+					key = CLI
+				}
+			}
+			custom_tooltip = SEPERATOR_TOOLTIP
+   if = {
+    limit = {
+     NOT = { government_rank = 2 }
+    }
+    set_government_rank = 2
+   }
+   add_splendor = 200
+   add_legitimacy_or_mil_power = {
+    amount = 10
+   }
+   custom_tooltip = SEPERATOR_TOOLTIP
+   country_event_with_insight = {
+    id = cilli_flavor.3
+    insight_tooltip = INSIGHT_JUST_TOOLTIP
+    effect_tooltip = "
+     unlock_government_reform = {
+      government_reform = cilli_principality_reform
+     }
+     add_government_reform = cilli_principality_reform
+    "
+   }
+  } 
  }
 }
 cli_4 = {
@@ -392,17 +623,37 @@ cli_4 = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  OR = {
+   tag = CLI 
+   AND = {
+    was_tag = CLI
+    tag = ILY
+   }
+  }
+ } 
 
  cli_restore_order = {
   icon = reformatio_sigismundi
   position = 2
   required_missions = { cli_bosnia_claims } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {} 
 
-  trigger = {  } 
+  trigger = {
+   army_size_percentage = 1
+   OR = {
+    NOT = { exists = TUR }
+    TUR = {
+     has_been_insulted_by_root = yes
+    }
+    is_rival = TUR
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   unlock_holy_order = { type = order_of_the_dragon }
+   add_prestige_or_monarch_power = { amount = 5 }
+  } 
  }
 
  cli_bohemian_succession = {
@@ -420,33 +671,130 @@ cli_4 = {
   icon = mission_rb_control_electors
   position = 4
   required_missions = { cli_bohemian_succession } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   all_capital_provinces = {
+    owner = {
+     is_elector = yes
+    }
+   }
+  }
 
-  trigger = {  } 
+  trigger = {
+   is_elector = yes
+  } 
 
-  effect = {  } 
+  effect = {
+   add_legitimacy_or_mil_power = {
+    amount = 10
+   }
+   add_country_modifier = {
+    name = gen_hre_diplomacy_mod
+    duration = 5475
+   }
+  } 
  }
 
  cli_conquer_despotate = {
   icon = defeat_the_serbs
   position = 5
   required_missions = { cli_bosnia_king } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    AND = {
+     OR = {
+      area = rascia_area
+      area = serbia_area
+     }
+     NOT = { country_or_non_sovereign_subject_holds = ROOT }
+    }
+    owned_by = SER
+   }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   OR = {
+    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+     OR = {
+      area = rascia_area
+      area = serbia_area
+     }
+     value = 7
+    }
+    SER = {
+     is_subject_other_than_tributary_trigger = yes
+     is_subject_of = ROOT
+    }
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_prestige_or_monarch_power = { amount = 10 }
+   complex_dynamic_effect = {
+    first_custom_tooltip = CLI_IF_SERBIA_VASSAL
+    first_limit = "
+     SER = {
+      is_subject_other_than_tributary_trigger = yes
+      is_subject_of = ROOT
+     }
+    "
+    first_effect = "
+     add_dip_power = 100
+     SER = {
+      add_liberty_desire = -25
+     }
+    "
+    second_custom_tooltip = CLI_IF_SERBIA_CONQUERED
+    second_limit = "
+     num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+      OR = {
+       area = rascia_area
+       area = serbia_area
+      }
+      value = 7
+     }
+    "
+    second_effect = "
+     add_adm_power = 50
+     add_army_tradition_or_mil_power = { amount = 15 }
+    "
+   }
+  } 
  }
 
  cli_protect_serbs = {
   icon = encroach_on_the_germans
   position = 6
   required_missions = { cli_conquer_despotate } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    province_id = 4173
+    area = rascia_area
+    area = serbia_area
+   }
+   NOT = { country_or_non_sovereign_subject_holds = ROOT }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   4173 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   rascia_area = {
+    type = all
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   serbia_area = {
+    type = all
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_accepted_culture_or_dip_power = { culture = serbian }
+   add_country_modifier = {
+    name = cli_serbian_protectors
+    duration = 5475
+   }
+  } 
  }
 }
 cli_5 = {
@@ -454,49 +802,430 @@ cli_5 = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  OR = {
+   tag = CLI 
+   AND = {
+    was_tag = CLI
+    tag = ILY
+   }
+  }
+ } 
 
  cli_bosnia_claims = {
   icon = union_with_naples
   position = 1
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    region = balkan_region
+    region = carpathia_region
+    if = {
+     limit = { exists = BOS }
+     owned_by = BOS
+    }
+    else_if = {
+     limit = { exists = HRZ }
+     owned_by = HRZ
+    }
+   }
+   NOT = { country_or_non_sovereign_subject_holds = ROOT }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   OR = {
+    AND = {
+     custom_trigger_tooltip = {
+      tooltip = cli_bosnia_claims_tt
+      any_country = {
+       capital_scope = {
+        OR = {
+         region = balkan_region
+         region = carpathia_region
+        }
+       }
+       NOT = { tag = BOS }
+       NOT = { tag = HRZ }
+       OR = {
+        has_opinion = {
+         who = ROOT
+         value = 150
+        }
+        alliance_with = ROOT
+        is_subject_of = ROOT
+        marriage_with = ROOT
+       }
+      }
+     }
+     if = {
+      limit = { exists = BOS }
+      has_spy_network_in = {
+       who = BOS
+       value = 25
+      }
+     }
+     else_if = {
+      limit = { exists = HRZ }
+      has_spy_network_in = {
+       who = HRZ
+       value = 25
+      }
+     }
+    }
+    if = {
+     limit = { exists = BOS }
+     BOS = {
+      is_subject_other_than_tributary_trigger = yes
+      is_subject_of = ROOT
+     }
+    }
+    else_if = {
+     limit = { exists = HRZ }
+     HRZ = {
+      is_subject_other_than_tributary_trigger = yes
+      is_subject_of = ROOT
+     }
+    }
+    AND = {
+     bosnia_area = {
+      type = all
+      country_or_non_sovereign_subject_holds = ROOT
+     }
+     1828 = {
+      country_or_non_sovereign_subject_holds = ROOT
+     }
+    }
+   }
+  }
 
-  effect = {  } 
+  effect = {
+   complex_dynamic_effect = {
+    first_custom_tooltip = CLI_IF_RELATIONS_IMPROVED
+    first_limit = "
+     any_country = {
+      capital_scope = {
+       OR = {
+        region = balkan_region
+        region = carpathia_region
+       }
+      }
+      NOT = { tag = BOS }
+      NOT = { tag = HRZ }
+      OR = {
+       has_opinion = {
+        who = ROOT
+        value = 150
+       }
+       alliance_with = ROOT
+       is_subject_of = ROOT
+       marriage_with = ROOT
+      }
+     }
+    }
+    if = {
+     limit = { exists = BOS }
+     has_spy_network_in = {
+      who = BOS
+      value = 25
+     }
+    }
+    else_if = {
+     limit = { exists = HRZ }
+     has_spy_network_in = {
+      who = HRZ
+      value = 25
+     }
+    }
+   "
+    first_effect = "
+     if = {
+      limit = { exists = BOS }
+      add_casus_belli = {
+       type = cb_restore_personal_union
+       target = BOS
+       months = 120
+      }
+     }
+     else_if = {
+      limit = { exists = HRZ }
+      add_casus_belli = {
+       type = cb_restore_personal_union
+       target = HRZ
+       months = 120
+      }
+     }
+     else = {
+      bosnia_area = {
+       limit = { NOT = { owned_by = ROOT } }
+       add_permanent_claim = ROOT
+      }
+     }
+    "
+    second_custom_tooltip = CLI_IF_BOSNIA_CONQUERED
+    second_limit = "
+     OR = {
+      BOS = {
+       is_subject_other_than_tributary_trigger = yes
+       is_subject_of = ROOT
+      }
+      HRZ = {
+       is_subject_other_than_tributary_trigger = yes
+       is_subject_of = HRZ
+      }
+      AND = {
+       bosnia_area = {
+        type = all
+        country_or_non_sovereign_subject_holds = ROOT
+       }
+       1828 = {
+        country_or_non_sovereign_subject_holds = ROOT
+       }
+      }
+     }
+    "
+    second_effect = "
+     add_mil_power = 100
+     add_prestige_or_monarch_power = { amount = 15 }
+    "
+   }
+  }
  }
 
  cli_bosnia_king = {
   icon = mission_war_for_the_crown
   position = 4
   required_missions = { cli_bosnia_claims } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    area = bosnia_area
+    province_id = 1828
+   }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   bosnia_area = {
+    type = all
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   1828 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_accepted_culture_or_dip_power = { culture = bosnian }
+   4173 = {
+    if = {
+     limit = { NOT = { owned_by = ROOT } }
+     add_permanent_claim = ROOT
+    }
+   }
+   rascia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+   serbia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+  } 
  }
 
  cli_purge_heretics = {
   icon = fight_bosnian_heresies
   position = 5
   required_missions = { cli_bosnia_king } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    area = bosnia_area
+    province_id = 1828
+   }
+   religion = krstjani
+  } 
 
-  trigger = {  } 
+  trigger = {
+   bosnia_area = {
+    type = all
+    NOT = { religion = krstjani }
+   }
+   1828 = {
+    NOT = { religion = krstjani }
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   albania_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_claim = ROOT
+   }
+   complex_dynamic_effect = {
+    first_custom_tooltip = CLI_IF_BOSNIA_UNDER_60
+    first_limit = "
+     OR = {
+      BOS = {
+       is_subject_other_than_tributary_trigger = yes
+       is_subject_of = ROOT
+       NOT = { total_development = 60 }
+      }
+      HRZ = {
+       is_subject_other_than_tributary_trigger = yes
+       is_subject_of = ROOT
+       NOT = { total_development = 60 }
+      }
+     }
+    "
+    first_effect = "
+     custom_tooltip = cli_purge_heretics_tt
+     if = {
+      limit = {
+       BOS = {
+        is_subject_other_than_tributary_trigger = yes
+        is_subject_of = ROOT
+        NOT = { total_development = 60 }
+       }
+      }
+      inherit = BOS
+     }
+     if = {
+      limit = {
+       HRZ = {
+        is_subject_other_than_tributary_trigger = yes
+        is_subject_of = ROOT
+        NOT = { total_development = 60 }
+       }
+      }
+      inherit = HRZ
+     }
+    "
+    second_custom_tooltip = CLI_IF_BOSNIA_ABOVE_60
+    second_limit = "
+     OR = {
+      BOS = {
+       is_subject_other_than_tributary_trigger = yes
+       is_subject_of = ROOT
+       total_development = 60
+      }
+      HRZ = {
+       is_subject_other_than_tributary_trigger = yes
+       is_subject_of = ROOT
+       total_development = 60
+      }
+     }
+    "
+    second_effect = "
+     add_adm_power = 100
+    "
+   }
+  } 
  }
 
  cli_protect_albanians = {
   icon = mission_protect_albania
   position = 6
   required_missions = { cli_purge_heretics } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    AND = {
+     area = albania_area
+     NOT = { country_or_non_sovereign_subject_holds = ROOT }
+    }
+    owned_by = ALB
+   }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   OR = {
+    num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+     OR = {
+      area = albania_area
+     }
+     value = 3
+    }
+    ALB = {
+     OR = {
+      guaranteed_by = ROOT
+      alliance_with = ROOT
+     }
+     trust = {
+      who = ROOT
+      value = 80
+     }
+    }
+    AND = {
+     ALB = {
+      exists = no
+     }
+     TUR = {
+      has_been_insulted_by_root = yes
+     }
+    }
+   }
+  }
 
-  effect = {  } 
+  effect = {
+   if = {
+    limit = {
+     exists = TUR
+     NOT = {
+      has_casus_belli = {
+       type = cb_crusade
+       target = TUR
+      }
+     }
+    }
+    add_casus_belli = {
+     type = cb_crusade_pheasants
+     target = TUR
+     months = 60
+    }
+    every_neighbor_province = {
+     limit = { owned_by = TUR }
+     add_claim = ROOT
+    }
+   }
+   complex_dynamic_effect = {
+    first_custom_tooltip = CLI_IF_ALBANIA_CONQUERED
+    first_limit = "
+     num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+      OR = {
+       area = albania_area
+      }
+      value = 3
+     }
+     NOT = {
+      ALB = {
+       OR = {
+        guaranteed_by = ROOT
+        alliance_with = ROOT
+       }
+       trust = {
+        who = ROOT
+        value = 80
+       }
+      }
+     }
+    "
+    first_effect = "
+     add_mil_power = 50
+     add_army_tradition_or_mil_power = { amount = 15 }
+    "
+    second_custom_tooltip = CLI_IF_ALBANIA_BEFRIENDED
+    second_limit = "
+     ALB = {
+      OR = {
+       guaranteed_by = ROOT
+       alliance_with = ROOT
+      }
+      trust = {
+       who = ROOT
+       value = 80
+      }
+     }
+    "
+    second_effect = "
+     vassalize = ALB
+    "
+   }
+  } 
  }
 
  cli_launch_crusade = {
@@ -506,33 +1235,166 @@ cli_5 = {
    cli_protect_albanians
    cli_protect_serbs
   }
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   owned_by = TUR
+  } 
 
-  trigger = {  } 
+  trigger = {
+   OR = {
+    is_in_war = {
+     defender_leader = TUR
+     attacker_leader = ROOT
+    }
+    has_won_war_against = { who = TUR max_years_since = 15 }
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   complex_dynamic_effect = {
+    first_custom_tooltip = CLI_IN_CRUSADE
+    first_limit = "
+     is_in_war = {
+      defender_leader = TUR
+      attacker_leader = ROOT
+     }
+    "
+    first_effect = "
+     add_country_modifier = {
+      name = cli_warring_ottomans
+      duration = 3650
+     }
+    "
+    second_custom_tooltip = CLI_WON_CRUSADE
+    second_limit = "
+     NOT = {
+      is_in_war = {
+       defender_leader = TUR
+       attacker_leader = ROOT
+      }
+     }
+     has_won_war_against = { who = TUR max_years_since = 10 }
+    "
+    second_effect = "
+     add_prestige_or_monarch_power = { amount = 20 }
+     add_country_modifier = {
+      name = cli_celebrating_crusade
+      duration = 3650
+     }
+    "
+   }
+  } 
  }
 
  cli_recover_bulgaria = {
   icon = push_on_to_bulgaria
   position = 8
   required_missions = { cli_launch_crusade } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    province_id = 4780
+    province_id = 3001
+    area = bulgaria_area
+    area = silistria_area
+   }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   4780 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   3001 = {
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   bulgaria_area = {
+    type = all
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+   silistria_area = {
+    type = all
+    country_or_non_sovereign_subject_holds = ROOT
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   4780 = {
+    add_nationalism = -10
+   }
+   3001 = {
+    add_nationalism = -10
+   }
+   bulgaria_area = {
+    add_nationalism = -10
+   }
+   silistria_area = {
+    add_nationalism = -10
+   }
+   151 = {
+    if = {
+     limit = { NOT = { owned_by = ROOT } }
+     add_permanent_claim = ROOT
+    }
+   }
+  } 
  }
 
  cli_drive_out_turks = {
   icon = mission_battle_of_varna
   position = 9
   required_missions = { cli_recover_bulgaria } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    province_id = 151
+    AND = {
+     owned_by = TUR
+     OR = {
+      superregion = eastern_europe_superregion
+      superregion = europe_superregion
+     }
+    }
+   }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   NOT = {
+    any_province = {
+     owned_by = TUR
+     OR = {
+      superregion = eastern_europe_superregion
+      superregion = europe_superregion
+     }
+    }
+   }
+   owns_core_province = 151
+  } 
 
-  effect = {  } 
+  effect = {
+   if = {
+    limit = { 
+     has_dlc = "Mandate of Heaven"
+    }
+    add_splendor = 800
+   }
+   add_prestige_or_monarch_power = { amount = 20 }
+   if = {
+    limit = {
+     151 = {
+      culture = turkish
+     }
+    }
+    custom_tooltip = hun_turkish_constantinople_tt_yes
+    tooltip = {
+     country_event = { id = new_flavour_hun.3 }
+     custom_tooltip = hun_constantinople_insight_tt
+    }
+   }
+   else = {
+    custom_tooltip = hun_turkish_constantinople_tt_no
+    tooltip = {
+     country_event = { id = new_flavour_hun.3 }
+     custom_tooltip = hun_constantinople_insight_tt
+    }
+   }
+  }
  }
 }
 cli_german = {
@@ -540,39 +1402,193 @@ cli_german = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  tag = CLI
+  has_country_flag = cli_german_branch
+ }  
 
  cli_be_cilli = {
   icon = lead_the_empire
   position = 7
   required_missions = { cli_reform_kingdom } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   if = {
+    limit = { hre_size = 1 }
+    all_capital_provinces = {
+     owner = {
+      is_elector = yes
+     }
+    }
+   }
+   else = {
+    region = south_german_region
+   }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   tag = CLI
+   if = {
+    limit = { hre_size = 1 }
+    is_emperor = yes
+   }
+   else = {
+    south_german_region = {
+     type = all
+     country_or_non_sovereign_subject_holds = ROOT
+    }
+   }
 
-  effect = {  } 
+  } 
+
+  effect = {
+   if = {
+    limit = {
+     hre_size = 1
+    }
+    add_prestige = 10
+   }
+   else = {
+    add_adm_power = 100
+    add_mil_power = 100
+    add_power_projection = {
+     type = mission_rewards_power_projection
+     amount = 20
+    }
+   }
+   add_country_modifier = {
+    name = cli_be_cilli_mod
+    duration = -1
+   }
+   custom_tooltip = cli_be_cilli_tt
+  } 
  }
 
  cli_convert_illyria = {
   icon = promote_urbanization
   position = 8
   required_missions = { cli_be_cilli } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    area = carinthia_area
+    area = croatia_area
+    area = slavonia_area
+    area = east_adriatic_coast_area
+    area = bosnia_area
+    area = rascia_area
+    area = serbia_area
+    area = albania_area
+   }
+   NOT = { religion = ROOT }
+   NOT = { culture = windic }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    religion = ROOT
+    culture = windic
+    OR = {
+     area = carinthia_area
+     area = croatia_area
+     area = slavonia_area
+     area = east_adriatic_coast_area
+     area = bosnia_area
+     area = rascia_area
+     area = serbia_area
+     area = albania_area
+    }
+    value = 20
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_country_modifier = {
+    name = cli_germanized_illyria
+    duration = -1
+   }
+   custom_tooltip = cli_convert_illyria_tt
+   for = {
+    amount = 10
+    effect = "
+     random_province = {
+      limit = {
+       country_or_non_sovereign_subject_holds = ROOT
+       OR = {
+        area = carinthia_area
+        area = croatia_area
+        area = slavonia_area
+        area = east_adriatic_coast_area
+        area = bosnia_area
+        area = rascia_area
+        area = serbia_area
+        area = albania_area
+       }
+       religion = ROOT
+       culture = windic
+      }
+      add_random_development = 1
+     }
+    "
+   }
+  } 
  }
 
  cli_german_industry = {
   icon = industrialized_rhineland
   position = 9
   required_missions = { cli_convert_illyria } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    area = carinthia_area
+    area = croatia_area
+    area = slavonia_area
+    area = east_adriatic_coast_area
+    area = bosnia_area
+    area = rascia_area
+    area = serbia_area
+    area = albania_area
+   }
+   has_manufactory_trigger = no
+  } 
 
-  trigger = {  } 
+  trigger = {
+   development_in_provinces = {
+    OR = {
+     area = carinthia_area
+     area = croatia_area
+     area = slavonia_area
+     area = east_adriatic_coast_area
+     area = bosnia_area
+     area = rascia_area
+     area = serbia_area
+     area = albania_area
+    }
+    has_manufactory_trigger = yes
+    value = 300
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_country_modifier = {
+    name = cli_industrialized_illyria
+    duration = -1
+   }
+   add_years_of_owned_provinces_production_income = {
+    years = 3
+    trigger = {
+     OR = {
+      area = carinthia_area
+      area = croatia_area
+      area = slavonia_area
+      area = east_adriatic_coast_area
+      area = bosnia_area
+      area = rascia_area
+      area = serbia_area
+      area = albania_area
+     }
+    }
+    custom_tooltip = cli_german_industry_tt
+   }
+  } 
  }
 }
 cli_slavic = {
@@ -580,38 +1596,185 @@ cli_slavic = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  OR = {
+   tag = CLI 
+   AND = {
+    was_tag = CLI
+    tag = ILY
+   }
+  }
+  has_country_flag = cli_slavic_branch
+ } 
 
  cli_illyrian_renaissance = {
   icon = secure_the_sava
   position = 7
-  provinces_to_highlight = {  } 
+  required_missions = { cli_reform_kingdom }
+  provinces_to_highlight = {
+   owned_by = ROOT
+   OR = {
+    area = carinthia_area
+    area = croatia_area
+    area = slavonia_area
+    area = east_adriatic_coast_area
+    area = bosnia_area
+    area = rascia_area
+    area = serbia_area
+    area = albania_area
+   }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   has_institution = renaissance
+   development_in_provinces = {
+    OR = {
+     area = carinthia_area
+     area = croatia_area
+     area = slavonia_area
+     area = east_adriatic_coast_area
+     area = bosnia_area
+     area = rascia_area
+     area = serbia_area
+     area = albania_area
+    }
+    has_tax_building_trigger = yes
+    renaissance = 100
+    value = 200
+   }
+   num_of_owned_provinces_with = {
+    development = 25
+    value = 3
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   capital_scope = {
+    add_building = university
+   }
+   custom_tooltip = cli_illyrian_renaissance_tt
+   for = {
+    amount = 3
+    effect = "
+     random_province = {
+      limit = {
+       owned_by = ROOT
+       OR = {
+        area = carinthia_area
+        area = croatia_area
+        area = slavonia_area
+        area = east_adriatic_coast_area
+        area = bosnia_area
+        area = rascia_area
+        area = serbia_area
+        area = albania_area
+       }
+       NOT = { has_building = university }
+       development = 25
+      }
+      add_building = university
+     }
+    "
+   }
+   add_country_modifier = {
+    name = cli_illyrian_renaissance_mod
+    duration = -1
+   }
+   wallachia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+   moldavia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+   southern_transylvania_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+   transylvania_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+  } 
  }
 
  cli_educating_population = {
   icon = mission_early_modern_university
   position = 8
   required_missions = { cli_illyrian_renaissance } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   owned_by = ROOT
+   NOT = { has_building = university }
+  }
 
-  trigger = {  } 
+  trigger = {
+   OR = {
+    num_of_owned_provinces_with = {
+     has_building = university 
+     value = 25 
+    }
+    full_idea_group = innovativeness_ideas
+    full_idea_group = economic_ideas
+    full_idea_group = trade_ideas
+   }
+   is_ahead_of_time_in_technology = { tech = adm }
+   is_ahead_of_time_in_technology = { tech = dip }
+   is_ahead_of_time_in_technology = { tech = mil }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_innovativeness_big_effect = yes
+   custom_tooltip = cli_educating_population_tt
+   hidden_effect = {
+    set_country_flag = cli_trading_schools
+    every_owned_province = {
+     limit = { has_building = university }
+     add_province_modifier = {
+      name = cli_trading_school
+      duration = -1
+     }
+    }
+   }
+   every_province = {
+    limit = {
+     same_trade_node_as = 1308
+     same_trade_node_as = 1298
+     province_has_center_of_trade_of_level = 1
+     NOT = { owned_by = ROOT }
+    }
+    add_claim = ROOT
+   }
+  } 
  }
 
  cli_mediterranean_dominance = {
   icon = mission_rb_mediterranean_authority
   position = 9
   required_missions = { cli_educating_population } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = { 
+   OR = {
+    same_trade_node_as = 1308
+    same_trade_node_as = 1298
+   }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   1308 = {
+    is_strongest_trade_power = ROOT
+   }
+   1298 = {
+    is_strongest_trade_power = ROOT
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_mercantilism_or_monarch_power = { amount = 3 }
+   add_country_modifier = {
+    name = cli_mediterranean_dominance_mod
+    duration = -1
+   }
+  } 
  }
 }
 cli_branching = {
@@ -619,7 +1782,17 @@ cli_branching = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  OR = {
+   tag = CLI 
+   AND = {
+    was_tag = CLI
+    tag = ILY
+   }
+  }
+  NOT = { has_country_flag = cli_slavic_branch }
+  NOT = { has_country_flag = cli_german_branch }
+ } 
 
  cli_branch_1 = {
   icon = mission_unknown_mission
@@ -627,9 +1800,13 @@ cli_branching = {
   required_missions = { cli_reform_kingdom } 
   provinces_to_highlight = {  } 
 
-  trigger = {  } 
+  trigger = {
+    custom_trigger_tooltip = { tooltip = cli_this_is_a_branching_mission always = no }
+  } 
 
-  effect = {  } 
+  effect = {
+   custom_tooltip = cli_this_is_a_branching_mission
+  } 
  }
 
  cli_branch_2 = {
@@ -638,9 +1815,13 @@ cli_branching = {
   required_missions = { cli_branch_1 } 
   provinces_to_highlight = {  } 
 
-  trigger = {  } 
+  trigger = {
+   custom_trigger_tooltip = { tooltip = cli_this_is_a_branching_mission always = no }
+ } 
 
-  effect = {  } 
+ effect = {
+  custom_tooltip = cli_this_is_a_branching_mission
+ } 
  }
 
  cli_branch_3 = {
@@ -649,9 +1830,13 @@ cli_branching = {
   required_missions = { cli_branch_2 } 
   provinces_to_highlight = {  } 
 
-  trigger = {  } 
+  trigger = {
+   custom_trigger_tooltip = { tooltip = cli_this_is_a_branching_mission always = no }
+ } 
 
-  effect = {  } 
+ effect = {
+  custom_tooltip = cli_this_is_a_branching_mission
+ } 
  }
 }
 cli_german2 = {
@@ -659,28 +1844,119 @@ cli_german2 = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  tag = CLI
+  has_country_flag = cli_german_branch
+ } 
 
  cli_protect_borders = {
   icon = the_imperial_border
   position = 8
   required_missions = { cli_be_cilli } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+    AND = {
+     is_part_of_hre = yes
+     owner = {
+      is_part_of_hre = no
+     }
+    }
+   }
 
-  trigger = {  } 
+   trigger = {
+    if = {
+     limit = {
+      hre_size = 1
+      NOT = { has_dlc = "Emperor" }
+     }
+     hre_reform_passed = reichsreform
+     is_emperor = yes
+     NOT = { num_of_foreign_hre_provinces = 1 }
+    }
+    else_if = {
+     limit = {
+      hre_size = 1
+      has_dlc = "Emperor"
+     }
+     hre_reform_passed = emperor_reichsreform
+     is_emperor = yes
+     NOT = { num_of_foreign_hre_provinces = 1 }
+    }
+    else = {
+     custom_trigger_tooltip = {
+      tooltip = imperial_ban_fallback_tt
+      NOT = {
+       any_core_province = {
+        NOT = { owned_by = ROOT }
+       }
+      }
+     }
+    }
+   }
 
-  effect = {  } 
+   effect = {
+    add_prestige = 10
+    if = {
+     limit = {
+      hre_size = 1
+     }
+     add_imperial_influence = 10
+     add_country_modifier = {
+      name = gen_hre_imperial_ban_mod
+      duration = 5475
+     }
+    }
+   }
  }
 
  cli_old_order = {
   icon = multicultural_empire
   position = 9
   required_missions = { cli_protect_borders } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   continent = europe
+   is_part_of_hre = no
+  } 
 
-  trigger = {  } 
+  trigger = {
+   if = {
+    limit = {
+     hre_size = 1
+     has_dlc = "Emperor"
+    }
+    hre_reform_passed = emperor_reichsstabilitaet
+    is_emperor = yes
+    calc_true_if = {
+     all_province = {
+      is_part_of_hre = yes 
+      continent = europe
+     }
+     amount = 250
+    }	
+   }
+   else = {
+    total_development = 2500
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   if = {
+    limit = {
+     hre_size = 1
+     has_dlc = "Emperor"
+    }
+    custom_tooltip = cli_old_order_tt
+    set_country_flag = cli_imperial_cutdown
+    add_imperial_influence = 10
+   }
+   else = {
+    add_splendor = 800
+    add_power_projection = {
+     type = mission_rewards_power_projection
+     amount = 50
+    }
+   }
+   add_prestige = 25
+  } 
  }
 }
 cli_slavic2 = {
@@ -688,28 +1964,95 @@ cli_slavic2 = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  OR = {
+   tag = CLI 
+   AND = {
+    was_tag = CLI
+    tag = ILY
+   }
+  }
+  has_country_flag = cli_slavic_branch
+ } 
 
  cli_spread_to_romania = {
   icon = mission_control_moldavia
   position = 8
   required_missions = { cli_illyrian_renaissance } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    area = wallachia_area
+    area = moldavia_area
+    area = southern_transylvania_area
+    area = transylvania_area
+   }
+   NOT = { country_or_non_sovereign_subject_holds = ROOT }
+  } 
 
-  trigger = {  } 
+  trigger = {
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    OR = {
+     area = wallachia_area
+     area = moldavia_area
+     area = southern_transylvania_area
+     area = transylvania_area
+    }
+    value = 16
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_accepted_culture_or_dip_power = { culture = romanian free = yes }
+   add_accepted_culture_or_dip_power = { culture = transylvanian free = yes }
+   macedonia_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+   northern_greece_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+   morea_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
+   }
+  } 
  }
 
  cli_cradle_of_civilization = {
   icon = mission_balkan_conquest
   position = 9
   required_missions = { cli_spread_to_romania } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   OR = {
+    area = macedonia_area
+    area = northern_greece_area
+    area = morea_area
+   }
+   NOT = { country_or_non_sovereign_subject_holds = ROOT }
+  }
 
-  trigger = {  } 
+  trigger = {
+   owns_core_province = 146
+   num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+    OR = {
+     area = macedonia_area
+     area = northern_greece_area
+     area = morea_area
+    }
+    value = 12
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_innovativeness_big_effect = yes
+   146 = {
+    add_province_modifier = {
+     name = cli_cradle_of_civilization_mod
+     duration = -1
+    }
+   }
+  } 
  }
 }
 cli_branching2 = {
@@ -717,7 +2060,17 @@ cli_branching2 = {
  generic = no
  ai = yes
  has_country_shield = yes
- potential = { tag = CLI } 
+ potential = {
+  OR = {
+   tag = CLI 
+   AND = {
+    was_tag = CLI
+    tag = ILY
+   }
+  }
+  NOT = { has_country_flag = cli_slavic_branch }
+  NOT = { has_country_flag = cli_german_branch }
+ } 
 
  cli_branch_4 = {
   icon = mission_unknown_mission
@@ -725,9 +2078,13 @@ cli_branching2 = {
   required_missions = { cli_branch_1 } 
   provinces_to_highlight = {  } 
 
-  trigger = {  } 
+  trigger = {
+   custom_trigger_tooltip = { tooltip = cli_this_is_a_branching_mission always = no }
+ } 
 
-  effect = {  } 
+ effect = {
+  custom_tooltip = cli_this_is_a_branching_mission
+ } 
  }
 
  cli_branch_5 = {
@@ -736,8 +2093,12 @@ cli_branching2 = {
   required_missions = { cli_branch_4 } 
   provinces_to_highlight = {  } 
 
-  trigger = {  } 
+  trigger = {
+   custom_trigger_tooltip = { tooltip = cli_this_is_a_branching_mission always = no }
+ } 
 
-  effect = {  } 
+ effect = {
+  custom_tooltip = cli_this_is_a_branching_mission
+ } 
  }
 }

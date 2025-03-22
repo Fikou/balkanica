@@ -138,10 +138,7 @@ vranduk = {
    if = {
     limit = {
      140 = {
-      NOT = { has_building = fort_15th }
-      NOT = { has_building = fort_16th }
-      NOT = { has_building = fort_17th }
-      NOT = { has_building = fort_18th }
+      has_fort_building_trigger = no
      }
     }
     add_building_construction = {
@@ -191,10 +188,7 @@ vranduk = {
    if = {
     limit = {
      140 = {
-      NOT = { has_building = fort_15th }
-      NOT = { has_building = fort_16th }
-      NOT = { has_building = fort_17th }
-      NOT = { has_building = fort_18th }
+      has_fort_building_trigger = no
      }
     }
     add_building_construction = {
@@ -281,8 +275,7 @@ ljubljana_castle = {
   }
   conditional_modifier = {
    trigger = {
-    # owner = { mission_completed = cli_reconquer_ljubljana }
-    tag = CLI
+    owner = { mission_completed = cli_renovate_ljubljana }
    }
    modifier = {
     legitimacy = 0.5
@@ -290,8 +283,7 @@ ljubljana_castle = {
   }
   conditional_modifier = {
    trigger = {
-    # owner = { mission_completed = cli_make_cool_dungeons }
-    tag = CLI
+    owner = { mission_completed = cli_web_loyalty }
    }
    modifier = {
     global_spy_defence = 0.25

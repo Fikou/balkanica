@@ -12,10 +12,7 @@ mon_1 = {
 
   trigger = {
    138 = {
-    OR = {
-     has_building = temple
-     has_building = cathedral
-    }
+    has_tax_building_trigger = yes
     development = 12
    }
    treasury = 150
@@ -52,10 +49,7 @@ mon_1 = {
 
   trigger = {
    138 = {
-    OR = {
-     has_building = workshop
-     has_building = counting_house
-    }
+    has_production_building_trigger = yes
     development = 20
    }
    treasury = 300
@@ -92,7 +86,7 @@ mon_1 = {
   } 
 
   effect = {
-   add_prestige = 20
+   add_prestige_or_monarch_power = { amount = 20 }
    add_stability_or_adm_power_per_stab = { amount = 2 }
    unlock_holy_order = { type = order_of_the_dragon }
    rascia_area = {
@@ -135,10 +129,7 @@ mon_1 = {
      has_building = fort_15th
     }
     has_building = ramparts
-    OR = {
-     has_building = barracks
-     has_building = training_fields
-    }
+    has_manpower_building_trigger = yes
    }
   }
 

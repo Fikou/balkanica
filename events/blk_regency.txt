@@ -8,7 +8,7 @@ country_event = {
  is_triggered_only = yes
  option = {
   name = reg.1.a
-  add_prestige = 10
+  add_prestige_or_monarch_power = { amount = 10 }
  }
 }
 
