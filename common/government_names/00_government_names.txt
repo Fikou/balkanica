@@ -2699,7 +2699,7 @@ hunyadi_regent_monarchy = {
 
 	consort_male  = {
 		1 = PRINCE_CONSORT
-		2 = PRINCE_CONSORT
+		2 = regent_male
 		3 = PRINCE_CONSORT
 	}
 

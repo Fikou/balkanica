@@ -941,6 +941,24 @@ select_current_missions_CLI = {
    has_country_flag = cli_slavic_branch
   }
   override_country_name = CLI_S
+  if = {
+   limit = { has_updated_culture = { culture = slavic } }
+   set_ruler_culture = slovene_new
+  }
+  else = {
+   set_ruler_culture = slovene
+  }
+  if = {
+   limit = {
+    has_heir = yes
+    heir_has_ruler_dynasty = yes
+   }
+   if = {
+    limit = { has_updated_culture = { culture = slavic } }
+    set_heir_culture = slovene_new
+   }
+   set_heir_culture = slovene
+  }
  }
  if = {
   limit = {
@@ -1529,7 +1547,7 @@ preview_mission_branch_1 = {
  }
  #CILLI
  if = {
-  limit = { can_preview_mission_of_key_and_batch = { key = cli batch = $batch$ } }
+  limit = { can_preview_mission_of_key_and_batch = { key = CLI batch = $batch$ } }
   set_preview_loc_branch = { key = CLI batch = $batch$ branch = 1 }
   set_country_flag = cli_slavic_branch
   custom_tooltip = cli_preview_slavic_branch
@@ -1753,7 +1771,7 @@ preview_mission_branch_2 = {
  }
  #CILLI
  if = {
-  limit = { can_preview_mission_of_key_and_batch = { key = cli batch = $batch$ } }
+  limit = { can_preview_mission_of_key_and_batch = { key = CLI batch = $batch$ } }
   set_preview_loc_branch = { key = CLI batch = $batch$ branch = 2 }
   set_country_flag = cli_german_branch
   custom_tooltip = cli_preview_german_branch

@@ -121,5 +121,18 @@ legitimist_rebels = {
    }
    kill_ruler = yes
   }
+  else_if = {
+   limit = {
+    has_regency = yes
+    has_heir = "Ladislaus Postumus"
+    has_country_flag = hab_ladislaus_postumus_heir
+    government = monarchy
+    CLI = {
+     mission_completed = cli_ladislaus
+    }
+   }
+   CLI = { set_country_flag = cli_controls_ladislaus }
+   kill_ruler = yes
+  }
  }
 }

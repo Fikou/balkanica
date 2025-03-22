@@ -231,6 +231,7 @@
  request_regency_action_tooltip:0 "Ask that §Y[From.GetName]§! hand their heir over to us, making us the country's §YRegent§!."
  request_regency_allowtip:0 "Has an underage Heir"
  request_regency_allowtip2:0 "Has not given Regency rights to another country"
+ request_regency_allowtip3:0 "Not in an extended Regency"
  request_regency_action_dialog:0 "[This.GetName] requests custody of our heir, making them the Regent of our nation until they grow up."
  cancel_request_regency_action_title:0 "Cancel Regency Request"
  cancel_request_regency_action_desc:0 "We will no longer become the temporary overlord of §Y[From.GetName]§! if their ruler dies without a capable heir."

@@ -25,6 +25,10 @@
 
  cli_hungarian_succession_title:0 "Hungarian Succession"
  cli_hungarian_succession_desc:0 "We have had rising tensions with Hungary's regent for a while, ruling the country in our place. Maybe we should pull some strings and make him disappear?"
+ cli_hungarian_succession_tt:0 "If §YLadislaus Postumus§! is not controlled by us, instead have at least §Y25§! prestige"
+ cli_hungarian_succession_tt2:0 "§RHave an Army in§! §Y[HUN.Capital.GetName]§!"
+ CLI_IF_HUNGARY_ASSASSINATED:0 "If §MHungary's Regent§! is §MAssassinated§!:"
+ CLI_IF_HUNGARY_SUBJECTED:0 "If §M[HUN.GetName]§! is already §MSubjugated§!:"
 
  cli_take_banate_title:0 "Take the Banate"
  cli_take_banate_desc:0 "While we do not share much with the Hungarians and it would be a big overstep to mess with them, we can likely use our status to become the governor of Croatia, Slavonia and Dalmatia, and integrate them into our kingdom."
@@ -41,9 +45,15 @@
 
  cli_ladislaus_title:0 "Take Control of Ladislaus"
  cli_ladislaus_desc:0 "Ladislaus the Posthumous, the cousin of Ulrich II was chosen by his father's will to be the archduke of Austria, and king of Hungary and Bohemia. However, the Holy Roman Emperor, Friedrich III has taken the boy, making himself the ruler of Austria. We can't let this much power go into the hands of one man, so we will stoke the nobles to help us take him."
+ cli_ladislaus_tt:0 "§Y[HAB.Monarch.GetName]§! will be asked to grant us §GGuardianship§! over §YLadislaus Postumus§!. A wave of rebels will happen if he doesn't give him up."
+ cli_ladislaus_tt2:0 "§YLadislaus Postumus§! has already taken rule or died before we could seize him."
 
  cli_austrian_succession_title:0 "Austrian Succession"
- cli_austrian_succession_desc:0 "Now that we have taken Ladislaus, it's time to seize the Archduchy from his previous guardian."
+ cli_austrian_succession_desc:0 "If the emperor gave us Ladislaus so easily, we can probably push him further with some incentive. Let's bribe him to rule over the country while Ladislaus is not yet of age."
+ cli_austrian_succession_tt:0 "If §YLadislaus Postumus§! is not controlled by us, instead have at least §Y25§! prestige"
+ cli_austrian_succession_tt2:0 "§Y[HAB.Monarch.GetName]§! will abdicate as §YRegent§!."
+ CLI_IF_AUSTRIA_BRIBED:0 "If §M[HAB.GetName]§! is §MBribed§!:"
+ CLI_IF_AUSTRIA_SUBJECTED:0 "If §M[HAB.GetName]§! is already §MSubjugated§!:"
 
  cli_break_pact_title:0 "Break the Pact"
  cli_break_pact_desc:0 "The inheritance agreement with the Habsburgs has been an ever looming Sword of Damocles above our head. We have to get rid of this treaty and make sure our lands are not given away to anyone else."
@@ -197,3 +207,12 @@
  cilli_flavor.3.desc:0 "Our court diplomacy and intrigue has been going fantastically. Our regencies have shown us the way, we should reform the government to do them more in the future!"
  cilli_flavor.3.a:0 "Let's do it!"
  cilli_flavor.3.b:0 "The time is not right."
+ cilli_flavor.4.title:0 "Demand for our Heir!"
+ cilli_flavor.4.desc:0 "The royalty of [CLI.GetName], related to the Archduchy's heir, Ladislaus Postumus, are demanding that we give up the boy for guardianship. They have gathered a large amount of angry nobles with them. Should we do it?"
+ cilli_flavor.4.a:0 "If we must..."
+ cilli_flavor.4.b:0 "We will not give him up!"
+ cilli_flavor.5.title:0 "The Banate of Croatia"
+ cilli_flavor.5.desc:0 "Our rule as Regent of Hungary has been going well, yet we have not been compensated for it much. Why don't we unify with our brothers in Croatia by taking the Banate from Hungary?"
+ cilli_flavor.5.a:0 "Let us hold these lands directly."
+ cilli_flavor.5.b:0 "Ruling over them as a subject worked well for Hungary."
+ cilli_flavor.5.c:0 "It's not worth getting them upset."

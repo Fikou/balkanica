@@ -365,11 +365,129 @@ cli_2 = {
   icon = mission_destroy_the_hungarians
   position = 3
   required_missions = { cli_ladislaus } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   owned_by = HUN
+  } 
 
-  trigger = {  } 
+  trigger = {
+   OR = {
+    AND = {
+     receives_military_access_from = HUN
+     HUN = {
+      has_heir = "Ladislaus Postumus"
+      }
+      hidden_trigger = { has_country_flag = hun_ladislaus_postumus_heir }
+     }
+     custom_trigger_tooltip = {
+      tooltip = cli_hungarian_succession_tt2
+      HUN = { capital_scope = { units_in_province = ROOT } }
+     has_spy_network_in = {
+      who = HUN
+      value = 30
+     }
+     hidden_trigger = {
+      has_country_flag = cli_controls_ladislaus
+     }
+    }
+    custom_trigger_tooltip = {
+     tooltip = cli_hungarian_succession_tt
+     OR = {
+      HUN = {
+       NOT = { has_heir = "Ladislaus Postumus" }
+       NOT = { has_country_flag = hun_ladislaus_postumus_heir }
+      }
+      NOT = { has_country_flag = cli_controls_ladislaus }
+     }
+     HUN = {
+      is_subject_of = ROOT
+     }
+     prestige = 25
+    }
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   152 = {
+    if = {
+     limit = { NOT = { owned_by = ROOT } }
+     add_permanent_claim = ROOT
+    }
+   }
+   4756 = {
+    if = {
+     limit = { NOT = { owned_by = ROOT } }
+     add_permanent_claim = ROOT
+    }
+   }
+   1767 = {
+    if = {
+     limit = { NOT = { owned_by = ROOT } }
+     add_permanent_claim = ROOT
+    }
+   }
+   131 = {
+    if = {
+     limit = { NOT = { owned_by = ROOT } }
+     add_permanent_claim = ROOT
+    }
+   }
+   4752 = {
+    if = {
+     limit = { NOT = { owned_by = ROOT } }
+     add_permanent_claim = ROOT
+    }
+   }
+   1826 = {
+    if = {
+     limit = { NOT = { owned_by = ROOT } }
+     add_permanent_claim = ROOT
+    }
+   }
+   complex_dynamic_effect = {
+    first_custom_tooltip = CLI_IF_HUNGARY_ASSASSINATED
+    first_limit = "
+     receives_military_access_from = HUN
+     HUN = {
+      has_heir = \"Ladislaus Postumus\"
+      capital_scope = {
+       units_in_province = ROOT
+      }
+      has_country_flag = hun_ladislaus_postumus_heir
+     }
+     has_spy_network_in = {
+      who = HUN
+      value = 30
+     }
+     has_country_flag = cli_controls_ladislaus
+    "
+    first_effect = "
+     HUN = {
+      kill_ruler = yes 
+      add_trust = {
+       who = ROOT
+       value = -20
+      }
+     }
+     hidden_effect = {
+      add_spy_network_in = {
+       who = HUN
+       value = -30
+      }
+     }
+    "
+    second_custom_tooltip = CLI_IF_HUNGARY_SUBJECTED
+    second_limit = "
+     HUN = {
+      is_subject_of = ROOT
+     }
+    "
+    second_effect = "
+     HUN = {
+      add_liberty_desire = -15
+     }
+    "
+   }
+  } 
  }
 
  cli_take_banate = {
@@ -528,22 +646,141 @@ cli_3 = {
  cli_ladislaus = {
   icon = the_hungarian_succession
   position = 2
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   is_capital_of = HAB
+  } 
 
-  trigger = {  } 
+  trigger = {
+   NOT = {
+    has_ruler = "Friderik II"
+   }
+   OR = {
+    custom_trigger_tooltip = {
+     tooltip = cli_ladislaus_tt2
+     NOT = {
+      HAB = {
+       has_heir = "Ladislaus Postumus"
+       has_country_flag = hab_ladislaus_postumus_heir
+      }
+     }
+    }
+    AND = {
+     marriage_with = HAB
+     has_spy_network_in = {
+      who = HAB
+      value = 30
+     }
+    }
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   if = {
+    limit = {
+     HAB = {
+      has_heir = "Ladislaus Postumus"
+      has_country_flag = hab_ladislaus_postumus_heir
+     }
+    }
+    custom_tooltip = cli_ladislaus_tt
+    hidden_effect = {
+     HAB = { country_event = { id = cilli_flavor.4 } }
+     add_spy_network_in = {
+      who = HAB
+      value = -30
+     }
+    }
+   }
+  } 
  }
 
  cli_austrian_succession = {
   icon = mission_the_austrian_succession
   position = 3
   required_missions = { cli_ladislaus } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   owned_by = HAB
+  } 
 
-  trigger = {  } 
+  trigger = {
+   OR = {
+    AND = {
+     treasury = 300
+     HAB = {
+      has_heir = "Ladislaus Postumus"
+      hidden_trigger = { has_country_flag = hab_ladislaus_postumus_heir }
+     }
+     hidden_trigger = {
+      has_country_flag = cli_controls_ladislaus
+     }
+    }
+    HAB = {
+     is_subject_of = ROOT
+    }
+    custom_trigger_tooltip = {
+     tooltip = cli_austrian_succession_tt
+     OR = {
+      HAB = {
+       NOT = { has_heir = "Ladislaus Postumus" }
+       NOT = { has_country_flag = hab_ladislaus_postumus_heir }
+      }
+      NOT = { has_country_flag = cli_controls_ladislaus }
+     }
+     prestige = 25
+    }
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   carinthia_area = {
+    add_core = ROOT
+   }
+   complex_dynamic_effect = {
+    first_custom_tooltip = CLI_IF_AUSTRIA_BRIBED
+    first_limit = "
+     treasury = 300
+     HAB = {
+      has_heir = \"Ladislaus Postumus\"
+      has_country_flag = hab_ladislaus_postumus_heir
+      has_country_flag = cli_controls_ladislaus
+      NOT = { is_subject_of = ROOT }
+     }
+    "
+    first_effect = "
+     add_treasury = -300
+     tooltip = cli_austrian_succession_tt2
+     hidden_effect = { HAB = { kill_ruler = yes } }
+     if = {
+      limit = { 129 = { owned_by = HAB } }
+      129 = { cede_province = ROOT }
+     }
+     if = {
+      limit = { 1769 = { owned_by = HAB } }
+      1769 = { cede_province = ROOT }
+     }
+    "
+    second_custom_tooltip = CLI_IF_AUSTRIA_SUBJECTED
+    second_limit = "
+     HAB = {
+      is_subject_of = ROOT
+     }
+    "
+    second_effect = "
+     add_favors = {
+      who = HAB
+      amount = 30
+     }
+     if = {
+      limit = { 129 = { owned_by = HAB } }
+      129 = { cede_province = ROOT }
+     }
+     if = {
+      limit = { 1769 = { owned_by = HAB } }
+      1769 = { cede_province = ROOT }
+     }
+    "
+   }
+  } 
  }
 
  cli_break_pact = {
@@ -575,7 +812,16 @@ cli_3 = {
   }
   provinces_to_highlight = {} 
 
-  trigger = {  } 
+  trigger = {
+   OR = {
+    full_idea_group = administrative_ideas
+    full_idea_group = court_ideas
+    adm = 5
+   }
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+  } 
 
   effect = {
    if = {
@@ -660,7 +906,9 @@ cli_4 = {
   icon = bohemian_borderlands
   position = 3
   required_missions = { cli_ladislaus } 
-  provinces_to_highlight = {  } 
+  provinces_to_highlight = {
+   owned_by = BOH
+  } 
 
   trigger = {  } 
 
@@ -944,6 +1192,12 @@ cli_5 = {
        target = BOS
        months = 120
       }
+      hidden_effect = {
+       add_spy_network_in = {
+        who = BOS
+        value = -25
+       }
+      }
      }
      else_if = {
       limit = { exists = HRZ }
@@ -951,6 +1205,12 @@ cli_5 = {
        type = cb_restore_personal_union
        target = HRZ
        months = 120
+      }
+      hidden_effect = {
+       add_spy_network_in = {
+        who = HRZ
+        value = -25
+       }
       }
      }
      else = {
@@ -1806,7 +2066,7 @@ cli_branching = {
 
   effect = {
    custom_tooltip = cli_this_is_a_branching_mission
-  } 
+  }
  }
 
  cli_branch_2 = {

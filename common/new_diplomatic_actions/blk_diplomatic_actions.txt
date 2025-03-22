@@ -164,7 +164,15 @@ request_regency_action = {
    tooltip = request_regency_allowtip2
    FROM = { NOT = { has_country_flag = has_regency_request } }
   }
-  is_in_extended_regency = no
+  FROM = {
+   custom_trigger_tooltip = {
+    tooltip = request_regency_allowtip3
+    OR = {
+     has_regency = no
+     is_in_extended_regency = no
+    }
+   }
+  }
  }
  ai_acceptance = {
   add_entry = {

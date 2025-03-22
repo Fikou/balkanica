@@ -151,3 +151,133 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+ id = cilli_flavor.4
+ title = cilli_flavor.4.title
+ desc = cilli_flavor.4.desc
+ picture = NOBLE_ESTATE_DEMANDS_eventPicture
+ is_triggered_only = yes
+ major = yes
+ major_trigger = {
+  tag = CLI
+  tag = ILY
+  tag = BOH
+  tag = HUN
+ }
+ option = {
+  name = cilli_flavor.4.a
+  CLI = { set_country_flag = cli_controls_ladislaus }
+		ai_chance = {
+			factor = 9
+		}
+ }
+ option = {
+  name = cilli_flavor.4.b
+  capital_scope = {
+   spawn_rebels = {
+    type = legitimist_rebels
+    size = 3
+   }
+  }
+  random_owned_province = {
+   limit = {
+    is_capital = no
+   }
+   spawn_rebels = {
+    type = legitimist_rebels
+    size = 2
+   }
+  }
+  random_owned_province = {
+   limit = {
+    is_capital = no
+   }
+   spawn_rebels = {
+    type = legitimist_rebels
+    size = 2
+   }
+  }
+  ai_chance = {
+   factor = 1
+  }
+ }
+}
+
+country_event = {
+ id = cilli_flavor.5
+ title = cilli_flavor.5.title
+ desc = cilli_flavor.5.desc
+ picture = DIPLOMACY_eventPicture
+
+ major = yes
+ major_trigger = {
+  tag = CRO
+  tag = HUN
+  tag = BOH
+  tag = HAB
+ }
+ mean_time_to_happen = {
+  months = 18
+ }
+ trigger = {
+  has_mission = cli_hungarian_succession
+  mission_completed = cli_hungarian_succession
+  HUN = { is_subject_of = ROOT }
+  OR = {
+   CRO = { is_subject_of = HUN }
+   HUN = {
+    any_owned_province = {
+     is_core = CRO
+    }
+   }
+  }
+ }
+
+ option = {
+  name = cilli_flavor.5.a
+  CRO = {
+   every_owned_province = {
+    cede_province = ROOT
+   }
+  }
+  HUN = {
+   every_owned_province = {
+    limit = { is_core = CRO }
+    cede_province = ROOT
+   }
+   add_liberty_desire = 20
+   add_trust = {
+    who = ROOT
+    value = -10
+   }
+  }
+  ai_chance = {
+   factor = 2
+  }
+ }
+
+ option = {
+  name = cilli_flavor.5.b
+  trigger = {
+   CRO = { is_subject_of = HUN }
+  }
+  create_subject = {
+   subject_type = integrated_personal_union
+   who = CRO
+  }
+  HUN = {
+   add_liberty_desire = 10
+  }
+  ai_chance = {
+   factor = 4
+  }
+ }
+ option = {
+  name = cilli_flavor.5.c
+  add_prestige = 10
+  ai_chance = {
+   factor = 4
+  }
+ }
+}
