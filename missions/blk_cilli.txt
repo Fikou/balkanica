@@ -910,9 +910,19 @@ cli_4 = {
    owned_by = BOH
   } 
 
-  trigger = {  } 
+  trigger = {
+   BOH = {
+    is_subject_of = ROOT
+   }
+  } 
 
-  effect = {  } 
+  effect = {
+   add_prestige = 15
+   add_treasury = 2000 #idk bribe the emperor
+   BOH = {
+    add_liberty_desire = -10
+   }
+  } 
  }
 
  cli_take_electorate = {

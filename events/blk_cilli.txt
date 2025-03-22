@@ -236,16 +236,20 @@ country_event = {
 
  option = {
   name = cilli_flavor.5.a
-  CRO = {
-   every_owned_province = {
-    cede_province = ROOT
+  custom_tooltip = cilli_flavor.5.tt
+  hidden_effect = {
+   CRO = {
+    every_owned_province = {
+     cede_province = ROOT
+    }
    }
-  }
+   HUN = {
+    every_owned_province = {
+     limit = { is_core = CRO }
+     cede_province = ROOT
+    }
+   }
   HUN = {
-   every_owned_province = {
-    limit = { is_core = CRO }
-    cede_province = ROOT
-   }
    add_liberty_desire = 20
    add_trust = {
     who = ROOT
