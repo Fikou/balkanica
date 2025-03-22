@@ -375,16 +375,15 @@ cli_2 = {
      receives_military_access_from = HUN
      HUN = {
       has_heir = "Ladislaus Postumus"
-      }
       hidden_trigger = { has_country_flag = hun_ladislaus_postumus_heir }
-     }
-     custom_trigger_tooltip = {
-      tooltip = cli_hungarian_succession_tt2
-      HUN = { capital_scope = { units_in_province = ROOT } }
      }
      has_spy_network_in = {
       who = HUN
       value = 30
+     }
+     custom_trigger_tooltip = {
+      tooltip = cli_hungarian_succession_tt2
+      HUN = { capital_scope = { units_in_province = ROOT } }
      }
      hidden_trigger = {
       has_country_flag = cli_controls_ladislaus
