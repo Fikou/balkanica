@@ -343,7 +343,8 @@ croatian_sabor_reform = {
  potential = {
   OR = {
    has_reform = croatian_sabor_reform
-   mission_completed = cro_reign_in_slavonia
+   #mission_completed = cro_reign_in_slavonia
+   mission_completed = cro_reconquer_dalmatia
    culture = croatian
    culture = croatian_new
   }
@@ -351,7 +352,8 @@ croatian_sabor_reform = {
  trigger = {
   OR = {
    has_reform = croatian_sabor_reform
-   mission_completed = cro_reign_in_slavonia
+   #mission_completed = cro_reign_in_slavonia
+   mission_completed = cro_reconquer_dalmatia
   }
  }
  modifiers = {
