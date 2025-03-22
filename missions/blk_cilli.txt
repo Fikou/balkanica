@@ -381,6 +381,7 @@ cli_2 = {
      custom_trigger_tooltip = {
       tooltip = cli_hungarian_succession_tt2
       HUN = { capital_scope = { units_in_province = ROOT } }
+     }
      has_spy_network_in = {
       who = HUN
       value = 30
