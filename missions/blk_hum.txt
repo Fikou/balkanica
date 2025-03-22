@@ -208,6 +208,7 @@ hrz_3 = {
     TUR = { exists = no }
     OR = {
      TUR = { has_100_opinion_improved_relation = { target = HRZ } }
+     TUR = { has_opinion = { who = ROOT value = 90 } }
      TUR = { owns = 3002 }
      hidden_trigger = {
       has_country_flag = adopt_herceg_title
@@ -229,6 +230,7 @@ hrz_3 = {
       TUR = { exists = yes }
       OR = {
        TUR = { has_100_opinion_improved_relation = { target = HRZ } }
+       TUR = { has_opinion = { who = ROOT value = 90 } }
        TUR = { owns = 3002 }
       }
       NOT = {
@@ -248,12 +250,6 @@ hrz_3 = {
       }
       clr_country_flag = forced_tributary_state
      }
-     croatia_area = {
-      add_permanent_claim = ROOT
-     }
-     slavonia_area = {
-      add_permanent_claim = ROOT
-     }
     }
    }
    # if we do x: unlock saintsava path
@@ -267,12 +263,20 @@ hrz_3 = {
       }
      }
      set_country_flag = hrz_saintsava_path
-     croatia_area = {
-      add_permanent_claim = ROOT
-     }
-     slavonia_area = {
-      add_permanent_claim = ROOT
-     }
+    }
+   }
+   hidden_effect = {
+    croatia_area = {
+     add_permanent_claim = ROOT
+    }
+    slavonia_area = {
+     add_permanent_claim = ROOT
+    }
+    4239 = {
+     add_permanent_claim = ROOT
+    }
+    130 = {
+     add_permanent_claim = ROOT
     }
    }
    swap_non_generic_missions = yes
@@ -371,6 +375,11 @@ hrz_saintsava_2 = {
 
 		effect = {
    add_stability_or_adm_power = yes
+   add_splendor = 50
+   add_country_modifier = {
+    name = hrz_token_reward
+    duration = -1
+   }
   }
 	}
 }
@@ -419,12 +428,19 @@ hrz_saintsava_4 = {
   }
 
 		trigger = {
+   if = {
+    limit = {
+     TUR = { exists = yes }
+    }
+    total_development = TUR
+   }
    tur_owns_any_balkan_provices = no
   }
 
 		effect = {
    add_permanent_power_projection = {
     type = hum_tur_balkans
+    amount = 20
    }
   }
 	}
@@ -442,7 +458,10 @@ hrz_herzog_2 = {
 		icon = mission_european_politics
 		position = 5
 		required_missions = { hrz_our_future }
-		provinces_to_highlight = {  }
+		provinces_to_highlight = {
+   is_claim = ROOT
+   NOT = { owned_by = ROOT }
+  }
 
 		trigger = {
    total_development = 120
@@ -450,6 +469,10 @@ hrz_herzog_2 = {
 
 		effect = {
    add_stability_or_adm_power = yes
+   add_country_modifier = {
+    name = hrz_token_reward
+    duration = -1
+   }
    add_power_projection = {
     type = mission_rewards_power_projection
     amount = 25
@@ -504,6 +527,7 @@ hrz_herzog_4 = {
 		required_missions = { hrz_our_future }
 		provinces_to_highlight = {
    is_neighbor_of = ROOT
+   NOT = { owned_by = ROOT }
   }
 
 		trigger = {

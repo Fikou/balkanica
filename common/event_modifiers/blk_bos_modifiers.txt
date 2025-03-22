@@ -171,3 +171,8 @@ supporting_hum = {
 supporting_ragusa = {
  diplomatic_upkeep = 1
 }
+
+hrz_token_reward = {
+ can_claim_states = yes
+ prestige_decay = -0.01
+}

@@ -24,22 +24,22 @@
  hrz_approach_serbia_desc:0 "While Serbia may still be sore from our previous conflicts, they are one of our neighbors and may be willing to support our claim to the throne."
 
  hrz_christian_conversion_title:0 "§OReligious Conversion§!"
- hrz_christian_conversion_desc:0 ""
+ hrz_christian_conversion_desc:0 "Religious turmoil is high in the Balkans, and many of our subjects follow a variety of heresies. We must convert our subjects to the true faith."
 
  hrz_saintsava_title:0 "§OThe Duke of Saint Sava§!"
- hrz_saintsava_desc:0 ""
+ hrz_saintsava_desc:0 "Saint Sava, the patron saint of the Serbs, was a powerful figure in the Balkans. His body is said to be buried in the Monastery of Mileseva, in our lands. We must honor his legacy."
 
  hrz_push_ottomans_title:0 "§OPush the Ottomans Out§!"
- hrz_push_ottomans_desc:0 ""
+ hrz_push_ottomans_desc:0 "The Turks have encroached upon christendom for too long. It is high time we put a stop to their endless conquests."
 
  hrz_establish_ourselves_title:0 "§OEstablish Ourselves§!"
- hrz_establish_ourselves_desc:0 ""
+ hrz_establish_ourselves_desc:0 "Now that we have secured rule of Bosnia and support from the Ottomans, we must establish ourselves as a power in Europe."
 
  hrz_herzog_title:0 "§OThe Herzog of Rum§!"
- hrz_herzog_desc:0 ""
+ hrz_herzog_desc:0 "[Monarch.GetName], upon securing rule over Bosnia, has granted themselves the title of Herceg of Hum (or 'Herzog of Hum'). This title is a symbol of our independence and power - even our new sovereign, the Ottomans, have begun to respect it, calling our lands 'Herzegovina', or 'Herzog's Land'."
 
  hrz_do_something_title:0 "§OFortify Against Christiandom§!"
- hrz_do_something_desc:0 ""
+ hrz_do_something_desc:0 "Christiany seeks to bring down the Ottomans, and we would fall with them, due to our heretical beliefs. We must fortify our lands against the coming storm."
 
  hrz_branching_21_title:0 "Branching Mission"
  hrz_branching_21_desc:0 "This mission unlock after selecting the future of Hum."
@@ -54,3 +54,6 @@
  hrz_our_future_explanation_b_tt:0 "If the @TUR §YOttomans§! are our rival, or we have insulted them:\n\nWe will maintain our independence and unlock a §Ytheocratic§! government.\n"
 
  hum_tur_balkans:0 "Expelled the Ottomans"
+
+ hrz_token_reward:0 "Bulwark in the Balkans"
+ desc_hrz_token_reward:0 "Bulwark in the Balkans"
