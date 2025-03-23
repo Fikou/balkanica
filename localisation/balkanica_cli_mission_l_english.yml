@@ -195,6 +195,8 @@
  desc_cli_mediterranean_dominance_mod:0 "We have secured both sides of the Mediterranean, making collecting trade from each one easier."
  cli_cradle_of_civilization_mod:0 "Cradle of Western Civilization"
  desc_cli_cradle_of_civilization_mod:0 "Many of classical vilization's ideas originated in the city of Athens, making it the birthplace of Western Civilization."
+ cli_trading_school:0 "Trading School"
+ desc_cli_trading_school:0 "This province has a Trading School, which provides it with a greater trade value."
 
  cilli_flavor.1.title:0 "An Agreement"
  cilli_flavor.1.desc:0 "The rulers of Cilli have ended their war with the Habsburgs with an inheritance agreement. If either of the dynasties are wiped out, the other will inherit their lands. Seeing how much bigger they are, this does not favor us.\nWe must seek ways to break this pact."

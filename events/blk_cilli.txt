@@ -249,6 +249,7 @@ country_event = {
      cede_province = ROOT
     }
    }
+  }
   HUN = {
    add_liberty_desire = 20
    add_trust = {
@@ -277,6 +278,7 @@ country_event = {
    factor = 4
   }
  }
+
  option = {
   name = cilli_flavor.5.c
   add_prestige = 10

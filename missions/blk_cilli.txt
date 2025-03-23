@@ -742,9 +742,9 @@ cli_3 = {
      HAB = {
       has_heir = \"Ladislaus Postumus\"
       has_country_flag = hab_ladislaus_postumus_heir
-      has_country_flag = cli_controls_ladislaus
       NOT = { is_subject_of = ROOT }
      }
+     has_country_flag = cli_controls_ladislaus
     "
     first_effect = "
      add_treasury = -300
