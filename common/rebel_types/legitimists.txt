@@ -104,6 +104,7 @@ legitimist_rebels = {
    country_event = { id = internal_conflicts.8 }
    end_disaster = internal_conflicts
   }
+  custom_tooltip = legitimist_rebels_tt
   if = {
    limit = { is_subject_of_type = regency }
    overlord = {
@@ -119,20 +120,23 @@ legitimist_rebels = {
      years = 5
     }
    }
-   kill_ruler = yes
+   hidden_effect = { kill_ruler = yes }
   }
   else_if = {
    limit = {
-    has_regency = yes
     has_heir = "Ladislaus Postumus"
     has_country_flag = hab_ladislaus_postumus_heir
     government = monarchy
     CLI = {
-     mission_completed = cli_ladislaus
+     exists = yes
+     OR = {
+      mission_completed = cli_ladislaus
+      has_country_flag = cli_controls_ladislaus
+     }
     }
    }
    CLI = { set_country_flag = cli_controls_ladislaus }
-   kill_ruler = yes
+   hidden_effect = { kill_ruler = yes }
   }
  }
 }

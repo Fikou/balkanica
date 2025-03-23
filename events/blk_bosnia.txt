@@ -62,8 +62,10 @@ country_event = {
  fire_only_once = yes
  major = yes
  major_trigger = {
-  religion = krstjani
-  tag = PAP
+  OR = {
+   religion = krstjani
+   tag = PAP
+  }
  }
  trigger = { # i'm not adding a trigger to check if the pope exists. they PROBABLY exist this early into the game.
    tag = BOS

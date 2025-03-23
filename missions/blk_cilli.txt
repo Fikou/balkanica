@@ -389,6 +389,9 @@ cli_2 = {
       has_country_flag = cli_controls_ladislaus
      }
     }
+    HUN = {
+     is_subject_of = ROOT
+    }
     custom_trigger_tooltip = {
      tooltip = cli_hungarian_succession_tt
      OR = {
@@ -397,9 +400,6 @@ cli_2 = {
        NOT = { has_country_flag = hun_ladislaus_postumus_heir }
       }
       NOT = { has_country_flag = cli_controls_ladislaus }
-     }
-     HUN = {
-      is_subject_of = ROOT
      }
      prestige = 25
     }
@@ -540,6 +540,16 @@ cli_2 = {
      }
      add_liberty_desire = -15
     }
+   }
+   130 = {
+    if = {
+     limit = { NOT = { owned_by = ROOT } }
+     add_permanent_claim = ROOT
+    }
+   }
+   east_adriatic_coast_area = {
+    limit = { NOT = { owned_by = ROOT } }
+    add_permanent_claim = ROOT
    }
   }
  }
@@ -733,6 +743,7 @@ cli_3 = {
 
   effect = {
    carinthia_area = {
+    limit = { owned_by = HAB }
     add_core = ROOT
    }
    complex_dynamic_effect = {
@@ -748,15 +759,19 @@ cli_3 = {
     "
     first_effect = "
      add_treasury = -300
-     tooltip = cli_austrian_succession_tt2
+     custom_tooltip = cli_austrian_succession_tt2
      hidden_effect = { HAB = { kill_ruler = yes } }
-     if = {
-      limit = { 129 = { owned_by = HAB } }
-      129 = { cede_province = ROOT }
+     129 = {
+      if = {
+       limit = { owned_by = HAB }
+       cede_province = ROOT
+      }
      }
-     if = {
-      limit = { 1769 = { owned_by = HAB } }
-      1769 = { cede_province = ROOT }
+     1769 = {
+      if = {
+       limit = { owned_by = HAB }
+       cede_province = ROOT
+      }
      }
     "
     second_custom_tooltip = CLI_IF_AUSTRIA_SUBJECTED
@@ -770,13 +785,17 @@ cli_3 = {
       who = HAB
       amount = 30
      }
-     if = {
-      limit = { 129 = { owned_by = HAB } }
-      129 = { cede_province = ROOT }
+     129 = {
+      if = {
+       limit = { owned_by = HAB }
+       cede_province = ROOT
+      }
      }
-     if = {
-      limit = { 1769 = { owned_by = HAB } }
-      1769 = { cede_province = ROOT }
+     1769 = {
+      if = {
+       limit = { owned_by = HAB }
+       cede_province = ROOT
+      }
      }
     "
    }
@@ -818,28 +837,28 @@ cli_3 = {
     full_idea_group = court_ideas
     adm = 5
    }
-			has_adm_advisor_3 = yes
-			has_dip_advisor_3 = yes
-			has_mil_advisor_3 = yes
+   has_adm_advisor_3 = yes
+   has_dip_advisor_3 = yes
+   has_mil_advisor_3 = yes
   } 
 
   effect = {
    if = {
-				limit = {
-					ai = yes
-				}
-				random_list = {
-					2 = { set_country_flag = cli_slavic_branch }
-					1 = { set_country_flag = cli_german_branch }
-				}
-				swap_non_generic_missions = yes
-			}
-			else = {
-				enable_branching_mission_review_without_ai = {
-					key = CLI
-				}
-			}
-			custom_tooltip = SEPERATOR_TOOLTIP
+    limit = {
+     ai = yes
+    }
+    random_list = {
+     2 = { set_country_flag = cli_slavic_branch }
+     1 = { set_country_flag = cli_german_branch }
+    }
+    swap_non_generic_missions = yes
+   }
+   else = {
+    enable_branching_mission_review_without_ai = {
+     key = CLI
+    }
+   }
+   custom_tooltip = SEPERATOR_TOOLTIP
    if = {
     limit = {
      NOT = { government_rank = 2 }
@@ -918,7 +937,7 @@ cli_4 = {
 
   effect = {
    add_prestige = 15
-   add_treasury = 2000 #idk bribe the emperor
+   add_treasury = 6000 #idk bribe the emperor
    BOH = {
     add_liberty_desire = -10
    }
@@ -1087,6 +1106,9 @@ cli_5 = {
     }
    }
    NOT = { country_or_non_sovereign_subject_holds = ROOT }
+   owner = {
+    religion_group = christian
+   }
   } 
 
   trigger = {
@@ -1159,76 +1181,75 @@ cli_5 = {
    complex_dynamic_effect = {
     first_custom_tooltip = CLI_IF_RELATIONS_IMPROVED
     first_limit = "
-     any_country = {
-      capital_scope = {
-       OR = {
-        region = balkan_region
-        region = carpathia_region
-       }
-      }
-      NOT = { tag = BOS }
-      NOT = { tag = HRZ }
-      OR = {
-       has_opinion = {
-        who = ROOT
-        value = 150
-       }
-       alliance_with = ROOT
-       is_subject_of = ROOT
-       marriage_with = ROOT
-      }
-     }
-    }
-    if = {
-     limit = { exists = BOS }
-     has_spy_network_in = {
-      who = BOS
-      value = 25
-     }
-    }
-    else_if = {
-     limit = { exists = HRZ }
-     has_spy_network_in = {
-      who = HRZ
-      value = 25
-     }
-    }
+any_country = {
+capital_scope = {
+ OR = {
+  region = balkan_region
+  region = carpathia_region
+ }
+}
+NOT = { tag = BOS }
+NOT = { tag = HRZ }
+OR = {
+ has_opinion = {
+  who = ROOT
+  value = 150
+ }
+ alliance_with = ROOT
+ is_subject_of = ROOT
+ marriage_with = ROOT
+}
+}
+if = {
+limit = { exists = BOS }
+has_spy_network_in = {
+who = BOS
+value = 25
+}
+}
+else_if = {
+limit = { exists = HRZ }
+has_spy_network_in = {
+who = HRZ
+value = 25
+}
+}
    "
     first_effect = "
-     if = {
-      limit = { exists = BOS }
-      add_casus_belli = {
-       type = cb_restore_personal_union
-       target = BOS
-       months = 120
-      }
-      hidden_effect = {
-       add_spy_network_in = {
-        who = BOS
-        value = -25
-       }
-      }
-     }
-     else_if = {
-      limit = { exists = HRZ }
-      add_casus_belli = {
-       type = cb_restore_personal_union
-       target = HRZ
-       months = 120
-      }
-      hidden_effect = {
-       add_spy_network_in = {
-        who = HRZ
-        value = -25
-       }
-      }
-     }
-     else = {
-      bosnia_area = {
-       limit = { NOT = { owned_by = ROOT } }
-       add_permanent_claim = ROOT
-      }
-     }
+if = {
+limit = { exists = BOS }
+add_casus_belli = {
+type = cb_restore_personal_union
+target = BOS
+months = 120
+}
+hidden_effect = {
+add_spy_network_in = {
+ who = BOS
+ value = -25
+}
+}
+}
+else_if = {
+limit = { exists = HRZ }
+add_casus_belli = {
+type = cb_restore_personal_union
+target = HRZ
+months = 120
+}
+hidden_effect = {
+add_spy_network_in = {
+ who = HRZ
+ value = -25
+}
+}
+}
+else = {
+bosnia_area = {
+limit = { NOT = { owned_by = ROOT } }
+add_permanent_claim = ROOT
+}
+}
     "
     second_custom_tooltip = CLI_IF_BOSNIA_CONQUERED
     second_limit = "

@@ -213,6 +213,7 @@
  cilli_flavor.4.desc:0 "The royalty of [CLI.GetName], related to the Archduchy's heir, Ladislaus Postumus, are demanding that we give up the boy for guardianship. They have gathered a large amount of angry nobles with them. Should we do it?"
  cilli_flavor.4.a:0 "If we must..."
  cilli_flavor.4.b:0 "We will not give him up!"
+ cli_flavor.4.tt:0 "Ladislaus will be put under guardianship of [CLI.GetName], making them de jure regents of the lands he's heir to."
  cilli_flavor.5.title:0 "The Banate of Croatia"
  cilli_flavor.5.desc:0 "Our rule as Regent of Hungary has been going well, yet we have not been compensated for it much. Why don't we unify with our brothers in Croatia by taking the Banate from Hungary?"
  cilli_flavor.5.a:0 "Let us hold these lands directly."

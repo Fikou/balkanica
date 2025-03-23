@@ -13,7 +13,7 @@ country_decisions = {
   allow = {
    treasury = 1000
    any_known_country = {
-    NOT = { tag = overlord }
+    NOT = { overlord_of = ROOT }
     has_eclipsed = ROOT
     total_development = 150
    }

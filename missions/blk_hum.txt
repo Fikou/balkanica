@@ -10,7 +10,9 @@ hrz_1 = {
 		position = 2
 		required_missions = { hrz_civil_war }
 		provinces_to_highlight = {  }
-
+  ai_weight = {
+   factor = 1000
+  }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = HUN }  }
 
 		effect = {
@@ -50,7 +52,9 @@ hrz_2 = {
 		position = 2
 		required_missions = { hrz_civil_war }
 		provinces_to_highlight = {  }
-
+  ai_weight = {
+   factor = 1000
+  }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = HAB }  }
 
 		effect = {
@@ -73,7 +77,9 @@ hrz_3 = {
 		icon = mission_war_for_the_crown
 		position = 1
 		provinces_to_highlight = {  }
-
+  ai_weight = {
+   factor = 1000
+  }
 		trigger = { army_size_percentage = 1 }
 
 		effect = {
@@ -295,7 +301,9 @@ hrz_4 = {
 		position = 2
 		required_missions = { hrz_civil_war }
 		provinces_to_highlight = {  }
-
+  ai_weight = {
+   factor = 1000
+  }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = ARA }  }
 
 		effect = {
@@ -335,7 +343,9 @@ hrz_5 = {
 		position = 2
 		required_missions = { hrz_civil_war }
 		provinces_to_highlight = {  }
-
+  ai_weight = {
+   factor = 1000
+  }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = SER }  }
 
 		effect = {
@@ -538,7 +548,7 @@ hrz_herzog_4 = {
      any_neighbor_province = {
       OR = {
        owner = { is_rival = ROOT }
-       ROOT = { is_rival = owner }
+       owner = { is_enemy = ROOT }
       }
      }
     }

@@ -13,7 +13,8 @@ coup_attempt_disaster = {
   is_lesser_in_union = no 
   NOT = { crown_land_share = 75 } 
   NOT = { legitimacy = 85 }
-  NOT = { mission_completed = cli_web_loyalty }
+  hidden_trigger = { NOT = { mission_completed = cli_web_loyalty } }
+  
   if = { 
    limit = { 
     has_estate_led_regency = { estate = estate_nobles }	
@@ -56,7 +57,7 @@ coup_attempt_disaster = {
    has_regency = no
    is_lesser_in_union = yes
    legitimacy = 100 
-   mission_completed = cli_web_loyalty
+   hidden_trigger = { mission_completed = cli_web_loyalty }
   }
  }
  

@@ -284,32 +284,32 @@ country_event = {
 			set_country_flag = had_election_event
 			select_biggest_country_of_scope_type = {
 				limit = "
-					has_regency = no
-					is_free_or_tributary_trigger = yes
-					OR = {
-						has_estate = estate_nobles
-						has_estate = estate_brahmins
-						has_estate = estate_rajput
-					}
-					government = monarchy
-					NOT = { war_with = ROOT }
-					if = {
-						limit = {
-							ROOT = { religion_group = christian }
-						}
-						religion_group = christian
-					}
-     if = {
-      limit = {
-       OR = {
-        ROOT = { tag = BOS }
-        ROOT = { tag = HRZ }
-       }
-       bos_civil_war_resolved_trigger = no
-      }
-      NOT = { tag = BOS }
-      NOT = { tag = HRZ }
-     }
+has_regency = no
+is_free_or_tributary_trigger = yes
+OR = {
+ has_estate = estate_nobles
+ has_estate = estate_brahmins
+ has_estate = estate_rajput
+}
+government = monarchy
+NOT = { war_with = ROOT }
+if = {
+ limit = {
+  ROOT = { religion_group = christian }
+ }
+ religion_group = christian
+}
+if = {
+ limit = {
+  OR = {
+   ROOT = { tag = BOS }
+   ROOT = { tag = HRZ }
+  }
+  bos_civil_war_resolved_trigger = no
+ }
+ NOT = { tag = BOS }
+ NOT = { tag = HRZ }
+}
 				"
 				trigger_scope = "any_neighbor_country"
 				effect_scope = "random_neighbor_country"

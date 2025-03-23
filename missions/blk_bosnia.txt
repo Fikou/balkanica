@@ -13,6 +13,9 @@ bos_1 = {
    owned_by = HUN
    has_discovered = ROOT
   }
+  ai_weight = {
+   factor = 1000
+  }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = HUN }  }
 
 		effect = {
@@ -316,6 +319,9 @@ bos_2 = {
    owned_by = HAB
    has_discovered = ROOT
   }
+  ai_weight = {
+   factor = 1000
+  }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = HAB }  }
 
 		effect = {
@@ -535,7 +541,7 @@ bos_3 = {
 		position = 1
 		provinces_to_highlight = {  }
   ai_weight = {
-   factor = 100
+   factor = 1000
   }
 		trigger = { army_size_percentage = 1 }
 
@@ -638,7 +644,7 @@ bos_3 = {
 			add_prestige_or_monarch_power = { amount = 10 }
    if = {
     limit = {
-     has_ruler = "Stjepan Toma≈° Ostojic"
+     has_ruler = "Stjepan Tomaö Ostojic"
     }
     change_ruler_stat = {
      type = adm
@@ -962,6 +968,9 @@ bos_4 = {
    owned_by = ARA
    has_discovered = ROOT
   }
+  ai_weight = {
+   factor = 1000
+  }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = ARA }  }
 
 		effect = {
@@ -1165,6 +1174,9 @@ bos_5 = {
 		provinces_to_highlight = {
    owned_by = SER
    has_discovered = ROOT
+  }
+  ai_weight = {
+   factor = 1000
   }
 		trigger = { bos_civil_war_can_get_support_trigger = { faction = SER }  }
 

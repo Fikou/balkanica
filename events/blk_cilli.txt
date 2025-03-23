@@ -160,13 +160,16 @@ country_event = {
  is_triggered_only = yes
  major = yes
  major_trigger = {
-  tag = CLI
-  tag = ILY
-  tag = BOH
-  tag = HUN
+  OR = {
+   tag = CLI
+   tag = ILY
+   tag = BOH
+   tag = HUN
+  }
  }
  option = {
   name = cilli_flavor.4.a
+  custom_tooltip = cli_flavor.4.tt
   CLI = { set_country_flag = cli_controls_ladislaus }
 		ai_chance = {
 			factor = 9
@@ -177,7 +180,7 @@ country_event = {
   capital_scope = {
    spawn_rebels = {
     type = legitimist_rebels
-    size = 3
+    size = 2
    }
   }
   random_owned_province = {
@@ -212,10 +215,12 @@ country_event = {
 
  major = yes
  major_trigger = {
-  tag = CRO
-  tag = HUN
-  tag = BOH
-  tag = HAB
+  OR = {
+   tag = CRO
+   tag = HUN
+   tag = BOH
+   tag = HAB
+  }
  }
  mean_time_to_happen = {
   months = 18

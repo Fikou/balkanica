@@ -446,12 +446,14 @@ country_event = {
  is_triggered_only = yes
  major = yes
  major_trigger = {
-  tag = BYZ
-  tag = GEN
-  tag = KNI
-  tag = MAM
-  tag = TUR
-  tag = VEN
+  OR = {
+   tag = BYZ
+   tag = GEN
+   tag = KNI
+   tag = MAM
+   tag = TUR
+   tag = VEN
+  }
  }
 
  option = {
@@ -543,7 +545,7 @@ country_event = {
     limit = {
      has_eclipsed = ROOT
      total_development = 150
-     NOT = { tag = overlord }
+     NOT = { overlord_of = ROOT }
     }
     save_event_target_as = ragusa_new_overlord_option_a
    }
@@ -551,7 +553,7 @@ country_event = {
     limit = {
      has_eclipsed = ROOT
      total_development = 200
-     NOT = { tag = overlord }
+     NOT = { overlord_of = ROOT }
      NOT = { tag = event_target:ragusa_new_overlord_option_a }
     }
     save_event_target_as = ragusa_new_overlord_option_b
@@ -560,7 +562,7 @@ country_event = {
     limit = {
      has_eclipsed = ROOT
      total_development = 300
-     NOT = { tag = overlord }
+     NOT = { overlord_of = ROOT }
      NOT = { tag = event_target:ragusa_new_overlord_option_a }
      NOT = { tag = event_target:ragusa_new_overlord_option_b }
     }
