@@ -498,7 +498,7 @@ country_event = {
  title = krstjani_flavor.5.title
  desc = krstjani_flavor.5.desc
  picture = REFORM_eventPicture
-
+ fire_only_once = yes
  major = yes
 
  major_trigger = {
