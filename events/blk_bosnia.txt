@@ -433,14 +433,14 @@ country_event = {
   tag = BOS
   OR = {
    AND = {
-    tur_owns_any_balkan_provices = yes
+   balkan_region = { owned_by = TUR }
     OR = {
      defensive_war_with = TUR
      offensive_war_with = TUR
     }
    }
    AND = {
-    tur_owns_any_balkan_provices = no
+    NOT = { balkan_region = { owned_by = TUR } }
     any_country = {
      OR = {
       defensive_war_with = ROOT
