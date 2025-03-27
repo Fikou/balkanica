@@ -444,7 +444,7 @@ hrz_saintsava_4 = {
     }
     total_development = TUR
    }
-   tur_owns_any_balkan_provices = no
+   NOT = { balkan_region = { owned_by = TUR } }
   }
 
 		effect = {

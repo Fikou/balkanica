@@ -937,7 +937,7 @@ bos_3 = {
 
 		trigger = {
 			is_great_power = yes
-			tur_owns_any_balkan_provices = no
+   NOT = { balkan_region = { owned_by = TUR } }
 			religious_unity = 0.9
 			army_size_percentage = 0.9
 			navy_size_percentage = 0.9

@@ -208,19 +208,6 @@ bos_can_diplo_vassal_rag_trigger = {
  }
 }
 
-tur_owns_any_balkan_provices = {
- TUR = {
-  OR = {
-   exists = no
-   NOT = {
-    balkan_region = {
-     owned_by = TUR
-    }
-   }
-  }
- }
-}
-
 bos_hating_on_hun = {
  OR = {
   is_rival = HUN

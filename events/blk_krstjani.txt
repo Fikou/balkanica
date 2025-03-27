@@ -498,9 +498,10 @@ country_event = {
  title = krstjani_flavor.5.title
  desc = krstjani_flavor.5.desc
  picture = REFORM_eventPicture
- fire_only_once = yes
- major = yes
 
+ fire_only_once = yes
+
+ major = yes
  major_trigger = {
   OR = {
    # random nations that might not fulfill the generic conditions
@@ -541,6 +542,7 @@ country_event = {
 
  trigger = {
   religion = krstjani
+  NOT = { has_global_flag = krstjani_cemented }
   development_in_provinces = {
    value = 80
    religion = krstjani

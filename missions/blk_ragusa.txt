@@ -854,7 +854,7 @@ rag_3 = {
 
 		trigger = {
    tag = ILY
-   tur_owns_any_balkan_provices = no
+   NOT = { balkan_region = { owned_by = TUR } }
   }
 
 		effect = {
