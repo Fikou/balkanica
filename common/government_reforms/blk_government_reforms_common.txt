@@ -109,7 +109,7 @@ duchy_of_saint_sava_reform = {
  }
  effect = {
   hidden_effect = {
-   override_country_name = HRZ
+   override_country_name = HRZ_DSS
   }
  }
  removed_effect = {
