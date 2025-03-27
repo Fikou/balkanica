@@ -153,6 +153,8 @@ hrz_3 = {
 		trigger = { bos_civil_war_resolved_trigger = yes }
 
 		effect = {
+   custom_tooltip = hrz_resolve_civil_war_tt
+   set_country_flag = adopt_herceg_title
 			bosnia_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
@@ -216,9 +218,6 @@ hrz_3 = {
      TUR = { has_100_opinion_improved_relation = { target = HRZ } }
      TUR = { has_opinion = { who = ROOT value = 90 } }
      TUR = { owns = 3002 }
-     hidden_trigger = {
-      has_country_flag = adopt_herceg_title
-     }
     }
     OR = {
      TUR = { is_rival = ROOT }
@@ -247,7 +246,6 @@ hrz_3 = {
       }
      }
      set_country_flag = hrz_herzog_path
-     set_country_flag = adopt_herceg_title
      TUR = {
       set_country_flag = forced_tributary_state
       create_subject = {
