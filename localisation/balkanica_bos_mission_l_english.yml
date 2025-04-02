@@ -322,6 +322,6 @@
  bosnia_flavor.104.a:0 "The game is set."
  bosnia_flavor_104_tt:0 "§MThis modifier will be removed if you revoke your guarantee over Hum, or they cease to exist.§!"
 
- bosnia_flavor.1.title:0 "Civil War!"
- bosnia_flavor.1.desc:0 "Since Tvrtko's death in September 1443 and the election of Thomas as the King of Bosnia the realm has been experiencing a Civil War. The powerful Duke of Hum, Stjepan, does not recognize the rule of our king and is pursuing his own ambitions.\nTo end the civil war, we have to either crush them militarily, set up a royal marriage between us or get the support of several powers in the region."
- bosnia_flavor.1.a:0 "Let's get to it, then."
+ bosnia_flavor.1000.title:0 "Civil War!"
+ bosnia_flavor.1000.desc:0 "Since Tvrtko's death in September 1443 and the election of Thomas as the King of Bosnia the realm has been experiencing a Civil War. The powerful Duke of Hum, Stjepan, does not recognize the rule of our king and is pursuing his own ambitions.\nTo end the civil war, we have to either crush them militarily, set up a royal marriage between us or get the support of several powers in the region."
+ bosnia_flavor.1000.a:0 "Let's get to it, then."
